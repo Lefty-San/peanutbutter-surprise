@@ -83,9 +83,34 @@ nav {
   margin-top: 0px;
   width: 150px;
   height: 50px; }
+<<<<<<< HEAD
 .page2 .svg {
   display: inline-block;
   width: 150px;
   height: 150px; }
 
 /*# sourceMappingURL=style.css.map */
+=======
+
+.lp_graphic {
+  background: url(./img/iPhone/LP_Graphic.png) 100% 100%;
+  height: 365px;
+  width: 295px; }
+
+/* iPhone Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .supported_orientation {
+    display: none; }
+
+  .lp_graphic {
+    background: url(./img/iPhone/LP_Graphic@2x.png) 100% 100%;
+    background-size: 100%; } }
+/* iPhone Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .supported_orientation {
+    display: block; } }
+/* iPad Portrait */
+/* iPad Landscape */
+/* ----------- Desktop Non-Retina Screens ----------- */
+/* ----------- Desktop Retina Screens ----------- */
+>>>>>>> d2262d4dc2289131f8858688970085a225f726e5
