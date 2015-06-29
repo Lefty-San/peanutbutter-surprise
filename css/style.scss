@@ -1,0 +1,69 @@
+// Global css written in sass.
+// from cmd line run from css directory
+// sass --watch style.scss:style.css
+//
+// or for manual compliles
+// sass style.scss style.css
+
+body{
+	width: 100%;
+	margin: 0 auto;
+}
+.mainContainer {
+	width: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+nav {
+	background-color: white;
+	font-size: 24px;
+	font-color: #a0a2a3;
+	font-style: Helvetica Neue;
+	height: 65px;
+	vertical-align: middle;
+}
+nav .img {
+	display: inline-block;
+	vertical-align: middle;
+}
+nav .logo {
+	margin-left: 16px;
+	max-height: 46px;
+}
+nav .menu{
+	max-height: 21px;
+	margin-right: 16px;
+	float: right;
+}
+.page1 {
+	background-color: #f9941f;
+	width: 100%;
+}
+.page1 h1{
+	font-size: 25px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: bold;
+	font-stretch: condensed;
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;
+	margin-left: 16px;
+	width: 275px;
+	margin-bottom: 0px;
+}
+.page1 h2{
+	font-size: 25px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: bold;
+	font-stretch: condensed;
+	color: #ffffff;
+	margin-left: 16px;
+	margin-top:0px;
+}
+.page1 .arrow{
+	display: block;
+	width: 19px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 15px
+}
