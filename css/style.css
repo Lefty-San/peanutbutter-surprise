@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   width: 100%;
   margin: 0 auto; }
@@ -59,67 +58,27 @@ nav .menu {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 15px; }
-=======
-body{
-	width: 100%;
-	margin: 0 auto;
-}
-.mainContainer {
-	width: 100%;
-	overflow: hidden;
-	margin: 0 auto;
-}
 
-nav {
-	background-color: white;
-	font-size: 24px;
-	font-color: #a0a2a3;
-	font-style: Helvetica Neue;
-	height: 65px;
-	vertical-align: middle;
-}
-nav .img {
-	display: inline-block;
-	vertical-align: middle;
-}
-nav .logo {
-	margin-left: 16px;
-	max-height: 46px;
-}
-nav .menu{
-	max-height: 21px;
-	margin-right: 16px;
-	float: right;
-}
-.page1 {
-	background-color: #f9941f;
-	width: 100%;
-}
-.page1 h1{
-	font-size: 25px;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-weight: bold;
-	font-stretch: condensed;
-	color: #ffffff;
-	border-bottom: 1px solid #ffffff;
-	margin-left: 16px;
-	width: 275px;
-	margin-bottom: 0px;
-}
-.page1 h2{
-	font-size: 25px;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-weight: bold;
-	font-stretch: condensed;
-	color: #ffffff;
-	margin-left: 16px;
-	margin-top:0px;
-}
-.page1 .arrow{
-	display: block;
-	width: 19px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 15px 
-}
->>>>>>> 15a171ce70bbb832c409d581fe46859ede188b07
+.page2 {
+  background-color: grey; }
+
+.page2 h1 {
+  display: block-inline;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: white;
+  margin-left: 100px;
+  width: 50px;
+  float: left;
+  border-right: 1px solid; }
+
+.page2 h2 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: white;
+  padding: 0;
+  display: block-inline;
+  margin-left: 150px;
+  margin-top: 0px;
+  width: 150px;
+  height: 50px; }
+
+/*# sourceMappingURL=style.css.map */
