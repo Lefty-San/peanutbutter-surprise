@@ -5,6 +5,20 @@
 // or for manual compliles
 // sass style.scss style.css
 
+// SCSS variables
+$font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$white: #ffffff;
+
+@mixin animation($name, $duration, $timing, $direction) {
+  -webkit-animation: $name $duration $timing $direction; /* Safari 4+ */
+  -moz-animation:    $name $duration $timing $direction; /* Fx 5+ */
+  -o-animation:      $name $duration $timing $direction; /* Opera 12+ */
+  animation:         $name $duration $timing $direction; /* IE 10+, Fx 29+ */
+}
+.sample-animation {
+  @include animation(sample, 5s, ease-in-out, forward);
+}
+
 body{
 	width: 100%;
 	margin: 0 auto;
@@ -22,48 +36,52 @@ nav {
 	font-style: Helvetica Neue;
 	height: 65px;
 	vertical-align: middle;
-}
-nav .img {
-	display: inline-block;
-	vertical-align: middle;
-}
-nav .logo {
-	margin-left: 16px;
-	max-height: 46px;
-}
-nav .menu{
-	max-height: 21px;
-	margin-right: 16px;
-	float: right;
+
+  .img {
+  	display: inline-block;
+  	vertical-align: middle;
+  }
+  .logo {
+  	margin-left: 16px;
+  	max-height: 46px;
+  }
+  .menu{
+  	max-height: 21px;
+  	margin-right: 16px;
+  	float: right;
+  }
+
 }
 .page1 {
 	background-color: #f9941f;
 	width: 100%;
 }
-.page1 h1{
-	font-size: 25px;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-weight: bold;
-	font-stretch: condensed;
-	color: #ffffff;
-	border-bottom: 1px solid #ffffff;
-	margin-left: 16px;
-	width: 275px;
-	margin-bottom: 0px;
-}
-.page1 h2{
-	font-size: 25px;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-weight: bold;
-	font-stretch: condensed;
-	color: #ffffff;
-	margin-left: 16px;
-	margin-top:0px;
-}
-.page1 .arrow{
-	display: block;
-	width: 19px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 15px
+.page1 {
+   h1{
+  	font-size: 25px;
+  	font-family: $font-stack;
+  	font-weight: bold;
+  	font-stretch: condensed;
+  	color: $white;
+  	border-bottom: 1px solid $white;
+  	margin-left: 16px;
+  	width: 275px;
+  	margin-bottom: 0px;
+    }
+  h2{
+  	font-size: 25px;
+  	font-family: $font-stack;
+  	font-weight: bold;
+  	font-stretch: condensed;
+  	color: $white;
+  	margin-left: 16px;
+  	margin-top:0px;
+  }
+  .arrow{
+  	display: block;
+  	width: 19px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	padding-bottom: 15px
+  }
 }
