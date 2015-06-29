@@ -103,10 +103,14 @@ nav {
   	font-family: $font-stack;
   	color: $white;
   	padding: 0;
-    display: block-inline;
     margin-left: 150px;
     margin-top:0px;
     width: 150px;
     height: 50px
+   }
+   .svg {
+   	display: inline-block;
+   	width: 150px;
+   	height: 150px;
    }
 }
