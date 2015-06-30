@@ -17,7 +17,7 @@ body {
   overflow: hidden;
   margin: 0 auto; }
 
-h1, h2 {
+h1, h2, p {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 nav {
@@ -107,6 +107,9 @@ nav {
   height: 50px;
   display: inline-block;
   text-align: left; }
+.page2 p {
+  color: #ffffff;
+  display: inline-block; }
 
 .page3 {
   background-color: #ffffff;
@@ -138,11 +141,14 @@ nav {
     margin-right: 25px;
     display: inline-block;
     text-align: left; }
+  .page3 p {
+    color: #f9941f; }
 
 .page2 .svg, .page3 .svg {
   display: inline-block;
   width: 150px;
-  height: 150px; }
+  height: 150px;
+  flex-direction: row-reverse; }
 .page2 svg, .page3 svg {
   width: 100px;
   height: 100px; }

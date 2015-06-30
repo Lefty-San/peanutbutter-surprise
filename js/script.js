@@ -5,18 +5,18 @@ $(function(){
 
 
 //page2 svgs
-$('.wireframes').append($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
-$(".proto").append($('<div>').load("svg/UX/InteractivePrototypes.svg"));
-$(".eval").append($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
-$(".usability").append($('<div>').load("svg/UX/UsabilityTesting.svg"));
-$(".user").append($('<div>').load("svg/UX/UserPersonas.svg"));
+$('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
+$(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
+$(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
+$(".usability").prepend($('<div>').load("svg/UX/UsabilityTesting.svg"));
+$(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
 
 //page3 svgs
-$(".custom").append($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
-$(".desktop").append($('<div>').load("svg/UI/DesktopUI.svg"));
-$(".presen").append($('<div>').load("svg/UI/InteractivePresentation.svg"));
-$(".mobile").append($('<div>').load("svg/UI/MobileUI.svg"));
-$(".poc").append($('<div>').load("svg/UI/POC.svg"));
+$(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
+$(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
+$(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
+$(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
+$(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
 $(".svg").click(function(){
 	$(this).children().attr("state", "play");

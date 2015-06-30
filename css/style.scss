@@ -33,7 +33,7 @@ body{
 	margin: 0 auto;
 }
 
-h1, h2{
+h1, h2, p{
 	font-family: $font-stack;
 }
 
@@ -137,6 +137,10 @@ nav {
     display: inline-block;
     text-align: left;
    }
+   p {
+   	color: $white;
+   	display: inline-block;
+   }
 }
 
 .page3 {
@@ -173,6 +177,9 @@ nav {
     display: inline-block;
     text-align: left;
    }
+   p {
+   	color: $orange;
+   }
 
 }
 .page2, .page3 {
@@ -180,6 +187,7 @@ nav {
 		display: inline-block;
 		width: 150px;
 		height: 150px;
+		flex-direction: row-reverse;
 	}
 	svg {
    		width: 100px;
