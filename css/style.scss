@@ -14,6 +14,14 @@ $font-hncb: "HelveticaNeue-CondensedBold";
 $white: #ffffff;
 $orange: #f9941f;
 
+@mixin fullscreen($img) {
+  background: $img no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 @mixin animation($name, $duration, $timing, $direction) {
   -webkit-animation: $name $duration $timing $direction; /* Safari 4+ */
   -moz-animation:    $name $duration $timing $direction; /* Fx 5+ */
@@ -107,7 +115,7 @@ nav {
   }
 }
 .page2 {
-	background: $Web_ux_back 100% 100%;
+  @include fullscreen($Web_ux_back);
 	overflow: hidden;
 	text-align: center;
 	padding-top: 20px;
@@ -233,9 +241,20 @@ nav {
 		color: $white;
 		float: left;
 	}
-	img {
+	.venn {
+    background: $iphone_venn_diag;
+    background-size:100%;
+    width:68px;
+    height:68px;
+    display:inline-block;
 		margin-top: 15px;
 	}
+  .arrowLeft {
+
+  }
+  .arrowRight {
+
+  }
 
 }
 

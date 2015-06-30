@@ -22,7 +22,7 @@ h1, h2, p {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 nav {
-  background-color: #ffffff;
+  background-color: white;
   font-size: 24px;
   font-color: #a0a2a3;
   font-style: Helvetica Neue;
@@ -58,8 +58,8 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    color: white;
+    border-bottom: 1px solid white;
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
@@ -67,7 +67,7 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: #ffffff;
+    color: white;
     margin-left: 16px;
     margin-top: 0px; }
   .page1 .dwnArrow {
@@ -81,7 +81,11 @@ nav {
     background-repeat: no-repeat; }
 
 .page2 {
-  background: url(../img/Web/UX_Background.png) 100% 100%;
+  background: url(../img/Web/UX_Background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -89,17 +93,11 @@ nav {
 
 .page2 h1 {
   display: block-inline;
-<<<<<<< HEAD
   font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
   font-weight: 400;
   font-stretch: condensed;
   font-size: 47px;
   color: white;
-=======
-  font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 60px;
-  color: #ffffff;
->>>>>>> 6388207cded055720e77a92f639ef1515e75599a
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -114,7 +112,7 @@ nav {
   font-weight: 400;
   font-stretch: condensed;
   font-size: 24px;
-  color: #ffffff;
+  color: white;
   text-align: left;
   padding: 0;
   margin-top: 0px;
@@ -132,7 +130,7 @@ nav {
   margin-bottom: -15px; }
 
 .page3 {
-  background-color: #ffffff;
+  background-color: white;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -182,7 +180,7 @@ nav {
   background-color: #f9941f;
   vertical-align: bottom; }
   .page4 h1 {
-    color: #ffffff;
+    color: white;
     float: left;
     margin-right: 14px;
     font-size: 47px; }
@@ -190,9 +188,14 @@ nav {
     margin-left: 18px;
     margin-top: 53px;
     font-size: 24px;
-    color: #ffffff;
+    color: white;
     float: left; }
-  .page4 img {
+  .page4 .venn {
+    background: url(../img/iPhone/VennDiagram.png);
+    background-size: 100%;
+    width: 68px;
+    height: 68px;
+    display: inline-block;
     margin-top: 15px; }
 
 .lp_graphic {
@@ -230,5 +233,3 @@ nav {
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */
-
-/*# sourceMappingURL=style.css.map */
