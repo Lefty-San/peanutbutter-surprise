@@ -109,16 +109,16 @@ nav {
 	text-align: center;
 }
 .page2{
-  .wireframes{
-  	margin-left: -150px;
-  }
   h1 {
   	display: block-inline;
   	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
-    font-size: 47px;
+    font-size: 60px;
   	color: $white;
     margin-left: 6px;
     width: 75px;
+    height: 57px;
+    margin-top: 0px;
+    padding-top:0;
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed;
@@ -133,7 +133,6 @@ nav {
     margin-top: 0px;
     width: 150px;
     height: 50px;
-    font-stretch: condensed;
     display: inline-block;
     text-align: left;
    }
@@ -144,29 +143,34 @@ nav {
 	overflow: hidden;
 	text-align: center;
 
-	.mobile{
-		margin-left: -150px;
-	}
 	h1 {
-		display: block-inline;
-		font-family: $font-stack;
-		color: $orange;
-		margin-left: 100px;
-		width: 50px;
-		float: left;
-		border-right: 1px solid;
-	}
+  	display: block-inline;
+  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
+    font-size: 60px;
+  	color: #666666;
+    margin-left: 6px;
+    width: 75px;
+    height: 57px;
+    margin-top: 0px;
+    padding-top:0;
+    display: inline-block;
+    border-right: 1px solid;
+    font-stretch: condensed;
+  }
 
-	h2 {
-		font-family: $font-stack;
-		color: $orange;
-		text-align: left;
-		padding: 0;
-		margin-left: 150px;
-		margin-top: 0px;
-		width: 150px;
-		height: 50px;
-	}
+  h2 {
+  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
+    font-size: 24px;
+  	color: #666666;
+  	text-align: left;
+  	padding: 0;
+    margin-top: 0px;
+    width: 150px;
+    height: 50px;
+    display: inline-block;
+    text-align: left;
+   }
+
 }
 .page2, .page3 {
 	.svg {
@@ -175,7 +179,7 @@ nav {
    		height: 150px;
    }
    .wireframes {
-     margin-left: -150px;
+     /*margin-left: -150px;*/
    }
 }
 
