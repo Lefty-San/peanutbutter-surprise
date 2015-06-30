@@ -9,6 +9,7 @@
 
 // SCSS variables
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-hncb: "HelveticaNeue-CondensedBold";
 $white: #ffffff;
 $orange: #f9941f;
 
@@ -65,9 +66,7 @@ nav {
 
    h1{
   	font-size: 25px;
-  	font-family: $font-stack;
-  	font-weight: bold;
-  	font-stretch: condensed;
+  	font-family: $font-hncb, $font-stack;
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
@@ -76,9 +75,7 @@ nav {
     }
   h2{
   	font-size: 25px;
-  	font-family: $font-stack;
-  	font-weight: bold;
-  	font-stretch: condensed;
+  	font-family: $font-hncb, $font-stack;
   	color: $white;
   	margin-left: 16px;
   	margin-top:0px;
@@ -93,8 +90,12 @@ nav {
 }
 .page2 {
 	background-color: grey;
+<<<<<<< HEAD
 	overflow: hidden;
 	text-align: center;
+=======
+  text-align: center;
+>>>>>>> bb284a1e1e720e417d508b7af7b0633a3a6c5ee3
 }
 .page2{
   .wireframes{
@@ -156,6 +157,9 @@ nav {
    		display: inline-block;
    		width: 150px;
    		height: 150px;
+   }
+   .wireframes {
+     margin-left: -150px;
    }
 }
 
