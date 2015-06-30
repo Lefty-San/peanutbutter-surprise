@@ -52,11 +52,23 @@ nav {
   .logo {
   	margin-left: 16px;
   	max-height: 46px;
+    background: $iphone_pk_logo;
+    background-size: 100%;
+    width:46px;
+    height:46px;
+    display:inline-block;
+    margin-top:10px;
   }
   .menu{
   	max-height: 21px;
   	margin-right: 16px;
   	float: right;
+    background: $iphone_menu;
+    background-size:100%;
+    width:28px;
+    height:21px;
+    display:inline-block;
+    margin-top:22px;
   }
 
 }
@@ -80,18 +92,21 @@ nav {
   	margin-left: 16px;
   	margin-top:0px;
   }
-  .arrow{
+  .dwnArrow{
   	display: block;
   	width: 19px;
-  	margin-left: auto;
-  	margin-right: auto;
-  	padding-bottom: 15px
+    height:19px;
+  	margin:0 auto;
+    padding-bottom:15px;
+    background:$iphone_scroll_arrow;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 }
 .page2 {
 	background-color: grey;
 	overflow: hidden;
-	text-align: center; 
+	text-align: center;
 }
 .page2{
   .wireframes{
@@ -99,23 +114,28 @@ nav {
   }
   h1 {
   	display: block-inline;
-  	font-family: $font-stack;
+  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
+    font-size: 47px;
   	color: $white;
-  	margin-left: 100px;
-  	width: 50px;
-  	float: left;
-  	border-right: 1px solid;
+    margin-left: 6px;
+    width: 75px;
+    display: inline-block;
+    border-right: 1px solid;
+    font-stretch: condensed;
   }
 
   h2 {
-  	font-family: $font-stack;
+  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
+    font-size: 24px;
   	color: $white;
   	text-align: left;
   	padding: 0;
-    margin-left: 150px;
-    margin-top:0px;
+    margin-top: 0px;
     width: 150px;
-    height: 50px
+    height: 50px;
+    font-stretch: condensed;
+    display: inline-block;
+    text-align: left;
    }
 }
 
@@ -196,6 +216,23 @@ nav {
   and (orientation: portrait) {
     .supported_orientation {
       display:none;
+    }
+    nav{
+      .logo {
+        background: $iphone_pk_logo2x;
+        background-size: 100%;
+      }
+      .menu {
+        background: $iphone_menu2x;
+        background-size:100%;
+      }
+    }
+    .page1 {
+      .dwnArrow {
+        background: $iphone_scroll_arrow2x;
+        background-size:100%;
+        background-repeat: no-repeat;
+      }
     }
     .lp_graphic {
       height: 365px;
