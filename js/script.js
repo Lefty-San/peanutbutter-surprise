@@ -1,6 +1,6 @@
 // js file. this will be fun
 $(function(){
-    console.log('jQuery loaded and running');
+    console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
 
@@ -22,4 +22,25 @@ $(".svg").click(function(){
 	$(this).children().attr("state", "play");
 	$(this).children().children().attr("state", "play");
 	$(this).children("p").show();
+});
+
+
+// key log for window information
+// matches to screen
+var kkeys = [], myString = "83,67,82,69,69,78";
+
+$(document).keydown(function(e) {
+
+  kkeys.push( e.keyCode );
+
+  if ( kkeys.toString().indexOf( myString ) >= 0 ) {
+
+    $(document).unbind('keydown',arguments.callee);
+
+    // do something awesome
+    var x = window.innerWidth,
+        y  = window.innerHeight;
+        alert("pixels available on x-axis" + x + "\n pixels available on y-axis" + y);
+  }
+
 });

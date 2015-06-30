@@ -79,6 +79,7 @@ nav {
    h1{
   	font-size: 25px;
   	font-family: $font-hncb, $font-stack;
+    font-stretch: condensed;
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
@@ -88,6 +89,7 @@ nav {
   h2{
   	font-size: 25px;
   	font-family: $font-hncb, $font-stack;
+    font-stretch: condensed;
   	color: $white;
   	margin-left: 16px;
   	margin-top:0px;
