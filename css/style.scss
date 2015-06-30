@@ -143,6 +143,11 @@ nav {
    	color: $white;
    	display: inline-block;
    }
+   .proto{
+   	svg {
+   	margin-bottom: -15px;
+   }
+   }
 }
 
 .page3 {
@@ -181,6 +186,11 @@ nav {
    }
    p {
    	color: $orange;
+   }
+   .presen{
+   	svg{
+   		margin-bottom: -15px;
+   	}
    }
 
 }
