@@ -11,6 +11,7 @@
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $font-hncb: "HelveticaNeue-CondensedBold";
 $white: #ffffff;
+$orange: #f9941f;
 
 @mixin animation($name, $duration, $timing, $direction) {
   -webkit-animation: $name $duration $timing $direction; /* Safari 4+ */
@@ -30,6 +31,10 @@ body{
 	width: 100%;
 	overflow: hidden;
 	margin: 0 auto;
+}
+
+h1, h2{
+	font-family: $font-stack;
 }
 
 nav {
@@ -68,7 +73,7 @@ nav {
 
 }
 .page1 {
-	background-color: #f9941f;
+	background-color: $orange;
 	width: 100%;
 
    h1{
@@ -77,7 +82,7 @@ nav {
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
-  	width: 275px;
+  	width: 330px;
   	margin-bottom: 0px;
     }
   h2{
@@ -100,9 +105,13 @@ nav {
 }
 .page2 {
 	background-color: grey;
-  text-align: center;
+	overflow: hidden;
+	text-align: center;
 }
 .page2{
+  .wireframes{
+  	margin-left: -150px;
+  }
   h1 {
   	display: block-inline;
   	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
@@ -119,6 +128,7 @@ nav {
   	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
     font-size: 24px;
   	color: $white;
+  	text-align: left;
   	padding: 0;
     margin-top: 0px;
     width: 150px;
@@ -127,15 +137,67 @@ nav {
     display: inline-block;
     text-align: left;
    }
-   .svg {
-   	display: inline-block;
-   	margin-left:0;
-   	width: 150px;
-   	height: 150px;
+}
+
+.page3 {
+	background-color: $white;
+	overflow: hidden;
+	text-align: center;
+
+	.mobile{
+		margin-left: -150px;
+	}
+	h1 {
+		display: block-inline;
+		font-family: $font-stack;
+		color: $orange;
+		margin-left: 100px;
+		width: 50px;
+		float: left;
+		border-right: 1px solid;
+	}
+
+	h2 {
+		font-family: $font-stack;
+		color: $orange;
+		text-align: left;
+		padding: 0;
+		margin-left: 150px;
+		margin-top: 0px;
+		width: 150px;
+		height: 50px;
+	}
+}
+.page2, .page3 {
+	.svg {
+   		display: inline-block;
+   		width: 150px;
+   		height: 150px;
    }
    .wireframes {
      margin-left: -150px;
    }
+}
+
+.page4 {
+	background-color: $orange;
+	vertical-align: bottom;
+	h1{
+		color: $white;
+		float: left;
+		margin-right: 14px;
+		font-size: 47px;
+	}
+	h2{
+		margin-left: 18px;
+		margin-top: 53px;
+		font-size: 24px;
+		color: $white;
+		float: left;
+	}
+	img {
+		margin-top: 15px;
+	}
 }
 
 // images
