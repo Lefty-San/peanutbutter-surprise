@@ -61,19 +61,27 @@ nav {
     margin-top:10px;
   }
   .menu{
-  	max-height: 21px;
-  	margin-right: 16px;
+  	display: inline-block;
   	float: right;
-    background: $iphone_menu;
-    background-size:100%;
-    width:28px;
-    height:21px;
-    display:inline-block;
-    margin-top:22px;
+  	ul{
+  		color: #666666;
+  		font-family: $font-hncb, $font-stack;
+  	}
+  	.image{
+	  	max-height: 21px;
+	  	margin-right: 16px;
+	  	float: right;
+	    background: $iphone_menu;
+	    background-size:100%;
+	    width:28px;
+	    height:21px;
+	    display:inline-block;
+	    margin-top:22px;
+	}
   }
 
 }
-.page1 {
+#page1 {
 	background-color: $orange;
 	width: 100%;
 
@@ -106,14 +114,14 @@ nav {
     background-repeat: no-repeat;
   }
 }
-.page2 {
+#page2 {
 	background: $Web_ux_back 75% 75%;
 	overflow: hidden;
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-.page2{
+#page2{
   h1 {
   	display: block-inline;
   	@include helvetica-neue-regular-condensed();
@@ -132,12 +140,13 @@ nav {
 
   h2 {
     @include helvetica-neue-regular-condensed();
+    font-weight: bold;
     font-size: 24px;
   	color: $white;
   	text-align: left;
   	padding: 0;
     margin-top: 0px;
-    width: 150px;
+    width: 100px;
     height: 50px;
     display: inline-block;
     text-align: left;
@@ -156,7 +165,7 @@ nav {
    }
 }
 
-.page3 {
+#page3 {
 	background-color: $white;
 	overflow: hidden;
 	text-align: center;
@@ -201,7 +210,7 @@ nav {
    }
 
 }
-.page2, .page3 {
+#page2, #page3 {
 	.svg{
 		display: inline-block;
 		width: 150px;
@@ -217,7 +226,7 @@ nav {
    }
 }
 
-.page4 {
+#page4 {
 	background-color: $orange;
 	vertical-align: bottom;
 	h1{
@@ -261,11 +270,13 @@ nav {
         background-size: 100%;
       }
       .menu {
-        background: $iphone_menu2x;
-        background-size:100%;
+      	.image{
+	        background: $iphone_menu2x;
+	        background-size:100%;
+	    }
       }
     }
-    .page1 {
+    #page1 {
       .dwnArrow {
         background: $iphone_scroll_arrow2x;
         background-size:100%;

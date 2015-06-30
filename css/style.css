@@ -41,20 +41,26 @@ nav {
     display: inline-block;
     margin-top: 10px; }
   nav .menu {
-    max-height: 21px;
-    margin-right: 16px;
-    float: right;
-    background: url(../img/iPhone/Menu.png);
-    background-size: 100%;
-    width: 28px;
-    height: 21px;
     display: inline-block;
-    margin-top: 22px; }
+    float: right; }
+    nav .menu ul {
+      color: #666666;
+      font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+    nav .menu .image {
+      max-height: 21px;
+      margin-right: 16px;
+      float: right;
+      background: url(../img/iPhone/Menu.png);
+      background-size: 100%;
+      width: 28px;
+      height: 21px;
+      display: inline-block;
+      margin-top: 22px; }
 
-.page1 {
+#page1 {
   background-color: #f9941f;
   width: 100%; }
-  .page1 h1 {
+  #page1 h1 {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
@@ -63,14 +69,14 @@ nav {
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
-  .page1 h2 {
+  #page1 h2 {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
     color: #ffffff;
     margin-left: 16px;
     margin-top: 0px; }
-  .page1 .dwnArrow {
+  #page1 .dwnArrow {
     display: block;
     width: 19px;
     height: 19px;
@@ -80,26 +86,20 @@ nav {
     background-size: 100%;
     background-repeat: no-repeat; }
 
-.page2 {
+#page2 {
   background: url(../img/Web/UX_Background.png) 75% 75%;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px; }
 
-.page2 h1 {
+#page2 h1 {
   display: block-inline;
-<<<<<<< HEAD
   font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
   font-weight: 400;
   font-stretch: condensed;
   font-size: 47px;
-  color: white;
-=======
-  font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 60px;
   color: #ffffff;
->>>>>>> 6388207cded055720e77a92f639ef1515e75599a
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -109,35 +109,36 @@ nav {
   border-right: 1px solid;
   font-stretch: condensed;
   font-weight: 400; }
-.page2 h2 {
+#page2 h2 {
   font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
   font-weight: 400;
   font-stretch: condensed;
+  font-weight: bold;
   font-size: 24px;
   color: #ffffff;
   text-align: left;
   padding: 0;
   margin-top: 0px;
-  width: 150px;
+  width: 100px;
   height: 50px;
   display: inline-block;
   text-align: left;
   font-stretch: condensed;
   font-weight: 400;
   vertical-align: top; }
-.page2 p {
-  color: white;
+#page2 p {
+  color: #ffffff;
   display: inline-block; }
-.page2 .proto svg {
+#page2 .proto svg {
   margin-bottom: -15px; }
 
-.page3 {
+#page3 {
   background-color: #ffffff;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px; }
-  .page3 h1 {
+  #page3 h1 {
     display: block-inline;
     font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 60px;
@@ -150,7 +151,7 @@ nav {
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed; }
-  .page3 h2 {
+  #page3 h2 {
     font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 24px;
     color: #666666;
@@ -162,37 +163,37 @@ nav {
     margin-right: 25px;
     display: inline-block;
     text-align: left; }
-  .page3 p {
+  #page3 p {
     color: #f9941f; }
-  .page3 .presen svg {
+  #page3 .presen svg {
     margin-bottom: -15px; }
 
-.page2 .svg, .page3 .svg {
+#page2 .svg, #page3 .svg {
   display: inline-block;
   width: 150px;
   height: 150px;
   flex-direction: row-reverse; }
-.page2 svg, .page3 svg {
+#page2 svg, #page3 svg {
   width: 100px;
   height: 100px; }
-.page2 .wireframes, .page3 .wireframes {
+#page2 .wireframes, #page3 .wireframes {
   /*margin-left: -150px;*/ }
 
-.page4 {
+#page4 {
   background-color: #f9941f;
   vertical-align: bottom; }
-  .page4 h1 {
+  #page4 h1 {
     color: #ffffff;
     float: left;
     margin-right: 14px;
     font-size: 47px; }
-  .page4 h2 {
+  #page4 h2 {
     margin-left: 18px;
     margin-top: 53px;
     font-size: 24px;
     color: #ffffff;
     float: left; }
-  .page4 img {
+  #page4 img {
     margin-top: 15px; }
 
 .lp_graphic {
@@ -208,11 +209,11 @@ nav {
   nav .logo {
     background: url(../img/iPhone/PKLogo@2x.png);
     background-size: 100%; }
-  nav .menu {
+  nav .menu .image {
     background: url(../img/iPhone/Menu@2x.png);
     background-size: 100%; }
 
-  .page1 .dwnArrow {
+  #page1 .dwnArrow {
     background: url(../img/iPhone/Scroll_Arrow@2x.png);
     background-size: 100%;
     background-repeat: no-repeat; }

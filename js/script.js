@@ -3,6 +3,19 @@ $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
+//hide menu until clicked
+var menuHidden=true;
+$(".menu ul").hide();
+$(".menu").click(function(){
+	if (menuHidden=false){
+		menuHidden=true;
+		$(".menu ul").hide();
+	}
+	else{
+		menuHidden=false;
+		$(".menu ul").show();
+	}
+});
 
 //page2 svgs
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
