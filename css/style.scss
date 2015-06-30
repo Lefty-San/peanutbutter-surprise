@@ -107,10 +107,11 @@ nav {
   }
 }
 .page2 {
-	background-color: grey;
+	background: $Web_ux_back 100% 100%;
 	overflow: hidden;
 	text-align: center;
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .page2{
   h1 {
@@ -148,6 +149,11 @@ nav {
    	color: $white;
    	display: inline-block;
    }
+   .proto{
+   	svg {
+   	margin-bottom: -15px;
+   }
+   }
 }
 
 .page3 {
@@ -155,6 +161,7 @@ nav {
 	overflow: hidden;
 	text-align: center;
 	padding-top: 20px;
+	padding-bottom: 20px;
 
 	h1 {
   	display: block-inline;
@@ -186,6 +193,11 @@ nav {
    }
    p {
    	color: $orange;
+   }
+   .presen{
+   	svg{
+   		margin-bottom: -15px;
+   	}
    }
 
 }
