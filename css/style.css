@@ -1,3 +1,4 @@
+/* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
 .sample-animation {
   -webkit-animation: sample 5s ease-in-out forward;
   /* Safari 4+ */
@@ -88,9 +89,17 @@ nav {
 
 .page2 h1 {
   display: block-inline;
+<<<<<<< HEAD
+  font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-size: 47px;
+  color: white;
+=======
   font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 60px;
   color: #ffffff;
+>>>>>>> 6388207cded055720e77a92f639ef1515e75599a
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -98,9 +107,12 @@ nav {
   padding-top: 0;
   display: inline-block;
   border-right: 1px solid;
-  font-stretch: condensed; }
+  font-stretch: condensed;
+  font-weight: 400; }
 .page2 h2 {
-  font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: condensed;
   font-size: 24px;
   color: #ffffff;
   text-align: left;
@@ -109,9 +121,12 @@ nav {
   width: 150px;
   height: 50px;
   display: inline-block;
-  text-align: left; }
+  text-align: left;
+  font-stretch: condensed;
+  font-weight: 400;
+  vertical-align: top; }
 .page2 p {
-  color: #ffffff;
+  color: white;
   display: inline-block; }
 .page2 .proto svg {
   margin-bottom: -15px; }

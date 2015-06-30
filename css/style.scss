@@ -6,6 +6,7 @@
 // sass style.scss style.css
 
 @import 'assets';
+@import 'fonts';
 
 // SCSS variables
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -115,8 +116,8 @@ nav {
 .page2{
   h1 {
   	display: block-inline;
-  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
-    font-size: 60px;
+  	@include helvetica-neue-regular-condensed();
+    font-size: 47px;
   	color: $white;
     margin-left: 6px;
     width: 75px;
@@ -126,10 +127,11 @@ nav {
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed;
+    font-weight:400;
   }
 
   h2 {
-  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
+    @include helvetica-neue-regular-condensed();
     font-size: 24px;
   	color: $white;
   	text-align: left;
@@ -139,6 +141,9 @@ nav {
     height: 50px;
     display: inline-block;
     text-align: left;
+    font-stretch: condensed;
+    font-weight:400;
+    vertical-align:top;
    }
    p {
    	color: $white;
