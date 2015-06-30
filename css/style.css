@@ -1,55 +1,255 @@
-/*
-Error: Invalid CSS after "	overflow: hidden": expected "{", was ";"
-        on line 132 of css/style.scss
+/* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
+.sample-animation {
+  -webkit-animation: sample 5s ease-in-out forward;
+  /* Safari 4+ */
+  -moz-animation: sample 5s ease-in-out forward;
+  /* Fx 5+ */
+  -o-animation: sample 5s ease-in-out forward;
+  /* Opera 12+ */
+  animation: sample 5s ease-in-out forward;
+  /* IE 10+, Fx 29+ */ }
 
-127: 	background: $Web_ux_back 75% 75%;
-128: =======
-129: .page2 {
-130:   @include fullscreen($Web_ux_back);
-131: >>>>>>> 855c724f0eb798ca3abef0d6d95bc8a3959d0cce
-132: 	overflow: hidden;
-133: 	text-align: center;
-134: 	padding-top: 20px;
-135: 	padding-bottom: 20px;
-136: }
-137: #page2{
+body {
+  width: 100%;
+  margin: 0 auto; }
 
-Backtrace:
-css/style.scss:132
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1098:in `expected'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1093:in `tok!'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:638:in `block'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:658:in `block_child'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:650:in `block_contents'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:639:in `block'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:658:in `block_child'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:650:in `block_contents'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:639:in `block'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:632:in `ruleset'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:650:in `block_contents'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:403:in `_to_tree'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:328:in `block in watch'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/listener.rb:252:in `call'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"	overflow: hidden\": expected \"{\", was \";\"\A         on line 132 of css/style.scss\A \A 127: 	background: $Web_ux_back 75% 75%;\A 128: =======\A 129: .page2 {\A 130:   @include fullscreen($Web_ux_back);\A 131: >>>>>>> 855c724f0eb798ca3abef0d6d95bc8a3959d0cce\A 132: 	overflow: hidden;\A 133: 	text-align: center;\A 134: 	padding-top: 20px;\A 135: 	padding-bottom: 20px;\A 136: }\A 137: #page2{"; }
+.mainContainer {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto; }
+
+h1, h2, p {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+nav {
+  background-color: #ffffff;
+  font-size: 24px;
+  font-color: #a0a2a3;
+  font-style: Helvetica Neue;
+  height: 65px;
+  vertical-align: middle; }
+  nav .img {
+    display: inline-block;
+    vertical-align: middle; }
+  nav .logo {
+    margin-left: 16px;
+    max-height: 46px;
+    background: url(../img/iPhone/PKLogo.png);
+    background-size: 100%;
+    width: 46px;
+    height: 46px;
+    display: inline-block;
+    margin-top: 10px; }
+  nav .menu {
+    display: inline-block;
+    float: right; }
+    nav .menu ul {
+      color: #666666;
+      font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      margin-top: 50px;
+      background-color: #ffffff;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      border-bottom-left-radius: 5px; }
+      nav .menu ul a, nav .menu ul a:visited {
+        color: #666666;
+        text-decoration: none; }
+      nav .menu ul li {
+        list-style: none;
+        margin-left: -20px; }
+    nav .menu .image {
+      max-height: 21px;
+      margin-right: 16px;
+      float: right;
+      background: url(../img/iPhone/Menu.png);
+      background-size: 100%;
+      width: 28px;
+      height: 21px;
+      display: inline-block;
+      margin-top: 22px; }
+
+#page1 {
+  background-color: #f9941f;
+  width: 100%; }
+  #page1 h1 {
+    font-size: 25px;
+    font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-stretch: condensed;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    margin-left: 16px;
+    width: 330px;
+    margin-bottom: 0px; }
+  #page1 h2 {
+    font-size: 25px;
+    font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-stretch: condensed;
+    color: #ffffff;
+    margin-left: 16px;
+    margin-top: 0px; }
+  #page1 .dwnArrow {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    background: url(../img/iPhone/Scroll_Arrow.png);
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+#page2 {
+  background: url(../img/Web/UX_Background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+#page2 h1 {
+  display: block-inline;
+  font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-size: 47px;
+  color: #ffffff;
+  margin-left: 6px;
+  width: 75px;
+  height: 57px;
+  margin-top: 0px;
+  padding-top: 0;
+  display: inline-block;
+  border-right: 1px solid;
+  font-stretch: condensed;
+  font-weight: 400; }
+#page2 h2 {
+  font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: left;
+  padding: 0;
+  margin-top: 0px;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  text-align: left;
+  font-stretch: condensed;
+  font-weight: 400;
+  vertical-align: top; }
+#page2 p {
+  color: #ffffff;
+  display: inline-block; }
+#page2 .proto svg {
+  margin-bottom: -15px; }
+
+#page3 {
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  #page3 h1 {
+    display: block-inline;
+    font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 60px;
+    color: #666666;
+    margin-left: 60px;
+    width: 50px;
+    height: 57px;
+    margin-top: 0px;
+    padding-top: 0;
+    display: inline-block;
+    border-right: 1px solid;
+    font-stretch: condensed; }
+  #page3 h2 {
+    font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 24px;
+    color: #666666;
+    text-align: left;
+    padding: 0;
+    margin-top: 0px;
+    width: 150px;
+    height: 50px;
+    margin-right: 25px;
+    display: inline-block;
+    text-align: left; }
+  #page3 p {
+    color: #f9941f; }
+  #page3 .presen svg {
+    margin-bottom: -15px; }
+
+#page2 .svg, #page3 .svg {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  flex-direction: row-reverse; }
+#page2 svg, #page3 svg {
+  width: 100px;
+  height: 100px; }
+#page2 .wireframes, #page3 .wireframes {
+  /*margin-left: -150px;*/ }
+
+#page4 {
+  background-color: #f9941f;
+  vertical-align: bottom; }
+  #page4 h1 {
+    color: #ffffff;
+    float: left;
+    margin-right: 14px;
+    font-size: 47px; }
+  #page4 h2 {
+    margin-left: 18px;
+    margin-top: 53px;
+    font-size: 24px;
+    color: #ffffff;
+    float: left; }
+  #page4 .venn {
+    background: url(../img/iPhone/VennDiagram.png);
+    background-size: 100%;
+    width: 68px;
+    height: 68px;
+    display: inline-block;
+    margin-top: 15px; }
+
+.lp_graphic {
+  background: url(../img/iPhone/LP_Graphic.png) 100% 100%;
+  height: 365px;
+  width: 295px; }
+
+/* iPhone Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .supported_orientation {
+    display: none; }
+
+  nav .logo {
+    background: url(../img/iPhone/PKLogo@2x.png);
+    background-size: 100%; }
+  nav .menu .image {
+    background: url(../img/iPhone/Menu@2x.png);
+    background-size: 100%; }
+
+  #page1 .dwnArrow {
+    background: url(../img/iPhone/Scroll_Arrow@2x.png);
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+  .lp_graphic {
+    height: 365px;
+    width: 295px;
+    background: url(../img/iPhone/LP_Graphic@2x.png) 100% 100%;
+    background-size: 100%; } }
+/* iPhone Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .supported_orientation {
+    display: block; } }
+/* iPad Portrait */
+/* iPad Landscape */
+/* ----------- Desktop Non-Retina Screens ----------- */
+/* ----------- Desktop Retina Screens ----------- */
+
+/*# sourceMappingURL=style.css.map */

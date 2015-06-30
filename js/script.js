@@ -6,15 +6,16 @@ $(function(){
 //hide menu until clicked
 var menuHidden=true;
 $(".menu ul").hide();
-$(".menu").click(function(){
-	if (menuHidden=false){
+$(".menu .image").click(function(){
+	if (menuHidden == false){
 		menuHidden=true;
 		$(".menu ul").hide();
 	}
 	else{
-		menuHidden=false;
+		menuHidden = false;
 		$(".menu ul").show();
 	}
+	console.log("menuHide= \r" + menuHidden);
 });
 
 //page2 svgs

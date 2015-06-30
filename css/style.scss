@@ -74,6 +74,19 @@ nav {
   	ul{
   		color: #666666;
   		font-family: $font-hncb, $font-stack;
+  		margin-top: 50px;
+  		background-color: $white;
+  		padding-bottom: 10px;
+  		padding-right: 10px;
+  		border-bottom-left-radius: 5px;
+  		a, a:visited{
+  			color: #666666;
+  			text-decoration: none;
+  		}
+  		li{
+  			list-style: none;
+  			margin-left: -20px;
+  		}
   	}
   	.image{
 	  	max-height: 21px;
@@ -122,13 +135,9 @@ nav {
     background-repeat: no-repeat;
   }
 }
-<<<<<<< HEAD
+
 #page2 {
-	background: $Web_ux_back 75% 75%;
-=======
-.page2 {
-  @include fullscreen($Web_ux_back);
->>>>>>> 855c724f0eb798ca3abef0d6d95bc8a3959d0cce
+  	@include fullscreen($Web_ux_back);
 	overflow: hidden;
 	text-align: center;
 	padding-top: 20px;
