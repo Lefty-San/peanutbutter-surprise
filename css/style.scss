@@ -161,8 +161,18 @@ nav {
 
 .page4 {
 	background-color: $orange;
+	vertical-align: bottom;
 	h1{
-
+		color: $white;
+		float: left;
+		margin-right: 14px;
+	}
+	h2{
+		margin-left: 18px;
+		margin-top: 28px;
+		font-size: 24px;
+		color: $white;
+		float: left;
 	}
 }
 

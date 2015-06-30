@@ -119,7 +119,18 @@ nav {
   margin-left: -150px; }
 
 .page4 {
-  background-color: #f9941f; }
+  background-color: #f9941f;
+  vertical-align: bottom; }
+  .page4 h1 {
+    color: #ffffff;
+    float: left;
+    margin-right: 14px; }
+  .page4 h2 {
+    margin-left: 18px;
+    margin-top: 28px;
+    font-size: 24px;
+    color: #ffffff;
+    float: left; }
 
 .lp_graphic {
   background: url(./img/iPhone/LP_Graphic.png) 100% 100%;
