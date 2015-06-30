@@ -10,6 +10,7 @@
 // SCSS variables
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $white: #ffffff;
+$orange: #f9941f;
 
 @mixin animation($name, $duration, $timing, $direction) {
   -webkit-animation: $name $duration $timing $direction; /* Safari 4+ */
@@ -29,6 +30,10 @@ body{
 	width: 100%;
 	overflow: hidden;
 	margin: 0 auto;
+}
+
+h1, h2{
+	font-family: $font-stack;
 }
 
 nav {
@@ -55,7 +60,7 @@ nav {
 
 }
 .page1 {
-	background-color: #f9941f;
+	background-color: $orange;
 	width: 100%;
 
    h1{
@@ -88,8 +93,13 @@ nav {
 }
 .page2 {
 	background-color: grey;
+	overflow: hidden;
+	text-align: center;
 }
 .page2{
+  .wireframes{
+  	margin-left: -150px;
+  }
   h1 {
   	display: block-inline;
   	font-family: $font-stack;
@@ -103,18 +113,57 @@ nav {
   h2 {
   	font-family: $font-stack;
   	color: $white;
+  	text-align: left;
   	padding: 0;
     margin-left: 150px;
     margin-top:0px;
     width: 150px;
     height: 50px
    }
-   .svg {
-   	display: inline-block;
-   	margin-left:0;
-   	width: 150px;
-   	height: 150px;
+}
+
+.page3 {
+	background-color: $white;
+	overflow: hidden;
+	text-align: center;
+
+	.mobile{
+		margin-left: -150px;
+	}
+	h1 {
+		display: block-inline;
+		font-family: $font-stack;
+		color: $orange;
+		margin-left: 100px;
+		width: 50px;
+		float: left;
+		border-right: 1px solid;
+	}
+
+	h2 {
+		font-family: $font-stack;
+		color: $orange;
+		text-align: left;
+		padding: 0;
+		margin-left: 150px;
+		margin-top: 0px;
+		width: 150px;
+		height: 50px;
+	}
+}
+.page2, .page3 {
+	.svg {
+   		display: inline-block;
+   		width: 150px;
+   		height: 150px;
    }
+}
+
+.page4 {
+	background-color: $orange;
+	h1{
+
+	}
 }
 
 // images
