@@ -9,6 +9,7 @@
 
 // SCSS variables
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-hncb: "HelveticaNeue-CondensedBold";
 $white: #ffffff;
 
 @mixin animation($name, $duration, $timing, $direction) {
@@ -60,9 +61,7 @@ nav {
 
    h1{
   	font-size: 25px;
-  	font-family: $font-stack;
-  	font-weight: bold;
-  	font-stretch: condensed;
+  	font-family: $font-hncb, $font-stack;
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
@@ -71,9 +70,7 @@ nav {
     }
   h2{
   	font-size: 25px;
-  	font-family: $font-stack;
-  	font-weight: bold;
-  	font-stretch: condensed;
+  	font-family: $font-hncb, $font-stack;
   	color: $white;
   	margin-left: 16px;
   	margin-top:0px;
@@ -88,6 +85,7 @@ nav {
 }
 .page2 {
 	background-color: grey;
+  text-align: center;
 }
 .page2{
   h1 {
@@ -114,6 +112,9 @@ nav {
    	margin-left:0;
    	width: 150px;
    	height: 150px;
+   }
+   .wireframes {
+     margin-left: -150px;
    }
 }
 
