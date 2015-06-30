@@ -29,11 +29,23 @@ nav {
     vertical-align: middle; }
   nav .logo {
     margin-left: 16px;
-    max-height: 46px; }
+    max-height: 46px;
+    background: url(./img/iPhone/PKLogo.png);
+    background-size: 100%;
+    width: 46px;
+    height: 46px;
+    display: inline-block;
+    margin-top: 10px; }
   nav .menu {
     max-height: 21px;
     margin-right: 16px;
-    float: right; }
+    float: right;
+    background: url(./img/iPhone/Menu.png);
+    background-size: 100%;
+    width: 28px;
+    height: 21px;
+    display: inline-block;
+    margin-top: 22px; }
 
 .page1 {
   background-color: #f9941f;
@@ -52,12 +64,15 @@ nav {
     color: white;
     margin-left: 16px;
     margin-top: 0px; }
-  .page1 .arrow {
+  .page1 .dwnArrow {
     display: block;
     width: 19px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 15px; }
+    height: 19px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    background: url(./img/iPhone/Scroll_Arrow.png);
+    background-size: 100%;
+    background-repeat: no-repeat; }
 
 .page2 {
   background-color: grey;
@@ -101,6 +116,18 @@ nav {
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .supported_orientation {
     display: none; }
+
+  nav .logo {
+    background: url(./img/iPhone/PKLogo@2x.png);
+    background-size: 100%; }
+  nav .menu {
+    background: url(./img/iPhone/Menu@2x.png);
+    background-size: 100%; }
+
+  .page1 .dwnArrow {
+    background: url(./img/iPhone/Scroll_Arrow@2x.png);
+    background-size: 100%;
+    background-repeat: no-repeat; }
 
   .lp_graphic {
     height: 365px;

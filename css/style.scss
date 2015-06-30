@@ -47,11 +47,23 @@ nav {
   .logo {
   	margin-left: 16px;
   	max-height: 46px;
+    background: $iphone_pk_logo;
+    background-size: 100%;
+    width:46px;
+    height:46px;
+    display:inline-block;
+    margin-top:10px;
   }
   .menu{
   	max-height: 21px;
   	margin-right: 16px;
   	float: right;
+    background: $iphone_menu;
+    background-size:100%;
+    width:28px;
+    height:21px;
+    display:inline-block;
+    margin-top:22px;
   }
 
 }
@@ -75,12 +87,15 @@ nav {
   	margin-left: 16px;
   	margin-top:0px;
   }
-  .arrow{
+  .dwnArrow{
   	display: block;
   	width: 19px;
-  	margin-left: auto;
-  	margin-right: auto;
-  	padding-bottom: 15px
+    height:19px;
+  	margin:0 auto;
+    padding-bottom:15px;
+    background:$iphone_scroll_arrow;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 }
 .page2 {
@@ -138,6 +153,23 @@ nav {
   and (orientation: portrait) {
     .supported_orientation {
       display:none;
+    }
+    nav{
+      .logo {
+        background: $iphone_pk_logo2x;
+        background-size: 100%;
+      }
+      .menu {
+        background: $iphone_menu2x;
+        background-size:100%;
+      }
+    }
+    .page1 {
+      .dwnArrow {
+        background: $iphone_scroll_arrow2x;
+        background-size:100%;
+        background-repeat: no-repeat;
+      }
     }
     .lp_graphic {
       height: 365px;
