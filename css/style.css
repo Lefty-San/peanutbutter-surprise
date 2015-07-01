@@ -149,6 +149,8 @@ nav {
 #page2 p {
   color: #ffffff;
   display: inline-block; }
+#page2 .proto svg {
+  margin-top: 15px; }
 
 #page3 {
   background-color: #ffffff;
@@ -194,7 +196,7 @@ nav {
   #page3 p {
     color: #f9941f; }
   #page3 .presen svg {
-    margin-bottom: -15px; }
+    margin-top: 15px; }
 
 #page2 .svg, #page3 .svg {
   display: inline-block;
@@ -236,7 +238,7 @@ nav {
   height: 365px;
   width: 295px; }
 
-#page2 .x {
+.x {
   background: url(../img/iPhone/WhiteX.png) 100% 100%;
   height: 14px;
   width: 14px;
@@ -257,48 +259,48 @@ nav {
   animation: growTL 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+#page2 .proto div svg[state=large], #page3 .desktop div svg[state=large] {
   z-index: 1;
-  -webkit-animation: grow 1s linear forwards;
+  -webkit-animation: growTR 1s linear forwards;
   /* Safari 4+ */
-  -moz-animation: grow 1s linear forwards;
+  -moz-animation: growTR 1s linear forwards;
   /* Fx 5+ */
-  -o-animation: grow 1s linear forwards;
+  -o-animation: growTR 1s linear forwards;
   /* Opera 12+ */
-  animation: grow 1s linear forwards;
+  animation: growTR 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+#page2 .user div svg[state=large], #page3 .poc div svg[state=large] {
   z-index: 1;
-  -webkit-animation: grow 1s linear forwards;
+  -webkit-animation: growML 1s linear forwards;
   /* Safari 4+ */
-  -moz-animation: grow 1s linear forwards;
+  -moz-animation: growML 1s linear forwards;
   /* Fx 5+ */
-  -o-animation: grow 1s linear forwards;
+  -o-animation: growML 1s linear forwards;
   /* Opera 12+ */
-  animation: grow 1s linear forwards;
+  animation: growML 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+#page2 .eval div svg[state=large], #page3 .presen div svg[state=large] {
   z-index: 1;
-  -webkit-animation: grow 1s linear forwards;
+  -webkit-animation: growMR 1s linear forwards;
   /* Safari 4+ */
-  -moz-animation: grow 1s linear forwards;
+  -moz-animation: growMR 1s linear forwards;
   /* Fx 5+ */
-  -o-animation: grow 1s linear forwards;
+  -o-animation: growMR 1s linear forwards;
   /* Opera 12+ */
-  animation: grow 1s linear forwards;
+  animation: growMR 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+#page2 .usability div svg[state=large], #page3 .custom div svg[state=large] {
   z-index: 1;
-  -webkit-animation: grow 1s linear forwards;
+  -webkit-animation: growB 1s linear forwards;
   /* Safari 4+ */
-  -moz-animation: grow 1s linear forwards;
+  -moz-animation: growB 1s linear forwards;
   /* Fx 5+ */
-  -o-animation: grow 1s linear forwards;
+  -o-animation: growB 1s linear forwards;
   /* Opera 12+ */
-  animation: grow 1s linear forwards;
+  animation: growB 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
 #page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large] {
@@ -322,13 +324,29 @@ nav {
   animation: fade 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-@keyframes move {
-  to {
-    padding-left: 50px; } }
 @keyframes growTL {
   to {
     transform: scale(10, 10);
     padding: 130px 120px; } }
+@keyframes growTR {
+  to {
+    transform: scale(10, 10);
+    padding: 130px 0px;
+    margin-left: -120px; } }
+@keyframes growML {
+  to {
+    transform: scale(10, 10);
+    padding: 0px 110px;
+    margin-top: -20px; } }
+@keyframes growMR {
+  to {
+    transform: scale(10, 10);
+    margin-left: -120px;
+    margin-top: -20px; } }
+@keyframes growB {
+  to {
+    transform: scale(10, 10);
+    margin-top: -200px; } }
 @keyframes shrink {
   to {
     transform: scale(0.25, 0.25) translateY(-300px); } }
