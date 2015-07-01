@@ -234,7 +234,28 @@ nav {
   height: 365px;
   width: 295px; }
 
-#page2 .svg div svg[state=play], #page3 .svg div svg[state=play] {
+#page2 .x {
+  background: url(../img/iPhone/WhiteX.png) 100% 100%;
+  height: 14px;
+  width: 14px;
+  margin-top: -90px;
+  margin-left: 330px;
+  z-index: 2;
+  position: absolute; }
+
+/*top left*/
+#page2 .wireframes div svg[state=large], #page3 .mobile div svg[state=large] {
+  z-index: 1;
+  -webkit-animation: growTL 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: growTL 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: growTL 1s linear forwards;
+  /* Opera 12+ */
+  animation: growTL 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
   z-index: 1;
   -webkit-animation: grow 1s linear forwards;
   /* Safari 4+ */
@@ -245,7 +266,40 @@ nav {
   animation: grow 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-#page2 .svg div svg #icon[state=play], #page3 .svg div svg #icon[state=play] {
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+  z-index: 1;
+  -webkit-animation: grow 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: grow 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: grow 1s linear forwards;
+  /* Opera 12+ */
+  animation: grow 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+  z-index: 1;
+  -webkit-animation: grow 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: grow 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: grow 1s linear forwards;
+  /* Opera 12+ */
+  animation: grow 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large] {
+  z-index: 1;
+  -webkit-animation: grow 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: grow 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: grow 1s linear forwards;
+  /* Opera 12+ */
+  animation: grow 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+#page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large] {
   transform-origin: center top;
   -webkit-animation: shrink 1s linear forwards;
   /* Safari 4+ */
@@ -256,7 +310,7 @@ nav {
   animation: shrink 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
-#page2 .svg div svg #shadow[state=play], #page3 .svg div svg #shadow[state=play] {
+#page2 .svg div svg #shadow[state=large], #page3 .svg div svg #shadow[state=large] {
   -webkit-animation: fade 1s linear forwards;
   /* Safari 4+ */
   -moz-animation: fade 1s linear forwards;
@@ -269,10 +323,10 @@ nav {
 @keyframes move {
   to {
     padding-left: 50px; } }
-@keyframes grow {
+@keyframes growTL {
   to {
     transform: scale(10, 10);
-    padding: 110px 120px; } }
+    padding: 130px 120px; } }
 @keyframes shrink {
   to {
     transform: scale(0.25, 0.25) translateY(-300px); } }

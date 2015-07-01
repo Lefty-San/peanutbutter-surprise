@@ -302,26 +302,55 @@ nav {
   height: 365px;
   width: 295px;
 }
-
-#page2 .svg div svg[state=play], #page3 .svg div svg[state=play]{
-	z-index: 1;
-	@include animation(grow, 1s, linear, forwards);
+#page2 .x {
+	background: $iphone_white_x 100% 100%;
+	height: 14px;
+	width: 14px;
+	margin-top: -90px;
+	margin-left: 330px;
+	z-index: 2;
+	position: absolute;
 }
 
-#page2 .svg div svg #icon[state=play], #page3 .svg div svg #icon[state=play]{
-	transform-origin: center top;
-	@include animation(shrink, 1s, linear, forwards);
-}
-#page2 .svg div svg #shadow[state=play], #page3 .svg div svg #shadow[state=play]{
-	@include animation(fade, 1s, linear, forwards);
+#icon {
+
 }
 
 //animations
+/*top left*/
+#page2 .wireframes div svg[state=large], #page3 .mobile div svg[state=large]{
+	z-index: 1;
+	@include animation(growTL, 1s, linear, forwards);
+}
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large]{
+	z-index: 1;
+	@include animation(grow, 1s, linear, forwards);
+}
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large]{
+	z-index: 1;
+	@include animation(grow, 1s, linear, forwards);
+}
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large]{
+	z-index: 1;
+	@include animation(grow, 1s, linear, forwards);
+}
+#page2 .svg div svg[state=large], #page3 .svg div svg[state=large]{
+	z-index: 1;
+	@include animation(grow, 1s, linear, forwards);
+}
+#page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large]{
+	transform-origin: center top;
+	@include animation(shrink, 1s, linear, forwards);
+}
+#page2 .svg div svg #shadow[state=large], #page3 .svg div svg #shadow[state=large]{
+	@include animation(fade, 1s, linear, forwards);
+}
+
 @keyframes move{
 	to {padding-left: 50px;}
 }
-@keyframes grow{
-	to {transform: scale(10,10); padding: 110px 120px;}
+@keyframes growTL{
+	to {transform: scale(10,10); padding: 130px 120px;}
 }
 @keyframes shrink{
 	to {transform: scale(.25,.25) translateY(-300px);}
