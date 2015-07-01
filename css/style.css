@@ -22,7 +22,7 @@ h1, h2, p {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 nav {
-  background-color: #ffffff;
+  background-color: white;
   font-size: 24px;
   font-color: #a0a2a3;
   font-style: Helvetica Neue;
@@ -47,7 +47,7 @@ nav {
       color: #666666;
       font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       margin-top: 50px;
-      background-color: #ffffff;
+      background-color: white;
       padding-bottom: 10px;
       padding-right: 10px;
       border-bottom-left-radius: 5px; }
@@ -75,8 +75,8 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    color: white;
+    border-bottom: 1px solid white;
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
@@ -84,7 +84,7 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: #ffffff;
+    color: white;
     margin-left: 16px;
     margin-top: 0px; }
   #page1 .dwnArrow {
@@ -114,7 +114,7 @@ nav {
   font-weight: 400;
   font-stretch: condensed;
   font-size: 47px;
-  color: #ffffff;
+  color: white;
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -130,7 +130,7 @@ nav {
   font-stretch: condensed;
   font-weight: bold;
   font-size: 24px;
-  color: #ffffff;
+  color: white;
   text-align: left;
   padding: 0;
   margin-top: 0px;
@@ -142,42 +142,50 @@ nav {
   font-weight: 400;
   vertical-align: top; }
 #page2 p {
-  color: #ffffff;
+  color: white;
   display: inline-block; }
 #page2 .proto svg {
   margin-bottom: -15px; }
 
 #page3 {
-  background-color: #ffffff;
+  background-color: white;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px; }
   #page3 h1 {
     display: block-inline;
-    font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 60px;
+    font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+    font-weight: 400;
+    font-stretch: condensed;
+    font-size: 47px;
     color: #666666;
-    margin-left: 60px;
-    width: 50px;
+    margin-left: 6px;
+    width: 75px;
     height: 57px;
     margin-top: 0px;
     padding-top: 0;
     display: inline-block;
     border-right: 1px solid;
-    font-stretch: condensed; }
+    font-stretch: condensed;
+    font-weight: 400; }
   #page3 h2 {
-    font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+    font-weight: 400;
+    font-stretch: condensed;
+    font-weight: bold;
     font-size: 24px;
     color: #666666;
     text-align: left;
     padding: 0;
     margin-top: 0px;
-    width: 150px;
+    width: 100px;
     height: 50px;
-    margin-right: 25px;
     display: inline-block;
-    text-align: left; }
+    text-align: left;
+    font-stretch: condensed;
+    font-weight: 400;
+    vertical-align: top; }
   #page3 p {
     color: #f9941f; }
   #page3 .presen svg {
@@ -198,7 +206,7 @@ nav {
   background-color: #f9941f;
   vertical-align: bottom; }
   #page4 h1 {
-    color: #ffffff;
+    color: white;
     float: left;
     margin-right: 14px;
     font-size: 47px; }
@@ -206,7 +214,7 @@ nav {
     margin-left: 18px;
     margin-top: 53px;
     font-size: 24px;
-    color: #ffffff;
+    color: white;
     float: left; }
   #page4 .venn {
     background: url(../img/iPhone/VennDiagram.png);
@@ -242,7 +250,10 @@ nav {
     height: 365px;
     width: 295px;
     background: url(../img/iPhone/LP_Graphic@2x.png) 100% 100%;
-    background-size: 100%; } }
+    background-size: 100%; }
+
+  .svg div {
+    min-height: 100px; } }
 /* iPhone Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .supported_orientation {
@@ -251,5 +262,3 @@ nav {
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */
-
-/*# sourceMappingURL=style.css.map */
