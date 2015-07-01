@@ -3,6 +3,9 @@ $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
+//hide x until needed
+$(".x").hide();
+
 //hide menu until clicked
 var menuHidden=true;
 $(".menu ul").hide();
@@ -42,12 +45,20 @@ $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
 $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
 $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
-$(".svg").click(function(){
-	$(this).children("div").prepend($('<div class="x">'));
-	$(this).attr("state", "play");
-	$(this).children().children().attr("state", "play");
-	$(this).children().children().children().attr("state", "play");
+$("[state='small']").click(function(){
+	$(this).attr("state", "large");
+	$(this).children().children().attr("state", "large");
+	$(this).children().children().children().attr("state", "large");
+	$(".x").show();
+	console.log("Clicked");
 });
+
+$(".x").click(function(){
+	$("[state='large'] #icon").css({'transform-origin': 'center', 'transform': 'scale(1,1)'}); //return to original size
+	$("[state='large']").attr("state", "shrink");
+	$(".x").hide();
+	console.log("Unclicked");
+})
 
 
 // key log for window information
