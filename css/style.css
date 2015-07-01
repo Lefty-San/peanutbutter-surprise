@@ -1,12 +1,12 @@
 /* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
 .sample-animation {
-  -webkit-animation: sample 5s ease-in-out forward;
+  -webkit-animation: sample, 5s, ease-in-out, forward;
   /* Safari 4+ */
-  -moz-animation: sample 5s ease-in-out forward;
+  -moz-animation: sample, 5s, ease-in-out, forward;
   /* Fx 5+ */
-  -o-animation: sample 5s ease-in-out forward;
+  -o-animation: sample, 5s, ease-in-out, forward;
   /* Opera 12+ */
-  animation: sample 5s ease-in-out forward;
+  animation: sample, 5s, ease-in-out, forward;
   /* IE 10+, Fx 29+ */ }
 
 body {
@@ -162,7 +162,7 @@ nav {
     width: 50px;
     height: 57px;
     margin-top: 0px;
-    padding-top: 0;
+    padding-right: 10px;
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed; }
@@ -182,6 +182,16 @@ nav {
     color: #f9941f; }
   #page3 .presen svg {
     margin-bottom: -15px; }
+
+svg[state=play] {
+  -webkit-animation: grow, 2s, linear, forwards;
+  /* Safari 4+ */
+  -moz-animation: grow, 2s, linear, forwards;
+  /* Fx 5+ */
+  -o-animation: grow, 2s, linear, forwards;
+  /* Opera 12+ */
+  animation: grow, 2s, linear, forwards;
+  /* IE 10+, Fx 29+ */ }
 
 #page2 .svg, #page3 .svg {
   display: inline-block;
@@ -221,6 +231,35 @@ nav {
   height: 365px;
   width: 295px; }
 
+/*animations*/
+@-webkit-keyframes grow {
+  from {
+    width: 100px;
+    height: 100px; }
+  to {
+    width: 200px;
+    height: 200px; } }
+@-moz-keyframes grow {
+  from {
+    width: 100px;
+    height: 100px; }
+  to {
+    width: 200px;
+    height: 200px; } }
+@-o-keyframes grow {
+  from {
+    width: 100px;
+    height: 100px; }
+  to {
+    width: 200px;
+    height: 200px; } }
+@keyframes grow {
+  from {
+    width: 100px;
+    height: 100px; }
+  to {
+    width: 200px;
+    height: 200px; } }
 /* iPhone Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .supported_orientation {

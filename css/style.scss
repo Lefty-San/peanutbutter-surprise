@@ -23,10 +23,10 @@ $orange: #f9941f;
 }
 
 @mixin animation($name, $duration, $timing, $direction) {
-  -webkit-animation: $name $duration $timing $direction; /* Safari 4+ */
-  -moz-animation:    $name $duration $timing $direction; /* Fx 5+ */
-  -o-animation:      $name $duration $timing $direction; /* Opera 12+ */
-  animation:         $name $duration $timing $direction; /* IE 10+, Fx 29+ */
+  -webkit-animation: $name, $duration, $timing, $direction; /* Safari 4+ */
+  -moz-animation:    $name, $duration, $timing, $direction; /* Fx 5+ */
+  -o-animation:      $name, $duration, $timing, $direction; /* Opera 12+ */
+  animation:         $name, $duration, $timing, $direction; /* IE 10+, Fx 29+ */
 }
 .sample-animation {
   @include animation(sample, 5s, ease-in-out, forward);
@@ -203,7 +203,7 @@ nav {
     width: 50px;
     height: 57px;
     margin-top: 0px;
-    padding-top:0;
+    padding-right:10px;
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed;
@@ -232,6 +232,11 @@ nav {
    }
 
 }
+
+svg[state=play]{
+	@include animation(grow, 2s, linear, forwards);
+}
+
 #page2, #page3 {
 	.svg{
 		display: inline-block;
@@ -288,6 +293,24 @@ nav {
   width: 295px;
 }
 
+/*animations*/
+@-webkit-keyframes grow{
+	from {width:100px; height:100px;}
+	to {width:200px; height:200px;}
+}
+@-moz-keyframes grow{
+	from {width:100px; height:100px;}
+	to {width:200px; height:200px;}
+}
+@-o-keyframes grow{
+	from {width:100px; height:100px;}
+	to {width:200px; height:200px;}
+}
+@keyframes grow{
+	from {width:100px; height:100px;}
+	to {width:200px; height:200px;}
+}
+
 /* iPhone Portrait */
 @media only screen
   and (min-device-width: 320px)
@@ -318,11 +341,12 @@ nav {
     }
     .lp_graphic {
       height: 365px;
- 		width:295px;
+ 	  width:295px;
       background:$iphone_lp_g2x 100% 100%;
       background-size:100%;
     }
 }
+
 // placeholder for iPhone 6+
 /* iPhone Landscape */
 @media only screen
