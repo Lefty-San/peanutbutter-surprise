@@ -194,33 +194,37 @@ nav {
 	padding-top: 20px;
 	padding-bottom: 20px;
 
-	h1 {
+  h1 {
   	display: block-inline;
-  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
-    font-size: 60px;
+  	@include helvetica-neue-regular-condensed();
+    font-size: 47px;
   	color: #666666;
-    margin-left: 60px;
-    width: 50px;
+    margin-left: 6px;
+    width: 75px;
     height: 57px;
     margin-top: 0px;
     padding-right:10px;
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed;
+    font-weight:400;
   }
 
   h2 {
-  	font-family: "HelveticaNeue-Condensed", "HelveticaNeueCondensed", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed" $font-stack;
+    @include helvetica-neue-regular-condensed();
+    font-weight: bold;
     font-size: 24px;
   	color: #666666;
   	text-align: left;
   	padding: 0;
     margin-top: 0px;
-    width: 150px;
+    width: 100px;
     height: 50px;
-    margin-right:25px;
     display: inline-block;
     text-align: left;
+    font-stretch: condensed;
+    font-weight:400;
+    vertical-align:top;
    }
    p {
    	color: $orange;
@@ -344,6 +348,11 @@ svg[state=play]{
  	  width:295px;
       background:$iphone_lp_g2x 100% 100%;
       background-size:100%;
+    }
+    .svg {
+      div {
+        min-height:100px;
+      }
     }
 }
 

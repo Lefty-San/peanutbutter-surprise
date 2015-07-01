@@ -18,6 +18,16 @@ $(".menu .image").click(function(){
 	console.log("menuHide= \r" + menuHidden);
 });
 
+// scroll listener
+$("[scroll]").click( function(){
+  var tar = $(this).attr("scroll");
+  $('html, body').animate({
+        scrollTop: $(tar).offset().top
+    }, 1000);
+    // add something to hide the menu when mobile dropdown
+    $('.menu .image').click();
+});
+
 //page2 svgs
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
 $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
