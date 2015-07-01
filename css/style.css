@@ -21,8 +21,11 @@ body {
 h1, h2, p {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
+svg {
+  z-index: 0; }
+
 nav {
-  background-color: white;
+  background-color: #ffffff;
   font-size: 24px;
   font-color: #a0a2a3;
   font-style: Helvetica Neue;
@@ -47,7 +50,7 @@ nav {
       color: #666666;
       font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       margin-top: 50px;
-      background-color: white;
+      background-color: #ffffff;
       padding-bottom: 10px;
       padding-right: 10px;
       border-bottom-left-radius: 5px; }
@@ -77,8 +80,8 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: white;
-    border-bottom: 1px solid white;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
@@ -86,7 +89,7 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: white;
+    color: #ffffff;
     margin-left: 16px;
     margin-top: 0px; }
   #page1 .dwnArrow {
@@ -116,7 +119,7 @@ nav {
   font-weight: 400;
   font-stretch: condensed;
   font-size: 47px;
-  color: white;
+  color: #ffffff;
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -132,7 +135,7 @@ nav {
   font-stretch: condensed;
   font-weight: bold;
   font-size: 24px;
-  color: white;
+  color: #ffffff;
   text-align: left;
   padding: 0;
   margin-top: 0px;
@@ -144,17 +147,17 @@ nav {
   font-weight: 400;
   vertical-align: top; }
 #page2 p {
-  color: white;
+  color: #ffffff;
   display: inline-block; }
-#page2 .proto svg {
-  margin-bottom: -15px; }
 
 #page3 {
-  background-color: white;
+  background-color: #ffffff;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px; }
+  #page3 .title {
+    width: 100%; }
   #page3 h1 {
     display: block-inline;
     font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
@@ -163,7 +166,7 @@ nav {
     font-size: 47px;
     color: #666666;
     margin-left: 6px;
-    width: 75px;
+    width: 50px;
     height: 57px;
     margin-top: 0px;
     padding-top: 0;
@@ -198,6 +201,8 @@ nav {
   width: 150px;
   height: 150px;
   flex-direction: row-reverse; }
+  #page2 .svg div, #page3 .svg div {
+    height: 100px; }
 #page2 svg, #page3 svg {
   width: 100px;
   height: 100px; }
@@ -208,7 +213,7 @@ nav {
   background-color: #f9941f;
   vertical-align: bottom; }
   #page4 h1 {
-    color: white;
+    color: #ffffff;
     float: left;
     margin-right: 14px;
     font-size: 47px; }
@@ -216,7 +221,7 @@ nav {
     margin-left: 18px;
     margin-top: 53px;
     font-size: 24px;
-    color: white;
+    color: #ffffff;
     float: left; }
   #page4 .venn {
     background: url(../img/iPhone/VennDiagram.png);
@@ -231,6 +236,51 @@ nav {
   height: 365px;
   width: 295px; }
 
+#page2 .svg div svg[state=play], #page3 .svg div svg[state=play] {
+  z-index: 1;
+  -webkit-animation: grow 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: grow 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: grow 1s linear forwards;
+  /* Opera 12+ */
+  animation: grow 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+#page2 .svg div svg #icon[state=play], #page3 .svg div svg #icon[state=play] {
+  transform-origin: center top;
+  -webkit-animation: shrink 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: shrink 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: shrink 1s linear forwards;
+  /* Opera 12+ */
+  animation: shrink 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+#page2 .svg div svg #shadow[state=play], #page3 .svg div svg #shadow[state=play] {
+  -webkit-animation: fade 1s linear forwards;
+  /* Safari 4+ */
+  -moz-animation: fade 1s linear forwards;
+  /* Fx 5+ */
+  -o-animation: fade 1s linear forwards;
+  /* Opera 12+ */
+  animation: fade 1s linear forwards;
+  /* IE 10+, Fx 29+ */ }
+
+@keyframes move {
+  to {
+    padding-left: 50px; } }
+@keyframes grow {
+  to {
+    transform: scale(10, 10);
+    padding: 110px 120px; } }
+@keyframes shrink {
+  to {
+    transform: scale(0.25, 0.25) translateY(-300px); } }
+@keyframes fade {
+  to {
+    opacity: 0; } }
 /* iPhone Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .supported_orientation {
@@ -282,3 +332,5 @@ nav {
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */
+
+/*# sourceMappingURL=style.css.map */

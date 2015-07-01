@@ -45,6 +45,9 @@ body{
 h1, h2, p{
 	font-family: $font-stack;
 }
+svg{
+	z-index: 0;
+}
 
 nav {
 	background-color: $white;
@@ -184,7 +187,7 @@ nav {
    }
    .proto{
    	svg {
-   	margin-bottom: -15px;
+   	
    }
    }
 }
@@ -196,13 +199,17 @@ nav {
 	padding-top: 20px;
 	padding-bottom: 20px;
 
+  .title{
+  	width: 100%;
+  }
+
   h1 {
   	display: block-inline;
   	@include helvetica-neue-regular-condensed();
     font-size: 47px;
   	color: #666666;
     margin-left: 6px;
-    width: 75px;
+    width: 50px;
     height: 57px;
     margin-top: 0px;
     padding-top:0;
@@ -244,6 +251,10 @@ nav {
 		width: 150px;
 		height: 150px;
 		flex-direction: row-reverse;
+
+		div{
+			height: 100px;
+		}
 	}
 	svg {
    		width: 100px;
@@ -294,6 +305,32 @@ nav {
   width: 295px;
 }
 
+#page2 .svg div svg[state=play], #page3 .svg div svg[state=play]{
+	z-index: 1;
+	@include animation(grow, 1s, linear, forwards);
+}
+
+#page2 .svg div svg #icon[state=play], #page3 .svg div svg #icon[state=play]{
+	transform-origin: center top;
+	@include animation(shrink, 1s, linear, forwards);
+}
+#page2 .svg div svg #shadow[state=play], #page3 .svg div svg #shadow[state=play]{
+	@include animation(fade, 1s, linear, forwards);
+}
+
+//animations
+@keyframes move{
+	to {padding-left: 50px;}
+}
+@keyframes grow{
+	to {transform: scale(10,10); padding: 110px 120px;}
+}
+@keyframes shrink{
+	to {transform: scale(.25,.25) translateY(-300px);}
+}
+@keyframes fade{
+	to {opacity: 0;}
+}
 /* iPhone Portrait */
 @media only screen
   and (min-device-width: 320px)
@@ -334,6 +371,7 @@ nav {
       }
     }
 }
+
 // placeholder for iPhone 6+
 /* iPhone Landscape */
 @media only screen
