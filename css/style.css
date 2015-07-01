@@ -70,6 +70,8 @@ nav {
       height: 21px;
       display: inline-block;
       margin-top: 22px; }
+  nav .fullMenu {
+    display: none; }
 
 #page1 {
   background-color: #f9941f;
@@ -363,6 +365,24 @@ nav {
   .supported_orientation {
     display: block; } }
 /* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  nav .menu {
+    display: none; }
+  nav .fullMenu {
+    display: inline-block;
+    margin-top: 18px;
+    position: absolute; }
+    nav .fullMenu ul li {
+      display: inline-block;
+      margin: 0 1em;
+      color: #a0a2a3;
+      font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+      font-weight: 300;
+      font-stretch: normal;
+      font-size: 20px; }
+      nav .fullMenu ul li a, nav .fullMenu ul li a:active, nav .fullMenu ul li a:visited {
+        color: #a0a2a3;
+        text-decoration: none; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */

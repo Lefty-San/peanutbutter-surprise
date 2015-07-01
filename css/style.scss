@@ -101,9 +101,11 @@ nav {
 	    height:21px;
 	    display:inline-block;
 	    margin-top:22px;
-	}
+	   }
   }
-
+  .fullMenu {
+    display:none;
+  }
 }
 #page1 {
 	background-color: $orange;
@@ -417,7 +419,29 @@ nav {
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-
+    nav {
+      .menu {
+        display:none;
+      }
+      .fullMenu {
+        display:inline-block;
+        margin-top: 18px;
+        position: absolute;
+          ul {
+            li {
+              display:inline-block;
+              margin:0 1em;
+              color: #a0a2a3;
+              @include helvetica-neue-light();
+              font-size: 20px;
+              a, a:active, a:visited {
+                color: #a0a2a3;
+                text-decoration: none;
+              }
+            }
+          }
+      }
+    }
 }
 
 /* iPad Landscape */
