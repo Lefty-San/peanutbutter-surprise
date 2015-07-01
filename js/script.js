@@ -43,8 +43,10 @@ $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
 $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
 $(".svg").click(function(){
+	$(this).children("div").prepend($('<div class="x">'));
 	$(this).attr("state", "play");
 	$(this).children().children().attr("state", "play");
+	$(this).children().children().children().attr("state", "play");
 });
 
 
