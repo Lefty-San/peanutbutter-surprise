@@ -259,6 +259,7 @@ nav {
   animation: growTL 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*top right*/
 #page2 .proto div svg[state=large], #page3 .desktop div svg[state=large] {
   z-index: 1;
   -webkit-animation: growTR 1s linear forwards;
@@ -270,6 +271,7 @@ nav {
   animation: growTR 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*middle left*/
 #page2 .user div svg[state=large], #page3 .poc div svg[state=large] {
   z-index: 1;
   -webkit-animation: growML 1s linear forwards;
@@ -281,6 +283,7 @@ nav {
   animation: growML 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*middle right*/
 #page2 .eval div svg[state=large], #page3 .presen div svg[state=large] {
   z-index: 1;
   -webkit-animation: growMR 1s linear forwards;
@@ -292,6 +295,7 @@ nav {
   animation: growMR 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*bottom*/
 #page2 .usability div svg[state=large], #page3 .custom div svg[state=large] {
   z-index: 1;
   -webkit-animation: growB 1s linear forwards;
@@ -349,7 +353,7 @@ nav {
     margin-top: -200px; } }
 @keyframes shrink {
   to {
-    transform: scale(0.25, 0.25) translateY(-300px); } }
+    transform: matrix2d(0.25, 0, 0, 0.25, 0, -70px); } }
 @keyframes fade {
   to {
     opacity: 0; } }

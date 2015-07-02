@@ -28,7 +28,8 @@ $("[scroll]").click( function(){
         scrollTop: $(tar).offset().top
     }, 1000);
     // add something to hide the menu when mobile dropdown
-    $('.menu .image').click();
+    $('.menu ul').hide();
+    menuHidden = true;
 });
 
 //page2 svgs
@@ -55,7 +56,7 @@ $("[state='small']").click(function(){
 
 $(".x").click(function(){
 	$("[state='large'] #icon").css({'transform-origin': 'center', 'transform': 'scale(1,1)'}); //return to original size
-	$("[state='large']").attr("state", "shrink");
+	$("[state='large']").attr("state", "small");
 	$(".x").hide();
 	console.log("Unclicked");
 })
