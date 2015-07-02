@@ -19,7 +19,8 @@ body {
   margin: 0 auto; }
 
 h1, h2, p {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-stretch: condensed; }
 
 svg {
   z-index: 0; }
@@ -213,7 +214,8 @@ nav {
 
 #page4 {
   background-color: #f9941f;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 50px; }
   #page4 .heading {
     width: 100%; }
   #page4 h1 {
@@ -241,54 +243,62 @@ nav {
       background-size: 100%;
       width: 14px;
       height: 10px;
-      display: inline-block; }
+      display: inline-block;
+      margin-right: 30px;
+      margin-bottom: 20px; }
     #page4 .slider .rightButt {
       background: url(../img/iPhone/ArrowRight.png);
       background-size: 100%;
       width: 14px;
       height: 10px;
-      display: inline-block; }
+      display: inline-block;
+      margin-left: 30px;
+      margin-bottom: 20px; }
     #page4 .slider .pixPerf {
-      background-image: url(../img/iPhone/UIPixelPerfection.png);
-      background-size: 100%;
-      width: 52px;
-      height: 52px;
-      display: inline-block; }
+      background-image: url(../img/iPhone/UIPixelPerfection.png); }
     #page4 .slider .final {
-      background-image: url(../img/iPhone/FinalGraphics.png);
-      background-size: 100%;
-      width: 52px;
-      height: 52px;
-      display: inline-block; }
+      background-image: url(../img/iPhone/FinalGraphics.png); }
     #page4 .slider .design {
-      background-image: url(../img/iPhone/DesignComps.png);
-      background-size: 100%;
-      width: 52px;
-      height: 52px;
-      display: inline-block; }
+      background-image: url(../img/iPhone/DesignComps.png); }
     #page4 .slider .sol {
-      background-image: url(../img/iPhone/SolutionArchitecture.png);
-      background-size: 100%;
-      width: 52px;
-      height: 52px;
-      display: inline-block; }
+      background-image: url(../img/iPhone/SolutionArchitecture.png); }
     #page4 .slider .ux {
-      background-image: url(../img/iPhone/UserExperience.png);
-      background-size: 100%;
-      width: 52px;
-      height: 52px;
-      display: inline-block; }
+      background-image: url(../img/iPhone/UserExperience.png); }
     #page4 .slider .us {
-      background-image: url(../img/iPhone/UserStories.png);
+      background-image: url(../img/iPhone/UserStories.png); }
+    #page4 .slider .projectSpecs {
+      background-image: url(../img/iPhone/ProjectSpecs.png); }
+    #page4 .slider .pixPerf, #page4 .slider .final, #page4 .slider .design, #page4 .slider .sol, #page4 .slider .ux, #page4 .slider .us, #page4 .slider .projectSpecs {
       background-size: 100%;
       width: 52px;
       height: 52px;
       display: inline-block; }
-    #page4 .slider .projectSpecs {
-      background-image: url(../img/iPhone/ProjectSpecs.png);
+  #page4 .circle {
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid #ffffff;
+    border-width: 2px;
+    display: inline-block; }
+    #page4 .circle h1 {
+      font-size: 30;
+      display: inline-block;
+      margin-top: 45px;
+      margin-right: -20px; }
+    #page4 .circle h2 {
+      font-size: 18;
+      display: inline-block; }
+    #page4 .circle .suits {
+      background: url(../img/iPhone/Client_Icon.png);
       background-size: 100%;
-      width: 52px;
-      height: 52px;
+      width: 75px;
+      height: 93px;
+      margin: 75px auto 0 auto; }
+    #page4 .circle .ci {
+      margin-top: -30px;
       display: inline-block; }
 
 .lp_graphic {

@@ -4,6 +4,7 @@ $(function(){
 });
 
 //slider logic
+$(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
 	console.log("clicked");
 	$(".final").addClass("pixPerf").removeClass("final");
@@ -12,6 +13,10 @@ $(".leftButt").click(function(){
 	$(".ux").addClass("sol").removeClass("ux");
 	$(".us").addClass("ux").removeClass("us");
 	$(".projectSpecs").addClass("us").removeClass("projectSpecs");
+	if ($("#image").hasClass("pixPerf")){
+		$(".leftButt").css('visibility','hidden');
+	}
+	$(".rightButt").css('visibility','visible');
 });
 $(".rightButt").click(function(){
 	console.log("clicked");
@@ -21,12 +26,11 @@ $(".rightButt").click(function(){
 	$(".design").addClass("sol").removeClass("design");
 	$(".final").addClass("design").removeClass("final");
 	$(".pixPerf").addClass("final").removeClass("pixPerf");
-	
-	
-	
-	
+	if ($("#image").hasClass("projectSpecs")){
+		$(".rightButt").css('visibility','hidden');
+	}
+	$(".leftButt").css('visibility','visible');
 });
-
 
 //hide x until needed
 $(".x").hide();

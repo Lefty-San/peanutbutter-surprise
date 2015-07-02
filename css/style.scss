@@ -43,7 +43,8 @@ body{
 }
 
 h1, h2, p{
-	font-family: $font-stack;
+	font-family: $font-hncb, $font-stack;
+	font-stretch: condensed;
 }
 svg{
 	z-index: 0;
@@ -268,6 +269,7 @@ nav {
 #page4 {
 	background-color: $orange;
 	text-align: center;
+	padding-bottom: 50px;
 	.heading{
 		width: 100%;
 	}
@@ -300,6 +302,8 @@ nav {
 			width: 14px;
 			height: 10px;
 			display: inline-block;
+			margin-right: 30px;
+			margin-bottom: 20px;
 		}
 		.rightButt{
 			background: $iphone_arrow_right;
@@ -307,54 +311,66 @@ nav {
 			width: 14px;
 			height: 10px;
 			display: inline-block;
+			margin-left: 30px;
+			margin-bottom: 20px;
 		}
 		.pixPerf{
 			background-image: $iphone_pix_perf;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.final{
 			background-image: $iphone_final_graphics;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.design{
 			background-image: $iphone_design_comps;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.sol{
 			background-image: $iphone_sol_arch;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.ux{
 			background-image: $iphone_user_exp;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.us{
 			background-image: $iphone_user_stories;
+		}
+		.projectSpecs{
+			background-image: $iphone_proj_specs;
+		}
+		.pixPerf, .final, .design, .sol, .ux, .us, .projectSpecs {
 			background-size: 100%;
 			width: 52px;
 			height: 52px;
 			display: inline-block;
 		}
-		.projectSpecs{
-			background-image: $iphone_proj_specs;
+	}
+	.circle {
+		width: 300px;
+		height: 300px;
+		margin-top: 30px;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		border: solid $white;
+		border-width:2px;
+		display: inline-block;
+		h1{
+			font-size: 30;
+			display: inline-block;
+			margin-top: 45px;
+			margin-right: -20px;
+		}
+		h2{
+			font-size: 18;
+			display: inline-block;
+		}
+		.suits{
+			background: $iphone_client_icon;
 			background-size: 100%;
-			width: 52px;
-			height: 52px;
+			width: 75px;
+			height: 93px;
+			margin: 75px auto 0 auto;
+		}
+		.ci{
+			margin-top: -30px;
 			display: inline-block;
 		}
 	}
