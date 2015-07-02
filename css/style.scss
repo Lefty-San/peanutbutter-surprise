@@ -186,9 +186,9 @@ nav {
    	display: inline-block;
    }
    .proto{
-     	svg {
-     		margin-top: 15px;
-     }
+   	svg {
+   		margin-top: 15px;
+   }
    }
 }
 
@@ -267,7 +267,10 @@ nav {
 
 #page4 {
 	background-color: $orange;
-	vertical-align: bottom;
+	text-align: center;
+	.heading{
+		width: 100%;
+	}
 	h1{
 		color: $white;
 		float: left;
@@ -288,6 +291,72 @@ nav {
     height:68px;
     display:inline-block;
 		margin-top: 15px;
+	}
+	.slider{
+		margin-top: 40px;
+		.leftButt{
+			background: $iphone_arrow_left;
+			background-size: 100%;
+			width: 14px;
+			height: 10px;
+			display: inline-block;
+		}
+		.rightButt{
+			background: $iphone_arrow_right;
+			background-size: 100%;
+			width: 14px;
+			height: 10px;
+			display: inline-block;
+		}
+		.pixPerf{
+			background-image: $iphone_pix_perf;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.final{
+			background-image: $iphone_final_graphics;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.design{
+			background-image: $iphone_design_comps;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.sol{
+			background-image: $iphone_sol_arch;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.ux{
+			background-image: $iphone_user_exp;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.us{
+			background-image: $iphone_user_stories;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.projectSpecs{
+			background-image: $iphone_proj_specs;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
 	}
 }
 
@@ -333,7 +402,6 @@ nav {
 	z-index: 1;
 	@include animation(growB, 1s, linear, forwards);
 }
-
 #page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large]{
 	transform-origin: center top;
 	@include animation(shrink, 1s, linear, forwards);
@@ -358,7 +426,7 @@ nav {
 	to{transform: scale(10,10); margin-top: -200px;}
 }
 @keyframes shrink{
-	to {transform: matrix2d(.25, 0, 0, .25, 0, -70px);}
+	to {transform: translateY(-70px) scale(.25,.25);}
 }
 @keyframes fade{
 	to {opacity: 0;}
