@@ -15,12 +15,16 @@ $(".leftButt").click(function(){
 });
 $(".rightButt").click(function(){
 	console.log("clicked");
-	$(".pixPerf").addClass("final").removeClass("pixPerf");
-	$(".final").addClass("design").removeClass("final");
-	$(".design").addClass("sol").removeClass("design");
-	$(".sol").addClass("ux").removeClass("sol");
-	$(".ux").addClass("us").removeClass("ux");
 	$(".us").addClass("projectSpecs").removeClass("us");
+	$(".ux").addClass("us").removeClass("ux");
+	$(".sol").addClass("ux").removeClass("sol");
+	$(".design").addClass("sol").removeClass("design");
+	$(".final").addClass("design").removeClass("final");
+	$(".pixPerf").addClass("final").removeClass("pixPerf");
+	
+	
+	
+	
 });
 
 
