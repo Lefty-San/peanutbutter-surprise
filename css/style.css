@@ -26,7 +26,7 @@ svg {
   z-index: 0; }
 
 nav {
-  background-color: #ffffff;
+  background-color: white;
   font-size: 24px;
   font-color: #a0a2a3;
   font-style: Helvetica Neue;
@@ -51,7 +51,7 @@ nav {
       color: #666666;
       font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       margin-top: 50px;
-      background-color: #ffffff;
+      background-color: white;
       padding-bottom: 10px;
       padding-right: 10px;
       border-bottom-left-radius: 5px; }
@@ -81,8 +81,8 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    color: white;
+    border-bottom: 1px solid white;
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
@@ -90,7 +90,7 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: #ffffff;
+    color: white;
     margin-left: 16px;
     margin-top: 0px; }
   #page1 .dwnArrow {
@@ -120,7 +120,7 @@ nav {
   font-weight: 400;
   font-stretch: condensed;
   font-size: 47px;
-  color: #ffffff;
+  color: white;
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -136,7 +136,7 @@ nav {
   font-stretch: condensed;
   font-weight: bold;
   font-size: 24px;
-  color: #ffffff;
+  color: white;
   text-align: left;
   padding: 0;
   margin-top: 0px;
@@ -148,13 +148,13 @@ nav {
   font-weight: 400;
   vertical-align: top; }
 #page2 p {
-  color: #ffffff;
+  color: white;
   display: inline-block; }
 #page2 .proto svg {
   margin-top: 15px; }
 
 #page3 {
-  background-color: #ffffff;
+  background-color: white;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -219,7 +219,7 @@ nav {
   #page4 .heading {
     width: 100%; }
   #page4 h1 {
-    color: #ffffff;
+    color: white;
     float: left;
     margin-right: 14px;
     font-size: 47px; }
@@ -227,7 +227,7 @@ nav {
     margin-left: 18px;
     margin-top: 53px;
     font-size: 24px;
-    color: #ffffff;
+    color: white;
     float: left; }
   #page4 .venn {
     background: url(../img/iPhone/VennDiagram.png);
@@ -377,13 +377,13 @@ nav {
 
 #page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large] {
   transform-origin: center top;
-  -webkit-animation: shrink 1s linear forwards;
+  -webkit-animation: shrink 1s ease forwards;
   /* Safari 4+ */
-  -moz-animation: shrink 1s linear forwards;
+  -moz-animation: shrink 1s ease forwards;
   /* Fx 5+ */
-  -o-animation: shrink 1s linear forwards;
+  -o-animation: shrink 1s ease forwards;
   /* Opera 12+ */
-  animation: shrink 1s linear forwards;
+  animation: shrink 1s ease forwards;
   /* IE 10+, Fx 29+ */ }
 
 #page2 .svg div svg #shadow[state=large], #page3 .svg div svg #shadow[state=large] {
@@ -400,31 +400,38 @@ nav {
   to {
     transform: scale(10, 10);
     padding: 130px 120px; } }
+
 @keyframes growTR {
   to {
     transform: scale(10, 10);
     padding: 130px 0px;
     margin-left: -120px; } }
+
 @keyframes growML {
   to {
     transform: scale(10, 10);
     padding: 0px 110px;
     margin-top: -20px; } }
+
 @keyframes growMR {
   to {
     transform: scale(10, 10);
     margin-left: -120px;
     margin-top: -20px; } }
+
 @keyframes growB {
   to {
     transform: scale(10, 10);
     margin-top: -200px; } }
+
 @keyframes shrink {
   to {
     transform: translateY(-70px) scale(0.25, 0.25); } }
+
 @keyframes fade {
   to {
     opacity: 0; } }
+
 /* iPhone Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .supported_orientation {
@@ -476,5 +483,3 @@ nav {
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */
-
-/*# sourceMappingURL=style.css.map */
