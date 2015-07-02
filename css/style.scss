@@ -331,7 +331,7 @@ nav {
 }
 #page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large]{
 	transform-origin: center top;
-	@include animation(shrink, 1s, linear, forwards);
+	@include animation(shrink, 1s, ease, forwards);
 }
 #page2 .svg div svg #shadow[state=large], #page3 .svg div svg #shadow[state=large]{
 	@include animation(fade, 1s, linear, forwards);
@@ -352,9 +352,14 @@ nav {
 @keyframes growB{
 	to{transform: scale(10,10); margin-top: -200px;}
 }
+
+
 @keyframes shrink{
-	to {transform: scale(.25,.25) translateY(-300px);}
+  to {transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,-70,0,1) scale(.25,.25);}
 }
+// @keyframes shrink{
+//   to {transform: translateY(-70px) scale(.25,.25);}
+// }
 @keyframes fade{
 	to {opacity: 0;}
 }

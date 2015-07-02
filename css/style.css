@@ -305,13 +305,13 @@ nav {
 
 #page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large] {
   transform-origin: center top;
-  -webkit-animation: shrink 1s linear forwards;
+  -webkit-animation: shrink 1s ease forwards;
   /* Safari 4+ */
-  -moz-animation: shrink 1s linear forwards;
+  -moz-animation: shrink 1s ease forwards;
   /* Fx 5+ */
-  -o-animation: shrink 1s linear forwards;
+  -o-animation: shrink 1s ease forwards;
   /* Opera 12+ */
-  animation: shrink 1s linear forwards;
+  animation: shrink 1s ease forwards;
   /* IE 10+, Fx 29+ */ }
 
 #page2 .svg div svg #shadow[state=large], #page3 .svg div svg #shadow[state=large] {
@@ -354,7 +354,7 @@ nav {
 
 @keyframes shrink {
   to {
-    transform: scale(0.25, 0.25) translateY(-300px); } }
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -70, 0, 1) scale(0.25, 0.25); } }
 
 @keyframes fade {
   to {
