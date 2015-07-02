@@ -3,6 +3,27 @@ $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
+//slider logic
+$(".leftButt").click(function(){
+	console.log("clicked");
+	$(".final").addClass("pixPerf").removeClass("final");
+	$(".design").addClass("final").removeClass("design");
+	$(".sol").addClass("design").removeClass("sol");
+	$(".ux").addClass("sol").removeClass("ux");
+	$(".us").addClass("ux").removeClass("us");
+	$(".projectSpecs").addClass("us").removeClass("projectSpecs");
+});
+$(".rightButt").click(function(){
+	console.log("clicked");
+	$(".pixPerf").addClass("final").removeClass("pixPerf");
+	$(".final").addClass("design").removeClass("final");
+	$(".design").addClass("sol").removeClass("design");
+	$(".sol").addClass("ux").removeClass("sol");
+	$(".ux").addClass("us").removeClass("ux");
+	$(".us").addClass("projectSpecs").removeClass("us");
+});
+
+
 //hide x until needed
 $(".x").hide();
 
@@ -18,7 +39,6 @@ $(".menu .image").click(function(){
 		menuHidden = false;
 		$(".menu ul").show();
 	}
-	console.log("menuHide= \r" + menuHidden);
 });
 
 // scroll listener
@@ -28,7 +48,8 @@ $("[scroll]").click( function(){
         scrollTop: $(tar).offset().top
     }, 1000);
     // add something to hide the menu when mobile dropdown
-    $('.menu .image').click();
+    $('.menu ul').hide();
+    menuHidden = true;
 });
 
 //page2 svgs
@@ -50,16 +71,13 @@ $("[state='small']").click(function(){
 	$(this).children().children().attr("state", "large");
 	$(this).children().children().children().attr("state", "large");
 	$(".x").show();
-	console.log("Clicked");
 });
 
 $(".x").click(function(){
 	$("[state='large'] #icon").css({'transform-origin': 'center', 'transform': 'scale(1,1)'}); //return to original size
-	$("[state='large']").attr("state", "shrink");
+	$("[state='large']").attr("state", "small");
 	$(".x").hide();
-	console.log("Unclicked");
-})
-
+});
 
 // key log for window information
 // matches to screen

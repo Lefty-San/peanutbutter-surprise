@@ -213,7 +213,9 @@ nav {
 
 #page4 {
   background-color: #f9941f;
-  vertical-align: bottom; }
+  text-align: center; }
+  #page4 .heading {
+    width: 100%; }
   #page4 h1 {
     color: white;
     float: left;
@@ -232,6 +234,62 @@ nav {
     height: 68px;
     display: inline-block;
     margin-top: 15px; }
+  #page4 .slider {
+    margin-top: 40px; }
+    #page4 .slider .leftButt {
+      background: url(../img/iPhone/ArrowLeft.png);
+      background-size: 100%;
+      width: 14px;
+      height: 10px;
+      display: inline-block; }
+    #page4 .slider .rightButt {
+      background: url(../img/iPhone/ArrowRight.png);
+      background-size: 100%;
+      width: 14px;
+      height: 10px;
+      display: inline-block; }
+    #page4 .slider .pixPerf {
+      background-image: url(../img/iPhone/UIPixelPerfection.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .final {
+      background-image: url(../img/iPhone/FinalGraphics.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .design {
+      background-image: url(../img/iPhone/DesignComps.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .sol {
+      background-image: url(../img/iPhone/SolutionArchitecture.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .ux {
+      background-image: url(../img/iPhone/UserExperience.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .us {
+      background-image: url(../img/iPhone/UserStories.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .projectSpecs {
+      background-image: url(../img/iPhone/ProjectSpecs.png);
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
 
 .lp_graphic {
   background: url(../img/iPhone/LP_Graphic.png) 100% 100%;
@@ -259,6 +317,7 @@ nav {
   animation: growTL 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*top right*/
 #page2 .proto div svg[state=large], #page3 .desktop div svg[state=large] {
   z-index: 1;
   -webkit-animation: growTR 1s linear forwards;
@@ -270,6 +329,7 @@ nav {
   animation: growTR 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*middle left*/
 #page2 .user div svg[state=large], #page3 .poc div svg[state=large] {
   z-index: 1;
   -webkit-animation: growML 1s linear forwards;
@@ -281,6 +341,7 @@ nav {
   animation: growML 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*middle right*/
 #page2 .eval div svg[state=large], #page3 .presen div svg[state=large] {
   z-index: 1;
   -webkit-animation: growMR 1s linear forwards;
@@ -292,6 +353,7 @@ nav {
   animation: growMR 1s linear forwards;
   /* IE 10+, Fx 29+ */ }
 
+/*bottom*/
 #page2 .usability div svg[state=large], #page3 .custom div svg[state=large] {
   z-index: 1;
   -webkit-animation: growB 1s linear forwards;
@@ -354,7 +416,7 @@ nav {
 
 @keyframes shrink {
   to {
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -70, 0, 1) scale(0.25, 0.25); } }
+    transform: translateY(-70px) scale(0.25, 0.25); } }
 
 @keyframes fade {
   to {

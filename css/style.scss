@@ -186,9 +186,9 @@ nav {
    	display: inline-block;
    }
    .proto{
-     	svg {
-     		margin-top: 15px;
-     }
+   	svg {
+   		margin-top: 15px;
+   }
    }
 }
 
@@ -267,7 +267,10 @@ nav {
 
 #page4 {
 	background-color: $orange;
-	vertical-align: bottom;
+	text-align: center;
+	.heading{
+		width: 100%;
+	}
 	h1{
 		color: $white;
 		float: left;
@@ -288,6 +291,72 @@ nav {
     height:68px;
     display:inline-block;
 		margin-top: 15px;
+	}
+	.slider{
+		margin-top: 40px;
+		.leftButt{
+			background: $iphone_arrow_left;
+			background-size: 100%;
+			width: 14px;
+			height: 10px;
+			display: inline-block;
+		}
+		.rightButt{
+			background: $iphone_arrow_right;
+			background-size: 100%;
+			width: 14px;
+			height: 10px;
+			display: inline-block;
+		}
+		.pixPerf{
+			background-image: $iphone_pix_perf;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.final{
+			background-image: $iphone_final_graphics;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.design{
+			background-image: $iphone_design_comps;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.sol{
+			background-image: $iphone_sol_arch;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.ux{
+			background-image: $iphone_user_exp;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.us{
+			background-image: $iphone_user_stories;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
+		.projectSpecs{
+			background-image: $iphone_proj_specs;
+			background-size: 100%;
+			width: 52px;
+			height: 52px;
+			display: inline-block;
+		}
 	}
 }
 
@@ -313,18 +382,22 @@ nav {
 	z-index: 1;
 	@include animation(growTL, 1s, linear, forwards);
 }
+/*top right*/
 #page2 .proto div svg[state=large], #page3 .desktop div svg[state=large]{
 	z-index: 1;
 	@include animation(growTR, 1s, linear, forwards);
 }
+/*middle left*/
 #page2 .user div svg[state=large], #page3 .poc div svg[state=large]{
 	z-index: 1;
 	@include animation(growML, 1s, linear, forwards);
 }
+/*middle right*/
 #page2 .eval div svg[state=large], #page3 .presen div svg[state=large]{
 	z-index: 1;
 	@include animation(growMR, 1s, linear, forwards);
 }
+/*bottom*/
 #page2 .usability div svg[state=large], #page3 .custom div svg[state=large]{
 	z-index: 1;
 	@include animation(growB, 1s, linear, forwards);
@@ -355,7 +428,7 @@ nav {
 
 
 @keyframes shrink{
-  to {transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,-70,0,1) scale(.25,.25);}
+	to {transform: translateY(-70px) scale(.25,.25);}
 }
 // @keyframes shrink{
 //   to {transform: translateY(-70px) scale(.25,.25);}
