@@ -43,8 +43,7 @@ body{
 }
 
 h1, h2, p{
-	font-family: $font-hncb, $font-stack;
-	font-stretch: condensed;
+	@include helvetica-neue-medium-condensed;
 }
 svg{
 	z-index: 0;
@@ -343,8 +342,8 @@ nav {
 		}
 	}
 	.circle {
-		width: 300px;
-		height: 300px;
+		width: 285px;
+		height: 285px;
 		margin-top: 30px;
 		-moz-border-radius: 50%;
 		-webkit-border-radius: 50%;
@@ -352,14 +351,86 @@ nav {
 		border: solid $white;
 		border-width:2px;
 		display: inline-block;
+    .circ {
+      width: 7px;
+      height: 7px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-color: $white;
+      border-color: $white;
+      margin: auto;
+    }
+    .num1 {
+      margin-left: 135px;
+      margin-top: -5px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num2 {
+      margin-left: 240px;
+      margin-top: 43px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num3 {
+      margin-left: 275px;
+      margin-top: 165px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num4 {
+      margin-left: 220px;
+      margin-top: 252px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num5 {
+      margin-left: 47px;
+      margin-top: 252px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num6 {
+      margin-top: 165px;
+      margin-left: -6px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num7 {
+      margin-top: 47px;
+      margin-left: 22px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .large {
+      width: 17px;
+      height: 17px;
+    }
 		h1{
-			font-size: 30;
+			font-size: 36;
 			display: inline-block;
+      @include helvetica-neue-bold-condensed();
 			margin-top: 45px;
 			margin-right: -20px;
 		}
 		h2{
-			font-size: 18;
+			font-size: 24;
+      @include helvetica-neue-light-condensed();
 			display: inline-block;
 		}
 		.suits{
@@ -370,7 +441,7 @@ nav {
 			margin: 75px auto 0 auto;
 		}
 		.ci{
-			margin-top: -30px;
+			margin-top: -40px;
 			display: inline-block;
 		}
 	}

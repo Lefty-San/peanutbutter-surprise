@@ -4,6 +4,8 @@ $(function(){
 });
 
 //slider logic
+var current=1;
+$(".num"+current).children().addClass("large");
 $(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
 	console.log("clicked");
@@ -17,6 +19,12 @@ $(".leftButt").click(function(){
 		$(".leftButt").css('visibility','hidden');
 	}
 	$(".rightButt").css('visibility','visible');
+
+	if (current != 1){
+		current--;
+	}
+	$(".num"+current).children().addClass("large");
+	$(".num"+(current+1)).children().removeClass("large")
 });
 $(".rightButt").click(function(){
 	console.log("clicked");
@@ -30,6 +38,12 @@ $(".rightButt").click(function(){
 		$(".rightButt").css('visibility','hidden');
 	}
 	$(".leftButt").css('visibility','visible');
+
+	if (current != 7){
+		current++;
+	}
+	$(".num"+current).children().addClass("large");
+	$(".num"+(current-1)).children().removeClass("large")
 });
 
 //hide x until needed
