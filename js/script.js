@@ -129,3 +129,18 @@ $(document).keydown(function(e) {
   }
 
 });
+
+// Stop checking user Agent, check for screen dimentions
+console.log(window.outerWidth + '\n' + window.outerHeight);
+var ow = window.outerWidth,
+      oh = window.outerHeight;
+
+    if ( ow < 500 ) {
+      $('body').addClass("smartPhone");
+    } else if ( 500 < ow && ow < 1300 ) {
+      $('body').addClass("tablet");
+    } else if ( ow > 1300 ) {
+      $('body').addClass("desktop");
+    } else {
+      console.log("dude what are you doing? grab a more common device");
+    }
