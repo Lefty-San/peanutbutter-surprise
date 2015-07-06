@@ -105,14 +105,12 @@ $("[state='small']").click(function(e){
   if ($(this).hasClass("usability")||$(this).hasClass("custom")){
   	  TweenLite.to( $("[state='bigAF'] div svg"), 2, {transform: "scale(10,10) translateY(-30px)", zIndex: 1, transformOrigin:"50% 50%", ease:Power2.easeInOut});
   }
-  TweenLite.to("[state='bigAF'] div svg g#Circle", 2, {transform: "scale(7,7)", zIndex: 1,transformOrigin:"50% 50%", ease:Power2.easeInOut});
   TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {opacity:"0", transformOrigin:"50% 50%", zIndex: 1,ease:Power2.easeInOut});
   TweenLite.to("[state='bigAF'] div svg g#icon", 2, {transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)", zIndex: 1,transformOrigin:"50% 50%", ease:Power2.easeInOut});
   $(".x").show();
 });
 $(".x").click(function(){
 	 TweenLite.to( $("[state='bigAF'] div svg"), 2, {transform: "scale(1,1)", zIndex: 0, transformOrigin:"50% 50%", ease:Power2.easeInOut});
-	TweenLite.to("[state='bigAF'] div svg g#Circle", 2, {transform: "scale(1,1)", zIndex: 0,transformOrigin:"50% 50%", ease:Power2.easeInOut});
   TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {opacity:"1", transformOrigin:"50% 50%", zIndex: 0, ease:Power2.easeInOut});
   TweenLite.to("[state='bigAF'] div svg g#icon", 2, {transform: "translateX(0) translateY(0) translateZ(0) scale(1, 1)", zIndex: 0, transformOrigin:"50% 50%", ease:Power2.easeInOut});
 	$("[state='bigAF']").attr("state", "small");

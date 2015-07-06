@@ -200,9 +200,8 @@ nav {
   flex-direction: row-reverse; }
 #page2 svg, #page3 svg {
   width: 100px;
-  height: 100px; }
-#page2 .wireframes, #page3 .wireframes {
-  /*margin-left: -150px;*/ }
+  height: 100px;
+  display: inline-block; }
 
 #page4 {
   background-color: #f9941f;
