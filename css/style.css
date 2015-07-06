@@ -23,9 +23,6 @@ h1, h2, p {
   font-weight: 500;
   font-stretch: condensed; }
 
-svg {
-  z-index: 0; }
-
 nav {
   background-color: #ffffff;
   font-size: 24px;
@@ -151,8 +148,6 @@ nav {
 #page2 p {
   color: #ffffff;
   display: inline-block; }
-#page2 .proto svg {
-  margin-top: 15px; }
 
 #page3 {
   background-color: #ffffff;
@@ -197,21 +192,16 @@ nav {
     vertical-align: top; }
   #page3 p {
     color: #f9941f; }
-  #page3 .presen svg {
-    margin-top: 15px; }
 
 #page2 .svg, #page3 .svg {
   display: inline-block;
   width: 150px;
   height: 150px;
   flex-direction: row-reverse; }
-  #page2 .svg div, #page3 .svg div {
-    height: 100px; }
 #page2 svg, #page3 svg {
   width: 100px;
-  height: 100px; }
-#page2 .wireframes, #page3 .wireframes {
-  /*margin-left: -150px;*/ }
+  height: 100px;
+  display: inline-block; }
 
 #page4 {
   background-color: #f9941f;
@@ -257,27 +247,52 @@ nav {
       margin-bottom: 20px; }
     #page4 .slider .pixPerf {
       background-image: url(../img/iPhone/UIPixelPerfection.png); }
+    #page4 .slider .pixPerf:before {
+      content: "pixel perfection"; }
     #page4 .slider .final {
       background-image: url(../img/iPhone/FinalGraphics.png); }
+    #page4 .slider .final:before {
+      content: "final graphics & assets"; }
     #page4 .slider .design {
       background-image: url(../img/iPhone/DesignComps.png); }
+    #page4 .slider .design:before {
+      content: "design comps"; }
     #page4 .slider .sol {
       background-image: url(../img/iPhone/SolutionArchitecture.png); }
+    #page4 .slider .sol:before {
+      content: "solution architecture"; }
     #page4 .slider .ux {
       background-image: url(../img/iPhone/UserExperience.png); }
+    #page4 .slider .ux:before {
+      content: "user experience"; }
     #page4 .slider .us {
       background-image: url(../img/iPhone/UserStories.png); }
+    #page4 .slider .us:before {
+      content: "user stories"; }
     #page4 .slider .projectSpecs {
       background-image: url(../img/iPhone/ProjectSpecs.png); }
+    #page4 .slider .projectSpecs:before {
+      content: "project specs & requirments"; }
     #page4 .slider .pixPerf, #page4 .slider .final, #page4 .slider .design, #page4 .slider .sol, #page4 .slider .ux, #page4 .slider .us, #page4 .slider .projectSpecs {
       background-size: 100%;
       width: 52px;
       height: 52px;
       display: inline-block; }
+    #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
+      font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+      font-weight: 500;
+      font-stretch: condensed;
+      color: #ffffff;
+      display: inline-block;
+      margin-top: 50px;
+      position: absolute;
+      margin-top: 60px;
+      margin-left: -45px;
+      width: 90px; }
   #page4 .circle {
     width: 285px;
     height: 285px;
-    margin-top: 30px;
+    margin-top: 50px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -293,55 +308,32 @@ nav {
       background-color: #ffffff;
       border-color: #ffffff;
       margin: auto; }
+    #page4 .circle .num1, #page4 .circle .num2, #page4 .circle .num3, #page4 .circle .num4, #page4 .circle .num5, #page4 .circle .num6, #page4 .circle .num7 {
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute; }
     #page4 .circle .num1 {
       margin-left: 135px;
-      margin-top: -5px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-top: -5px; }
     #page4 .circle .num2 {
       margin-left: 240px;
-      margin-top: 43px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-top: 43px; }
     #page4 .circle .num3 {
       margin-left: 275px;
-      margin-top: 165px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-top: 165px; }
     #page4 .circle .num4 {
       margin-left: 220px;
-      margin-top: 252px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-top: 252px; }
     #page4 .circle .num5 {
       margin-left: 47px;
-      margin-top: 252px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-top: 252px; }
     #page4 .circle .num6 {
       margin-top: 165px;
-      margin-left: -6px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-left: -6px; }
     #page4 .circle .num7 {
       margin-top: 47px;
-      margin-left: 22px;
-      width: 17px;
-      height: 17px;
-      text-align: center;
-      position: absolute; }
+      margin-left: 22px; }
     #page4 .circle .large {
       width: 17px;
       height: 17px; }
@@ -369,6 +361,13 @@ nav {
       margin-top: -40px;
       display: inline-block; }
 
+div[state=small] {
+  position: static; }
+
+div[state=bigAF] {
+  position: relative;
+  z-index: 1; }
+
 .lp_graphic {
   background: url(../img/iPhone/LP_Graphic.png) 100% 100%;
   height: 365px;
@@ -383,117 +382,6 @@ nav {
   z-index: 2;
   position: absolute; }
 
-/*top left*/
-#page2 .wireframes div svg[state=large], #page3 .mobile div svg[state=large] {
-  z-index: 1;
-  -webkit-animation: growTL 0.5s linear forwards;
-  /* Safari 4+ */
-  -moz-animation: growTL 0.5s linear forwards;
-  /* Fx 5+ */
-  -o-animation: growTL 0.5s linear forwards;
-  /* Opera 12+ */
-  animation: growTL 0.5s linear forwards;
-  /* IE 10+, Fx 29+ */ }
-
-/*top right*/
-#page2 .proto div svg[state=large], #page3 .desktop div svg[state=large] {
-  z-index: 1;
-  -webkit-animation: growTR 1s linear forwards;
-  /* Safari 4+ */
-  -moz-animation: growTR 1s linear forwards;
-  /* Fx 5+ */
-  -o-animation: growTR 1s linear forwards;
-  /* Opera 12+ */
-  animation: growTR 1s linear forwards;
-  /* IE 10+, Fx 29+ */ }
-
-/*middle left*/
-#page2 .user div svg[state=large], #page3 .poc div svg[state=large] {
-  z-index: 1;
-  -webkit-animation: growML 1s linear forwards;
-  /* Safari 4+ */
-  -moz-animation: growML 1s linear forwards;
-  /* Fx 5+ */
-  -o-animation: growML 1s linear forwards;
-  /* Opera 12+ */
-  animation: growML 1s linear forwards;
-  /* IE 10+, Fx 29+ */ }
-
-/*middle right*/
-#page2 .eval div svg[state=large], #page3 .presen div svg[state=large] {
-  z-index: 1;
-  -webkit-animation: growMR 1s linear forwards;
-  /* Safari 4+ */
-  -moz-animation: growMR 1s linear forwards;
-  /* Fx 5+ */
-  -o-animation: growMR 1s linear forwards;
-  /* Opera 12+ */
-  animation: growMR 1s linear forwards;
-  /* IE 10+, Fx 29+ */ }
-
-/*bottom*/
-#page2 .usability div svg[state=large], #page3 .custom div svg[state=large] {
-  z-index: 1;
-  -webkit-animation: growB 1s linear forwards;
-  /* Safari 4+ */
-  -moz-animation: growB 1s linear forwards;
-  /* Fx 5+ */
-  -o-animation: growB 1s linear forwards;
-  /* Opera 12+ */
-  animation: growB 1s linear forwards;
-  /* IE 10+, Fx 29+ */ }
-
-#page2 .svg div svg #icon[state=large], #page3 .svg div svg #icon[state=large] {
-  transform-origin: 25px 0px 0;
-  -webkit-animation: shrink 1s ease forwards;
-  /* Safari 4+ */
-  -moz-animation: shrink 1s ease forwards;
-  /* Fx 5+ */
-  -o-animation: shrink 1s ease forwards;
-  /* Opera 12+ */
-  animation: shrink 1s ease forwards;
-  /* IE 10+, Fx 29+ */
-  -webkit-animation-delay: 0.25s; }
-
-#page2 .svg div svg #shadow[state=large], #page3 .svg div svg #shadow[state=large] {
-  -webkit-animation: fade 1s linear forwards;
-  /* Safari 4+ */
-  -moz-animation: fade 1s linear forwards;
-  /* Fx 5+ */
-  -o-animation: fade 1s linear forwards;
-  /* Opera 12+ */
-  animation: fade 1s linear forwards;
-  /* IE 10+, Fx 29+ */ }
-
-@keyframes growTL {
-  to {
-    transform: scale(10, 10);
-    padding: 130px 120px; } }
-@keyframes growTR {
-  to {
-    transform: scale(10, 10);
-    padding: 130px 0px;
-    margin-left: -120px; } }
-@keyframes growML {
-  to {
-    transform: scale(10, 10);
-    padding: 0px 110px;
-    margin-top: -20px; } }
-@keyframes growMR {
-  to {
-    transform: scale(10, 10);
-    margin-left: -120px;
-    margin-top: -20px; } }
-@keyframes growB {
-  to {
-    transform: scale(10, 10);
-    margin-top: -200px; } }
-@keyframes shrink {
-  to {
-    transform: translateY(-70px) scale(0.25, 0.25); } }
-@keyframes fade {
-  to {
-    opacity: 0; } }
 /* iPhone Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .supported_orientation {
