@@ -66,13 +66,22 @@ $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
 $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
 $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
-$("[state='small']").click(function(){
-	$(this).attr("state", "large");
-	$(this).children().children().attr("state", "large");
-	$(this).children().children().children().attr("state", "large");
+$(".wireframes[state='small']").click(function(e){
+  /*
+  $("[state='small']").click(function(){
+  	$(this).attr("state", "large");
+  	$(this).children().children().attr("state", "large");
+  	$(this).children().children().children().attr("state", "large");
+  	$(".x").show();
+  }); */
+  $('.wireframes').attr("state", "bigAF");
+  TweenLite.to( $(".wireframes div svg"), 2, {transform: "scale(7,7)", transformOrigin:"50% 50%", ease:Power2.easeInOut});
+  TweenLite.to(".wireframes div svg g#Circle", 2, {transform: "scale(7,7)", transformOrigin:"50% 50%", ease:Power2.easeInOut});
+  TweenLite.to(".wireframes div svg g#Shadow", 2, {opacity:"0", transformOrigin:"50% 50%", ease:Power2.easeInOut});
+  TweenLite.to(".wireframes div svg g#icon", 2, {transform: "translateX(115px) translateY(-90px) translateZ(0) scale(0.25, 0.25)", transformOrigin:"50% 50%", ease:Power2.easeInOut});
 	$(".x").show();
 });
-
+// TweenLite.to("#myID", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.easeInOut});
 $(".x").click(function(){
 	$("[state='large'] #icon").css({'transform-origin': 'center', 'transform': 'scale(1,1)'}); //return to original size
 	$("[state='large']").attr("state", "small");
@@ -94,7 +103,7 @@ $(document).keydown(function(e) {
     // do something awesome
     var x = window.innerWidth,
         y  = window.innerHeight;
-        alert("pixels available on x-axis" + x + "\n pixels available on y-axis" + y);
+        alert("pixels available on x-axis " + x + "\n pixels available on y-axis " + y);
   }
 
 });
