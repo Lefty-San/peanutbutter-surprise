@@ -4,6 +4,9 @@ $(function(){
 });
 
 //slider logic
+var current=1;
+$(".num"+current).children().addClass("large");
+$(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
 	console.log("clicked");
 	$(".final").addClass("pixPerf").removeClass("final");
@@ -12,17 +15,36 @@ $(".leftButt").click(function(){
 	$(".ux").addClass("sol").removeClass("ux");
 	$(".us").addClass("ux").removeClass("us");
 	$(".projectSpecs").addClass("us").removeClass("projectSpecs");
+	if ($("#image").hasClass("pixPerf")){
+		$(".leftButt").css('visibility','hidden');
+	}
+	$(".rightButt").css('visibility','visible');
+
+	if (current != 1){
+		current--;
+	}
+	$(".num"+current).children().addClass("large");
+	$(".num"+(current+1)).children().removeClass("large")
 });
 $(".rightButt").click(function(){
 	console.log("clicked");
-	$(".pixPerf").addClass("final").removeClass("pixPerf");
-	$(".final").addClass("design").removeClass("final");
-	$(".design").addClass("sol").removeClass("design");
-	$(".sol").addClass("ux").removeClass("sol");
-	$(".ux").addClass("us").removeClass("ux");
 	$(".us").addClass("projectSpecs").removeClass("us");
-});
+	$(".ux").addClass("us").removeClass("ux");
+	$(".sol").addClass("ux").removeClass("sol");
+	$(".design").addClass("sol").removeClass("design");
+	$(".final").addClass("design").removeClass("final");
+	$(".pixPerf").addClass("final").removeClass("pixPerf");
+	if ($("#image").hasClass("projectSpecs")){
+		$(".rightButt").css('visibility','hidden');
+	}
+	$(".leftButt").css('visibility','visible');
 
+	if (current != 7){
+		current++;
+	}
+	$(".num"+current).children().addClass("large");
+	$(".num"+(current-1)).children().removeClass("large")
+});
 
 //hide x until needed
 $(".x").hide();

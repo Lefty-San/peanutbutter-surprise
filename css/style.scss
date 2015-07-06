@@ -44,7 +44,7 @@ body{
 }
 
 h1, h2, p{
-	font-family: $font-stack;
+	@include helvetica-neue-medium-condensed;
 }
 svg{
 	z-index: 0;
@@ -269,6 +269,7 @@ nav {
 #page4 {
 	background-color: $orange;
 	text-align: center;
+	padding-bottom: 50px;
 	.heading{
 		width: 100%;
 	}
@@ -301,6 +302,8 @@ nav {
 			width: 14px;
 			height: 10px;
 			display: inline-block;
+			margin-right: 30px;
+			margin-bottom: 20px;
 		}
 		.rightButt{
 			background: $iphone_arrow_right;
@@ -308,54 +311,138 @@ nav {
 			width: 14px;
 			height: 10px;
 			display: inline-block;
+			margin-left: 30px;
+			margin-bottom: 20px;
 		}
 		.pixPerf{
 			background-image: $iphone_pix_perf;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.final{
 			background-image: $iphone_final_graphics;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.design{
 			background-image: $iphone_design_comps;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.sol{
 			background-image: $iphone_sol_arch;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.ux{
 			background-image: $iphone_user_exp;
-			background-size: 100%;
-			width: 52px;
-			height: 52px;
-			display: inline-block;
 		}
 		.us{
 			background-image: $iphone_user_stories;
+		}
+		.projectSpecs{
+			background-image: $iphone_proj_specs;
+		}
+		.pixPerf, .final, .design, .sol, .ux, .us, .projectSpecs {
 			background-size: 100%;
 			width: 52px;
 			height: 52px;
 			display: inline-block;
 		}
-		.projectSpecs{
-			background-image: $iphone_proj_specs;
+	}
+	.circle {
+		width: 285px;
+		height: 285px;
+		margin-top: 30px;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		border: solid $white;
+		border-width:2px;
+		display: inline-block;
+    .circ {
+      width: 7px;
+      height: 7px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-color: $white;
+      border-color: $white;
+      margin: auto;
+    }
+    .num1 {
+      margin-left: 135px;
+      margin-top: -5px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num2 {
+      margin-left: 240px;
+      margin-top: 43px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num3 {
+      margin-left: 275px;
+      margin-top: 165px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num4 {
+      margin-left: 220px;
+      margin-top: 252px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num5 {
+      margin-left: 47px;
+      margin-top: 252px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num6 {
+      margin-top: 165px;
+      margin-left: -6px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .num7 {
+      margin-top: 47px;
+      margin-left: 22px;
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute;
+    }
+    .large {
+      width: 17px;
+      height: 17px;
+    }
+		h1{
+			font-size: 36;
+			display: inline-block;
+      @include helvetica-neue-bold-condensed();
+			margin-top: 45px;
+			margin-right: -20px;
+		}
+		h2{
+			font-size: 24;
+      @include helvetica-neue-light-condensed();
+			display: inline-block;
+		}
+		.suits{
+			background: $iphone_client_icon;
 			background-size: 100%;
-			width: 52px;
-			height: 52px;
+			width: 75px;
+			height: 93px;
+			margin: 75px auto 0 auto;
+		}
+		.ci{
+			margin-top: -40px;
 			display: inline-block;
 		}
 	}
