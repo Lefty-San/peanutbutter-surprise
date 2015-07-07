@@ -294,7 +294,7 @@ nav {
   #page4 .circle {
     width: 285px;
     height: 285px;
-    margin-top: 50px;
+    margin-top: 70px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -325,20 +325,17 @@ nav {
       margin-left: 275px;
       margin-top: 165px; }
     #page4 .circle .num4 {
-      margin-left: 220px;
-      margin-top: 252px; }
+      margin-left: 218px;
+      margin-top: 255px; }
     #page4 .circle .num5 {
-      margin-left: 47px;
-      margin-top: 252px; }
+      margin-left: 50px;
+      margin-top: 255px; }
     #page4 .circle .num6 {
       margin-top: 165px;
-      margin-left: -6px; }
+      margin-left: -7px; }
     #page4 .circle .num7 {
-      margin-top: 47px;
-      margin-left: 22px; }
-    #page4 .circle .large {
-      width: 17px;
-      height: 17px; }
+      margin-top: 51px;
+      margin-left: 20px; }
     #page4 .circle h1 {
       font-size: 36;
       display: inline-block;
