@@ -18,7 +18,7 @@ $(".num"+current).children().addClass("large");
 $(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
 	console.log("clicked");
-  
+});
 //functions
 function makeBigAF(translate){
 	TweenLite.to( $("[state='bigAF'] div svg"), 2, {
@@ -198,6 +198,7 @@ $("[scroll]").click( function(){
 });
 
 //load in page2 svgs
+  console.log('function run');
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
 $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
 $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
@@ -274,4 +275,3 @@ var ow = window.outerWidth,
     } else {
       console.log("dude what are you doing? grab a more common device");
     }
-});
