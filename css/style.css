@@ -24,7 +24,7 @@ h1, h2, p {
   font-stretch: condensed; }
 
 nav {
-  background-color: white;
+  background-color: #ffffff;
   font-size: 24px;
   font-color: #a0a2a3;
   font-style: Helvetica Neue;
@@ -49,7 +49,7 @@ nav {
       color: #666666;
       font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       margin-top: 50px;
-      background-color: white;
+      background-color: #ffffff;
       padding-bottom: 10px;
       padding-right: 10px;
       border-bottom-left-radius: 5px; }
@@ -79,8 +79,8 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: white;
-    border-bottom: 1px solid white;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
@@ -88,7 +88,7 @@ nav {
     font-size: 25px;
     font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-stretch: condensed;
-    color: white;
+    color: #ffffff;
     margin-left: 16px;
     margin-top: 0px; }
   #page1 .dwnArrow {
@@ -118,7 +118,7 @@ nav {
   font-weight: 400;
   font-stretch: condensed;
   font-size: 47px;
-  color: white;
+  color: #ffffff;
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -134,7 +134,7 @@ nav {
   font-stretch: condensed;
   font-weight: bold;
   font-size: 24px;
-  color: white;
+  color: #ffffff;
   text-align: left;
   padding: 0;
   margin-top: 0px;
@@ -146,11 +146,11 @@ nav {
   font-weight: 400;
   vertical-align: top; }
 #page2 p {
-  color: white;
+  color: #ffffff;
   display: inline-block; }
 
 #page3 {
-  background-color: white;
+  background-color: #ffffff;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -215,7 +215,7 @@ nav {
   #page4 .heading {
     width: 100%; }
   #page4 h1 {
-    color: white;
+    color: #ffffff;
     float: left;
     margin-right: 14px;
     font-size: 47px; }
@@ -223,7 +223,7 @@ nav {
     margin-left: 18px;
     margin-top: 53px;
     font-size: 24px;
-    color: white;
+    color: #ffffff;
     float: left; }
   #page4 .venn {
     background: url(../img/iPhone/VennDiagram.png);
@@ -287,15 +287,13 @@ nav {
       font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
       font-weight: 500;
       font-stretch: condensed;
-      color: white;
+      color: #ffffff;
       display: inline-block;
       margin-top: 50px;
       position: absolute;
       margin-top: 60px;
       margin-left: -45px;
-      width: 90px;
-      width: 115px !important;
-      left: 45%; }
+      width: 90px; }
   #page4 .circle {
     width: 285px;
     height: 285px;
@@ -303,7 +301,7 @@ nav {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: solid white;
+    border: solid #ffffff;
     border-width: 2px;
     display: inline-block; }
     #page4 .circle .circ {
@@ -312,8 +310,8 @@ nav {
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
-      background-color: white;
-      border-color: white;
+      background-color: #ffffff;
+      border-color: #ffffff;
       margin: auto; }
     #page4 .circle .num1, #page4 .circle .num2, #page4 .circle .num3, #page4 .circle .num4, #page4 .circle .num5, #page4 .circle .num6, #page4 .circle .num7 {
       width: 17px;
@@ -410,29 +408,7 @@ div[state=bigAF] {
     background-size: 100%; }
 
   .svg div {
-    min-height: 100px; }
-
-  #page4 .slider .pixPerf {
-    background-image: url(../img/iPhone/UIPixelPerfection@2x.png);
-    background-size: 100%; }
-  #page4 .slider .final {
-    background-image: url(../img/iPhone/FinalGraphics@2x.png);
-    background-size: 100%; }
-  #page4 .slider .design {
-    background-image: url(../img/iPhone/DesignComps@2x.png);
-    background-size: 100%; }
-  #page4 .slider .sol {
-    background-image: url(../img/iPhone/SolutionArchitecture@2x.png);
-    background-size: 100%; }
-  #page4 .slider .ux {
-    background-image: url(../img/iPhone/UserExperience@2x.png);
-    background-size: 100%; }
-  #page4 .slider .us {
-    background-image: url(../img/iPhone/UserStories@2x.png);
-    background-size: 100%; }
-  #page4 .slider .projectSpecs {
-    background-image: url(../img/iPhone/ProjectSpecs@2x.png);
-    background-size: 100%; } }
+    min-height: 100px; } }
 /* iPhone Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .supported_orientation {
@@ -459,3 +435,5 @@ div[state=bigAF] {
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */
+
+/*# sourceMappingURL=style.css.map */
