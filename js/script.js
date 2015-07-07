@@ -4,6 +4,27 @@ $(function(){
 });
 
 //functions
+function makeBigAF(translate){
+	TweenLite.to( $("[state='bigAF'] div svg"), 2, {
+  	  	transform: "scale(10,10)" + translate, 
+  	  	zIndex: 1, 
+  	  	transformOrigin:"50% 50%", 
+  	  	ease:Power2.easeInOut
+  	});
+	TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {
+	  	opacity:"0", 
+	  	transformOrigin:"50% 50%", 
+	  	zIndex: 1,
+	  	ease:Power2.easeInOut
+	});
+	TweenLite.to("[state='bigAF'] div svg g#icon", 2, {
+	  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)", 
+	  	zIndex: 1,
+	  	transformOrigin:"50% 50%", 
+	  	ease:Power2.easeInOut
+	});
+	$(".x").show();
+}
 function moveCirc(curr, next){
 	TweenLite.to($(".num"+curr).children(), .5, {
 		transform: "scale(1, 1)",
@@ -17,24 +38,27 @@ function moveCirc(curr, next){
 	});
 }
 
-function norm(img){
-	TweenMax.to( $(img), .3, {
-		transform: "scale(1, 1) translateX(0px)",
+//make an image or svg normal after animation
+function norm(img, time){
+	TweenMax.to( $(img), time, {
+		transform: "scale(1, 1) translateX(0px) translateY(0px)",
 		opacity: "1",
+		zIndex: 0,
 		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut,
+		ease:Power2.easeInOut
 	});
 }
 
+//move icons after animations
 function moveLeft(){
 	$(".final").addClass("pixPerf").removeClass("final");
 	$(".design").addClass("final").removeClass("design");
-	$(".sol").addClass("design").removeClass("sol");
-	$(".ux").addClass("sol").removeClass("ux");
-	$(".us").addClass("ux").removeClass("us");
+	$(".ux").addClass("design").removeClass("ux");
+	$(".sol").addClass("ux").removeClass("sol");
+	$(".us").addClass("sol").removeClass("us");
 	$(".projectSpecs").addClass("us").removeClass("projectSpecs");
 
-	norm("#image");
+	norm("#image", .3);
 
 	if ($("#image").hasClass("pixPerf")){
 		$(".leftButt").css('visibility','hidden');
@@ -45,17 +69,16 @@ function moveLeft(){
 	}
 	moveCirc(current+1, current);
 }
-
 function moveRight(){
 	console.log("clicked");
 	$(".us").addClass("projectSpecs").removeClass("us");
-	$(".ux").addClass("us").removeClass("ux");
-	$(".sol").addClass("ux").removeClass("sol");
-	$(".design").addClass("sol").removeClass("design");
+	$(".sol").addClass("us").removeClass("sol");
+	$(".ux").addClass("sol").removeClass("ux");
+	$(".design").addClass("ux").removeClass("design");
 	$(".final").addClass("design").removeClass("final");
 	$(".pixPerf").addClass("final").removeClass("pixPerf");
 
-	norm("#image");
+	norm("#image", .3);
 
 	if ($("#image").hasClass("projectSpecs")){
 		$(".rightButt").css('visibility','hidden');
@@ -68,6 +91,7 @@ function moveRight(){
 	moveCirc(current-1, current);
 }
 
+//animate buttons and icons
 function animateRight(){
 	TweenMax.to( $(".rightButt"), .1, {
 		transform: "scale(.75, .75) translateX(5px)", 
@@ -154,67 +178,31 @@ $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
 $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
 $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
+//listen for clicked svgs and make big AF
 $("[state='small']").click(function(e){
   $(this).attr("state", "bigAF");
   if ($(this).hasClass("wireframes")||$(this).hasClass("mobile")){
-  	  TweenLite.to( $("[state='bigAF'] div svg"), 2, {
-  	  	transform: "scale(10,10) translateX(10px)", 
-  	  	zIndex: 1, 
-  	  	transformOrigin:"50% 50%", 
-  	  	ease:Power2.easeInOut});
+  	  makeBigAF("translateX(10px)");
   }
   if ($(this).hasClass("proto")||$(this).hasClass("desktop")){
-  	  TweenLite.to( $("[state='bigAF'] div svg"), 2, {
-  	  	transform: "scale(10,10) translateX(-7px)",
-  	  	 zIndex: 1, 
-  	  	 transformOrigin:"50% 50%", 
-  	  	 ease:Power2.easeInOut
-  	  	});
+  	  makeBigAF("translateX(-7px)");
   }
   if ($(this).hasClass("user")||$(this).hasClass("poc")){
-  	  TweenLite.to( $("[state='bigAF'] div svg"), 2, {
-  	  	transform: "scale(10,10) translateY(-15px) translateX(8px)", 
-  	  	zIndex: 1, 
-  	  	transformOrigin:"50% 50%", 
-  	  	ease:Power2.easeInOut
-  	  });
+  	  makeBigAF("translateY(-15px) translateX(8px)");
   }
   if ($(this).hasClass("eval")||$(this).hasClass("presen")){
-  	  TweenLite.to( $("[state='bigAF'] div svg"), 2, {
-  	  	transform: "scale(10,10) translateY(-15px) translateX(-8px)", 
-  	  	zIndex: 1, 
-  	  	transformOrigin:"50% 50%", 
-  	  	ease:Power2.easeInOut
-  	  });
+  	  makeBigAF("translateY(-15px) translateX(-8px)");
   }
   if ($(this).hasClass("usability")||$(this).hasClass("custom")){
-  	  TweenLite.to( $("[state='bigAF'] div svg"), 2, {
-  	  	transform: "scale(10,10) translateY(-30px)", 
-  	  	zIndex: 1, 
-  	  	transformOrigin:"50% 50%", 
-  	  	ease:Power2.easeInOut
-  	  });
+  	  makeBigAF("translateY(-30px)");
   }
-  TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {
-  	opacity:"0", 
-  	transformOrigin:"50% 50%", 
-  	zIndex: 1,
-  	ease:Power2.easeInOut
-  });
-  TweenLite.to("[state='bigAF'] div svg g#icon", 2, {
-  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)", 
-  	zIndex: 1,
-  	transformOrigin:"50% 50%", 
-  	ease:Power2.easeInOut
-  });
-  $(".x").show();
 });
 $(".x").click(function(){
-	 TweenLite.to( $("[state='bigAF'] div svg"), 2, {transform: "scale(1,1)", zIndex: 0, transformOrigin:"50% 50%", ease:Power2.easeInOut});
-  TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {opacity:"1", transformOrigin:"50% 50%", zIndex: 0, ease:Power2.easeInOut});
-  TweenLite.to("[state='bigAF'] div svg g#icon", 2, {transform: "translateX(0) translateY(0) translateZ(0) scale(1, 1)", zIndex: 0, transformOrigin:"50% 50%", ease:Power2.easeInOut});
-	$("[state='bigAF']").attr("state", "small");
-	$(".x").hide();
+  norm("[state='bigAF'] div svg", 2);
+  norm("[state='bigAF'] div svg g#Shadow", 2);
+  norm("[state='bigAF'] div svg g#icon", 2);
+  $("[state='bigAF']").attr("state", "small");
+  $(".x").hide();
 });
 
 // key log for window information
