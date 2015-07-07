@@ -25,6 +25,10 @@ function makeBigAF(translate){
 	});
 	$(".x").show();
 }
+//hideMenu function must be called onComplete
+function hideMenu(){
+	$(".menu ul").hide();
+}
 function moveCirc(curr, next){
 	TweenLite.to($(".num"+curr).children(), .5, {
 		transform: "scale(1, 1)",
@@ -91,7 +95,7 @@ function moveRight(){
 	moveCirc(current-1, current);
 }
 
-//animate buttons and icons
+//animate buttons and icons on OurProcess
 function animateRight(){
 	TweenMax.to( $(".rightButt"), .1, {
 		transform: "scale(.75, .75) translateX(5px)", 
@@ -142,14 +146,26 @@ $(".x").hide();
 //hide menu until clicked
 menuHidden=true;
 $(".menu ul").hide();
+$(".menu ul").css('margin-right', '-100px');
 $(".menu .image").click(function(){
 	if (menuHidden == false){
 		menuHidden=true;
-		$(".menu ul").hide();
+		TweenLite.to($(".menu ul"), .2,{
+			marginRight: '-100px',
+			transformOrigin:"50% 50%",
+			ease: Power2.easeIn,
+			onComplete: hideMenu
+		});
+		
 	}
 	else{
 		menuHidden = false;
 		$(".menu ul").show();
+		TweenLite.to($(".menu ul"), .5,{
+			marginRight: '0px',
+			transformOrigin:"50% 50%",
+			ease: Bounce.easeOut 
+		});
 	}
 });
 
@@ -160,18 +176,19 @@ $("[scroll]").click( function(){
         scrollTop: $(tar).offset().top
     }, 1000);
     // add something to hide the menu when mobile dropdown
+    $(".menu ul").css('margin-right', '-100px');
     $('.menu ul').hide();
     menuHidden = true;
 });
 
-//page2 svgs
+//load in page2 svgs
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
 $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
 $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
 $(".usability").prepend($('<div>').load("svg/UX/UsabilityTesting.svg"));
 $(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
 
-//page3 svgs
+//load in page3 svgs
 $(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
 $(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
 $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
@@ -197,6 +214,8 @@ $("[state='small']").click(function(e){
   	  makeBigAF("translateY(-30px)");
   }
 });
+
+//listen for x click then make small AF
 $(".x").click(function(){
   norm("[state='bigAF'] div svg", 2);
   norm("[state='bigAF'] div svg g#Shadow", 2);
@@ -217,7 +236,7 @@ $(document).keydown(function(e) {
 
     $(document).unbind('keydown',arguments.callee);
 
-    // do something awesome
+    // do something awesome AF
     var x = window.innerWidth,
         y  = window.innerHeight;
         alert("pixels available on x-axis " + x + "\n pixels available on y-axis " + y);
