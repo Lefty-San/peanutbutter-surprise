@@ -6,9 +6,9 @@ $(function(){
 //functions
 function makeBigAF(translate){
 	TweenLite.to( $("[state='bigAF'] div svg"), 2, {
-  	  	transform: "scale(10,10)" + translate, 
-  	  	zIndex: 1, 
-  	  	transformOrigin:"50% 50%", 
+  	  	transform: "scale(10,10)" + translate,
+  	  	zIndex: 1,
+  	  	transformOrigin:"50% 50%",
   	  	ease:Power2.easeInOut
   	});
 	TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {
@@ -23,7 +23,8 @@ function makeBigAF(translate){
 	  	transformOrigin:"50% 50%", 
 	  	ease:Power2.easeInOut
 	});
-	$(".x").show();
+	setTimeout(function(){$(".x").show();}, 2000);
+	setTimeout(function(){$("article").show();}, 2000);
 }
 //hideMenu function must be called onComplete
 function hideMenu(){
@@ -133,15 +134,13 @@ function animateLeft(){
 current=1;
 moveCirc(1,1);
 $(".leftbutt").css('visibility','hidden');
-$(".leftButt").click(function(){
-	animateLeft();
-});
-$(".rightButt").click(function(){
-	animateRight();
-});
+$(".leftButt").click(animateLeft);
+$(".rightButt").click(animateRight);
 
 //hide x until needed
 $(".x").hide();
+//hide text until svgs are clicked
+$("article").hide();
 
 //hide menu until clicked
 menuHidden=true;
@@ -198,25 +197,61 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 //listen for clicked svgs and make big AF
 $("[state='small']").click(function(e){
   $(this).attr("state", "bigAF");
-  if ($(this).hasClass("wireframes")||$(this).hasClass("mobile")){
+  if ($(this).hasClass("wireframes")){
+  	  $('article p').empty();
+  	  $('article p').load("arts/wireframes.txt");
   	  makeBigAF("translateX(10px)");
   }
-  if ($(this).hasClass("proto")||$(this).hasClass("desktop")){
+  if ($(this).hasClass("mobile")){
+  	  $('article').empty();
+  	  $('article').prepend($('<p>').load("../arts/mobile.txt"));
+  	  makeBigAF("translateX(10px)");
+  }
+  if ($(this).hasClass("proto")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/proto.txt"));
   	  makeBigAF("translateX(-7px)");
   }
-  if ($(this).hasClass("user")||$(this).hasClass("poc")){
+  if ($(this).hasClass("desktop")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/desktop.txt"));
+  	  makeBigAF("translateX(-7px)");
+  }
+  if ($(this).hasClass("user")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/user.txt"));
   	  makeBigAF("translateY(-15px) translateX(8px)");
   }
-  if ($(this).hasClass("eval")||$(this).hasClass("presen")){
+  if ($(this).hasClass("poc")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/poc.txt"));
+  	  makeBigAF("translateY(-15px) translateX(8px)");
+  }
+  if ($(this).hasClass("eval")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/eval.txt"));
   	  makeBigAF("translateY(-15px) translateX(-8px)");
   }
-  if ($(this).hasClass("usability")||$(this).hasClass("custom")){
+  if ($(this).hasClass("presen")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/presen.txt"));
+  	  makeBigAF("translateY(-15px) translateX(-8px)");
+  }
+  if ($(this).hasClass("usability")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/usabilty.txt"));
+  	  makeBigAF("translateY(-30px)");
+  }
+  if ($(this).hasClass("custom")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/custom.txt"));
   	  makeBigAF("translateY(-30px)");
   }
 });
 
 //listen for x click then make small AF
 $(".x").click(function(){
+  $("article").hide();
   norm("[state='bigAF'] div svg", 2);
   norm("[state='bigAF'] div svg g#Shadow", 2);
   norm("[state='bigAF'] div svg g#icon", 2);

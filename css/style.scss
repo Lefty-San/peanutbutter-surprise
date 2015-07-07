@@ -244,6 +244,12 @@ nav {
    		height: 100px;
       display: inline-block;
    }
+   article {
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      text-align: center;
+   }
 }
 
 #page4 {
@@ -298,7 +304,7 @@ nav {
 			background-image: $iphone_pix_perf;
 		}
     .pixPerf:before{
-      content: "pixel perfection";
+      content: "UI pixel perfection";
     }
 		.final{
 			background-image: $iphone_final_graphics;

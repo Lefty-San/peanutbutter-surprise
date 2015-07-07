@@ -202,6 +202,11 @@ nav {
   width: 100px;
   height: 100px;
   display: inline-block; }
+#page2 article, #page3 article {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  text-align: center; }
 
 #page4 {
   background-color: #f9941f;
@@ -248,7 +253,7 @@ nav {
     #page4 .slider .pixPerf {
       background-image: url(../img/iPhone/UIPixelPerfection.png); }
     #page4 .slider .pixPerf:before {
-      content: "pixel perfection"; }
+      content: "UI pixel perfection"; }
     #page4 .slider .final {
       background-image: url(../img/iPhone/FinalGraphics.png); }
     #page4 .slider .final:before {
