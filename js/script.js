@@ -3,6 +3,22 @@ $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
+//  condensed slider functions
+var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'],
+     imgIndex = 0;
+function smlImage() {
+  var smlDex = sml[imgIndex];
+  $('#image').attr("class", smlDex);
+}
+
+
+//slider logic
+var current=1;
+$(".num"+current).children().addClass("large");
+$(".leftbutt").css('visibility','hidden');
+$(".leftButt").click(function(){
+	console.log("clicked");
+  
 //functions
 function makeBigAF(translate){
 	TweenLite.to( $("[state='bigAF'] div svg"), 2, {
@@ -12,15 +28,15 @@ function makeBigAF(translate){
   	  	ease:Power2.easeInOut
   	});
 	TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {
-	  	opacity:"0", 
-	  	transformOrigin:"50% 50%", 
+	  	opacity:"0",
+	  	transformOrigin:"50% 50%",
 	  	zIndex: 1,
 	  	ease:Power2.easeInOut
 	});
 	TweenLite.to("[state='bigAF'] div svg g#icon", 2, {
-	  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)", 
+	  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
 	  	zIndex: 1,
-	  	transformOrigin:"50% 50%", 
+	  	transformOrigin:"50% 50%",
 	  	ease:Power2.easeInOut
 	});
 	setTimeout(function(){$(".x").show();}, 2000);
@@ -99,8 +115,8 @@ function moveRight(){
 //animate buttons and icons on OurProcess
 function animateRight(){
 	TweenMax.to( $(".rightButt"), .1, {
-		transform: "scale(.75, .75) translateX(5px)", 
-		transformOrigin:"50% 50%", 
+		transform: "scale(.75, .75) translateX(5px)",
+		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut,
 		repeat:1,
 		yoyo: true
@@ -115,8 +131,8 @@ function animateRight(){
 }
 function animateLeft(){
 	TweenMax.to( $(".leftButt"), .1, {
-		transform: "scale(.75, .75) translateX(-5px)", 
-		transformOrigin:"50% 50%", 
+		transform: "scale(.75, .75) translateX(-5px)",
+		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut,
 		repeat:1,
 		yoyo: true,
@@ -155,7 +171,7 @@ $(".menu .image").click(function(){
 			ease: Power2.easeIn,
 			onComplete: hideMenu
 		});
-		
+
 	}
 	else{
 		menuHidden = false;
@@ -163,7 +179,7 @@ $(".menu .image").click(function(){
 		TweenLite.to($(".menu ul"), .5,{
 			marginRight: '0px',
 			transformOrigin:"50% 50%",
-			ease: Bounce.easeOut 
+			ease: Bounce.easeOut
 		});
 	}
 });
@@ -277,4 +293,20 @@ $(document).keydown(function(e) {
         alert("pixels available on x-axis " + x + "\n pixels available on y-axis " + y);
   }
 
+});
+
+// Stop checking user Agent, check for screen dimentions
+console.log(window.outerWidth + '\n' + window.outerHeight);
+var ow = window.outerWidth,
+      oh = window.outerHeight;
+
+    if ( ow < 500 ) {
+      $('body').addClass("smartPhone");
+    } else if ( 500 < ow && ow < 1300 ) {
+      $('body').addClass("tablet");
+    } else if ( ow > 1300 ) {
+      $('body').addClass("desktop");
+    } else {
+      console.log("dude what are you doing? grab a more common device");
+    }
 });

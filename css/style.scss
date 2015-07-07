@@ -357,6 +357,8 @@ nav {
       margin-top: 60px;
       margin-left: -45px;
       width: 90px;
+      width: 115px !important;
+      left: 45%;
     }
 	}
 	.circle {
@@ -501,6 +503,38 @@ div[state=bigAF]{
       div {
         min-height:100px;
       }
+    }
+    #page4 {
+        .slider {
+          .pixPerf{
+      			background-image: $iphone_pix_perf2x;
+            background-size:100%;
+      		}
+      		.final{
+      			background-image: $iphone_final_graphics2x;
+            background-size:100%;
+      		}
+      		.design{
+      			background-image: $iphone_design_comps2x;
+            background-size:100%;
+      		}
+      		.sol{
+      			background-image: $iphone_sol_arch2x;
+            background-size:100%;
+      		}
+      		.ux{
+      			background-image: $iphone_user_exp2x;
+            background-size:100%;
+      		}
+      		.us{
+      			background-image: $iphone_user_stories2x;
+            background-size:100%;
+      		}
+      		.projectSpecs{
+      			background-image: $iphone_proj_specs2x;
+            background-size:100%;
+      		}
+        }
     }
 }
 
