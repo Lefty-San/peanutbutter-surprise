@@ -4,10 +4,9 @@ $(function(){
 });
 
 //  condensed slider functions
-var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'],
-     imgIndex = 0;
+var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
 function smlImage() {
-  var smlDex = sml[imgIndex];
+  var smlDex = sml[current-1];
   $('#image').attr("class", smlDex);
 }
 
@@ -16,8 +15,6 @@ function smlImage() {
 var current=1;
 $(".num"+current).children().addClass("large");
 $(".leftbutt").css('visibility','hidden');
-$(".leftButt").click(function(){
-	console.log("clicked");
   
 //functions
 function makeBigAF(translate){
@@ -72,43 +69,29 @@ function norm(img, time){
 
 //move icons after animations
 function moveLeft(){
-	$(".final").addClass("pixPerf").removeClass("final");
-	$(".design").addClass("final").removeClass("design");
-	$(".ux").addClass("design").removeClass("ux");
-	$(".sol").addClass("ux").removeClass("sol");
-	$(".us").addClass("sol").removeClass("us");
-	$(".projectSpecs").addClass("us").removeClass("projectSpecs");
-
+	if (current != 1){
+		current--;
+	}
+	smlImage();
 	norm("#image", .3);
 
 	if ($("#image").hasClass("pixPerf")){
 		$(".leftButt").css('visibility','hidden');
 	}
 	$(".rightButt").css('visibility','visible');
-	if (current != 1){
-		current--;
-	}
 	moveCirc(current+1, current);
 }
 function moveRight(){
-	console.log("clicked");
-	$(".us").addClass("projectSpecs").removeClass("us");
-	$(".sol").addClass("us").removeClass("sol");
-	$(".ux").addClass("sol").removeClass("ux");
-	$(".design").addClass("ux").removeClass("design");
-	$(".final").addClass("design").removeClass("final");
-	$(".pixPerf").addClass("final").removeClass("pixPerf");
-
+	if (current != 7){
+		current++;
+	}
+	smlImage();
 	norm("#image", .3);
 
 	if ($("#image").hasClass("projectSpecs")){
 		$(".rightButt").css('visibility','hidden');
 	}
 	$(".leftButt").css('visibility','visible');
-
-	if (current != 7){
-		current++;
-	}
 	moveCirc(current-1, current);
 }
 
@@ -309,4 +292,3 @@ var ow = window.outerWidth,
     } else {
       console.log("dude what are you doing? grab a more common device");
     }
-});
