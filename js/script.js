@@ -3,6 +3,15 @@ $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
+//  condensed slider functions
+var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'],
+     imgIndex = 0;
+function smlImage() {
+  var smlDex = sml[imgIndex];
+  $('#image').attr("class", smlDex);
+}
+
+
 //slider logic
 var current=1;
 $(".num"+current).children().addClass("large");
