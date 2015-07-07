@@ -10,7 +10,6 @@ function smlImage() {
   $('#image').attr("class", smlDex);
 }
 
-
 //slider logic
 var current=1;
 $(".num"+current).children().addClass("large");
@@ -18,26 +17,32 @@ $(".leftbutt").css('visibility','hidden');
   
 //functions
 function makeBigAF(translate){
-	TweenLite.to( $("[state='bigAF'] div svg"), 2, {
+	var TIMING = 1.5;
+	TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
   	  	transform: "scale(10,10)" + translate,
   	  	zIndex: 1,
   	  	transformOrigin:"50% 50%",
   	  	ease:Power2.easeInOut
   	});
-	TweenLite.to("[state='bigAF'] div svg g#Shadow", 2, {
+	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 1,
 	  	ease:Power2.easeInOut
 	});
-	TweenLite.to("[state='bigAF'] div svg g#icon", 2, {
+	TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
 	  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
 	  	zIndex: 1,
 	  	transformOrigin:"50% 50%",
 	  	ease:Power2.easeInOut
 	});
-	setTimeout(function(){$(".x").show();}, 2000);
-	setTimeout(function(){$("article").show();}, 2000);
+	//lock scrolling
+	$('body').css({'overflow':'hidden'});
+    $(document).bind('scroll',function () { 
+       	window.scrollTo(0,0); 
+    });
+	setTimeout(function(){$(".x").show();}, (TIMING*1000));
+	setTimeout(function(){$("article").show();}, (TIMING*1000));
 }
 //hideMenu function must be called onComplete
 function hideMenu(){
@@ -136,11 +141,6 @@ $(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(animateLeft);
 $(".rightButt").click(animateRight);
 
-//hide x until needed
-$(".x").hide();
-//hide text until svgs are clicked
-$("article").hide();
-
 //hide menu until clicked
 menuHidden=true;
 $(".menu ul").hide();
@@ -196,64 +196,80 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 //listen for clicked svgs and make big AF
 $("[state='small']").click(function(e){
   $(this).attr("state", "bigAF");
-  if ($(this).hasClass("wireframes")){
-  	  $('article p').empty();
-  	  $('article p').load("arts/wireframes.txt");
-  	  makeBigAF("translateX(10px)");
-  }
-  if ($(this).hasClass("mobile")){
-  	  $('article').empty();
-  	  $('article').prepend($('<p>').load("../arts/mobile.txt"));
-  	  makeBigAF("translateX(10px)");
-  }
-  if ($(this).hasClass("proto")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/proto.txt"));
-  	  makeBigAF("translateX(-7px)");
-  }
-  if ($(this).hasClass("desktop")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/desktop.txt"));
-  	  makeBigAF("translateX(-7px)");
-  }
-  if ($(this).hasClass("user")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/user.txt"));
-  	  makeBigAF("translateY(-15px) translateX(8px)");
-  }
-  if ($(this).hasClass("poc")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/poc.txt"));
-  	  makeBigAF("translateY(-15px) translateX(8px)");
-  }
-  if ($(this).hasClass("eval")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/eval.txt"));
-  	  makeBigAF("translateY(-15px) translateX(-8px)");
-  }
-  if ($(this).hasClass("presen")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/presen.txt"));
-  	  makeBigAF("translateY(-15px) translateX(-8px)");
-  }
-  if ($(this).hasClass("usability")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/usabilty.txt"));
-  	  makeBigAF("translateY(-30px)");
-  }
-  if ($(this).hasClass("custom")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/custom.txt"));
-  	  makeBigAF("translateY(-30px)");
+  var CLASSNAME = $(this).attr('class').replace('svg ', '');
+  switch (CLASSNAME){
+  	case "wireframes":
+  	case "mobile":
+  		makeBigAF("translateX(10px)");
+  		break;
+  	case "wireframes":
+  		$('article p').load("arts/wireframes.txt");
+  		break;
+  	case "mobile":
+  		$('article p').load("arts/mobile.txt");
+  		break;
+  	case "proto":
+  	case "desktop":
+  		makeBigAF("translateX(-7px)");
+  		break;
+  	case "proto":
+  		$('article p').load("arts/proto.txt");
+  		break;
+  	case "desktop":
+  		$('article p').load("arts/desktop.txt");
+  		break;
+  	case "user":
+  	case "poc":
+  		makeBigAF("translateY(-15px) translateX(8px)");
+  		break;
+  	case "user":
+  		$('article p').load("arts/user.txt");
+  		break;
+  	case "poc":
+  		$('article p').load("arts/poc.txt");
+  		break;
+  	case "eval":
+  	case "presen":
+  		makeBigAF("translateY(-15px) translateX(-8px)");
+  		break;
+  	case "eval":
+  		$('article p').load("arts/eval.txt");
+  		break;
+  	case "presen":
+  		$('article p').load("arts/presen.txt");
+  		break;
+  	case "usability":
+  	case "custom":
+  		makeBigAF("translateY(-30px)");
+  		break;
+  	case "usability":
+  		$('article p').load("arts/usability.txt");
+  		break;
+  	case "custom":
+  		$('article p').load("arts/custom.txt");
+  		break;
+  	default:
+  		console.log("It didn't work");
+  		break;
   }
 });
 
+
+//hide x until needed
+$(".x").hide();
+//hide text until svgs are clicked
+$("article").hide();
 //listen for x click then make small AF
 $(".x").click(function(){
+  var TIMING = .75;
   $("article").hide();
-  norm("[state='bigAF'] div svg", 2);
-  norm("[state='bigAF'] div svg g#Shadow", 2);
-  norm("[state='bigAF'] div svg g#icon", 2);
+  norm("[state='bigAF'] div svg", TIMING);
+  norm("[state='bigAF'] div svg g#Shadow", TIMING);
+  norm("[state='bigAF'] div svg g#icon", TIMING);
+
+  //allow user to scroll again
+  $(document).unbind('scroll'); 
+  $('body').css({'overflow':'visible'});
   $("[state='bigAF']").attr("state", "small");
   $(".x").hide();
 });
