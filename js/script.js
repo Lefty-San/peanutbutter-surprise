@@ -192,51 +192,43 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 $("[state='small']").click(function(e){
   $(this).attr("state", "bigAF");
   if ($(this).hasClass("wireframes")){
-  	  $('article p').load("arts/wireframes.txt");
+  	  $('.article1 p').load("arts/wireframes.txt");
   	  makeBigAF("translateX(10px)");
   }
   else if ($(this).hasClass("mobile")){
-  	  $('article').prepend($('<p>').load("../arts/mobile.txt"));
+  	  $('.article2 p').load("arts/proto.txt");
   	  makeBigAF("translateX(10px)");
   }
   else if ($(this).hasClass("proto")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/proto.txt"));
+  	  $('.article1 p').load("arts/proto.txt");
   	  makeBigAF("translateX(-7px)");
   }
   else if ($(this).hasClass("desktop")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/desktop.txt"));
+  	  $('.article2 p').load("arts/proto.txt");
   	  makeBigAF("translateX(-7px)");
   }
   else if ($(this).hasClass("user")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/user.txt"));
+  	  $('.article1 p').load("arts/proto.txt");
   	  makeBigAF("translateY(-15px) translateX(8px)");
   }
   else if ($(this).hasClass("poc")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/poc.txt"));
+  	  $('.article2 p').load("arts/proto.txt");
   	  makeBigAF("translateY(-15px) translateX(8px)");
   }
   else if ($(this).hasClass("eval")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/eval.txt"));
+  	  $('.article1 p').load("arts/proto.txt");
   	  makeBigAF("translateY(-15px) translateX(-8px)");
   }
   else if ($(this).hasClass("presen")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/presen.txt"));
+  	  $('.article2 p').load("arts/proto.txt");
   	  makeBigAF("translateY(-15px) translateX(-8px)");
   }
   else if ($(this).hasClass("usability")){
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/usabilty.txt"));
+  	  $('.article1 p').load("arts/proto.txt");
   	  makeBigAF("translateY(-30px)");
   }
   else{
-  	  $('article').empty();
-  	  $('article').append($('<p>').load("../arts/custom.txt"));
+  	  $('.article2 p').load("arts/proto.txt");
   	  makeBigAF("translateY(-30px)");
   }
 });
@@ -250,6 +242,7 @@ $("article").hide();
 $(".x").click(function(){
   var TIMING = .75;
   $("article").hide();
+  $("article p").empty();
   norm("[state='bigAF'] div svg", TIMING);
   norm("[state='bigAF'] div svg g#Shadow", TIMING);
   norm("[state='bigAF'] div svg g#icon", TIMING);
