@@ -207,6 +207,8 @@ nav {
   z-index: 3;
   width: 100%;
   text-align: center; }
+  #page2 article p, #page3 article p {
+    color: #ffffff; }
 
 #page4 {
   background-color: #f9941f;
