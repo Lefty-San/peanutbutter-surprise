@@ -36,11 +36,6 @@ function makeBigAF(translate){
 	  	transformOrigin:"50% 50%",
 	  	ease:Power2.easeInOut
 	});
-	//lock scrolling
-	$('body').css({'overflow':'hidden'});
-    $(document).bind('scroll',function () { 
-       	window.scrollTo(0,0); 
-    });
 	setTimeout(function(){$(".x").show();}, (TIMING*1000));
 	setTimeout(function(){$("article").show();}, (TIMING*1000));
 }
@@ -196,61 +191,53 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 //listen for clicked svgs and make big AF
 $("[state='small']").click(function(e){
   $(this).attr("state", "bigAF");
-  var CLASSNAME = $(this).attr('class').replace('svg ', '');
-  switch (CLASSNAME){
-  	case "wireframes":
-  	case "mobile":
-  		makeBigAF("translateX(10px)");
-  		break;
-  	case "wireframes":
-  		$('article p').load("arts/wireframes.txt");
-  		break;
-  	case "mobile":
-  		$('article p').load("arts/mobile.txt");
-  		break;
-  	case "proto":
-  	case "desktop":
-  		makeBigAF("translateX(-7px)");
-  		break;
-  	case "proto":
-  		$('article p').load("arts/proto.txt");
-  		break;
-  	case "desktop":
-  		$('article p').load("arts/desktop.txt");
-  		break;
-  	case "user":
-  	case "poc":
-  		makeBigAF("translateY(-15px) translateX(8px)");
-  		break;
-  	case "user":
-  		$('article p').load("arts/user.txt");
-  		break;
-  	case "poc":
-  		$('article p').load("arts/poc.txt");
-  		break;
-  	case "eval":
-  	case "presen":
-  		makeBigAF("translateY(-15px) translateX(-8px)");
-  		break;
-  	case "eval":
-  		$('article p').load("arts/eval.txt");
-  		break;
-  	case "presen":
-  		$('article p').load("arts/presen.txt");
-  		break;
-  	case "usability":
-  	case "custom":
-  		makeBigAF("translateY(-30px)");
-  		break;
-  	case "usability":
-  		$('article p').load("arts/usability.txt");
-  		break;
-  	case "custom":
-  		$('article p').load("arts/custom.txt");
-  		break;
-  	default:
-  		console.log("It didn't work");
-  		break;
+  if ($(this).hasClass("wireframes")){
+  	  $('article p').load("arts/wireframes.txt");
+  	  makeBigAF("translateX(10px)");
+  }
+  else if ($(this).hasClass("mobile")){
+  	  $('article').prepend($('<p>').load("../arts/mobile.txt"));
+  	  makeBigAF("translateX(10px)");
+  }
+  else if ($(this).hasClass("proto")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/proto.txt"));
+  	  makeBigAF("translateX(-7px)");
+  }
+  else if ($(this).hasClass("desktop")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/desktop.txt"));
+  	  makeBigAF("translateX(-7px)");
+  }
+  else if ($(this).hasClass("user")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/user.txt"));
+  	  makeBigAF("translateY(-15px) translateX(8px)");
+  }
+  else if ($(this).hasClass("poc")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/poc.txt"));
+  	  makeBigAF("translateY(-15px) translateX(8px)");
+  }
+  else if ($(this).hasClass("eval")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/eval.txt"));
+  	  makeBigAF("translateY(-15px) translateX(-8px)");
+  }
+  else if ($(this).hasClass("presen")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/presen.txt"));
+  	  makeBigAF("translateY(-15px) translateX(-8px)");
+  }
+  else if ($(this).hasClass("usability")){
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/usabilty.txt"));
+  	  makeBigAF("translateY(-30px)");
+  }
+  else{
+  	  $('article').empty();
+  	  $('article').append($('<p>').load("../arts/custom.txt"));
+  	  makeBigAF("translateY(-30px)");
   }
 });
 
@@ -266,10 +253,6 @@ $(".x").click(function(){
   norm("[state='bigAF'] div svg", TIMING);
   norm("[state='bigAF'] div svg g#Shadow", TIMING);
   norm("[state='bigAF'] div svg g#icon", TIMING);
-
-  //allow user to scroll again
-  $(document).unbind('scroll'); 
-  $('body').css({'overflow':'visible'});
   $("[state='bigAF']").attr("state", "small");
   $(".x").hide();
 });
