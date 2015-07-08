@@ -1,22 +1,12 @@
 /* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
-.sample-animation {
-  -webkit-animation: sample 5s ease-in-out forward;
-  /* Safari 4+ */
-  -moz-animation: sample 5s ease-in-out forward;
-  /* Fx 5+ */
-  -o-animation: sample 5s ease-in-out forward;
-  /* Opera 12+ */
-  animation: sample 5s ease-in-out forward;
-  /* IE 10+, Fx 29+ */ }
-
 body {
   width: 100%;
-  margin: 0 auto; }
+  margin: 0; }
 
 .mainContainer {
   width: 100%;
   overflow: hidden;
-  margin: 0 auto; }
+  margin: 0; }
 
 h1, h2, p {
   font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
@@ -39,36 +29,25 @@ nav {
     background: url(../img/iPhone/PKLogo.png);
     background-size: 100%;
     width: 46px;
+    position: absolute;
     height: 46px;
     display: inline-block;
     margin-top: 10px; }
   nav .menu {
     display: inline-block;
-    float: right; }
+    margin-left: 40px; }
     nav .menu ul {
       color: #666666;
-      font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-      margin-top: 50px;
-      background-color: #ffffff;
-      padding-bottom: 10px;
-      padding-right: 10px;
-      border-bottom-left-radius: 5px; }
+      font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
       nav .menu ul a, nav .menu ul a:visited {
         color: #666666;
+        font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        font-weight: 300;
+        font-stretch: normal;
         text-decoration: none; }
       nav .menu ul li {
         list-style: none;
-        margin-left: -20px; }
-    nav .menu .image {
-      max-height: 21px;
-      margin-right: 16px;
-      float: right;
-      background: url(../img/iPhone/Menu.png);
-      background-size: 100%;
-      width: 28px;
-      height: 21px;
-      display: inline-block;
-      margin-top: 22px; }
+        display: inline-block; }
   nav .fullMenu {
     display: none; }
 
@@ -373,9 +352,11 @@ div[state=bigAF] {
   z-index: 1; }
 
 .lp_graphic {
-  background: url(../img/iPhone/LP_Graphic.png) 100% 100%;
+  background: url(../img/iPhone/LP_Graphic@2x.png);
   height: 365px;
-  width: 295px; }
+  width: 295px;
+  background-size: 100%;
+  margin: 0 auto; }
 
 .x {
   background: url(../img/iPhone/WhiteX.png) 100% 100%;
@@ -394,9 +375,27 @@ div[state=bigAF] {
   nav .logo {
     background: url(../img/iPhone/PKLogo@2x.png);
     background-size: 100%; }
-  nav .menu .image {
-    background: url(../img/iPhone/Menu@2x.png);
-    background-size: 100%; }
+  nav .menu {
+    float: right; }
+    nav .menu .image {
+      max-height: 21px;
+      margin-right: 16px;
+      float: right;
+      background: url(../img/iPhone/Menu.png);
+      background-size: 100%;
+      width: 28px;
+      height: 21px;
+      display: inline-block;
+      margin-top: 22px; }
+    nav .menu ul {
+      margin-top: 50px;
+      background-color: #ffffff;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      border-bottom-left-radius: 5px; }
+    nav .menu li {
+      margin-left: -20px;
+      display: block; }
 
   #page1 .dwnArrow {
     background: url(../img/iPhone/Scroll_Arrow@2x.png);
@@ -407,7 +406,8 @@ div[state=bigAF] {
     height: 365px;
     width: 295px;
     background: url(../img/iPhone/LP_Graphic@2x.png) 100% 100%;
-    background-size: 100%; }
+    background-size: 100%;
+    margin: 0; }
 
   .svg div {
     min-height: 100px; } }
@@ -416,24 +416,6 @@ div[state=bigAF] {
   .supported_orientation {
     display: block; } }
 /* iPad Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  nav .menu {
-    display: none; }
-  nav .fullMenu {
-    display: inline-block;
-    margin-top: 18px;
-    position: absolute; }
-    nav .fullMenu ul li {
-      display: inline-block;
-      margin: 0 1em;
-      color: #a0a2a3;
-      font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-      font-weight: 300;
-      font-stretch: normal;
-      font-size: 20px; }
-      nav .fullMenu ul li a, nav .fullMenu ul li a:active, nav .fullMenu ul li a:visited {
-        color: #a0a2a3;
-        text-decoration: none; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */

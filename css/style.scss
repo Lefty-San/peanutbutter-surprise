@@ -23,24 +23,14 @@ $orange: #f9941f;
   background-size: cover;
 }
 
-@mixin animation($name, $duration, $timing, $direction) {
-  -webkit-animation: $name $duration $timing $direction; /* Safari 4+ */
-  -moz-animation:    $name $duration $timing $direction; /* Fx 5+ */
-  -o-animation:      $name $duration $timing $direction; /* Opera 12+ */
-  animation:         $name $duration $timing $direction; /* IE 10+, Fx 29+ */
-}
-.sample-animation {
-  @include animation(sample, 5s, ease-in-out, forward);
-}
-
 body{
 	width: 100%;
-	margin: 0 auto;
+	margin: 0;
 }
 .mainContainer {
 	width: 100%;
 	overflow: hidden;
-	margin: 0 auto;
+	margin: 0;
 }
 
 h1, h2, p{
@@ -65,41 +55,27 @@ nav {
     background: $iphone_pk_logo;
     background-size: 100%;
     width:46px;
+    position: absolute;
     height:46px;
     display:inline-block;
     margin-top:10px;
   }
   .menu{
   	display: inline-block;
-  	float: right;
+    margin-left: 40px;
   	ul{
   		color: #666666;
   		font-family: $font-hncb, $font-stack;
-  		margin-top: 50px;
-  		background-color: $white;
-  		padding-bottom: 10px;
-  		padding-right: 10px;
-  		border-bottom-left-radius: 5px;
   		a, a:visited{
   			color: #666666;
+        @include helvetica-neue-light;
   			text-decoration: none;
   		}
   		li{
   			list-style: none;
-  			margin-left: -20px;
+        display: inline-block;
   		}
   	}
-  	.image{
-	  	max-height: 21px;
-	  	margin-right: 16px;
-	  	float: right;
-	    background: $iphone_menu;
-	    background-size:100%;
-	    width:28px;
-	    height:21px;
-	    display:inline-block;
-	    margin-top:22px;
-	   }
   }
   .fullMenu {
     display:none;
@@ -452,9 +428,11 @@ div[state=bigAF]{
 
 // images
 .lp_graphic {
-  background: $iphone_lp_g 100% 100%;
+  background: $iphone_lp_g2x;
   height: 365px;
   width: 295px;
+  background-size: 100%;
+  margin: 0 auto;
 }
 .x {
 	background: $iphone_white_x 100% 100%;
@@ -481,10 +459,29 @@ div[state=bigAF]{
         background-size: 100%;
       }
       .menu {
-      	.image{
-	        background: $iphone_menu2x;
-	        background-size:100%;
-	    }
+        float: right;
+        .image{
+          max-height: 21px;
+          margin-right: 16px;
+          float: right;
+          background: $iphone_menu;
+          background-size:100%;
+          width:28px;
+          height:21px;
+          display:inline-block;
+          margin-top:22px;
+        }
+        ul {
+          margin-top: 50px;
+          background-color: $white;
+          padding-bottom: 10px;
+          padding-right: 10px;
+          border-bottom-left-radius: 5px;
+        }
+        li {
+          margin-left: -20px;
+          display: block;
+        }
       }
     }
     #page1 {
@@ -496,9 +493,10 @@ div[state=bigAF]{
     }
     .lp_graphic {
       height: 365px;
- 		width:295px;
+ 		  width:295px;
       background:$iphone_lp_g2x 100% 100%;
       background-size:100%;
+      margin: 0;
     }
     .svg {
       div {
@@ -525,29 +523,7 @@ div[state=bigAF]{
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-    nav {
-      .menu {
-        display:none;
-      }
-      .fullMenu {
-        display:inline-block;
-        margin-top: 18px;
-        position: absolute;
-          ul {
-            li {
-              display:inline-block;
-              margin:0 1em;
-              color: #a0a2a3;
-              @include helvetica-neue-light();
-              font-size: 20px;
-              a, a:active, a:visited {
-                color: #a0a2a3;
-                text-decoration: none;
-              }
-            }
-          }
-      }
-    }
+    
 }
 
 /* iPad Landscape */

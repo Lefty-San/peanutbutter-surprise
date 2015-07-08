@@ -3,6 +3,25 @@ $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 });
 
+// Stop checking user Agent, check for screen dimentions
+//Put this at the top so it can be used
+console.log(window.outerWidth + '\n' + window.outerHeight);
+var ow = window.outerWidth,
+	oh = window.outerHeight;
+
+if ( ow < 500 ) {
+  $('body').addClass("smartPhone");
+} else if ( 500 < ow && ow < 800 ) {
+  $('body').addClass("tabletPort");
+} else if ( 800 < ow && ow < 1300 ) {
+  $('body').addClass("tabletLand");
+} else if ( ow > 1300 ) {
+  $('body').addClass("desktop");
+} else {
+  console.log("dude what are you doing? grab a more common device");
+}
+console.log($('body').attr("class"));
+
 //  condensed slider functions
 var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
 function smlImage() {
@@ -101,7 +120,7 @@ function animateRight(){
 	});
 	TweenMax.to( $("#image"), .3, {
 		transform: "scale(.9, .9) translateX(15px)",
-		opacity: ".26",
+		opacity: "",
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut,
 		onComplete: moveRight
@@ -117,7 +136,7 @@ function animateLeft(){
 	});
 	TweenMax.to( $("#image"), .3, {
 		transform: "scale(.9, .9) translateX(-15px)",
-		opacity: ".26",
+		opacity: "",
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut,
 		onComplete: moveLeft
@@ -133,8 +152,10 @@ $(".rightButt").click(animateRight);
 
 //hide menu until clicked
 menuHidden=true;
-$(".menu ul").hide();
-$(".menu ul").css('margin-right', '-100px');
+if ($('body').attr("class")=="smartPhone"){
+	$(".menu ul").hide();
+	$(".menu ul").css('margin-right', '-100px');
+}
 $(".menu .image").click(function(){
 	if (menuHidden == false){
 		menuHidden=true;
@@ -270,18 +291,3 @@ $(document).keydown(function(e) {
   }
 
 });
-
-// Stop checking user Agent, check for screen dimentions
-console.log(window.outerWidth + '\n' + window.outerHeight);
-var ow = window.outerWidth,
-      oh = window.outerHeight;
-
-    if ( ow < 500 ) {
-      $('body').addClass("smartPhone");
-    } else if ( 500 < ow && ow < 1300 ) {
-      $('body').addClass("tablet");
-    } else if ( ow > 1300 ) {
-      $('body').addClass("desktop");
-    } else {
-      console.log("dude what are you doing? grab a more common device");
-    }
