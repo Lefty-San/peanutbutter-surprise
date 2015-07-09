@@ -267,14 +267,14 @@ $("[state='small']").click(function(e){
 //hide x until needed
 $(".x").hide();
 //hide text until svgs are clicked
-$("#page2 article").hide();
-$("#page3 article").hide();
+$(".article1").hide();
+$(".article2").hide();
 //listen for x click then make small AF
 $(".x").click(function(){
   bigExists = false;
   var TIMING = .75;
-  $("#page2 article").hide();
-  $("#page3 article").hide();
+  $(".article1").hide();
+  $(".article2").hide();
   norm("[state='bigAF'] div svg", TIMING);
   norm("[state='bigAF'] div svg g#Shadow", TIMING);
   norm("[state='bigAF'] div svg g#icon", TIMING);
