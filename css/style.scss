@@ -46,6 +46,7 @@ nav {
 	vertical-align: middle;
   position: fixed;
   top: 0;
+  z-index: 10;
   width: 100%;
   .logo {
   	margin-left: 16px;
@@ -81,8 +82,6 @@ nav {
 #page1 {
 	background-color: $orange;
 	width: 100%;
-  margin-top: 65px;
-
    h1{
   	font-size: 25px;
   	@include helvetica-neue-bold-condensed();
@@ -546,7 +545,6 @@ div[state=bigAF]{
       }
     }
     #page1{
-      margin-top: 108px;
       header{
         margin-left: 20px;
       }
@@ -588,7 +586,7 @@ div[state=bigAF]{
     }
     #page2, #page3{
       header{
-        margin-top: 133px;
+        margin-top: 32px;
         h1{
           font-size: 52pt;
           padding-right: 10px;
@@ -604,10 +602,15 @@ div[state=bigAF]{
         font-size: 24pt;
       }
       section.svgs{
-        margin: 184px 134px 0 134px;
+        margin: 84px 34px 0 34px;
         padding-bottom: 40px;
-        .proto{
-          margin: 0px;
+        .proto, .desktop{
+          margin: 0 80px;
+        }
+        .eval, .usability, .custom, .presen{
+          margin-top: 94px;
+          margin-right: 40px;
+          margin-left: 40px;
         }
       }
     }

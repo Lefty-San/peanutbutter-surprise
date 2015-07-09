@@ -149,6 +149,51 @@ function animateLeft(){
 	});
 }
 
+function navDown(){
+	var TIMING = .5;
+	TweenMax.to($("nav"), TIMING,{
+		rotationX: 0,
+		transformPerspective: 300,
+		transformOrigin: "50% 0%",
+		ease:Power2.easeIn
+	});
+	$("#page1").css("padding-top", $('nav').height());
+}
+
+function navUp(){
+	var TIMING = .5;
+	TweenLite.to($("nav"), TIMING,{
+		rotationX: -90,
+		transformPerspective: 300,
+		transformOrigin: "50% 0",
+		ease:Power2.easeIn
+	});
+	$("#page1").css("padding-top", "0");
+}
+
+function scrollFunc(e) {
+    if ( typeof scrollFunc.x == 'undefined' ) {
+        scrollFunc.x=window.pageXOffset;
+        scrollFunc.y=window.pageYOffset;
+    }
+    var diffX=scrollFunc.x-window.pageXOffset;
+    var diffY=scrollFunc.y-window.pageYOffset;
+
+    if( diffY<0 ) {
+        // Scroll down
+        navUp();
+    } else if( diffY>0 ) {
+        // Scroll up
+        navDown();
+    } else {
+        // First scroll event -- do nothing
+    }
+    scrollFunc.x=window.pageXOffset;
+    scrollFunc.y=window.pageYOffset;
+}
+$("#page1").css("padding-top", $('nav').height());
+window.onscroll=scrollFunc;
+
 //slider logic
 current=1;
 moveCirc(1,1);
