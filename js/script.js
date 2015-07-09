@@ -28,7 +28,13 @@ function smlImage() {
   var smlDex = sml[current-1];
   $('#image').attr("class", smlDex);
 }
-  
+//slider logic
+var current=1;
+$(".num"+current).children().addClass("large");
+$(".leftbutt").css('visibility','hidden');
+$(".leftButt").click(function(){
+	console.log("clicked");
+});
 //functions
 function makeBigAF(translate){
 	var TIMING = 1.5;
@@ -193,6 +199,7 @@ $("[scroll]").click( function(){
 });
 
 //load in page2 svgs
+  console.log('function run');
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
 $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
 $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
@@ -271,6 +278,7 @@ $(".x").click(function(){
   norm("[state='bigAF'] div svg", TIMING);
   norm("[state='bigAF'] div svg g#Shadow", TIMING);
   norm("[state='bigAF'] div svg g#icon", TIMING);
+
   $("[state='bigAF']").attr("state", "small");
   $(".x").hide();
 });
