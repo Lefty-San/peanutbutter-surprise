@@ -155,7 +155,7 @@ function navDown(){
 		rotationX: 0,
 		transformPerspective: 300,
 		transformOrigin: "50% 0%",
-		ease:Power2.easeIn
+		ease:Bounce.easeOut
 	});
 	$("#page1").css("padding-top", $('nav').height());
 }
