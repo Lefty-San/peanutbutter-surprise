@@ -9,7 +9,6 @@ function smlImage() {
   var smlDex = sml[current-1];
   $('#image').attr("class", smlDex);
 }
-
 //slider logic
 var current=1;
 $(".num"+current).children().addClass("large");
@@ -38,11 +37,6 @@ function makeBigAF(translate){
 	  	transformOrigin:"50% 50%",
 	  	ease:Power2.easeInOut
 	});
-	//lock scrolling
-	$('body').css({'overflow':'hidden'});
-    $(document).bind('scroll',function () {
-       	window.scrollTo(0,0);
-    });
 	setTimeout(function(){$(".x").show();}, (TIMING*1000));
 	setTimeout(function(){$("article").show();}, (TIMING*1000));
 }
@@ -197,64 +191,53 @@ $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
 $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
 //listen for clicked svgs and make big AF
+bigExists = false;
 $("[state='small']").click(function(e){
-  $(this).attr("state", "bigAF");
-  var CLASSNAME = $(this).attr('class').replace('svg ', '');
-  switch (CLASSNAME){
-  	case "wireframes":
-  	case "mobile":
-  		makeBigAF("translateX(10px)");
-  		break;
-  	case "wireframes":
-  		$('article p').load("arts/wireframes.txt");
-  		break;
-  	case "mobile":
-  		$('article p').load("arts/mobile.txt");
-  		break;
-  	case "proto":
-  	case "desktop":
-  		makeBigAF("translateX(-7px)");
-  		break;
-  	case "proto":
-  		$('article p').load("arts/proto.txt");
-  		break;
-  	case "desktop":
-  		$('article p').load("arts/desktop.txt");
-  		break;
-  	case "user":
-  	case "poc":
-  		makeBigAF("translateY(-15px) translateX(8px)");
-  		break;
-  	case "user":
-  		$('article p').load("arts/user.txt");
-  		break;
-  	case "poc":
-  		$('article p').load("arts/poc.txt");
-  		break;
-  	case "eval":
-  	case "presen":
-  		makeBigAF("translateY(-15px) translateX(-8px)");
-  		break;
-  	case "eval":
-  		$('article p').load("arts/eval.txt");
-  		break;
-  	case "presen":
-  		$('article p').load("arts/presen.txt");
-  		break;
-  	case "usability":
-  	case "custom":
-  		makeBigAF("translateY(-30px)");
-  		break;
-  	case "usability":
-  		$('article p').load("arts/usability.txt");
-  		break;
-  	case "custom":
-  		$('article p').load("arts/custom.txt");
-  		break;
-  	default:
-  		console.log("It didn't work");
-  		break;
-  }
+	if(bigExists == false){
+	  bigExists = true;
+	  $(this).attr("state", "bigAF");
+
+	  if ($(this).hasClass("wireframes")){
+	  	  $('.article1 p').load("arts/wireframes.txt");
+	  	  makeBigAF("translateX(10px)");
+	  }
+	  else if ($(this).hasClass("mobile")){
+	  	  $('.article2 p').load("arts/proto.txt");
+	  	  makeBigAF("translateX(10px)");
+	  }
+	  else if ($(this).hasClass("proto")){
+	  	  $('.article1 p').load("arts/proto.txt");
+	  	  makeBigAF("translateX(-7px)");
+	  }
+	  else if ($(this).hasClass("desktop")){
+	  	  $('.article2 p').load("arts/proto.txt");
+	  	  makeBigAF("translateX(-7px)");
+	  }
+	  else if ($(this).hasClass("user")){
+	  	  $('.article1 p').load("arts/proto.txt");
+	  	  makeBigAF("translateY(-15px) translateX(8px)");
+	  }
+	  else if ($(this).hasClass("poc")){
+	  	  $('.article2 p').load("arts/proto.txt");
+	  	  makeBigAF("translateY(-15px) translateX(8px)");
+	  }
+	  else if ($(this).hasClass("eval")){
+	  	  $('.article1 p').load("arts/proto.txt");
+	  	  makeBigAF("translateY(-15px) translateX(-8px)");
+	  }
+	  else if ($(this).hasClass("presen")){
+	  	  $('.article2 p').load("arts/proto.txt");
+	  	  makeBigAF("translateY(-15px) translateX(-8px)");
+	  }
+	  else if ($(this).hasClass("usability")){
+	  	  $('.article1 p').load("arts/proto.txt");
+	  	  makeBigAF("translateY(-30px)");
+	  }
+	  else{
+	  	  $('.article2 p').load("arts/proto.txt");
+	  	  makeBigAF("translateY(-30px)");
+	  }
+	}
 });
 
 
@@ -264,15 +247,14 @@ $(".x").hide();
 $("article").hide();
 //listen for x click then make small AF
 $(".x").click(function(){
+  bigExists = false;
   var TIMING = .75;
   $("article").hide();
+  $("article p").empty();
   norm("[state='bigAF'] div svg", TIMING);
   norm("[state='bigAF'] div svg g#Shadow", TIMING);
   norm("[state='bigAF'] div svg g#icon", TIMING);
 
-  //allow user to scroll again
-  $(document).unbind('scroll');
-  $('body').css({'overflow':'visible'});
   $("[state='bigAF']").attr("state", "small");
   $(".x").hide();
 });
