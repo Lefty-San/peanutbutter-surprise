@@ -153,7 +153,7 @@ function navDown(){
 	var TIMING = .5;
 	TweenMax.to($("nav"), TIMING,{
 		rotationX: 0,
-		transformPerspective: 300,
+		transformPerspective: 500,
 		transformOrigin: "50% 0%",
 		ease:Bounce.easeOut
 	});
@@ -161,7 +161,7 @@ function navDown(){
 }
 
 function navUp(){
-	var TIMING = .5;
+	var TIMING = .2;
 	TweenLite.to($("nav"), TIMING,{
 		rotationX: -90,
 		transformPerspective: 300,
@@ -181,10 +181,10 @@ function scrollFunc(e) {
 
     if( diffY<0 ) {
         // Scroll down
-        navUp();
+        $("nav").attr("class","close");
     } else if( diffY>0 ) {
         // Scroll up
-        navDown();
+        $("nav").attr("class","open");
     } else {
         // First scroll event -- do nothing
     }
