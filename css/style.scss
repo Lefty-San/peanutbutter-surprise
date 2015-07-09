@@ -44,14 +44,8 @@ nav {
 	font-style: Helvetica Neue;
 	height: 65px;
 	vertical-align: middle;
-
-  .img {
-  	display: inline-block;
-  	vertical-align: middle;
-  }
   .logo {
   	margin-left: 16px;
-  	max-height: 46px;
     background: $iphone_pk_logo;
     background-size: 100%;
     width:46px;
@@ -65,15 +59,15 @@ nav {
     margin-left: 40px;
   	ul{
   		color: #666666;
-  		font-family: $font-hncb, $font-stack;
+  		@include helvetica-neue-light();
   		a, a:visited{
-  			color: #666666;
+  			color: #a0a2a3;
         @include helvetica-neue-light;
   			text-decoration: none;
   		}
   		li{
   			list-style: none;
-        display: inline-block;
+        //display: inline-block;
   		}
   	}
   }
@@ -87,8 +81,7 @@ nav {
 
    h1{
   	font-size: 25px;
-  	font-family: $font-hncb, $font-stack;
-    font-stretch: condensed;
+  	@include helvetica-neue-bold-condensed();
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
@@ -97,8 +90,7 @@ nav {
     }
   h2{
   	font-size: 25px;
-  	font-family: $font-hncb, $font-stack;
-    font-stretch: condensed;
+  	@include helvetica-neue-bold-condensed();
   	color: $white;
   	margin-left: 16px;
   	margin-top:0px;
@@ -109,7 +101,7 @@ nav {
     height:19px;
   	margin:0 auto;
     padding-bottom:15px;
-    background:$iphone_scroll_arrow;
+    background:$iphone_scroll_arrow2x;
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -168,7 +160,7 @@ nav {
 	padding-top: 20px;
 	padding-bottom: 20px;
 
-  .title{
+  header{
   	width: 100%;
   }
 
@@ -235,7 +227,7 @@ nav {
 	background-color: $orange;
 	text-align: center;
 	padding-bottom: 50px;
-	.heading{
+	header{
 		width: 100%;
 	}
 	h1{
@@ -477,6 +469,7 @@ div[state=bigAF]{
           padding-bottom: 10px;
           padding-right: 10px;
           border-bottom-left-radius: 5px;
+          display: block;
         }
         li {
           margin-left: -20px;
@@ -489,6 +482,9 @@ div[state=bigAF]{
         background: $iphone_scroll_arrow2x;
         background-size:100%;
         background-repeat: no-repeat;
+      }
+      article {
+        display: none;
       }
     }
     .lp_graphic {
@@ -521,9 +517,48 @@ div[state=bigAF]{
 @media only screen
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
-  and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2) {
-    
+    nav{
+      height: 108px;
+      .logo{
+        margin-top: 15px;
+        margin-left: 52px;
+        width: 83px;
+        height: 83px;
+        background-image: $iPad_pk_logo2x;
+      }
+      .menu{
+        margin-left: 120px;
+        margin-top: 20px;
+        ul{
+          li{
+            display: inline-block;
+            font-size: 24px;
+            
+          }
+        }
+      }
+    }
+    #page1{
+      h1{
+        font-size: 52px;
+        width: 560px;
+      }
+      h2{
+        font-size: 52px;
+      }
+      .lp_graphic {
+        background-image: $iPad_port_lp_g2x 100% 100%;
+        height: 645px;
+        width: 521px;
+      }
+      article{
+        display: block;
+      }
+      .dwnArrow{
+        padding-bottom: 26px;
+      }
+    }
 }
 
 /* iPad Landscape */

@@ -185,9 +185,11 @@ $("[scroll]").click( function(){
         scrollTop: $(tar).offset().top
     }, 1000);
     // add something to hide the menu when mobile dropdown
-    $(".menu ul").css('margin-right', '-100px');
-    $('.menu ul').hide();
-    menuHidden = true;
+    if ($("body").attr('class')=="smartPhone"){
+	    $(".menu ul").css('margin-right', '-100px');
+	    $('.menu ul').hide();
+	    menuHidden = true;
+	}
 });
 
 //load in page2 svgs
@@ -258,13 +260,14 @@ $("[state='small']").click(function(e){
 //hide x until needed
 $(".x").hide();
 //hide text until svgs are clicked
-$("article").hide();
+$("#page2 article").hide();
+$("#page3 article").hide();
 //listen for x click then make small AF
 $(".x").click(function(){
   bigExists = false;
   var TIMING = .75;
-  $("article").hide();
-  $("article p").empty();
+  $("#page2 article").hide();
+  $("#page3 article").hide();
   norm("[state='bigAF'] div svg", TIMING);
   norm("[state='bigAF'] div svg g#Shadow", TIMING);
   norm("[state='bigAF'] div svg g#icon", TIMING);
