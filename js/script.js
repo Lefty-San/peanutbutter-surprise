@@ -9,6 +9,48 @@ console.log(window.outerWidth + '\n' + window.outerHeight);
 var ow = window.outerWidth,
 	oh = window.outerHeight;
 
+$.fn.isOnScreen = function(x, y){
+    
+    if(x == null || typeof x == 'undefined') x = 1;
+    if(y == null || typeof y == 'undefined') y = 1;
+    
+    var win = $(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var height = this.outerHeight();
+    var width = this.outerWidth();
+ 
+    if(!width || !height){
+        return false;
+    }
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + width;
+    bounds.bottom = bounds.top + height;
+    
+    var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+    if(!visible){
+        return false;   
+    }
+    
+    var deltas = {
+        top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
+        bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
+        left : Math.min(1, ( bounds.right - viewport.left ) / width),
+        right : Math.min(1, ( viewport.right - bounds.left ) / width)
+    };
+    
+    return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
+    
+};
+
 if ( ow < 500 ) {
   $('body').addClass("smartPhone");
 } else if ( 500 < ow && ow < 800 ) {
@@ -57,7 +99,8 @@ function makeBigAF(translate){
 	  	ease:Power2.easeInOut
 	});
 	setTimeout(function(){$(".x").show();}, (TIMING*1000));
-	setTimeout(function(){$("article").show();}, (TIMING*1000));
+	setTimeout(function(){$(".article1").show();}, (TIMING*1000));
+	setTimeout(function(){$(".article2").show();}, (TIMING*1000));
 }
 //hideMenu function must be called onComplete
 function hideMenu(){
@@ -154,15 +197,15 @@ function navDown(){
 	var TIMING = .5;
 	TweenMax.to($("nav"), TIMING,{
 		rotationX: 0,
-		transformPerspective: 300,
+		transformPerspective: 500,
 		transformOrigin: "50% 0%",
-		ease:Power2.easeIn
+		ease:Bounce.easeOut
 	});
 	$("#page1").css("padding-top", $('nav').height());
 }
 
 function navUp(){
-	var TIMING = .5;
+	var TIMING = .2;
 	TweenLite.to($("nav"), TIMING,{
 		rotationX: -90,
 		transformPerspective: 300,
@@ -172,7 +215,41 @@ function navUp(){
 	$("#page1").css("padding-top", "0");
 }
 
+currPage = 1;
 function scrollFunc(e) {
+	var win = $(window);
+	//console.log("depth: " + $(window).scrollTop());
+
+	if (win.scrollTop()<($("#page1").height()/1.75)){
+		currPage = 1
+	}
+	else if ((win.scrollTop()>($("#page1").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()/1.75))){
+		currPage = 2;
+	}
+	else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))){
+		currPage = 3;
+	}
+	else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()+$("#page4").height()/1.75))){
+		currPage = 4;
+	}
+	else {
+		currPage = 5;
+	}
+
+	for (var i = 1; i < 6; i++) {
+		if (i == currPage){
+			$(".pagination div.o" + i).addClass("current");
+			$(".pagination").addClass("p"+i);
+		}
+		else {
+			$(".pagination div.o" + i).removeClass("current");
+			$(".pagination").removeClass("p"+i);
+
+		}
+	};
+
+	console.log("page: " + currPage);
+
     if ( typeof scrollFunc.x == 'undefined' ) {
         scrollFunc.x=window.pageXOffset;
         scrollFunc.y=window.pageYOffset;
@@ -182,10 +259,10 @@ function scrollFunc(e) {
 
     if( diffY<0 ) {
         // Scroll down
-        navUp();
+        $("nav").attr("class","close");
     } else if( diffY>0 ) {
         // Scroll up
-        navDown();
+        $("nav").attr("class","open");
     } else {
         // First scroll event -- do nothing
     }
@@ -267,43 +344,43 @@ $("[state='small']").click(function(e){
 	  $(this).attr("state", "bigAF");
 
 	  if ($(this).hasClass("wireframes")){
-	  	  $('.article1 p').load("arts/wireframes.txt");
+	  	  $('.article1 p').load("arts/wireframes.htm");
 	  	  makeBigAF("translateX(10px)");
 	  }
 	  else if ($(this).hasClass("mobile")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/mobile.htm");
 	  	  makeBigAF("translateX(10px)");
 	  }
 	  else if ($(this).hasClass("proto")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/proto.htm");
 	  	  makeBigAF("translateX(-7px)");
 	  }
 	  else if ($(this).hasClass("desktop")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/desktop.htm");
 	  	  makeBigAF("translateX(-7px)");
 	  }
 	  else if ($(this).hasClass("user")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/user.htm");
 	  	  makeBigAF("translateY(-15px) translateX(8px)");
 	  }
 	  else if ($(this).hasClass("poc")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/poc.htm");
 	  	  makeBigAF("translateY(-15px) translateX(8px)");
 	  }
 	  else if ($(this).hasClass("eval")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/eval.htm");
 	  	  makeBigAF("translateY(-15px) translateX(-8px)");
 	  }
 	  else if ($(this).hasClass("presen")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/presen.htm");
 	  	  makeBigAF("translateY(-15px) translateX(-8px)");
 	  }
 	  else if ($(this).hasClass("usability")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/usability.htm");
 	  	  makeBigAF("translateY(-30px)");
 	  }
 	  else{
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/custom.htm");
 	  	  makeBigAF("translateY(-30px)");
 	  }
 	}
