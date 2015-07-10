@@ -214,10 +214,40 @@ function navUp(){
 	$("#page1").css("padding-top", "0");
 }
 
+currPage = 1;
 function scrollFunc(e) {
-	if ($("#page3").isOnScreen(1, 1) == true){
-		console.log("It's visible");
+	var win = $(window);
+	//console.log("depth: " + $(window).scrollTop());
+
+	if (win.scrollTop()<($("#page1").height()/1.75)){
+		currPage = 1
 	}
+	else if ((win.scrollTop()>($("#page1").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()/1.75))){
+		currPage = 2;
+	}
+	else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))){
+		currPage = 3;
+	}
+	else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()+$("#page4").height()/1.75))){
+		currPage = 4;
+	}
+	else {
+		currPage = 5;
+	}
+
+	for (var i = 1; i < 6; i++) {
+		if (i == currPage){
+			$(".pagination div.o" + i).addClass("current");
+			$(".pagination").addClass("p"+i);
+		}
+		else {
+			$(".pagination div.o" + i).removeClass("current");
+			$(".pagination").removeClass("p"+i);
+
+		}
+	};
+
+	console.log("page: " + currPage);
 
     if ( typeof scrollFunc.x == 'undefined' ) {
         scrollFunc.x=window.pageXOffset;

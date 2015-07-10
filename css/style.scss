@@ -551,14 +551,33 @@ div[state=bigAF]{
         height: 7px;
         border-radius: 50%;
         border: solid;
-        border-color: white;
         border-width: 0px;
-        background-color: #d07814;
         margin-top: 7px;
       }
       .current{
         border-width: 1px;
         background-color: transparent;
+      }
+    }
+    .p1, .p4{
+      div{
+        background-color: #d07814;
+        border-color: white;
+      }
+    }
+    .p2, .p3{
+      div{
+        background-color: $orange;
+      }
+    }
+    .p2{
+      div{
+        border-color: $white;
+      }
+    }
+    .p3{
+      div{
+        border-color: #aeaeae;
       }
     }
     nav{
