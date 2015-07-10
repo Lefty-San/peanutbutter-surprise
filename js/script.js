@@ -132,6 +132,7 @@ function animateRight(){
 		onComplete: moveRight
 	});
 }
+
 function animateLeft(){
 	TweenMax.to( $(".leftButt"), .1, {
 		transform: "scale(.75, .75) translateX(-5px)",
