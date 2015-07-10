@@ -9,6 +9,48 @@ console.log(window.outerWidth + '\n' + window.outerHeight);
 var ow = window.outerWidth,
 	oh = window.outerHeight;
 
+$.fn.isOnScreen = function(x, y){
+    
+    if(x == null || typeof x == 'undefined') x = 1;
+    if(y == null || typeof y == 'undefined') y = 1;
+    
+    var win = $(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var height = this.outerHeight();
+    var width = this.outerWidth();
+ 
+    if(!width || !height){
+        return false;
+    }
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + width;
+    bounds.bottom = bounds.top + height;
+    
+    var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+    if(!visible){
+        return false;   
+    }
+    
+    var deltas = {
+        top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
+        bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
+        left : Math.min(1, ( bounds.right - viewport.left ) / width),
+        right : Math.min(1, ( viewport.right - bounds.left ) / width)
+    };
+    
+    return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
+    
+};
+
 if ( ow < 500 ) {
   $('body').addClass("smartPhone");
 } else if ( 500 < ow && ow < 800 ) {
@@ -57,7 +99,8 @@ function makeBigAF(translate){
 	  	ease:Power2.easeInOut
 	});
 	setTimeout(function(){$(".x").show();}, (TIMING*1000));
-	setTimeout(function(){$("article").show();}, (TIMING*1000));
+	setTimeout(function(){$(".article1").show();}, (TIMING*1000));
+	setTimeout(function(){$(".article2").show();}, (TIMING*1000));
 }
 //hideMenu function must be called onComplete
 function hideMenu(){
@@ -172,6 +215,10 @@ function navUp(){
 }
 
 function scrollFunc(e) {
+	if ($("#page3").isOnScreen(1, 1) == true){
+		console.log("It's visible");
+	}
+
     if ( typeof scrollFunc.x == 'undefined' ) {
         scrollFunc.x=window.pageXOffset;
         scrollFunc.y=window.pageYOffset;
@@ -266,43 +313,43 @@ $("[state='small']").click(function(e){
 	  $(this).attr("state", "bigAF");
 
 	  if ($(this).hasClass("wireframes")){
-	  	  $('.article1 p').load("arts/wireframes.txt");
+	  	  $('.article1 p').load("arts/wireframes.htm");
 	  	  makeBigAF("translateX(10px)");
 	  }
 	  else if ($(this).hasClass("mobile")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/mobile.htm");
 	  	  makeBigAF("translateX(10px)");
 	  }
 	  else if ($(this).hasClass("proto")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/proto.htm");
 	  	  makeBigAF("translateX(-7px)");
 	  }
 	  else if ($(this).hasClass("desktop")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/desktop.htm");
 	  	  makeBigAF("translateX(-7px)");
 	  }
 	  else if ($(this).hasClass("user")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/user.htm");
 	  	  makeBigAF("translateY(-15px) translateX(8px)");
 	  }
 	  else if ($(this).hasClass("poc")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/poc.htm");
 	  	  makeBigAF("translateY(-15px) translateX(8px)");
 	  }
 	  else if ($(this).hasClass("eval")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/eval.htm");
 	  	  makeBigAF("translateY(-15px) translateX(-8px)");
 	  }
 	  else if ($(this).hasClass("presen")){
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/presen.htm");
 	  	  makeBigAF("translateY(-15px) translateX(-8px)");
 	  }
 	  else if ($(this).hasClass("usability")){
-	  	  $('.article1 p').load("arts/proto.txt");
+	  	  $('.article1 p').load("arts/usability.htm");
 	  	  makeBigAF("translateY(-30px)");
 	  }
 	  else{
-	  	  $('.article2 p').load("arts/proto.txt");
+	  	  $('.article2 p').load("arts/custom.htm");
 	  	  makeBigAF("translateY(-30px)");
 	  }
 	}

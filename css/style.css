@@ -3,19 +3,15 @@
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   transform-origin: 50% 0%;
-  transition-timing-function: cubic-bezier(0, 1.73, 1, -1.79);
-  -webkit-transition-timing-function: cubic-bezier(0, 1.73, 1, -1.79);
-  transition: all 0.3s 0s;
-  -webkit-transition: all 0.3s 0s; }
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s; }
 
 .close {
   transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0.001, 0, -1, 0, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0.001, 0, -1, 0, 0, 0, 0, 0, 1);
-  transition-timing-function: cubic-bezier(0, 1.73, 1, -1.79);
-  -webkit-transition-timing-function: cubic-bezier(0, 1.73, 1, -1.79);
   transform-origin: 50% 0%;
-  transition: all 0.3s 0.3s;
-  -webkit-transition: all 0.3s 0.3s; }
+  transition: all 0.3s ease 0.3s;
+  -webkit-transition: all 0.3s ease 0.3s; }
 
 body {
   width: 100%;
@@ -202,12 +198,12 @@ nav {
   width: 100px;
   height: 100px;
   display: inline-block; }
-#page2 article, #page3 article {
+#page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
   position: absolute;
   z-index: 3;
   width: 100%;
   text-align: center; }
-  #page2 article p, #page3 article p {
+  #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
     color: #ffffff; }
 
 #page4 {
@@ -216,7 +212,10 @@ nav {
   padding-bottom: 50px; }
   #page4 header {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+    font-weight: 600;
+    font-stretch: condensed; }
     #page4 header h1 {
       color: #ffffff;
       display: inline-block;
@@ -288,6 +287,7 @@ nav {
       font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
       font-weight: 500;
       font-stretch: condensed;
+      font-size: 15pt;
       color: #ffffff;
       display: inline-block;
       margin-top: 50px;
@@ -341,7 +341,7 @@ nav {
       margin-top: 51px;
       margin-left: 20px; }
     #page4 .circle h1 {
-      font-size: 36pt;
+      font-size: 30pt;
       display: inline-block;
       color: #ffffff;
       font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
@@ -350,7 +350,7 @@ nav {
       margin-top: 45px;
       margin-right: -20px; }
     #page4 .circle h2 {
-      font-size: 24;
+      font-size: 18pt;
       margin-left: 15px;
       color: #ffffff;
       font-family: "HelveticaNeueLightCondensed", "HelveticaNeue-Light-Condensed", "Helvetica Neue Light Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
@@ -358,7 +358,7 @@ nav {
       font-stretch: condensed;
       display: inline-block; }
     #page4 .circle .suits {
-      background: url(../img/iPhone/Client_Icon.png);
+      background: url(../img/iPhone/Client_Icon@2x.png);
       background-size: 100%;
       width: 75px;
       height: 93px;
@@ -425,7 +425,8 @@ div[state=bigAF] {
     background: url(../img/iPhone/Scroll_Arrow@2x.png);
     background-size: 100%;
     background-repeat: no-repeat; }
-  #page1 article {
+
+  #page1 article, #page2 article, #page3 article, #page4 article {
     display: none; }
 
   .lp_graphic {
@@ -443,6 +444,23 @@ div[state=bigAF] {
     display: block; } }
 /* iPad Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .pagination {
+    position: fixed;
+    top: 50%;
+    left: 95%; }
+    .pagination div {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: solid;
+      border-color: white;
+      border-width: 0px;
+      background-color: #d07814;
+      margin-top: 7px; }
+    .pagination .current {
+      border-width: 1px;
+      background-color: transparent; }
+
   nav {
     height: 108px; }
     nav .logo {
@@ -502,11 +520,12 @@ div[state=bigAF] {
     #page2 header h2, #page3 header h2 {
       margin-top: 10px; }
   #page2 article, #page3 article {
-    margin-top: 133px;
     font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
     font-weight: 200;
     font-stretch: normal;
-    font-size: 24pt; }
+    font-size: 24pt;
+    margin: 0 50px;
+    text-align: left; }
   #page2 section.svgs, #page3 section.svgs {
     margin: 84px 34px 0 34px;
     padding-bottom: 40px; }
@@ -518,20 +537,81 @@ div[state=bigAF] {
       margin-left: 40px; }
 
   #page2 article {
-    color: #white; }
+    color: #ffffff; }
 
   #page3 article {
     color: #666666; }
 
+  #page4 header h1 {
+    font-size: 80px; }
+  #page4 header h2 {
+    font-size: 42px; }
+  #page4 header .venn {
+    background-image: url(../img/iPad/VennDiagram@2x.png);
+    background-size: 100%;
+    width: 85px;
+    height: 78px;
+    margin-left: 10px;
+    margin-bottom: -10px; }
+  #page4 .slider {
+    margin-top: 0px; }
+    #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
+      font-size: 20pt; }
+    #page4 .slider .rightButt, #page4 .slider .leftButt {
+      margin-bottom: 0;
+      background-size: 100%;
+      background-repeat: none; }
+    #page4 .slider .rightButt {
+      background-image: url(../img/iPad/ArrowRight@2x.png);
+      height: 19px;
+      width: 26px;
+      margin-left: 100px; }
+    #page4 .slider .leftButt {
+      background-image: url(../img/iPad/ArrowLeft@2x.png);
+      height: 19px;
+      width: 26px;
+      margin-right: 100px; }
   #page4 .circle {
-    margin: 65px 50px 0 50px; }
+    width: 364px;
+    height: 364px;
+    margin: 130px 50px 0 50px; }
+    #page4 .circle .circ {
+      width: 9px;
+      height: 9px; }
+    #page4 .circle .num1 {
+      margin-left: 175px; }
+    #page4 .circle .num2 {
+      margin-left: 320px;
+      margin-top: 69px; }
+    #page4 .circle .num3 {
+      margin-left: 344px;
+      margin-top: 244px; }
+    #page4 .circle .num4 {
+      margin-left: 257px;
+      margin-top: 341px; }
+    #page4 .circle .num5 {
+      margin-top: 341px;
+      margin-left: 89px; }
+    #page4 .circle .num6 {
+      margin-top: 244px;
+      margin-left: 2px; }
+    #page4 .circle .num7 {
+      margin-top: 69px;
+      margin-left: 27px; }
+    #page4 .circle .suits {
+      margin-top: 105px;
+      background: url(../img/iPad/Client_Icon@2x.png);
+      background-size: 100%;
+      width: 55px;
+      height: 70px; }
   #page4 article {
     margin-top: 41px;
     font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
     font-weight: 200;
     font-stretch: normal;
     font-size: 21pt;
-    color: #ffffff; } }
+    color: #ffffff;
+    margin: 0 50px; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */

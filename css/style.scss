@@ -27,19 +27,15 @@ $orange: #f9941f;
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   transform-origin: 50% 0%;
-  transition-timing-function: cubic-bezier(0,1.73,1,-1.79);
-  -webkit-transition-timing-function: cubic-bezier(0,1.73,1,-1.79);
-  transition: all 0.3s 0s;
-  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
 }
 .close {
   transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0.001, 0, -1, 0, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0.001, 0, -1, 0, 0, 0, 0, 0, 1);
-  transition-timing-function: cubic-bezier(0,1.73,1,-1.79);
-  -webkit-transition-timing-function: cubic-bezier(0,1.73,1,-1.79);
   transform-origin: 50% 0%;
-  transition: all 0.3s 0.3s;
-  -webkit-transition: all 0.3s 0.3s;
+  transition: all 0.3s ease 0.3s;
+  -webkit-transition: all 0.3s ease 0.3s;
 }
 
 body{
@@ -234,7 +230,7 @@ nav {
    		height: 100px;
       display: inline-block;
    }
-   article {
+   .article1, .article2 {
       position: absolute;
       z-index: 3;
       width: 100%;
@@ -252,6 +248,7 @@ nav {
 	header{
 		width: 100%;
     text-align: center;
+    @include helvetica-neue-bold-condensed();
   	h1{
   		color: $white;
       display: inline-block;
@@ -342,6 +339,7 @@ nav {
 		}
     .pixPerf:before, .final:before, .design:before, .sol:before, .ux:before, .us:before, .projectSpecs:before{
       @include helvetica-neue-medium-condensed;
+      font-size: 15pt;
       color: $white;
       display: inline-block;
       margin-top: 50px;
@@ -406,7 +404,7 @@ nav {
       margin-left: 20px;
     }
 		h1{
-			font-size: 36pt;
+			font-size: 30pt;
 			display: inline-block;
       color: $white;
       @include helvetica-neue-bold-condensed();
@@ -414,14 +412,14 @@ nav {
 			margin-right: -20px;
 		}
 		h2{
-			font-size: 24;
+			font-size: 18pt;
       margin-left: 15px;
       color: $white;
       @include helvetica-neue-light-condensed();
 			display: inline-block;
 		}
 		.suits{
-			background: $iphone_client_icon;
+			background: $iphone_client_icon2x;
 			background-size: 100%;
 			width: 75px;
 			height: 93px;
@@ -507,7 +505,9 @@ div[state=bigAF]{
         background-size:100%;
         background-repeat: no-repeat;
       }
-      article {
+    }
+    #page1, #page2, #page3, #page4{
+      article{
         display: none;
       }
     }
@@ -542,6 +542,25 @@ div[state=bigAF]{
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 2) {
+    .pagination{
+      position: fixed;
+      top: 50%;
+      left: 95%;
+      div{
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        border: solid;
+        border-color: white;
+        border-width: 0px;
+        background-color: #d07814;
+        margin-top: 7px;
+      }
+      .current{
+        border-width: 1px;
+        background-color: transparent;
+      }
+    }
     nav{
       height: 108px;
       .logo{
@@ -558,7 +577,6 @@ div[state=bigAF]{
           li{
             display: inline-block;
             font-size: 24px;
-            
           }
         }
       }
@@ -616,9 +634,10 @@ div[state=bigAF]{
         }
       }
       article{
-        margin-top: 133px;
         @include helvetica-neue-thin();
         font-size: 24pt;
+        margin: 0 50px;
+        text-align: left;
       }
       section.svgs{
         margin: 84px 34px 0 34px;
@@ -635,7 +654,7 @@ div[state=bigAF]{
     }
     #page2{
       article{
-        color: #white;
+        color: $white;
       }
     }
     #page3{
@@ -644,14 +663,94 @@ div[state=bigAF]{
       }
     }
     #page4{
+      header{
+        h1{
+          font-size: 80px;
+        }
+        h2{
+          font-size: 42px;
+        }
+        .venn{
+          background-image: $iPad_venn_diag2x;
+          background-size: 100%;
+          width: 85px;
+          height: 78px;
+          margin-left: 10px;
+          margin-bottom: -10px;
+        }
+      }
+      .slider{
+        margin-top: 0px;
+        .pixPerf:before, .final:before, .design:before, .sol:before, .ux:before, .us:before, .projectSpecs:before{
+          font-size: 20pt;
+        }
+        .rightButt, .leftButt{
+          margin-bottom: 0;
+          background-size: 100%;
+          background-repeat: none;
+        }
+        .rightButt{
+          background-image: $iPad_arrow_right2x; 
+          height: 19px;
+          width: 26px;
+          margin-left: 100px;
+        }
+        .leftButt{
+          background-image: $iPad_arrow_left2x;
+          height: 19px;
+          width: 26px;
+          margin-right: 100px;
+        }
+      }
       .circle{
-        margin: 65px 50px 0 50px;
+        width: 364px;
+        height: 364px;
+        margin: 130px 50px 0 50px;
+        .circ{
+          width: 9px;
+          height: 9px;
+        }
+        .num1{
+          margin-left: 175px;
+        }
+        .num2{
+          margin-left: 320px;
+          margin-top: 69px;
+        }
+        .num3{
+          margin-left: 344px;
+          margin-top: 244px;
+        }
+        .num4{
+          margin-left: 257px;
+          margin-top: 341px;
+        }
+        .num5{
+          margin-top: 341px;
+          margin-left: 89px;
+        }
+        .num6{
+          margin-top: 244px;
+          margin-left: 2px;
+        }
+        .num7{
+          margin-top: 69px;
+          margin-left: 27px;
+        }
+        .suits{
+          margin-top: 105px;
+          background: $iPad_client_icon2x;
+          background-size: 100%;
+          width: 55px;
+          height: 70px;
+        }
       }
       article{
         margin-top: 41px;
         @include helvetica-neue-thin();
         font-size: 21pt;
         color: $white;
+        margin: 0 50px;
       }
     }
 }
