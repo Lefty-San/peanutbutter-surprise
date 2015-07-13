@@ -50,7 +50,6 @@ $.fn.isOnScreen = function(x, y){
     return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
     
 };
-
 if ( ow < 500 ) {
   $('body').addClass("smartPhone");
 } else if ( 500 < ow && ow < 800 ) {
@@ -62,7 +61,8 @@ if ( ow < 500 ) {
 } else {
   console.log("dude what are you doing? grab a more common device");
 }
-console.log($('body').attr("class"));
+var device = $('body').attr("class");
+//console.log(device);
 
 //  condensed slider functions
 var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
@@ -80,24 +80,42 @@ $(".leftButt").click(function(){
 //functions
 function makeBigAF(translate){
 	var TIMING = 1.5;
-	TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-  	  	transform: "scale(10,10)" + translate,
-  	  	zIndex: 1,
-  	  	transformOrigin:"50% 50%",
-  	  	ease:Power2.easeInOut
-  	});
 	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 1,
 	  	ease:Power2.easeInOut
 	});
-	TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
-	  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
-	  	zIndex: 1,
-	  	transformOrigin:"50% 50%",
-	  	ease:Power2.easeInOut
-	});
+
+	if(device == "tabletPort"){		
+		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
+		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
+		  	zIndex: 1,
+		  	transformOrigin:"50% 50%",
+		  	ease:Power2.easeInOut
+		});
+		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
+	  	  	transform: "scale(5,5)" + translate,
+	  	  	zIndex: 1,
+	  	  	transformOrigin:"50% 50%",
+	  	  	ease:Power2.easeInOut
+	  	});
+	}
+	else //if(device == "tabletPort")
+	{
+		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
+		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
+		  	zIndex: 1,
+		  	transformOrigin:"50% 50%",
+		  	ease:Power2.easeInOut
+		});
+		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
+	  	  	transform: "scale(5,5)" + translate,
+	  	  	zIndex: 1,
+	  	  	transformOrigin:"50% 50%",
+	  	  	ease:Power2.easeInOut
+	  	});
+	}
 	setTimeout(function(){$(".x").show();}, (TIMING*1000));
 	setTimeout(function(){$(".article1").show();}, (TIMING*1000));
 	setTimeout(function(){$(".article2").show();}, (TIMING*1000));
@@ -280,7 +298,7 @@ $(".rightButt").click(animateRight);
 
 //hide menu until clicked
 menuHidden=true;
-if ($('body').attr("class")=="smartPhone"){
+if (device=="smartPhone"){
 	$(".menu ul").hide();
 	$(".menu ul").css('margin-right', '-100px');
 }
@@ -313,7 +331,7 @@ $("[scroll]").click( function(){
         scrollTop: $(tar).offset().top
     }, 1000);
     // add something to hide the menu when mobile dropdown
-    if ($("body").attr('class')=="smartPhone"){
+    if (device=="smartPhone"){
 	    $(".menu ul").css('margin-right', '-100px');
 	    $('.menu ul').hide();
 	    menuHidden = true;
@@ -344,43 +362,45 @@ $("[state='small']").click(function(e){
 
 	  if ($(this).hasClass("wireframes")){
 	  	  $('.article1 p').load("arts/wireframes.htm");
-	  	  makeBigAF("translateX(10px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)");}
 	  }
 	  else if ($(this).hasClass("mobile")){
 	  	  $('.article2 p').load("arts/mobile.htm");
-	  	  makeBigAF("translateX(10px)");
-	  }
+	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)");}
+	  	}
 	  else if ($(this).hasClass("proto")){
 	  	  $('.article1 p').load("arts/proto.htm");
-	  	  makeBigAF("translateX(-7px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)");}
 	  }
 	  else if ($(this).hasClass("desktop")){
 	  	  $('.article2 p').load("arts/desktop.htm");
-	  	  makeBigAF("translateX(-7px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)");}
 	  }
 	  else if ($(this).hasClass("user")){
 	  	  $('.article1 p').load("arts/user.htm");
-	  	  makeBigAF("translateY(-15px) translateX(8px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)");}
 	  }
 	  else if ($(this).hasClass("poc")){
 	  	  $('.article2 p').load("arts/poc.htm");
-	  	  makeBigAF("translateY(-15px) translateX(8px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)");}
 	  }
 	  else if ($(this).hasClass("eval")){
 	  	  $('.article1 p').load("arts/eval.htm");
-	  	  makeBigAF("translateY(-15px) translateX(-8px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
 	  }
 	  else if ($(this).hasClass("presen")){
 	  	  $('.article2 p').load("arts/presen.htm");
-	  	  makeBigAF("translateY(-15px) translateX(-8px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
 	  }
 	  else if ($(this).hasClass("usability")){
 	  	  $('.article1 p').load("arts/usability.htm");
-	  	  makeBigAF("translateY(-30px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
 	  }
 	  else{
 	  	  $('.article2 p').load("arts/custom.htm");
-	  	  makeBigAF("translateY(-30px)");
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
 	  }
 	}
 });
