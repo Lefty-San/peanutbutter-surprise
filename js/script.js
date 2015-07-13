@@ -8,6 +8,19 @@ $(function(){
 console.log(window.outerWidth + '\n' + window.outerHeight);
 var ow = window.outerWidth,
 	oh = window.outerHeight;
+if ( ow < 500 ) {
+  $('body').addClass("smartPhone");
+} else if ( 500 < ow && ow < 800 ) {
+  $('body').addClass("tabletPort");
+} else if ( 800 < ow && ow < 1300 ) {
+  $('body').addClass("tabletLand");
+} else if ( ow > 1300 ) {
+  $('body').addClass("desktop");
+} else {
+  console.log("dude what are you doing? grab a more common device");
+}
+var device = $('body').attr("class");
+//console.log(device);
 
 $.fn.isOnScreen = function(x, y){
     
@@ -50,19 +63,6 @@ $.fn.isOnScreen = function(x, y){
     return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
     
 };
-if ( ow < 500 ) {
-  $('body').addClass("smartPhone");
-} else if ( 500 < ow && ow < 800 ) {
-  $('body').addClass("tabletPort");
-} else if ( 800 < ow && ow < 1300 ) {
-  $('body').addClass("tabletLand");
-} else if ( ow > 1300 ) {
-  $('body').addClass("desktop");
-} else {
-  console.log("dude what are you doing? grab a more common device");
-}
-var device = $('body').attr("class");
-//console.log(device);
 
 //  condensed slider functions
 var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
@@ -425,7 +425,7 @@ var canExit = false;
 $(".article1").hide();
 $(".article2").hide();
 //listen for x click then make small AF
-$(".x, .shade, .svgs, nav").click(function(){
+$(".x, .shade, .svgs, nav, .pagination").click(function(){
 	if (canExit == true){
 	  bigExists = false;
 	  var TIMING = .75;
