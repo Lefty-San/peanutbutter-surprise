@@ -652,11 +652,21 @@ div[state=bigAF]{
           margin-top: 10px;
         }
       }
+      .article1, .article2{
+        margin: 0 auto;
+        p{
+          margin: 0 84px;
+        }
+      }
       article{
         @include helvetica-neue-thin();
         font-size: 24pt;
         margin: 0 50px;
         text-align: left;
+      }
+      .svg svg{
+        width: 135px;
+        height: 135px;
       }
       section.svgs{
         margin: 84px 34px 0 34px;

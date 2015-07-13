@@ -530,6 +530,10 @@ div[state=bigAF] {
       padding-bottom: 15px; }
     #page2 header h2, #page3 header h2 {
       margin-top: 10px; }
+  #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+    margin: 0 auto; }
+    #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+      margin: 0 84px; }
   #page2 article, #page3 article {
     font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
     font-weight: 200;
@@ -537,6 +541,9 @@ div[state=bigAF] {
     font-size: 24pt;
     margin: 0 50px;
     text-align: left; }
+  #page2 .svg svg, #page3 .svg svg {
+    width: 135px;
+    height: 135px; }
   #page2 section.svgs, #page3 section.svgs {
     margin: 84px 34px 0 34px;
     padding-bottom: 40px; }
