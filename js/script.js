@@ -16,10 +16,8 @@ if ( ow < 500 ) {
   $('body').addClass("tabletLand");
 } else if ( ow > 1300 ) {
   $('body').addClass("desktop");
-} else {
-  console.log("dude what are you doing? grab a more common device");
 }
-var device = $('body').attr("class");
+device = $('body').attr("class");
 //console.log(device);
 
 $.fn.isOnScreen = function(x, y){
