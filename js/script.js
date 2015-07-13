@@ -84,20 +84,20 @@ function makeBigAF(translate){
 	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
-	  	zIndex: 1,
+	  	zIndex: 2,
 	  	ease:Power2.easeInOut
 	});
 
 	if(device == "smartPhone"){		
 		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
 		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
-		  	zIndex: 1,
+		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
 		  	ease:Power2.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
 	  	  	transform: "scale3d(10,10,1)" + translate,
-	  	  	zIndex: 1,
+	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power2.easeInOut
 	  	});
@@ -105,20 +105,22 @@ function makeBigAF(translate){
 	else if(device == "tabletPort"){
 		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
 		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
-		  	zIndex: 1,
+		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
 		  	ease:Power2.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
 	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
-	  	  	zIndex: 1,
+	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power2.easeInOut
 	  	});
 	}
-	setTimeout(function(){$(".x").show();}, (TIMING*1000));
+	if (currPage == 2){setTimeout(function(){$(".x1").show();}, (TIMING*1000));}
+	else {setTimeout(function(){$(".x2").show();}, (TIMING*1000));}
 	setTimeout(function(){$(".article1").show();}, (TIMING*1000));
 	setTimeout(function(){$(".article2").show();}, (TIMING*1000));
+	setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
 //hideMenu function must be called onComplete
 function hideMenu(){
@@ -357,8 +359,10 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 bigExists = false;
 $("[state='small']").click(function(e){
 	if(bigExists == false){
+	  $(".shade").css("display", "block");
 	  bigExists = true;
 	  $(this).attr("state", "bigAF");
+	  //$(this).children().children().css("position", "absolute");
 
 	  if ($(this).hasClass("wireframes")){
 	  	  $('.article1 p').load("arts/wireframes.htm");
@@ -393,22 +397,22 @@ $("[state='small']").click(function(e){
 	  else if ($(this).hasClass("eval")){
 	  	  $('.article1 p').load("arts/eval.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-50px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)");}
 	  }
 	  else if ($(this).hasClass("presen")){
 	  	  $('.article2 p').load("arts/presen.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-50px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)");}
 	  }
 	  else if ($(this).hasClass("usability")){
 	  	  $('.article1 p').load("arts/usability.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-50px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)");}
 	  }
 	  else{
 	  	  $('.article2 p').load("arts/custom.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-50px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)");}
 	  }
 	}
 });
@@ -416,21 +420,27 @@ $("[state='small']").click(function(e){
 
 //hide x until needed
 $(".x").hide();
+var canExit = false;
 //hide text until svgs are clicked
 $(".article1").hide();
 $(".article2").hide();
 //listen for x click then make small AF
-$(".x").click(function(){
-  bigExists = false;
-  var TIMING = .75;
-  $(".article1").hide();
-  $(".article2").hide();
-  norm("[state='bigAF'] div svg", TIMING);
-  norm("[state='bigAF'] div svg g#Shadow", TIMING);
-  norm("[state='bigAF'] div svg g#icon", TIMING);
+$(".x, .shade, .svgs, nav").click(function(){
+	if (canExit == true){
+	  bigExists = false;
+	  var TIMING = .75;
+	  $(".article1").hide();
+	  $(".article2").hide();
+	  norm("[state='bigAF'] div svg", TIMING);
+	  norm("[state='bigAF'] div svg g#Shadow", TIMING);
+	  norm("[state='bigAF'] div svg g#icon", TIMING);
 
-  $("[state='bigAF']").attr("state", "small");
-  $(".x").hide();
+	  canExit = false;
+
+	  $(".shade").css("display", "none");
+	  $("[state='bigAF']").attr("state", "small");
+	  $(".x").hide();
+	}
 });
 
 // key log for window information
