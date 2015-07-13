@@ -47,7 +47,17 @@ body{
 	overflow: hidden;
 	margin: 0;
 }
-
+.shade{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: .5;
+  z-index: 0;
+  display: none;
+}
 h1, h2, p{
 	@include helvetica-neue-medium-condensed;
 }
@@ -641,6 +651,14 @@ div[state=bigAF]{
       }
     }
     #page2, #page3{
+      .x{
+        background-image: $iPad_white_x2x;
+        background-size: 100%;
+        width: 24px;
+        height: 24px;
+        margin-left: 475px;
+        margin-top: -175px;
+      }
       header{
         margin-top: 32px;
         h1{
@@ -655,7 +673,8 @@ div[state=bigAF]{
       .article1, .article2{
         margin: 0 auto;
         p{
-          margin: 0 84px;
+          margin: 50px 84px;
+          font-size: 18pt;
         }
       }
       article{

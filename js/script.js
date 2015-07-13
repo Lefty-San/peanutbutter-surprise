@@ -8,6 +8,17 @@ $(function(){
 console.log(window.outerWidth + '\n' + window.outerHeight);
 var ow = window.outerWidth,
 	oh = window.outerHeight;
+if ( ow < 500 ) {
+  $('body').addClass("smartPhone");
+} else if ( 500 < ow && ow < 800 ) {
+  $('body').addClass("tabletPort");
+} else if ( 800 < ow && ow < 1300 ) {
+  $('body').addClass("tabletLand");
+} else if ( ow > 1300 ) {
+  $('body').addClass("desktop");
+}
+device = $('body').attr("class");
+//console.log(device);
 
 $.fn.isOnScreen = function(x, y){
     
@@ -50,19 +61,6 @@ $.fn.isOnScreen = function(x, y){
     return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
     
 };
-if ( ow < 500 ) {
-  $('body').addClass("smartPhone");
-} else if ( 500 < ow && ow < 800 ) {
-  $('body').addClass("tabletPort");
-} else if ( 800 < ow && ow < 1300 ) {
-  $('body').addClass("tabletLand");
-} else if ( ow > 1300 ) {
-  $('body').addClass("desktop");
-} else {
-  console.log("dude what are you doing? grab a more common device");
-}
-var device = $('body').attr("class");
-//console.log(device);
 
 //  condensed slider functions
 var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
@@ -77,48 +75,50 @@ $(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
 	console.log("clicked");
 });
+TweenMax.set($('.svgs'),{perspective:1000});
 //functions
 function makeBigAF(translate){
 	var TIMING = 1.5;
 	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
-	  	zIndex: 1,
+	  	zIndex: 2,
 	  	ease:Power2.easeInOut
 	});
 
-	if(device == "tabletPort"){		
+	if(device == "smartPhone"){		
 		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
 		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
-		  	zIndex: 1,
+		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
 		  	ease:Power2.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-	  	  	transform: "scale(5,5)" + translate,
-	  	  	zIndex: 1,
+	  	  	transform: "scale3d(10,10,1)" + translate,
+	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power2.easeInOut
 	  	});
 	}
-	else //if(device == "tabletPort")
-	{
+	else if(device == "tabletPort"){
 		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
-		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
-		  	zIndex: 1,
+		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
+		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
 		  	ease:Power2.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-	  	  	transform: "scale(5,5)" + translate,
-	  	  	zIndex: 1,
+	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
+	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power2.easeInOut
 	  	});
 	}
-	setTimeout(function(){$(".x").show();}, (TIMING*1000));
+	if (currPage == 2){setTimeout(function(){$(".x1").show();}, (TIMING*1000));}
+	else {setTimeout(function(){$(".x2").show();}, (TIMING*1000));}
 	setTimeout(function(){$(".article1").show();}, (TIMING*1000));
 	setTimeout(function(){$(".article2").show();}, (TIMING*1000));
+	setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
 //hideMenu function must be called onComplete
 function hideMenu(){
@@ -358,13 +358,15 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 bigExists = false;
 $("[state='small']").click(function(e){
 	if(bigExists == false){
+	  $(".shade").css("display", "block");
 	  bigExists = true;
 	  $(this).attr("state", "bigAF");
+	  //$(this).children().children().css("position", "absolute");
 
 	  if ($(this).hasClass("wireframes")){
 	  	  $('.article1 p').load("arts/wireframes.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(42px) translateY(-5px)");}
 	  }
 	  else if ($(this).hasClass("mobile")){
 	  	  $('.article2 p').load("arts/mobile.htm");
@@ -374,34 +376,42 @@ $("[state='small']").click(function(e){
 	  else if ($(this).hasClass("proto")){
 	  	  $('.article1 p').load("arts/proto.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(0px) translateY(-5px)");}
 	  }
 	  else if ($(this).hasClass("desktop")){
 	  	  $('.article2 p').load("arts/desktop.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-0px) translateY(-5px)");}
 	  }
 	  else if ($(this).hasClass("user")){
 	  	  $('.article1 p').load("arts/user.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)");}
 	  }
 	  else if ($(this).hasClass("poc")){
 	  	  $('.article2 p').load("arts/poc.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)");}
 	  }
 	  else if ($(this).hasClass("eval")){
 	  	  $('.article1 p').load("arts/eval.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)");}
 	  }
 	  else if ($(this).hasClass("presen")){
 	  	  $('.article2 p').load("arts/presen.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)");}
 	  }
 	  else if ($(this).hasClass("usability")){
 	  	  $('.article1 p').load("arts/usability.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)");}
 	  }
 	  else{
 	  	  $('.article2 p').load("arts/custom.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)");}
 	  }
 	}
 });
@@ -409,21 +419,27 @@ $("[state='small']").click(function(e){
 
 //hide x until needed
 $(".x").hide();
+var canExit = false;
 //hide text until svgs are clicked
 $(".article1").hide();
 $(".article2").hide();
 //listen for x click then make small AF
-$(".x").click(function(){
-  bigExists = false;
-  var TIMING = .75;
-  $(".article1").hide();
-  $(".article2").hide();
-  norm("[state='bigAF'] div svg", TIMING);
-  norm("[state='bigAF'] div svg g#Shadow", TIMING);
-  norm("[state='bigAF'] div svg g#icon", TIMING);
+$(".x, .shade, .svgs, nav, .pagination").click(function(){
+	if (canExit == true){
+	  bigExists = false;
+	  var TIMING = .75;
+	  $(".article1").hide();
+	  $(".article2").hide();
+	  norm("[state='bigAF'] div svg", TIMING);
+	  norm("[state='bigAF'] div svg g#Shadow", TIMING);
+	  norm("[state='bigAF'] div svg g#icon", TIMING);
 
-  $("[state='bigAF']").attr("state", "small");
-  $(".x").hide();
+	  canExit = false;
+
+	  $(".shade").css("display", "none");
+	  $("[state='bigAF']").attr("state", "small");
+	  $(".x").hide();
+	}
 });
 
 // key log for window information
