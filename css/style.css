@@ -522,6 +522,13 @@ div[state=bigAF] {
   #page1 .dwnArrow {
     padding-bottom: 26px; }
 
+  #page2 .x, #page3 .x {
+    background-image: url(../img/iPad/WhiteX@2x.png);
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+    margin-left: 475px;
+    margin-top: -175px; }
   #page2 header, #page3 header {
     margin-top: 32px; }
     #page2 header h1, #page3 header h1 {
@@ -533,7 +540,8 @@ div[state=bigAF] {
   #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
     margin: 0 auto; }
     #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
-      margin: 0 84px; }
+      margin: 50px 84px;
+      font-size: 18pt; }
   #page2 article, #page3 article {
     font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
     font-weight: 200;
