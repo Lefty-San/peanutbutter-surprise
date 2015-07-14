@@ -98,7 +98,15 @@ function makeBigAF(translate, art){
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power4.easeInOut
-	  	});
+	  });
+    if (art == 3){
+      TweenLite.to( $("[state='bigAF']"), TIMING, {
+        transform: "scale3d(10,10,1)"+ translate,
+        zIndex:3,
+        transformOrigin: "50% 50%",
+        ease:Power4.easeInOut
+      });
+    }
 	}
 	else if(device == "tabletPort"){
 		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
@@ -414,11 +422,14 @@ $("[state='small']").click(function(e){
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 1);}
 	  }
-	  else{
+	  else if ($(this).hasClass("custom")){
 	  	  $('.article2 p').load("arts/custom.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
 	  }
+    else{
+      makeBigAF("translateY(0)", 3);
+    }
 	}
 });
 
