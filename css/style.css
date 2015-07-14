@@ -651,4 +651,20 @@ div[state=bigAF] {
     margin: 0 50px; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  #page2 section.svgs {
+    padding: 0 17%; }
+    #page2 section.svgs .svg:nth-child(n+2) {
+      margin-left: 44px; }
+    #page2 section.svgs .svg p {
+      width: 50%; }
+
+  #page3 {
+    background: red; }
+    #page3 section.svgs {
+      padding: 0 17%; }
+      #page3 section.svgs .svg:nth-child(n+2) {
+        margin-left: 44px; }
+      #page3 section.svgs .svg p {
+        width: 50%; } }
 /* ----------- Desktop Retina Screens ----------- */

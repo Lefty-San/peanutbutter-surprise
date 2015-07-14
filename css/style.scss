@@ -814,8 +814,38 @@ div[state=bigAF]{
 /* ----------- Desktop Non-Retina Screens ----------- */
 @media screen
   and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
+  and (max-device-width: 1600px) {
+
+    #page2 {
+      article.page2 {
+
+      }
+      section.svgs {
+        padding: 0 17%;
+        .svg:nth-child(n+2) {
+          margin-left:44px;
+        }
+        .svg p {
+          width:50%;
+        }
+      }
+    }
+    #page3 {
+      background:red;
+      article.page3 {
+
+      }
+      section.svgs {
+        padding: 0 17%;
+        .svg:nth-child(n+2) {
+          margin-left:44px;
+        }
+        .svg p {
+          width:50%;
+        }
+      }
+    }
+
 }
 
 /* ----------- Desktop Retina Screens ----------- */
