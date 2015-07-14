@@ -723,7 +723,11 @@ div[state=bigAF] {
       width: 50%; }
 
   #page3 {
-    background: red; }
+    background: url(http://33.media.tumblr.com/50e7c03ce00f174933356d19ed7e5926/tumblr_nrhjywn4A21uv0y2ro1_250.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
     #page3 section.svgs {
       padding: 0 17%; }
       #page3 section.svgs .svg:nth-child(n+2) {
