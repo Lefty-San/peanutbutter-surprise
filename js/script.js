@@ -79,39 +79,47 @@ TweenMax.set($('.svgs'),{perspective:1000});
 //functions
 function makeBigAF(translate, art){
 	var TIMING = 1.5;
-	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
+	TweenLite.to("[state='bigAF'] div svg path:not(g path)", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
-	  	ease:Power2.easeInOut
+	  	ease:Power4.easeInOut
 	});
 
 	if(device == "smartPhone"){
-		TweenLite.to($("[state='bigAF'] div svg g#icon"), TIMING, {
+		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
 		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
-		  	ease:Power2.easeInOut
+		  	ease:Power4.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
 	  	  	transform: "scale3d(10,10,1)" + translate,
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power2.easeInOut
-	  	});
+	  	  	ease:Power4.easeInOut
+	  });
+    if (art == 3){
+      TweenLite.to( $("[state='bigAF']"), TIMING, {
+        transform: "scale3d(10,10,1)"+ translate,
+        zIndex:3,
+        transformOrigin: "50% 50%",
+        ease:Power4.easeInOut
+      });
+    }
 	}
 	else if(device == "tabletPort"){
-		TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
 		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
-		  	ease:Power2.easeInOut
+		  	ease:Power4.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
 	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power2.easeInOut
+	  	  	ease:Power4.easeInOut
 	  	});
 	}
 
@@ -144,10 +152,10 @@ function moveCirc(curr, next){
 }
 
 //make an image or svg normal after animation
-function norm(img, time){
+function norm(img, time, opacity){
 	TweenMax.to( $(img), time, {
 		transform: "scale(1, 1) translateX(0px) translateY(0px)",
-		opacity: "1",
+		opacity: opacity,
 		zIndex: 0,
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut
@@ -160,7 +168,7 @@ function moveLeft(){
 		current--;
 	}
 	smlImage();
-	norm("#image", .3);
+	norm("#image", .3, 1);
 
 	if ($("#image").hasClass("pixPerf")){
 		$(".leftButt").css('visibility','hidden');
@@ -173,7 +181,7 @@ function moveRight(){
 		current++;
 	}
 	smlImage();
-	norm("#image", .3);
+	norm("#image", .3, 1);
 
 	if ($("#image").hasClass("projectSpecs")){
 		$(".rightButt").css('visibility','hidden');
@@ -336,6 +344,7 @@ $("[scroll]").click( function(){
   $('html, body').animate({
         scrollTop: $(tar).offset().top
     }, 1000);
+    setTimeout(function () {$("nav").attr("class","close");}, 1000);
     // add something to hide the menu when mobile dropdown
     if (device=="smartPhone"){
 	    $(".menu ul").css('margin-right', '-100px');
@@ -413,11 +422,14 @@ $("[state='small']").click(function(e){
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 1);}
 	  }
-	  else{
+	  else if ($(this).hasClass("custom")){
 	  	  $('.article2 p').load("arts/custom.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
 	  }
+    else{
+      makeBigAF("translateY(0)", 3);
+    }
 	}
 });
 
@@ -435,9 +447,9 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
 	  var TIMING = .75;
 	  $(".article1").hide();
 	  $(".article2").hide();
-	  norm("[state='bigAF'] div svg", TIMING);
-	  norm("[state='bigAF'] div svg g#Shadow", TIMING);
-	  norm("[state='bigAF'] div svg g#icon", TIMING);
+	  norm("[state='bigAF'] div svg", TIMING, 1);
+	  norm("[state='bigAF'] div svg path:not(g path)", TIMING, .12);
+	  norm("[state='bigAF'] div svg g", TIMING, 1);
 
 	  canExit = false;
 
