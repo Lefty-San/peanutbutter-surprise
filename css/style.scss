@@ -442,6 +442,64 @@ nav {
 	}
 }
 
+#page5{
+  background-color: #ebebeb;
+  text-align: center;
+  header{
+    color: #929292;
+    padding-top: 20px;
+    @include helvetica-neue-medium-condensed();
+    h2{
+      display: inline-block;
+      font-size: 24pt;
+      margin: 0;
+    }
+    h1{
+      display: inline-block;
+      font-size: 47pt;
+      margin: 0;
+    }
+  }
+  .boxes{
+    margin-top: 20px;
+    div{
+      background-color: $white;
+      width: 284px;
+      height: 190px;
+      margin: 0 18px 16px 18px;
+      display: inline-block;
+      border: solid;
+      border-color: #cccccc;
+      border-width: 1px;
+    }
+  }
+}
+
+footer{
+  background-color: #929292;
+  text-align: center;
+  margin: 0;
+  ul{
+    padding: 40px 0;
+    margin: 0;
+    color: #ebebeb;
+    font-size: 20pt;
+    @include helvetica-neue-light;
+    a, a:visited{
+      color: #ebebeb;
+      @include helvetica-neue-light;
+      font-size: 20pt;
+      text-decoration: none;
+    }
+    li{
+      list-style: none;
+      display: inline-block;
+    }
+  }
+  .prokarma{
+  }
+}
+
 div[state=small]{
   position: static;
 }
@@ -564,6 +622,7 @@ div[state=bigAF]{
         margin-top: 7px;
       }
       .current{
+        margin-left: -1px;
         border-width: 1px;
         background-color: transparent;
       }
@@ -579,6 +638,11 @@ div[state=bigAF]{
         background-color: $orange;
       }
     }
+    .p5{
+      div{
+        background-color: #929292;
+      }
+    }
     .p2{
       div{
         border-color: $white;
@@ -587,6 +651,11 @@ div[state=bigAF]{
     .p3{
       div{
         border-color: #aeaeae;
+      }
+    }
+    .p5{
+      div{
+        border-color: #929292;
       }
     }
     nav{
@@ -798,7 +867,11 @@ div[state=bigAF]{
         font-size: 21pt;
         color: $white;
         margin: 0 50px;
+        text-align: left;
       }
+    }
+    p{
+      color: $white;
     }
 }
 

@@ -21,45 +21,45 @@ device = $('body').attr("class");
 //console.log(device);
 
 $.fn.isOnScreen = function(x, y){
-
+    
     if(x == null || typeof x == 'undefined') x = 1;
     if(y == null || typeof y == 'undefined') y = 1;
-
+    
     var win = $(window);
-
+    
     var viewport = {
         top : win.scrollTop(),
         left : win.scrollLeft()
     };
     viewport.right = viewport.left + win.width();
     viewport.bottom = viewport.top + win.height();
-
+    
     var height = this.outerHeight();
     var width = this.outerWidth();
-
+ 
     if(!width || !height){
         return false;
     }
-
+    
     var bounds = this.offset();
     bounds.right = bounds.left + width;
     bounds.bottom = bounds.top + height;
-
+    
     var visible = (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
+    
     if(!visible){
-        return false;
+        return false;   
     }
-
+    
     var deltas = {
         top : Math.min( 1, ( bounds.bottom - viewport.top ) / height),
         bottom : Math.min(1, ( viewport.bottom - bounds.top ) / height),
         left : Math.min(1, ( bounds.right - viewport.left ) / width),
         right : Math.min(1, ( viewport.right - bounds.left ) / width)
     };
-
+    
     return (deltas.left * deltas.right) >= x && (deltas.top * deltas.bottom) >= y;
-
+    
 };
 
 //  condensed slider functions
@@ -77,17 +77,17 @@ $(".leftButt").click(function(){
 });
 TweenMax.set($('.svgs'),{perspective:1000});
 //functions
-function makeBigAF(translate){
+function makeBigAF(translate, art){
 	var TIMING = 1.5;
-	TweenLite.to("[state='bigAF'] div svg path:not(g path)", TIMING, {
+	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
 	  	ease:Power2.easeInOut
 	});
 
-	if(device == "smartPhone"){
-		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
+	if(device == "smartPhone"){		
+		TweenLite.to($("[state='bigAF'] div svg g#icon"), TIMING, {
 		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
@@ -101,7 +101,7 @@ function makeBigAF(translate){
 	  	});
 	}
 	else if(device == "tabletPort"){
-		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
+		TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
 		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
@@ -114,10 +114,16 @@ function makeBigAF(translate){
 	  	  	ease:Power2.easeInOut
 	  	});
 	}
-	if (currPage == 2){setTimeout(function(){$(".x1").show();}, (TIMING*1000));}
-	else {setTimeout(function(){$(".x2").show();}, (TIMING*1000));}
-	setTimeout(function(){$(".article1").show();}, (TIMING*1000));
-	setTimeout(function(){$(".article2").show();}, (TIMING*1000));
+		
+	if(art == 1){
+		setTimeout(function(){$(".article1").show();}, (TIMING*1000));
+		setTimeout(function(){$(".x1").show();}, (TIMING*1000));
+	}
+	else {
+		setTimeout(function(){$(".article2").show();}, (TIMING*1000));
+		setTimeout(function(){$(".x2").show();}, (TIMING*1000));
+	}
+
 	setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
 //hideMenu function must be called onComplete
@@ -193,7 +199,6 @@ function animateRight(){
 		onComplete: moveRight
 	});
 }
-
 function animateLeft(){
 	TweenMax.to( $(".leftButt"), .1, {
 		transform: "scale(.75, .75) translateX(-5px)",
@@ -365,53 +370,53 @@ $("[state='small']").click(function(e){
 
 	  if ($(this).hasClass("wireframes")){
 	  	  $('.article1 p').load("arts/wireframes.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(42px) translateY(-5px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 1);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(42px) translateY(-5px)", 1);}
 	  }
 	  else if ($(this).hasClass("mobile")){
 	  	  $('.article2 p').load("arts/mobile.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 2);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)", 2);}
 	  	}
 	  else if ($(this).hasClass("proto")){
 	  	  $('.article1 p').load("arts/proto.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(0px) translateY(-5px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 1);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(0px) translateY(-5px)", 1);}
 	  }
 	  else if ($(this).hasClass("desktop")){
 	  	  $('.article2 p').load("arts/desktop.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-0px) translateY(-5px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 2);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-0px) translateY(-5px)", 2);}
 	  }
 	  else if ($(this).hasClass("user")){
 	  	  $('.article1 p').load("arts/user.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 1);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 1);}
 	  }
 	  else if ($(this).hasClass("poc")){
 	  	  $('.article2 p').load("arts/poc.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 2);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 2);}
 	  }
 	  else if ($(this).hasClass("eval")){
 	  	  $('.article1 p').load("arts/eval.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 1);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 1);}
 	  }
 	  else if ($(this).hasClass("presen")){
 	  	  $('.article2 p').load("arts/presen.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 2);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 2);}
 	  }
 	  else if ($(this).hasClass("usability")){
 	  	  $('.article1 p').load("arts/usability.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 1);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 1);}
 	  }
 	  else{
 	  	  $('.article2 p').load("arts/custom.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)");}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)");}
+	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 2);}
+	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
 	  }
 	}
 });
