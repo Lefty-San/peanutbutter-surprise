@@ -550,8 +550,7 @@ div[state=bigAF]{
 /* iPad Portrait */
 @media only screen
   and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (max-device-width: 1024px) {
     .pagination{
       position: fixed;
       top: 50%;
@@ -738,7 +737,7 @@ div[state=bigAF]{
           background-repeat: none;
         }
         .rightButt{
-          background-image: $iPad_arrow_right2x; 
+          background-image: $iPad_arrow_right2x;
           height: 19px;
           width: 26px;
           margin-left: 100px;
