@@ -378,6 +378,35 @@ nav {
       margin-top: -40px;
       display: inline-block; }
 
+#page5 {
+  background-color: #ebebeb;
+  text-align: center; }
+  #page5 header {
+    color: #929292;
+    padding-top: 20px;
+    font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+    font-weight: 500;
+    font-stretch: condensed; }
+    #page5 header h2 {
+      display: inline-block;
+      font-size: 24pt;
+      margin: 0; }
+    #page5 header h1 {
+      display: inline-block;
+      font-size: 47pt;
+      margin: 0; }
+  #page5 .boxes {
+    margin-top: 20px; }
+    #page5 .boxes div {
+      background-color: #ffffff;
+      width: 284px;
+      height: 190px;
+      margin: 0 18px 16px 18px;
+      display: inline-block;
+      border: solid;
+      border-color: #cccccc;
+      border-width: 1px; }
+
 div[state=small] {
   position: static; }
 
@@ -477,11 +506,17 @@ div[state=bigAF] {
   .p2 div, .p3 div {
     background-color: #f9941f; }
 
+  .p5 div {
+    background-color: #929292; }
+
   .p2 div {
     border-color: #ffffff; }
 
   .p3 div {
     border-color: #aeaeae; }
+
+  .p5 div {
+    border-color: #929292; }
 
   nav {
     height: 108px; }
@@ -648,7 +683,8 @@ div[state=bigAF] {
     font-stretch: normal;
     font-size: 21pt;
     color: #ffffff;
-    margin: 0 50px; } }
+    margin: 0 50px;
+    text-align: left; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 /* ----------- Desktop Retina Screens ----------- */
