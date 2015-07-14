@@ -83,7 +83,7 @@ function makeBigAF(translate, art){
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
-	  	ease:Power2.easeInOut
+	  	ease:Power4.easeInOut
 	});
 
 	if(device == "smartPhone"){
@@ -91,13 +91,13 @@ function makeBigAF(translate, art){
 		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
-		  	ease:Power2.easeInOut
+		  	ease:Power4.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
 	  	  	transform: "scale3d(10,10,1)" + translate,
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power2.easeInOut
+	  	  	ease:Power4.easeInOut
 	  	});
 	}
 	else if(device == "tabletPort"){
@@ -105,13 +105,13 @@ function makeBigAF(translate, art){
 		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
-		  	ease:Power2.easeInOut
+		  	ease:Power4.easeInOut
 		});
 		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
 	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power2.easeInOut
+	  	  	ease:Power4.easeInOut
 	  	});
 	}
 
@@ -336,6 +336,7 @@ $("[scroll]").click( function(){
   $('html, body').animate({
         scrollTop: $(tar).offset().top
     }, 1000);
+    setTimeout(function () {$("nav").attr("class","close");}, 1000);
     // add something to hide the menu when mobile dropdown
     if (device=="smartPhone"){
 	    $(".menu ul").css('margin-right', '-100px');
