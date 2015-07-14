@@ -79,7 +79,7 @@ TweenMax.set($('.svgs'),{perspective:1000});
 //functions
 function makeBigAF(translate, art){
 	var TIMING = 1.5;
-	TweenLite.to("[state='bigAF'] div svg g#Shadow", TIMING, {
+	TweenLite.to("[state='bigAF'] div svg path:not(g path)", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
@@ -87,7 +87,7 @@ function makeBigAF(translate, art){
 	});
 
 	if(device == "smartPhone"){		
-		TweenLite.to($("[state='bigAF'] div svg g#icon"), TIMING, {
+		TweenLite.to("[state='bigAF'] div svg g#icon", TIMING, {
 		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
@@ -101,7 +101,7 @@ function makeBigAF(translate, art){
 	  	});
 	}
 	else if(device == "tabletPort"){
-		TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
 		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
 		  	zIndex: 3,
 		  	transformOrigin:"50% 50%",
@@ -144,10 +144,10 @@ function moveCirc(curr, next){
 }
 
 //make an image or svg normal after animation
-function norm(img, time){
+function norm(img, time, opacity){
 	TweenMax.to( $(img), time, {
 		transform: "scale(1, 1) translateX(0px) translateY(0px)",
-		opacity: "1",
+		opacity: opacity,
 		zIndex: 0,
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut
@@ -160,7 +160,7 @@ function moveLeft(){
 		current--;
 	}
 	smlImage();
-	norm("#image", .3);
+	norm("#image", .3, 1);
 
 	if ($("#image").hasClass("pixPerf")){
 		$(".leftButt").css('visibility','hidden');
@@ -173,7 +173,7 @@ function moveRight(){
 		current++;
 	}
 	smlImage();
-	norm("#image", .3);
+	norm("#image", .3, 1);
 
 	if ($("#image").hasClass("projectSpecs")){
 		$(".rightButt").css('visibility','hidden');
@@ -435,9 +435,9 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
 	  var TIMING = .75;
 	  $(".article1").hide();
 	  $(".article2").hide();
-	  norm("[state='bigAF'] div svg", TIMING);
-	  norm("[state='bigAF'] div svg g#Shadow", TIMING);
-	  norm("[state='bigAF'] div svg g#icon", TIMING);
+	  norm("[state='bigAF'] div svg", TIMING, 1);
+	  norm("[state='bigAF'] div svg path:not(g path)", TIMING, .12);
+	  norm("[state='bigAF'] div svg g", TIMING, 1);
 
 	  canExit = false;
 
