@@ -175,7 +175,19 @@ function makeBigAF(translate, art){
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power4.easeInOut
-	  	});
+	  });
+    if (art == 3){
+        TweenLite.to( $("[state='bigAF']"), TIMING, {
+          width: "100%",
+          height: "80%",
+          position: "absolute",
+          margin: "0",
+          zIndex:3,
+          left: 0,
+          transformOrigin: "50% 50%",
+          ease:Power4.easeInOut
+      });
+    }
 	}
 
 	setTimeout(function(){$(".article"+art).show();}, (TIMING*1000));
@@ -212,6 +224,7 @@ function norm(img, time, opacity){
 }
 
 function normWork(time){
+  $("[state = bigAF]").css("position", "relative");
   TweenLite.to($("[state = bigAF]"), time,{
     width: ourWork.width,
     height: ourWork.height,
@@ -401,11 +414,21 @@ $(".menu .image").click(function(){
 $("[scroll]").click( function(){
   var tar = $(this).attr("scroll");
   if (tar == "this"){
-    if ($(this).attr("state")=="small"){
-      $("html, body").animate({
-        scrollTop: $(this).offset().top
-      },1000);
-      canExit = true;
+    if (device == "smartPhone"){
+      if ($(this).attr("state")=="small"){
+        $("html, body").animate({
+          scrollTop: $(this).offset().top
+        },1000);
+        canExit = true;
+      }
+    }
+    else{
+      if ($(this).attr("state")=="small"){
+        $("html, body").animate({
+          scrollTop: $(this).parent().offset().top
+        },1000);
+        canExit = true;
+      }
     }
   }
   else{
@@ -497,13 +520,19 @@ $("[state='small']").click(function(e){
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
 	  }
     else{
-      //set the margin-top for .x3
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');
       var height = ourWork.height.replace('px', '');
-      var str = String(+j*((2* +margins) + (+height))+35)+"px";
-      $(".x3").css("margin-top", str);
-      makeBigAF("translateY(0)", 3);
+      makeBigAF("", 3);
+
+      if (device == "smartPhone"){
+        //set the margin-top for .x3
+        var str = String(+j*((2* +margins) + (+height))+35)+"px";
+        $(".x3").css("margin-top", str);
+      }
+      else if (device == "tabletPort"){
+
+      }
     }
 	}
 });
