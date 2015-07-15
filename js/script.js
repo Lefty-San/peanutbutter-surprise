@@ -501,7 +501,7 @@ $("[state='small']").click(function(e){
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');
       var height = ourWork.height.replace('px', '');
-      var str = String(+j*((+margins) + (+height))+35)+"px";
+      var str = String(+j*((2* +margins) + (+height))+35)+"px";
       $(".x3").css("margin-top", str);
       makeBigAF("translateY(0)", 3);
     }
