@@ -177,13 +177,15 @@ function makeBigAF(translate, art){
 	  	  	ease:Power4.easeInOut
 	  });
     if (art == 3){
+        translate = String(-100 + translate);
         TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "150%",
-          height: "80%",
+          width: "1000%",
+          height: "400%",
+          marginLeft: translate,
+          marginTop: 0,
           margin: "0",
           zIndex:3,
           left: 0,
-          position: "fixed",
           top: "100px",
           transformOrigin: "50% 50%",
           ease:Power4.easeInOut
@@ -417,7 +419,7 @@ $(".menu .image").click(function(){
 $("[scroll]").click( function(){
   var tar = $(this).attr("scroll");
   if (tar == "this"){
-    if (device == "smartPhone"){
+    if (device == "smartPhone" || device == "tabletPort"){
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
           scrollTop: $(this).offset().top - 17
@@ -526,7 +528,12 @@ $("[state='small']").click(function(e){
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');
       var height = ourWork.height.replace('px', '');
-      makeBigAF("", 3);
+      if (! j%2 == 0){
+        makeBigAF(-350, 3);
+      }
+      else{
+        makeBigAF("", 3);
+      }
 
       if (device == "smartPhone"){
         //set the margin-top for .x3
@@ -534,9 +541,10 @@ $("[state='small']").click(function(e){
         $(".x3").css("margin-top", str);
       }
       else if (device == "tabletPort"){
-        $(".x3").css("position", "fixed");
-        $(".x3").css("top", "130px");
-        $(".x3").css("right", "30px");
+        if(j%2 != 0) j--;
+        j = j/2;
+        var str = String(+j*((4* +margins) + (+height))+150)+"px";
+        $(".x3").css("margin-top", str);
       }
     }
 	}
