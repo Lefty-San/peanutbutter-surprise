@@ -131,7 +131,7 @@ $(".leftButt").click(function(){
 TweenMax.set($('.svgs'),{perspective:1000});
 //functions
 function makeBigAF(translate, art){
-	var TIMING = 1.5;
+	var TIMING = 1;
 	TweenLite.to("[state='bigAF'] div svg path:not(g path)", TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
