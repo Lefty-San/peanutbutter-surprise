@@ -473,16 +473,18 @@ nav {
   .boxes{
     margin-top: 20px;
     z-index: 0;
+    .cont{
+      margin: 18px;
+      display: inline-block
+    }
     .pu{
       background-color: $white;
       width: 284px;
       height: 190px;
-      margin: 18px;
       display: inline-block;
       border: solid;
       border-color: #cccccc;
       border-width: 1px;
-      position: relative;
     }
   }
 }
@@ -627,7 +629,7 @@ div[state=bigAF]{
     .pagination{
       position: fixed;
       top: 50%;
-      left: 95%;
+      left: 97%;
       div{
         width: 7px;
         height: 7px;
@@ -890,6 +892,10 @@ div[state=bigAF]{
     }
     #page5{
       .x3{
+        background-image: $iPad_orange_x2x;
+        height: 24px;
+        width: 25px;
+        background-size: 100%;
         margin-left: 720px;
       }
       .boxes{
@@ -902,7 +908,6 @@ div[state=bigAF]{
         .pu{
           width: 325px;
           height: 215px;
-          margin: 16px;
         }
       }
     }
@@ -914,7 +919,65 @@ div[state=bigAF]{
   and (max-device-width: 1024px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
-
+    #page1 {
+      .lp_graphic{
+        background-image: $iPad_land_lp_g2x;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 521px;
+        height: 645px;
+        position: absolute;
+        right: 50px;
+        top: 125px;
+        display: inline-block;
+        margin-left: 0;
+      }
+      header {
+        margin-top: 125px;
+        font-size: 52px;
+        display: inline-block;
+        margin-left: 52px;
+        width: 50%;
+      }
+      article {
+        margin-left: 52px;
+        width: 50%;
+        padding-bottom: 300px;
+        p{
+          font-size: 15pt;
+        }
+      }
+    }
+    #page2, #page3{
+      height: 688px;
+      section.svgs{
+        margin: 20px;
+        .proto, .desktop, .presen, .custom, .eval, .usability{
+          margin: 20px;
+        }
+      }
+    }
+    #page4{
+      .slider{
+        display: inline-block;
+      }
+      .circle{
+        margin-top: 0;
+      }
+    }
+    #page5{
+      .boxes{
+        .cont{
+          width: 290px;
+          height: 193px;
+          margin: 16px;
+          .pu{
+            width: 290px;
+            height: 193px;
+          }
+        }
+      }
+    }
 }
 
 /* ----------- Desktop Non-Retina Screens ----------- */

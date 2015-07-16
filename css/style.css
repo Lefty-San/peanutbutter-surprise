@@ -407,16 +407,17 @@ nav {
   #page5 .boxes {
     margin-top: 20px;
     z-index: 0; }
+    #page5 .boxes .cont {
+      margin: 18px;
+      display: inline-block; }
     #page5 .boxes .pu {
       background-color: #ffffff;
       width: 284px;
       height: 190px;
-      margin: 18px;
       display: inline-block;
       border: solid;
       border-color: #cccccc;
-      border-width: 1px;
-      position: relative; }
+      border-width: 1px; }
 
 footer {
   background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
@@ -524,7 +525,7 @@ div[state=bigAF] {
   .pagination {
     position: fixed;
     top: 50%;
-    left: 95%; }
+    left: 97%; }
     .pagination div {
       width: 7px;
       height: 7px;
@@ -728,6 +729,10 @@ div[state=bigAF] {
     color: #ffffff; }
 
   #page5 .x3 {
+    background-image: url(../img/iPad/OrangeX@2x.png);
+    height: 24px;
+    width: 25px;
+    background-size: 100%;
     margin-left: 720px; }
   #page5 .boxes .cont {
     width: 325px;
@@ -736,9 +741,52 @@ div[state=bigAF] {
     display: inline-block; }
   #page5 .boxes .pu {
     width: 325px;
-    height: 215px;
-    margin: 16px; } }
+    height: 215px; } }
 /* iPad Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  #page1 .lp_graphic {
+    background-image: url(../img/iPad/LP_Graphic_Landscape@2x.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 521px;
+    height: 645px;
+    position: absolute;
+    right: 50px;
+    top: 125px;
+    display: inline-block;
+    margin-left: 0; }
+  #page1 header {
+    margin-top: 125px;
+    font-size: 52px;
+    display: inline-block;
+    margin-left: 52px;
+    width: 50%; }
+  #page1 article {
+    margin-left: 52px;
+    width: 50%;
+    padding-bottom: 300px; }
+    #page1 article p {
+      font-size: 15pt; }
+
+  #page2, #page3 {
+    height: 688px; }
+    #page2 section.svgs, #page3 section.svgs {
+      margin: 20px; }
+      #page2 section.svgs .proto, #page2 section.svgs .desktop, #page2 section.svgs .presen, #page2 section.svgs .custom, #page2 section.svgs .eval, #page2 section.svgs .usability, #page3 section.svgs .proto, #page3 section.svgs .desktop, #page3 section.svgs .presen, #page3 section.svgs .custom, #page3 section.svgs .eval, #page3 section.svgs .usability {
+        margin: 20px; }
+
+  #page4 .slider {
+    display: inline-block; }
+  #page4 .circle {
+    margin-top: 0; }
+
+  #page5 .boxes .cont {
+    width: 290px;
+    height: 193px;
+    margin: 16px; }
+    #page5 .boxes .cont .pu {
+      width: 290px;
+      height: 193px; } }
 /* ----------- Desktop Non-Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
   #page2 section.svgs {

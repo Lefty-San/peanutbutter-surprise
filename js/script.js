@@ -18,7 +18,6 @@ $(".article1").hide();
 $(".article2").hide();
 //listen for x click then make small AF
 $(".x, .shade, .svgs, nav, .pagination").click(function(){
-  console.log("clicked");
 	if (canExit == true){
 	  bigExists = false;
 	  var TIMING = .75;
@@ -54,8 +53,6 @@ if ( ow < 500 ) {
   $('body').addClass("desktop");
 }
 device = $('body').attr("class");
-//console.log(device);
-
 if (device == "smartPhone"){
     ourWork.height = "190px";
     ourWork.width = "284px";
@@ -126,7 +123,6 @@ var current=1;
 $(".num"+current).children().addClass("large");
 $(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
-	console.log("clicked");
 });
 TweenMax.set($('.svgs'),{perspective:1000});
 //functions
@@ -153,11 +149,13 @@ function makeBigAF(translate, art){
 	  	  	ease:Power4.easeInOut
 	  });
     if (art == 3){
+      $("[state='bigAF']").parent().css("margin", 0);
       TweenLite.to( $("[state='bigAF']"), TIMING, {
-        width: "100%",
-        height: "100%",
-        margin: "0",
+        width: "100vw",
+        height: "100vh",
+        margin:0,
         zIndex:3,
+        left: 0,
         transformOrigin: "50% 50%",
         ease:Power4.easeInOut
       });
@@ -177,13 +175,12 @@ function makeBigAF(translate, art){
 	  	  	ease:Power4.easeInOut
 	  });
     if (art == 3){
-        translate = String(-100 + translate);
+        translate = String(translate)+"vw";
         TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "1000%",
-          height: "400%",
+          width: "100vw",
+          height: "100vw",
           marginLeft: translate,
           marginTop: 0,
-          margin: "0",
           zIndex:3,
           left: 0,
           top: "100px",
@@ -227,11 +224,12 @@ function norm(img, time, opacity){
 }
 
 function normWork(time){
+  $("[state = 'bigAF']").parent().css("margin", ourWork.margins);
   $("[state = bigAF]").css("position", "relative");
   TweenLite.to($("[state = bigAF]"), time,{
     width: ourWork.width,
     height: ourWork.height,
-    margin: ourWork.margins,
+    margin: 0,
     zIndex: 0,
     top: 0,
     left: 0,
@@ -327,7 +325,6 @@ function navUp(){
 currPage = 1;
 function scrollFunc(e) {
 	var win = $(window);
-	//console.log("depth: " + $(window).scrollTop());
 
 	if (win.scrollTop()<($("#page1").height()/1.75)){
 		currPage = 1
@@ -356,8 +353,6 @@ function scrollFunc(e) {
 
 		}
 	};
-
-	console.log("page: " + currPage);
 
     if ( typeof scrollFunc.x == 'undefined' ) {
         scrollFunc.x=window.pageXOffset;
@@ -441,7 +436,9 @@ $("[scroll]").click( function(){
           scrollTop: $(tar).offset().top
     }, 1000);
   }
-  setTimeout(function () {$("nav").attr("class","close");}, 1000);
+  if (tar != "#page1"){
+    setTimeout(function () {$("nav").attr("class","close");}, 1000);
+  }
   // add something to hide the menu when mobile dropdown
   if (device=="smartPhone"){
 	    $(".menu ul").css('margin-right', '-100px');
@@ -451,7 +448,6 @@ $("[scroll]").click( function(){
 });
 
 //load in page2 svgs
-  console.log('function run');
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
 $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
 $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
@@ -528,22 +524,22 @@ $("[state='small']").click(function(e){
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');
       var height = ourWork.height.replace('px', '');
-      if (! j%2 == 0){
-        makeBigAF(-350, 3);
+      if ((j%2) == 0){
+        makeBigAF(-5.5, 3);
       }
       else{
-        makeBigAF("", 3);
+        makeBigAF(-52.5, 3);
       }
 
       if (device == "smartPhone"){
         //set the margin-top for .x3
-        var str = String(+j*((2* +margins) + (+height))+35)+"px";
+        var str = String(+j*((2.1* +margins) + (+height))+35)+"px";
         $(".x3").css("margin-top", str);
       }
       else if (device == "tabletPort"){
         if(j%2 != 0) j--;
         j = j/2;
-        var str = String(+j*((4* +margins) + (+height))+150)+"px";
+        var str = String(+j*((2* +margins) + (+height))+150)+"px";
         $(".x3").css("margin-top", str);
       }
     }
