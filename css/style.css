@@ -770,10 +770,13 @@ div[state=bigAF] {
 
   #page2, #page3 {
     height: 688px; }
-    #page2 section.svgs, #page3 section.svgs {
+    #page2 section.svgs .svg, #page3 section.svgs .svg {
+      width: 122px;
+      height: 122px;
       margin: 20px; }
-      #page2 section.svgs .proto, #page2 section.svgs .desktop, #page2 section.svgs .presen, #page2 section.svgs .custom, #page2 section.svgs .eval, #page2 section.svgs .usability, #page3 section.svgs .proto, #page3 section.svgs .desktop, #page3 section.svgs .presen, #page3 section.svgs .custom, #page3 section.svgs .eval, #page3 section.svgs .usability {
-        margin: 20px; }
+      #page2 section.svgs .svg svg, #page3 section.svgs .svg svg {
+        width: 122px;
+        height: 122px; }
 
   #page4 .slider {
     display: inline-block; }
@@ -788,7 +791,22 @@ div[state=bigAF] {
       width: 290px;
       height: 193px; } }
 /* ----------- Desktop Non-Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+@media screen and (min-device-width: 1025px) and (max-device-width: 16000px) {
+  nav {
+    height: 144px; }
+    nav .logo {
+      margin-top: 15px;
+      margin-left: 52px;
+      width: 83px;
+      height: 83px;
+      background-image: url(../img/iPad/PKLogo@2x.png); }
+    nav .menu {
+      margin-left: 120px;
+      margin-top: 20px; }
+      nav .menu ul li {
+        display: inline-block;
+        font-size: 24px; }
+
   #page2 section.svgs {
     padding: 0 17%; }
     #page2 section.svgs .svg:nth-child(n+2) {

@@ -38,37 +38,44 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
 	}
 });
 
+function orientationCheck(){
+  console.log("Screen size has changed!");
+
+  var ow = window.outerWidth,
+  	oh = window.outerHeight;
+  if ( ow < 500 ) {
+    $('body').addClass("smartPhone");
+  } else if ( 500 < ow && ow < 800 ) {
+    $('body').addClass("tabletPort");
+  } else if ( 800 < ow && ow < 1300 ) {
+    $('body').addClass("tabletLand");
+  } else if ( ow > 1300 ) {
+    $('body').addClass("desktop");
+  }
+  device = $('body').attr("class");
+  if (device == "smartPhone"){
+      ourWork.height = "190px";
+      ourWork.width = "284px";
+      ourWork.margins = "18px";
+  }
+  else if (device == "tabletPort"){
+      ourWork.height = "215px";
+      ourWork.width = "325px";
+      ourWork.margins = "16px";
+  }
+  else if (device == "tabletLand"){
+
+  }
+  else {
+
+  }
+}
+
 // Stop checking user Agent, check for screen dimentions
 //Put this at the top so it can be used
+orientationCheck();
 console.log(window.outerWidth + '\n' + window.outerHeight);
-var ow = window.outerWidth,
-	oh = window.outerHeight;
-if ( ow < 500 ) {
-  $('body').addClass("smartPhone");
-} else if ( 500 < ow && ow < 800 ) {
-  $('body').addClass("tabletPort");
-} else if ( 800 < ow && ow < 1300 ) {
-  $('body').addClass("tabletLand");
-} else if ( ow > 1300 ) {
-  $('body').addClass("desktop");
-}
-device = $('body').attr("class");
-if (device == "smartPhone"){
-    ourWork.height = "190px";
-    ourWork.width = "284px";
-    ourWork.margins = "18px";
-}
-else if (device == "tabletPort"){
-    ourWork.height = "215px";
-    ourWork.width = "325px";
-    ourWork.margins = "16px";
-}
-else if (device == "tabletLand"){
-
-}
-else {
-
-}
+$(window).on("resize", orientationCheck);
 
 $.fn.isOnScreen = function(x, y){
 

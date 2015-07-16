@@ -951,9 +951,14 @@ div[state=bigAF]{
     #page2, #page3{
       height: 688px;
       section.svgs{
-        margin: 20px;
-        .proto, .desktop, .presen, .custom, .eval, .usability{
+        .svg{
+          width: 122px;
+          height: 122px;
           margin: 20px;
+          svg {
+            width: 122px;
+            height: 122px;
+          }
         }
       }
     }
@@ -982,8 +987,28 @@ div[state=bigAF]{
 
 /* ----------- Desktop Non-Retina Screens ----------- */
 @media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px) {
+  and (min-device-width: 1025px)
+  and (max-device-width: 16000px) {
+    nav{
+      height: 144px;
+      .logo{
+        margin-top: 15px;
+        margin-left: 52px;
+        width: 83px;
+        height: 83px;
+        background-image: $iPad_pk_logo2x;
+      }
+      .menu{
+        margin-left: 120px;
+        margin-top: 20px;
+        ul{
+          li{
+            display: inline-block;
+            font-size: 24px;
+          }
+        }
+      }
+    }
 
     #page2 {
       article.page2 {
