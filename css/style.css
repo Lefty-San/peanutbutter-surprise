@@ -407,7 +407,7 @@ nav {
   #page5 .boxes {
     margin-top: 20px;
     z-index: 0; }
-    #page5 .boxes div:not(.x3) {
+    #page5 .boxes .pu {
       background-color: #ffffff;
       width: 284px;
       height: 190px;
@@ -725,7 +725,17 @@ div[state=bigAF] {
     text-align: left; }
 
   p {
-    color: #ffffff; } }
+    color: #ffffff; }
+
+  #page5 .boxes .cont {
+    width: 325px;
+    height: 215;
+    margin: 16px;
+    display: inline-block; }
+  #page5 .boxes .pu {
+    width: 325px;
+    height: 215px;
+    margin: 16px; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {

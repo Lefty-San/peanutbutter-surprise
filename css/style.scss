@@ -473,7 +473,7 @@ nav {
   .boxes{
     margin-top: 20px;
     z-index: 0;
-    div:not(.x3){
+    .pu{
       background-color: $white;
       width: 284px;
       height: 190px;
@@ -887,6 +887,21 @@ div[state=bigAF]{
     }
     p{
       color: $white;
+    }
+    #page5{
+      .boxes{
+        .cont{
+          width: 325px;
+          height: 215;
+          margin: 16px;
+          display: inline-block;
+        }
+        .pu{
+          width: 325px;
+          height: 215px;
+          margin: 16px;
+        }
+      }
     }
 }
 

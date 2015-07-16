@@ -178,12 +178,13 @@ function makeBigAF(translate, art){
 	  });
     if (art == 3){
         TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "100%",
+          width: "150%",
           height: "80%",
-          position: "absolute",
           margin: "0",
           zIndex:3,
           left: 0,
+          position: "fixed",
+          top: "100px",
           transformOrigin: "50% 50%",
           ease:Power4.easeInOut
       });
@@ -230,6 +231,8 @@ function normWork(time){
     height: ourWork.height,
     margin: ourWork.margins,
     zIndex: 0,
+    top: 0,
+    left: 0,
     transformOrigin: "50% 50%",
     ease:Power4.easeInOut
   });
@@ -417,7 +420,7 @@ $("[scroll]").click( function(){
     if (device == "smartPhone"){
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
-          scrollTop: $(this).offset().top
+          scrollTop: $(this).offset().top - 17
         },1000);
         canExit = true;
       }
@@ -531,7 +534,9 @@ $("[state='small']").click(function(e){
         $(".x3").css("margin-top", str);
       }
       else if (device == "tabletPort"){
-
+        $(".x3").css("position", "fixed");
+        $(".x3").css("top", "130px");
+        $(".x3").css("right", "30px");
       }
     }
 	}
