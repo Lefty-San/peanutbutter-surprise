@@ -175,7 +175,22 @@ function makeBigAF(translate, art){
 	  	  	zIndex: 3,
 	  	  	transformOrigin:"50% 50%",
 	  	  	ease:Power4.easeInOut
-	  	});
+	  });
+    if (art == 3){
+        translate = String(-100 + translate);
+        TweenLite.to( $("[state='bigAF']"), TIMING, {
+          width: "1000%",
+          height: "400%",
+          marginLeft: translate,
+          marginTop: 0,
+          margin: "0",
+          zIndex:3,
+          left: 0,
+          top: "100px",
+          transformOrigin: "50% 50%",
+          ease:Power4.easeInOut
+      });
+    }
 	}
 
 	setTimeout(function(){$(".article"+art).show();}, (TIMING*1000));
@@ -212,11 +227,14 @@ function norm(img, time, opacity){
 }
 
 function normWork(time){
+  $("[state = bigAF]").css("position", "relative");
   TweenLite.to($("[state = bigAF]"), time,{
     width: ourWork.width,
     height: ourWork.height,
     margin: ourWork.margins,
     zIndex: 0,
+    top: 0,
+    left: 0,
     transformOrigin: "50% 50%",
     ease:Power4.easeInOut
   });
@@ -401,11 +419,21 @@ $(".menu .image").click(function(){
 $("[scroll]").click( function(){
   var tar = $(this).attr("scroll");
   if (tar == "this"){
-    if ($(this).attr("state")=="small"){
-      $("html, body").animate({
-        scrollTop: $(this).offset().top
-      },1000);
-      canExit = true;
+    if (device == "smartPhone" || device == "tabletPort"){
+      if ($(this).attr("state")=="small"){
+        $("html, body").animate({
+          scrollTop: $(this).offset().top - 17
+        },1000);
+        canExit = true;
+      }
+    }
+    else{
+      if ($(this).attr("state")=="small"){
+        $("html, body").animate({
+          scrollTop: $(this).parent().offset().top
+        },1000);
+        canExit = true;
+      }
     }
   }
   else{
@@ -497,13 +525,27 @@ $("[state='small']").click(function(e){
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
 	  }
     else{
-      //set the margin-top for .x3
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');
       var height = ourWork.height.replace('px', '');
-      var str = String(+j*((+margins) + (+height))+35)+"px";
-      $(".x3").css("margin-top", str);
-      makeBigAF("translateY(0)", 3);
+      if (! j%2 == 0){
+        makeBigAF(-350, 3);
+      }
+      else{
+        makeBigAF("", 3);
+      }
+
+      if (device == "smartPhone"){
+        //set the margin-top for .x3
+        var str = String(+j*((2* +margins) + (+height))+35)+"px";
+        $(".x3").css("margin-top", str);
+      }
+      else if (device == "tabletPort"){
+        if(j%2 != 0) j--;
+        j = j/2;
+        var str = String(+j*((4* +margins) + (+height))+150)+"px";
+        $(".x3").css("margin-top", str);
+      }
     }
 	}
 });

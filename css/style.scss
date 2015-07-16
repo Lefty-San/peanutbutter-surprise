@@ -473,7 +473,7 @@ nav {
   .boxes{
     margin-top: 20px;
     z-index: 0;
-    div:not(.x3){
+    .pu{
       background-color: $white;
       width: 284px;
       height: 190px;
@@ -482,15 +482,18 @@ nav {
       border: solid;
       border-color: #cccccc;
       border-width: 1px;
+      position: relative;
     }
   }
 }
 
 footer{
-  background-color: #929292;
+  background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
+  background-size: 100%;
   text-align: center;
   margin: 0;
   ul{
+    background-size: 100%;
     padding: 40px 0;
     margin: 0;
     color: #ebebeb;
@@ -884,6 +887,24 @@ div[state=bigAF]{
     }
     p{
       color: $white;
+    }
+    #page5{
+      .x3{
+        margin-left: 720px;
+      }
+      .boxes{
+        .cont{
+          width: 325px;
+          height: 215;
+          margin: 16px;
+          display: inline-block;
+        }
+        .pu{
+          width: 325px;
+          height: 215px;
+          margin: 16px;
+        }
+      }
     }
 }
 

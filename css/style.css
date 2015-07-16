@@ -407,7 +407,7 @@ nav {
   #page5 .boxes {
     margin-top: 20px;
     z-index: 0; }
-    #page5 .boxes div:not(.x3) {
+    #page5 .boxes .pu {
       background-color: white;
       width: 284px;
       height: 190px;
@@ -415,13 +415,16 @@ nav {
       display: inline-block;
       border: solid;
       border-color: #cccccc;
-      border-width: 1px; }
+      border-width: 1px;
+      position: relative; }
 
 footer {
-  background-color: #929292;
+  background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
+  background-size: 100%;
   text-align: center;
   margin: 0; }
   footer ul {
+    background-size: 100%;
     padding: 40px 0;
     margin: 0;
     color: #ebebeb;
@@ -722,7 +725,19 @@ div[state=bigAF] {
     text-align: left; }
 
   p {
-    color: white; } }
+    color: white; }
+
+  #page5 .x3 {
+    margin-left: 720px; }
+  #page5 .boxes .cont {
+    width: 325px;
+    height: 215;
+    margin: 16px;
+    display: inline-block; }
+  #page5 .boxes .pu {
+    width: 325px;
+    height: 215px;
+    margin: 16px; } }
 /* iPad Landscape */
 /* ----------- Desktop Non-Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
