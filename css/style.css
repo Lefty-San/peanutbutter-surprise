@@ -378,7 +378,7 @@ nav {
       margin-top: 165px; }
     #page4 .circle .num4 {
       margin-left: 218px;
-      margin-top: 256px; }
+      margin-top: 255px; }
     #page4 .circle .num5 {
       margin-left: 50px;
       margin-top: 255px; }
@@ -820,19 +820,19 @@ div[state=bigAF] {
     width: 521px;
     height: 645px;
     float: right;
-    margin-right: 200px;
+    margin-right: 100px;
     margin-top: 30px;
     display: inline-block;
     margin-left: 0; }
   #page1 header {
     margin-top: 160px;
-    width: 706px;
+    width: 300px;
     font-size: 52px;
     display: inline-block;
     margin-left: 75px; }
     #page1 header h1, #page1 header h2 {
       font-size: 50pt;
-      width: 100%;
+      width: 706px;
       margin: 0; }
   #page1 article {
     margin-left: 75px;
@@ -908,6 +908,8 @@ div[state=bigAF] {
     margin-top: 0;
     width: 424px;
     height: 424px; }
+    #page4 .circle .suits {
+      margin-top: 133px; }
     #page4 .circle .circ {
       width: 12px;
       height: 12px; }
@@ -915,28 +917,23 @@ div[state=bigAF] {
       margin-top: -7px;
       margin-left: 201px; }
     #page4 .circle .num2 {
-      margin-left: 374px;
-      margin-top: 79px; }
+      margin-left: 357px;
+      margin-top: 59px; }
     #page4 .circle .num3 {
-      margin-left: 409px; 
-      margin-top: 263px;
-}
+      margin-left: 415px;
+      margin-top: 233px; }
     #page4 .circle .num4 {
-      margin-left: 318px; 
-      margin-top: 385px;
-}
+      margin-left: 325px;
+      margin-top: 381px; }
     #page4 .circle .num5 {
-      margin-left: 98px; 
-      margin-top: 390px;
-}
+      margin-left: 82px;
+      margin-top: 381px; }
     #page4 .circle .num6 {
-      margin-left: 0px; 
-      margin-top: 270px;
-}
+      margin-left: -8px;
+      margin-top: 233px; }
     #page4 .circle .num7 {
-      margin-left: 30px; 
-      margin-top: 82px;
-}
+      margin-left: 49px;
+      margin-top: 59px; }
   #page4 article {
     width: 980px;
     text-align: left;

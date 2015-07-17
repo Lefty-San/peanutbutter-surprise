@@ -1025,20 +1025,20 @@ div[state=bigAF]{
         width: 521px;
         height: 645px;
         float: right;
-        margin-right: 200px;
+        margin-right: 100px;
         margin-top: 30px;
         display: inline-block;
         margin-left: 0;
       }
       header {
         margin-top: 160px;
-        width: 706px;
+        width: 300px;
         font-size: 52px;
         display: inline-block;
         margin-left: 75px;
         h1, h2{
           font-size: 50pt;
-          width: 100%;
+          width: 706px;
           margin: 0;
         }
       }
@@ -1134,6 +1134,9 @@ div[state=bigAF]{
         margin-top: 0;
         width: 424px;
         height: 424px;
+        .suits{
+          margin-top: 133px;
+        }
         .circ{
           width: 12px;
           height: 12px;
@@ -1147,19 +1150,24 @@ div[state=bigAF]{
           margin-top: 59px;
         }
         .num3{
-          margin-left: 409px;
+          margin-left: 415px;
+          margin-top: 233px;
         }
         .num4{
           margin-left: 325px;
+          margin-top: 381px
         }
         .num5{
-          margin-left: 74px;
+          margin-left: 82px;
+          margin-top: 381px;
         }
         .num6{
-          margin-left: -10px;
+          margin-left: -8px;
+          margin-top: 233px;
         }
         .num7{
-          margin-left: 30px;
+          margin-left: 49px;
+          margin-top: 59px;
         }
       }
       article{
