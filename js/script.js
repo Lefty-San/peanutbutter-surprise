@@ -39,12 +39,12 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
 });
 
 function orientationCheck(){
-  console.log("Screen size has changed!");
 
   var ow = window.outerWidth,
   	oh = window.outerHeight;
   if ( ow < 500 ) {
     $('body').addClass("smartPhone");
+    $(".pagination").hide();
   } else if ( 500 < ow && ow < 800 ) {
     $('body').addClass("tabletPort");
   } else if ( 800 < ow && ow < 1300 ) {
@@ -69,6 +69,8 @@ function orientationCheck(){
   else {
 
   }
+
+  console.log("Screen size has changed to: "+device);
 }
 
 // Stop checking user Agent, check for screen dimentions
