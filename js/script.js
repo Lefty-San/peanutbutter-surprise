@@ -508,6 +508,41 @@ $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
 //listen for clicked svgs and make big AF
 bigExists = false;
+$(function(){
+    var $cards = $('.svg');
+    var cardInFocus = null;
+
+
+    $cards.each(function(index, elem){
+        var $elem = $(elem);
+        var pos = $elem.position();
+        $(elem).data('orig-x', pos.left);
+        $(elem).data('orig-y', pos.top);
+    });
+
+    var reset = function(){
+        if(cardInFocus){
+            $(cardInFocus).transition({x:0,y:0});
+        };
+    };
+
+    $cards.focus(function(e){
+        reset();
+        cardInFocus = this;
+        var $doc = $(document);
+        var centerX = $doc.width() / 2;
+        var centerY = $doc.height() / 2;
+        var $card = $(this);
+        var origX = $card.data('orig-x');
+        var origY = $card.data('orig-y');
+        $(this).transition({x:centerX - origX,y:centerY-origY});
+    });
+
+    $cards.blur(function(e){
+        reset();
+    });
+
+});
 $("[state='small']").click(function(e){
 	if(bigExists == false){
 	  $(".shade").css("display", "block");
