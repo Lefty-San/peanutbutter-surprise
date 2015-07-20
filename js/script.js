@@ -18,7 +18,6 @@ $(".article1").hide();
 $(".article2").hide();
 //listen for x click then make small AF
 $(".x, .shade, .svgs, nav, .pagination").click(function(){
-  console.log("clicked");
 	if (canExit == true){
 	  bigExists = false;
 	  var TIMING = .75;
@@ -39,39 +38,46 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
 	}
 });
 
+function orientationCheck(){
+
+  var ow = window.outerWidth,
+  	oh = window.outerHeight;
+  if ( ow < 500 ) {
+    $('body').addClass("smartPhone");
+    $(".pagination").hide();
+  } else if ( 500 < ow && ow < 800 ) {
+    $('body').addClass("tabletPort");
+  } else if ( 800 < ow && ow < 1300 ) {
+    $('body').addClass("tabletLand");
+  } else if ( ow > 1300 ) {
+    $('body').addClass("desktop");
+  }
+  device = $('body').attr("class");
+  if (device == "smartPhone"){
+      ourWork.height = "190px";
+      ourWork.width = "284px";
+      ourWork.margins = "18px";
+  }
+  else if (device == "tabletPort"){
+      ourWork.height = "215px";
+      ourWork.width = "325px";
+      ourWork.margins = "16px";
+  }
+  else if (device == "tabletLand"){
+
+  }
+  else {
+
+  }
+
+  console.log("Screen size has changed to: "+device);
+}
+
 // Stop checking user Agent, check for screen dimentions
 //Put this at the top so it can be used
+orientationCheck();
 console.log(window.outerWidth + '\n' + window.outerHeight);
-var ow = window.outerWidth,
-	oh = window.outerHeight;
-if ( ow < 500 ) {
-  $('body').addClass("smartPhone");
-} else if ( 500 < ow && ow < 800 ) {
-  $('body').addClass("tabletPort");
-} else if ( 800 < ow && ow < 1300 ) {
-  $('body').addClass("tabletLand");
-} else if ( ow > 1300 ) {
-  $('body').addClass("desktop");
-}
-device = $('body').attr("class");
-//console.log(device);
-
-if (device == "smartPhone"){
-    ourWork.height = "190px";
-    ourWork.width = "284px";
-    ourWork.margins = "18px";
-}
-else if (device == "tabletPort"){
-    ourWork.height = "215px";
-    ourWork.width = "325px";
-    ourWork.margins = "16px";
-}
-else if (device == "tabletLand"){
-
-}
-else {
-
-}
+$(window).on("resize", orientationCheck);
 
 $.fn.isOnScreen = function(x, y){
 
@@ -126,7 +132,6 @@ var current=1;
 $(".num"+current).children().addClass("large");
 $(".leftbutt").css('visibility','hidden');
 $(".leftButt").click(function(){
-	console.log("clicked");
 });
 TweenMax.set($('.svgs'),{perspective:1000});
 //functions
@@ -153,11 +158,13 @@ function makeBigAF(translate, art){
 	  	  	ease:Power4.easeInOut
 	  });
     if (art == 3){
+      $("[state='bigAF']").parent().css("margin", 0);
       TweenLite.to( $("[state='bigAF']"), TIMING, {
-        width: "100%",
-        height: "100%",
-        margin: "0",
+        width: "100vw",
+        height: "100vh",
+        margin:0,
         zIndex:3,
+        left: 0,
         transformOrigin: "50% 50%",
         ease:Power4.easeInOut
       });
@@ -177,13 +184,12 @@ function makeBigAF(translate, art){
 	  	  	ease:Power4.easeInOut
 	  });
     if (art == 3){
-        translate = String(-100 + translate);
+        translate = String(translate)+"vw";
         TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "1000%",
-          height: "400%",
+          width: "100vw",
+          height: "100vw",
           marginLeft: translate,
           marginTop: 0,
-          margin: "0",
           zIndex:3,
           left: 0,
           top: "100px",
@@ -196,6 +202,16 @@ function makeBigAF(translate, art){
 	setTimeout(function(){$(".article"+art).show();}, (TIMING*1000));
 	setTimeout(function(){$(".x"+art).show();}, (TIMING*1000));
 	setTimeout(function(){canExit = true;}, (TIMING*1000));
+}
+function load(section, htm){
+  $(section).empty();
+  $.ajax({
+    url: htm,
+    cache: false
+  })
+    .done(function(html) {
+      $(section).append(html);
+  });
 }
 
 //hideMenu function must be called onComplete
@@ -227,11 +243,12 @@ function norm(img, time, opacity){
 }
 
 function normWork(time){
+  $("[state = 'bigAF']").parent().css("margin", ourWork.margins);
   $("[state = bigAF]").css("position", "relative");
   TweenLite.to($("[state = bigAF]"), time,{
     width: ourWork.width,
     height: ourWork.height,
-    margin: ourWork.margins,
+    margin: 0,
     zIndex: 0,
     top: 0,
     left: 0,
@@ -327,7 +344,6 @@ function navUp(){
 currPage = 1;
 function scrollFunc(e) {
 	var win = $(window);
-	//console.log("depth: " + $(window).scrollTop());
 
 	if (win.scrollTop()<($("#page1").height()/1.75)){
 		currPage = 1
@@ -345,6 +361,13 @@ function scrollFunc(e) {
 		currPage = 5;
 	}
 
+  if (currPage == 1){
+    $('nav').attr("class","open");
+  }
+  else{
+    $('nav').attr("class","close");
+  }
+
 	for (var i = 1; i < 6; i++) {
 		if (i == currPage){
 			$(".pagination div.o" + i).addClass("current");
@@ -356,26 +379,6 @@ function scrollFunc(e) {
 
 		}
 	};
-
-	console.log("page: " + currPage);
-
-    if ( typeof scrollFunc.x == 'undefined' ) {
-        scrollFunc.x=window.pageXOffset;
-        scrollFunc.y=window.pageYOffset;
-    }
-    var diffX=scrollFunc.x-window.pageXOffset;
-    var diffY=scrollFunc.y-window.pageYOffset;
-    if( diffY<0 ) {
-        // Scroll down
-        $("nav").attr("class","close");
-    } else if( diffY>0 ) {
-        // Scroll up
-        $("nav").attr("class","open");
-    } else {
-        // First scroll event -- do nothing
-    }
-    scrollFunc.x=window.pageXOffset;
-    scrollFunc.y=window.pageYOffset;
 }
 $("#page1").css("padding-top", $('nav').height());
 window.onscroll=scrollFunc;
@@ -441,7 +444,9 @@ $("[scroll]").click( function(){
           scrollTop: $(tar).offset().top
     }, 1000);
   }
-  setTimeout(function () {$("nav").attr("class","close");}, 1000);
+  if (tar != "#page1"){
+    setTimeout(function () {$("nav").attr("class","close");}, 1000);
+  }
   // add something to hide the menu when mobile dropdown
   if (device=="smartPhone"){
 	    $(".menu ul").css('margin-right', '-100px');
@@ -451,7 +456,6 @@ $("[scroll]").click( function(){
 });
 
 //load in page2 svgs
-  console.log('function run');
 $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
 $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
 $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
@@ -475,52 +479,52 @@ $("[state='small']").click(function(e){
 	  //$(this).children().children().css("position", "absolute");
 
 	  if ($(this).hasClass("wireframes")){
-	  	  $('.article1 p').load("arts/wireframes.htm");
+        load(".article1", "arts/wireframes.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(42px) translateY(-5px)", 1);}
 	  }
 	  else if ($(this).hasClass("mobile")){
-	  	  $('.article2 p').load("arts/mobile.htm");
+        load(".article2", "arts/mobile.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)", 2);}
 	  	}
 	  else if ($(this).hasClass("proto")){
-	  	  $('.article1 p').load("arts/proto.htm");
+	  	  load(".article1", "arts/proto.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(0px) translateY(-5px)", 1);}
 	  }
 	  else if ($(this).hasClass("desktop")){
-	  	  $('.article2 p').load("arts/desktop.htm");
+	  	  load(".article2", "arts/desktop.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-0px) translateY(-5px)", 2);}
 	  }
 	  else if ($(this).hasClass("user")){
-	  	  $('.article1 p').load("arts/user.htm");
+	  	  load(".article1", "arts/user.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 1);}
 	  }
 	  else if ($(this).hasClass("poc")){
-	  	  $('.article2 p').load("arts/poc.htm");
+	  	  load(".article2", "arts/poc.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 2);}
 	  }
 	  else if ($(this).hasClass("eval")){
-	  	  $('.article1 p').load("arts/eval.htm");
+	  	  load(".article1", "arts/eval.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 1);}
 	  }
 	  else if ($(this).hasClass("presen")){
-	  	  $('.article2 p').load("arts/presen.htm");
+	  	  load(".article2", "arts/presen.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 2);}
 	  }
 	  else if ($(this).hasClass("usability")){
-	  	  $('.article1 p').load("arts/usability.htm");
+	  	  load(".article1", "arts/usability.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 1);}
 	  }
 	  else if ($(this).hasClass("custom")){
-	  	  $('.article2 p').load("arts/custom.htm");
+	  	  load(".article2", "arts/custom.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
 	  }
@@ -528,22 +532,22 @@ $("[state='small']").click(function(e){
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');
       var height = ourWork.height.replace('px', '');
-      if (! j%2 == 0){
-        makeBigAF(-350, 3);
+      if ((j%2) == 0){
+        makeBigAF(-5.5, 3);
       }
       else{
-        makeBigAF("", 3);
+        makeBigAF(-52.5, 3);
       }
 
       if (device == "smartPhone"){
         //set the margin-top for .x3
-        var str = String(+j*((2* +margins) + (+height))+35)+"px";
+        var str = String(+j*((2.1* +margins) + (+height))+35)+"px";
         $(".x3").css("margin-top", str);
       }
       else if (device == "tabletPort"){
         if(j%2 != 0) j--;
         j = j/2;
-        var str = String(+j*((4* +margins) + (+height))+150)+"px";
+        var str = String(+j*((2* +margins) + (+height))+150)+"px";
         $(".x3").css("margin-top", str);
       }
     }
