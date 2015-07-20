@@ -361,6 +361,13 @@ function scrollFunc(e) {
 		currPage = 5;
 	}
 
+  if (currPage == 1){
+    $('nav').attr("class","open");
+  }
+  else{
+    $('nav').attr("class","close");
+  }
+
 	for (var i = 1; i < 6; i++) {
 		if (i == currPage){
 			$(".pagination div.o" + i).addClass("current");
@@ -372,24 +379,6 @@ function scrollFunc(e) {
 
 		}
 	};
-
-    if ( typeof scrollFunc.x == 'undefined' ) {
-        scrollFunc.x=window.pageXOffset;
-        scrollFunc.y=window.pageYOffset;
-    }
-    var diffX=scrollFunc.x-window.pageXOffset;
-    var diffY=scrollFunc.y-window.pageYOffset;
-    if( diffY<0 ) {
-        // Scroll down
-        $("nav").attr("class","close");
-    } else if( diffY>0 ) {
-        // Scroll up
-        $("nav").attr("class","open");
-    } else {
-        // First scroll event -- do nothing
-    }
-    scrollFunc.x=window.pageXOffset;
-    scrollFunc.y=window.pageYOffset;
 }
 $("#page1").css("padding-top", $('nav').height());
 window.onscroll=scrollFunc;
