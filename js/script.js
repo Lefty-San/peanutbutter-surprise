@@ -64,7 +64,9 @@ function orientationCheck(){
       ourWork.margins = "16px";
   }
   else if (device == "tabletLand"){
-
+      ourWork.height = "193px";
+      ourWork.width = "290px";
+      ourWork.margins = "14px";
   }
   else {
 
@@ -198,6 +200,62 @@ function makeBigAF(translate, art){
       });
     }
 	}
+  else if(device == "tabletLand"){
+		TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+		  	transform: "translateY(-200px) translateX(20px) translateZ(0) scale(.5,.5)",
+		  	zIndex: 3,
+		  	transformOrigin:"50% 50%",
+		  	ease:Power4.easeInOut
+		});
+		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
+	  	  	transform: "scale3d(6,6,1)" + translate,
+	  	  	zIndex: 3,
+	  	  	transformOrigin:"50% 50%",
+	  	  	ease:Power4.easeInOut
+	  });
+    if (art == 3){
+        translate = String(translate)+"vw";
+        TweenLite.to( $("[state='bigAF']"), TIMING, {
+          width: "100vw",
+          height: "100vw",
+          marginLeft: translate,
+          marginTop: 0,
+          zIndex:3,
+          left: 0,
+          top: "100px",
+          transformOrigin: "50% 50%",
+          ease:Power4.easeInOut
+      });
+    }
+	}
+  else{
+    TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+		  	transform: "translateY(-200px) translateX(20px) translateZ(0) scale(.5,.5)",
+		  	zIndex: 3,
+		  	transformOrigin:"50% 50%",
+		  	ease:Power4.easeInOut
+		});
+		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
+	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
+	  	  	zIndex: 3,
+	  	  	transformOrigin:"50% 50%",
+	  	  	ease:Power4.easeInOut
+	  });
+    if (art == 3){
+        translate = String(translate)+"vw";
+        TweenLite.to( $("[state='bigAF']"), TIMING, {
+          width: "100vw",
+          height: "100vw",
+          marginLeft: translate,
+          marginTop: 0,
+          zIndex:3,
+          left: 0,
+          top: "100px",
+          transformOrigin: "50% 50%",
+          ease:Power4.easeInOut
+      });
+    }
+  }
 
 	setTimeout(function(){$(".article"+art).show();}, (TIMING*1000));
 	setTimeout(function(){$(".x"+art).show();}, (TIMING*1000));
@@ -319,28 +377,6 @@ function animateLeft(){
 	});
 }
 
-function navDown(){
-	var TIMING = .5;
-	TweenMax.to($("nav"), TIMING,{
-		rotationX: 0,
-		transformPerspective: 500,
-		transformOrigin: "50% 0%",
-		ease:Bounce.easeOut
-	});
-	$("#page1").css("padding-top", $('nav').height());
-}
-
-function navUp(){
-	var TIMING = .2;
-	TweenLite.to($("nav"), TIMING,{
-		rotationX: -90,
-		transformPerspective: 300,
-		transformOrigin: "50% 0",
-		ease:Power2.easeIn
-	});
-	$("#page1").css("padding-top", "0");
-}
-
 currPage = 1;
 function scrollFunc(e) {
 	var win = $(window);
@@ -368,6 +404,7 @@ function scrollFunc(e) {
     $('nav').attr("class","close");
   }
 
+  //pagination logic
 	for (var i = 1; i < 6; i++) {
 		if (i == currPage){
 			$(".pagination div.o" + i).addClass("current");
@@ -482,52 +519,63 @@ $("[state='small']").click(function(e){
         load(".article1", "arts/wireframes.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(42px) translateY(-5px)", 1);}
-	  }
+	      else if (device=="tabletLand"){makeBigAF("translateX(55px) translateY(-28px)", 1);}
+        else {makeBigAF("translateX(70px) translateY(-60px)", 1);}
+    }
 	  else if ($(this).hasClass("mobile")){
         load(".article2", "arts/mobile.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)", 2);}
-	  	}
+        else if (device=="tabletLand"){makeBigAF("translateX(55px) translateY(-28px)", 2);}
+      }
 	  else if ($(this).hasClass("proto")){
 	  	  load(".article1", "arts/proto.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(0px) translateY(-5px)", 1);}
+        else if (device=="tabletLand"){makeBigAF("translateX(27px) translateY(-28px)", 1);}
 	  }
 	  else if ($(this).hasClass("desktop")){
 	  	  load(".article2", "arts/desktop.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-0px) translateY(-5px)", 2);}
-	  }
+        else if (device=="tabletLand"){makeBigAF("translateX(27px) translateY(-28px)", 2);}
+    }
 	  else if ($(this).hasClass("user")){
 	  	  load(".article1", "arts/user.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 1);}
+        else if (device=="tabletLand"){makeBigAF("translateX(0px) translateY(-28px)", 1);}
 	  }
 	  else if ($(this).hasClass("poc")){
 	  	  load(".article2", "arts/poc.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 2);}
-	  }
+        else if (device=="tabletLand"){makeBigAF("translateX(0px) translateY(-28px)", 2);}
+    }
 	  else if ($(this).hasClass("eval")){
 	  	  load(".article1", "arts/eval.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 1);}
-	  }
+        else if (device=="tabletLand"){makeBigAF("translateX(-27px) translateY(-28px)", 1);}
+    }
 	  else if ($(this).hasClass("presen")){
 	  	  load(".article2", "arts/presen.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 2);}
-	  }
+        else if (device=="tabletLand"){makeBigAF("translateX(-27px) translateY(-28px)", 2);}
+    }
 	  else if ($(this).hasClass("usability")){
 	  	  load(".article1", "arts/usability.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 1);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 1);}
-	  }
+        else if (device=="tabletLand"){makeBigAF("translateX(-55px) translateY(-28px)", 1);}
+    }
 	  else if ($(this).hasClass("custom")){
 	  	  load(".article2", "arts/custom.htm");
 	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 2);}
 	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
-	  }
+        else if (device=="tabletLand"){makeBigAF("translateX(-55px) translateY(-28px)", 2);}
+    }
     else{
       var j = $(this).attr("num").replace("j","");
       var margins = ourWork.margins.replace('px', '');

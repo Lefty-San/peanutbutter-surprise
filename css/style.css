@@ -783,6 +783,14 @@ div[state=bigAF] {
 
   #page2, #page3 {
     height: 688px; }
+    #page2 .x, #page3 .x {
+      margin-left: 634px;
+      margin-top: -260px; }
+    #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+      margin-top: -85px; }
+      #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+        width: 650px;
+        margin: 30px auto; }
     #page2 section.svgs .svg, #page3 section.svgs .svg {
       width: 122px;
       height: 122px;
@@ -866,8 +874,10 @@ div[state=bigAF] {
 
   #page2, #page3 {
     height: 1000px; }
+    #page2 p, #page3 p {
+      font-size: 24pt; }
     #page2 header, #page3 header {
-      margin-top: 130px; }
+      margin-top: 100px; }
       #page2 header h1, #page3 header h1 {
         font-size: 84px;
         width: auto;
@@ -877,14 +887,25 @@ div[state=bigAF] {
         height: 44px;
         line-height: 44px;
         margin-bottom: 10px; }
+    #page2 .x, #page3 .x {
+      margin-left: 800px;
+      margin-bottom: 100px; }
     #page2 article, #page3 article {
-      margin: 124px 80px 85px 80px;
+      margin: 80px;
       font-size: 24pt;
       text-align: left; }
+    #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+      width: 100%;
+      margin-top: -360px;
+      text-align: center; }
+      #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+        width: 700px; }
     #page2 section.svgs .svg, #page3 section.svgs .svg {
       width: 142px;
       height: 142px;
       margin: 24px; }
+      #page2 section.svgs .svg p, #page3 section.svgs .svg p {
+        font-size: 22pt; }
       #page2 section.svgs .svg svg, #page3 section.svgs .svg svg {
         width: 142px;
         height: 142px; }
