@@ -39,13 +39,14 @@ $orange: #f9941f;
 }
 
 body{
-	width: 100%;
+	width: 100vw;
 	margin: 0;
 }
 .mainContainer {
-	width: 100%;
+	width: 100vw;
 	overflow: hidden;
 	margin: 0;
+  overflow-x: hidden;
 }
 
 .pagination{
@@ -123,7 +124,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   .logo {
   	margin-left: 16px;
     background: $iphone_pk_logo;
@@ -282,9 +283,13 @@ nav {
 #page2, #page3 {
 	.svg{
 		display: inline-block;
-		width: 150px;
-		height: 150px;
+		width: 100px;
+		height: 100px;
 		flex-direction: row-reverse;
+    div{
+      width: 100px;
+      height: 100px;
+    }
 	}
 	svg {
    		width: 100px;
@@ -665,9 +670,12 @@ div[state=bigAF]{
       margin: 0;
     }
     .svg {
-      div {
-        min-height:100px;
+      div{
+        width: 100px;
+        height: 100px;
       }
+      margin-left: 20px;
+      margin-right: 20px;
     }
 }
 
@@ -783,9 +791,17 @@ div[state=bigAF]{
         margin: 0 50px;
         text-align: left;
       }
-      .svg svg{
+      .svg {
         width: 135px;
         height: 135px;
+        svg{
+        width: 135px;
+        height: 135px;
+        }
+        div{
+        width: 135px;
+        height: 135px;
+        }
       }
       section.svgs{
         margin: 84px 34px 0 34px;
@@ -981,6 +997,10 @@ div[state=bigAF]{
           width: 122px;
           height: 122px;
           margin: 20px;
+          div{
+            height: 122px;
+            width: 122px;
+          }
           svg {
             width: 122px;
             height: 122px;
@@ -1128,6 +1148,10 @@ div[state=bigAF]{
           width: 142px;
           height: 142px;
           margin: 24px;
+          div{
+            width: 142px;
+            height: 142px;
+          }
           p{
             font-size: 22pt;
           }
