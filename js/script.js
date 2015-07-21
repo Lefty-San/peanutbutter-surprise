@@ -471,6 +471,9 @@ $("[state='small']").click(function(e){
     else
       makeBigAF($(this), "724px");
 	}
+  var url = "arts/"+$(this).attr("class").replace("svg ", "") + ".htm";
+  console.log(url);
+  load(".article" + ($(this).data("pageNo")-1), url);
 });
 
 // key log for window information
