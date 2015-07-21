@@ -1,6 +1,20 @@
 // js file. this will be fun
 $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
+
+    var $cards = $('.svg');
+    var cardInFocus = null;
+    $cards.each(function(index, elem){
+        var $elem = $(elem);
+        var pos = $elem.offset();
+        $(elem).data('orig-x', pos.left);
+        $(elem).data('orig-y', pos.top);
+        $(elem).data('pageNo', +$(elem).attr("scroll").replace("#page", ""));
+        //console.log($elem.width());
+        $(elem).data('width', $elem.width());
+        $elem.data('height', $elem.height());
+        //console.log($(elem).data());
+    });
 });
 
 //initiate ourWork object
@@ -27,9 +41,9 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
         normWork(TIMING);
     }
     else{
-    	  norm("[state='bigAF'] div svg", TIMING, 1);
-    	  norm("[state='bigAF'] div svg path:not(g path)", TIMING, .12);
-    	  norm("[state='bigAF'] div svg g", TIMING, 1);
+    	  normSVG("[state='bigAF'] div svg", TIMING, 1);
+    	  normSVG("[state='bigAF'] div svg path:not(g path)", TIMING, .12);
+    	  normSVG("[state='bigAF'] div svg g", TIMING, 1);
     }
 	  canExit = false;
 	  $(".shade").css("display", "none");
@@ -137,130 +151,52 @@ $(".leftButt").click(function(){
 });
 TweenMax.set($('.svgs'),{perspective:1000});
 //functions
-function makeBigAF(translate, art){
+function makeBigAF(ths, size){
 	var TIMING = 1.5;
-	TweenLite.to("[state='bigAF'] div svg path:not(g path)", TIMING, {
+  var pageHeight = 0;
+  for (var i = 1; i < ths.data('pageNo'); i++){
+    pageHeight += $("#page"+ths.data('pageNo')).height();
+  }
+
+	TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
 	  	opacity:"0",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
 	  	ease:Power4.easeInOut
 	});
-
-	if(device == "smartPhone"){
-		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
-		  	transform: "translateY(-70px) translateZ(0) scale(0.25, 0.25)",
-		  	zIndex: 3,
-		  	transformOrigin:"50% 50%",
-		  	ease:Power4.easeInOut
-		});
-		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-	  	  	transform: "scale3d(10,10,1)" + translate,
-	  	  	zIndex: 3,
-	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power4.easeInOut
-	  });
-    if (art == 3){
-      $("[state='bigAF']").parent().css("margin", 0);
-      TweenLite.to( $("[state='bigAF']"), TIMING, {
-        width: "100vw",
-        height: "100vh",
-        margin:0,
-        zIndex:3,
-        left: 0,
-        transformOrigin: "50% 50%",
-        ease:Power4.easeInOut
-      });
-    }
-	}
-	else if(device == "tabletPort"){
-		TweenLite.to("[state='bigAF'] div svg g", TIMING, {
-		  	transform: "translateY(-200px) translateX(5px) translateZ(0) scale(.5,.5)",
-		  	zIndex: 3,
-		  	transformOrigin:"50% 50%",
-		  	ease:Power4.easeInOut
-		});
-		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
-	  	  	zIndex: 3,
-	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power4.easeInOut
-	  });
-    if (art == 3){
-        translate = String(translate)+"vw";
-        TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "100vw",
-          height: "100vw",
-          marginLeft: translate,
-          marginTop: 0,
-          zIndex:3,
-          left: 0,
-          top: "100px",
-          transformOrigin: "50% 50%",
-          ease:Power4.easeInOut
-      });
-    }
-	}
-  else if(device == "tabletLand"){
-		TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
-		  	transform: "translateY(-200px) translateX(20px) translateZ(0) scale(.5,.5)",
-		  	zIndex: 3,
-		  	transformOrigin:"50% 50%",
-		  	ease:Power4.easeInOut
-		});
-		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-	  	  	transform: "scale3d(6,6,1)" + translate,
-	  	  	zIndex: 3,
-	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power4.easeInOut
-	  });
-    if (art == 3){
-        translate = String(translate)+"vw";
-        TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "100vw",
-          height: "100vw",
-          marginLeft: translate,
-          marginTop: 0,
-          zIndex:3,
-          left: 0,
-          top: "100px",
-          transformOrigin: "50% 50%",
-          ease:Power4.easeInOut
-      });
-    }
-	}
-  else{
-    TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
-		  	transform: "translateY(-200px) translateX(20px) translateZ(0) scale(.5,.5)",
-		  	zIndex: 3,
-		  	transformOrigin:"50% 50%",
-		  	ease:Power4.easeInOut
-		});
-		TweenLite.to( $("[state='bigAF'] div svg"), TIMING, {
-	  	  	transform: "scale3d(5.5,5.5,1)" + translate,
-	  	  	zIndex: 3,
-	  	  	transformOrigin:"50% 50%",
-	  	  	ease:Power4.easeInOut
-	  });
-    if (art == 3){
-        translate = String(translate)+"vw";
-        TweenLite.to( $("[state='bigAF']"), TIMING, {
-          width: "100vw",
-          height: "100vw",
-          marginLeft: translate,
-          marginTop: 0,
-          zIndex:3,
-          left: 0,
-          top: "100px",
-          transformOrigin: "50% 50%",
-          ease:Power4.easeInOut
-      });
-    }
+	TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+	  	transform: "translateY(-200px) translateZ(0) scale(0.5, 0.5)",
+	  	zIndex: 3,
+	  	transformOrigin:"50% 50%",
+	  	ease:Power4.easeInOut
+	});
+  var trans = "translateX("+String(($(".mainContainer").width()/2) - ths.data('orig-x')- +size.replace("px","")/2)+"px) translateY("+String((pageHeight - ths.data('orig-y'))+$("#page"+ths.data('pageNo')).height()/4)+"px) ";
+  console.log(ths.data());
+  console.log($('.mainContainer').width())
+  console.log(trans);
+  TweenLite.to($("[state='bigAF'] div svg"),TIMING,{
+    width: size,
+    height: size,
+    transform: trans,
+    zIndex: 3
+  });
+  if (size == 3){
+    $("[state='bigAF']").parent().css("margin", 0);
+    TweenLite.to( $("[state='bigAF']"), TIMING, {
+      width: "100vw",
+      height: "100vh",
+      margin:0,
+      zIndex:3,
+      left: 0,
+      transformOrigin: "50% 50%",
+      ease:Power4.easeInOut
+    });
   }
-
-	setTimeout(function(){$(".article"+art).show();}, (TIMING*1000));
-	setTimeout(function(){$(".x"+art).show();}, (TIMING*1000));
+	setTimeout(function(){$(".article"+String(ths.data('pageNo')-1)).show();}, (TIMING*1000));
+	setTimeout(function(){$(".x"+String(ths.data('pageNo')-1)).show();}, (TIMING*1000));
 	setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
+
 function load(section, htm){
   $(section).empty();
   $.ajax({
@@ -285,6 +221,17 @@ function moveCirc(curr, next){
 	TweenLite.to($(".num"+next).children(), .5, {
 		transform: "scale(2, 2)",
 		transformOrigin: "50% 50%",
+		ease:Power2.easeInOut
+	});
+}
+function normSVG(img, time, opacity){
+  TweenMax.to( $(img), time, {
+		transform: "scale(1, 1) translateX(0px) translateY(0px)",
+    width: $("[state='small']").width(),
+    height: $("[state='small']").width(),
+		opacity: opacity,
+		zIndex: 0,
+		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut
 	});
 }
@@ -506,134 +453,23 @@ $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
 $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
 $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
+
 //listen for clicked svgs and make big AF
 bigExists = false;
-$(function(){
-    var $cards = $('.svg');
-    var cardInFocus = null;
-
-
-    $cards.each(function(index, elem){
-        var $elem = $(elem);
-        var pos = $elem.position();
-        $(elem).data('orig-x', pos.left);
-        $(elem).data('orig-y', pos.top);
-    });
-
-    var reset = function(){
-        if(cardInFocus){
-            $(cardInFocus).transition({x:0,y:0});
-        };
-    };
-
-    $cards.focus(function(e){
-        reset();
-        cardInFocus = this;
-        var $doc = $(document);
-        var centerX = $doc.width() / 2;
-        var centerY = $doc.height() / 2;
-        var $card = $(this);
-        var origX = $card.data('orig-x');
-        var origY = $card.data('orig-y');
-        $(this).transition({x:centerX - origX,y:centerY-origY});
-    });
-
-    $cards.blur(function(e){
-        reset();
-    });
-
-});
 $("[state='small']").click(function(e){
 	if(bigExists == false){
 	  $(".shade").css("display", "block");
 	  bigExists = true;
 	  $(this).attr("state", "bigAF");
 	  //$(this).children().children().css("position", "absolute");
-
-	  if ($(this).hasClass("wireframes")){
-        load(".article1", "arts/wireframes.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 1);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(42px) translateY(-5px)", 1);}
-	      else if (device=="tabletLand"){makeBigAF("translateX(55px) translateY(-28px)", 1);}
-        else {makeBigAF("translateX(70px) translateY(-60px)", 1);}
-    }
-	  else if ($(this).hasClass("mobile")){
-        load(".article2", "arts/mobile.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(10px)", 2);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(45px) translateY(-5px)", 2);}
-        else if (device=="tabletLand"){makeBigAF("translateX(55px) translateY(-28px)", 2);}
-      }
-	  else if ($(this).hasClass("proto")){
-	  	  load(".article1", "arts/proto.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 1);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(0px) translateY(-5px)", 1);}
-        else if (device=="tabletLand"){makeBigAF("translateX(27px) translateY(-28px)", 1);}
-	  }
-	  else if ($(this).hasClass("desktop")){
-	  	  load(".article2", "arts/desktop.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateX(-7px)", 2);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-0px) translateY(-5px)", 2);}
-        else if (device=="tabletLand"){makeBigAF("translateX(27px) translateY(-28px)", 2);}
-    }
-	  else if ($(this).hasClass("user")){
-	  	  load(".article1", "arts/user.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 1);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 1);}
-        else if (device=="tabletLand"){makeBigAF("translateX(0px) translateY(-28px)", 1);}
-	  }
-	  else if ($(this).hasClass("poc")){
-	  	  load(".article2", "arts/poc.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(8px)", 2);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-45px) translateY(-5px)", 2);}
-        else if (device=="tabletLand"){makeBigAF("translateX(0px) translateY(-28px)", 2);}
-    }
-	  else if ($(this).hasClass("eval")){
-	  	  load(".article1", "arts/eval.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 1);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 1);}
-        else if (device=="tabletLand"){makeBigAF("translateX(-27px) translateY(-28px)", 1);}
-    }
-	  else if ($(this).hasClass("presen")){
-	  	  load(".article2", "arts/presen.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-15px) translateX(-8px)", 2);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(20px) translateY(-55px)", 2);}
-        else if (device=="tabletLand"){makeBigAF("translateX(-27px) translateY(-28px)", 2);}
-    }
-	  else if ($(this).hasClass("usability")){
-	  	  load(".article1", "arts/usability.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 1);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 1);}
-        else if (device=="tabletLand"){makeBigAF("translateX(-55px) translateY(-28px)", 1);}
-    }
-	  else if ($(this).hasClass("custom")){
-	  	  load(".article2", "arts/custom.htm");
-	  	  if (device=="smartPhone"){makeBigAF("translateY(-30px)", 2);}
-	  	  else if (device=="tabletPort"){makeBigAF("translateX(-20px) translateY(-55px)", 2);}
-        else if (device=="tabletLand"){makeBigAF("translateX(-55px) translateY(-28px)", 2);}
-    }
-    else{
-      var j = $(this).attr("num").replace("j","");
-      var margins = ourWork.margins.replace('px', '');
-      var height = ourWork.height.replace('px', '');
-      if ((j%2) == 0){
-        makeBigAF(-5.5, 3);
-      }
-      else{
-        makeBigAF(-52.5, 3);
-      }
-
-      if (device == "smartPhone"){
-        //set the margin-top for .x3
-        var str = String(+j*((2.1* +margins) + (+height))+35)+"px";
-        $(".x3").css("margin-top", str);
-      }
-      else if (device == "tabletPort"){
-        if(j%2 != 0) j--;
-        j = j/2;
-        var str = String(+j*((2* +margins) + (+height))+150)+"px";
-        $(".x3").css("margin-top", str);
-      }
-    }
+    if (device == "smartPhone")
+      makeBigAF($(this), "1000px");
+    else if (device == "tabletPort")
+      makeBigAF($(this), "667px");
+    else if (device == "tabletLand")
+      makeBigAF($(this), "667px");
+    else
+      makeBigAF($(this), "724px");
 	}
 });
 

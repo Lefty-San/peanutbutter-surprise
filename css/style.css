@@ -14,13 +14,14 @@
   -webkit-transition: all 0.3s ease 0.3s; }
 
 body {
-  width: 100%;
+  width: 100vw;
   margin: 0; }
 
 .mainContainer {
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 .pagination {
   position: fixed;
@@ -85,7 +86,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
-  width: 100%; }
+  width: 100vw; }
   nav .logo {
     margin-left: 16px;
     background: url(../img/iPhone/PKLogo.png);
@@ -239,9 +240,12 @@ nav {
 
 #page2 .svg, #page3 .svg {
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   flex-direction: row-reverse; }
+  #page2 .svg div, #page3 .svg div {
+    width: 100px;
+    height: 100px; }
 #page2 svg, #page3 svg {
   width: 100px;
   height: 100px;
@@ -560,8 +564,12 @@ div[state=bigAF] {
     background-size: 100%;
     margin: 0; }
 
-  .svg div {
-    min-height: 100px; } }
+  .svg {
+    margin-left: 20px;
+    margin-right: 20px; }
+    .svg div {
+      width: 100px;
+      height: 100px; } }
 /* iPhone Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .supported_orientation {
@@ -647,9 +655,15 @@ div[state=bigAF] {
     font-size: 24pt;
     margin: 0 50px;
     text-align: left; }
-  #page2 .svg svg, #page3 .svg svg {
+  #page2 .svg, #page3 .svg {
     width: 135px;
     height: 135px; }
+    #page2 .svg svg, #page3 .svg svg {
+      width: 135px;
+      height: 135px; }
+    #page2 .svg div, #page3 .svg div {
+      width: 135px;
+      height: 135px; }
   #page2 section.svgs, #page3 section.svgs {
     margin: 84px 34px 0 34px;
     padding-bottom: 40px; }
@@ -795,6 +809,9 @@ div[state=bigAF] {
       width: 122px;
       height: 122px;
       margin: 20px; }
+      #page2 section.svgs .svg div, #page3 section.svgs .svg div {
+        height: 122px;
+        width: 122px; }
       #page2 section.svgs .svg svg, #page3 section.svgs .svg svg {
         width: 122px;
         height: 122px; }
@@ -904,6 +921,9 @@ div[state=bigAF] {
       width: 142px;
       height: 142px;
       margin: 24px; }
+      #page2 section.svgs .svg div, #page3 section.svgs .svg div {
+        width: 142px;
+        height: 142px; }
       #page2 section.svgs .svg p, #page3 section.svgs .svg p {
         font-size: 22pt; }
       #page2 section.svgs .svg svg, #page3 section.svgs .svg svg {
