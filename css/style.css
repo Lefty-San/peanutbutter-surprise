@@ -1,7 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
 /* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
 * {
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600; }
 
 .open {
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -121,13 +122,15 @@ nav {
     border-bottom: 1px solid white;
     margin-left: 16px;
     width: 330px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    font-weight: 600; }
   #page1 h2 {
     font-size: 25px;
     /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
     color: white;
     margin-left: 16px;
-    margin-top: 0px; }
+    margin-top: 0px;
+    font-weight: 400; }
   #page1 .dwnArrow {
     display: block;
     width: 19px;
@@ -162,7 +165,7 @@ nav {
   display: inline-block;
   border-right: 1px solid;
   font-stretch: condensed;
-  font-weight: 400; }
+  font-weight: 600; }
 #page2 h2 {
   /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
   font-weight: bold;
@@ -176,7 +179,7 @@ nav {
   display: inline-block;
   text-align: left;
   font-stretch: condensed;
-  font-weight: 400;
+  font-weight: 300;
   vertical-align: top; }
 #page2 p {
   color: white;
