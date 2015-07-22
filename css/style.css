@@ -1,47 +1,983 @@
-/*
-Error: Invalid CSS after "...00,300,400,600)": expected "{", was ";"
-        on line 10 of style.scss
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+/* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600; }
 
-5: // or for manual compliles
-6: // sass style.scss style.css
-7: 
-8: <<<<<<< HEAD
-9: =======
-10: @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
-11: 
-12: >>>>>>> dec12a4b30ef090a83ea00e1b6d37cce0b7e36cb
-13: @import 'assets';
-14: @import 'fonts';
-15: 
+.open {
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform-origin: 50% 0%;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s; }
 
-Backtrace:
-style.scss:10
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1098:in `expected'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1093:in `tok!'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:638:in `block'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:632:in `ruleset'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:657:in `block_child'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:647:in `block_contents'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:403:in `_to_tree'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:328:in `block in watch'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/listener.rb:252:in `call'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.15/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...00,300,400,600)\": expected \"{\", was \";\"\A         on line 10 of style.scss\A \A 5: // or for manual compliles\A 6: // sass style.scss style.css\A 7: \A 8: <<<<<<< HEAD\A 9: =======\A 10: @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);\A 11: \A 12: >>>>>>> dec12a4b30ef090a83ea00e1b6d37cce0b7e36cb\A 13: @import 'assets';\A 14: @import 'fonts';\A 15: "; }
+.close {
+  transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0.001, 0, -1, 0, 0, 0, 0, 0, 1);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0.001, 0, -1, 0, 0, 0, 0, 0, 1);
+  transform-origin: 50% 0%;
+  transition: all 0.3s ease 0.3s;
+  -webkit-transition: all 0.3s ease 0.3s; }
+
+body {
+  width: 100vw;
+  margin: 0; }
+
+.mainContainer {
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  overflow-x: hidden; }
+
+.pagination {
+  position: fixed;
+  top: 50%;
+  left: 97%; }
+  .pagination div {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: solid;
+    border-width: 0px;
+    margin-top: 7px; }
+  .pagination .current {
+    margin-left: -1px;
+    border-width: 1px;
+    background-color: transparent; }
+
+.p1 div, .p4 div {
+  background-color: #d07814;
+  border-color: white; }
+
+.p2 div, .p3 div {
+  background-color: #f9941f; }
+
+.p5 div {
+  background-color: #929292; }
+
+.p2 div {
+  border-color: #ffffff; }
+
+.p3 div {
+  border-color: #aeaeae; }
+
+.p5 div {
+  border-color: #929292; }
+
+.shade {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: .5;
+  z-index: 1;
+  display: none; }
+
+h1, h2, p {
+  /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/ }
+
+nav {
+  background-color: #ffffff;
+  font-size: 24px;
+  font-color: #a0a2a3;
+  /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
+  height: 65px;
+  vertical-align: middle;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw; }
+  nav .logo {
+    margin-left: 16px;
+    background: url(../img/iPhone/PKLogo.png);
+    background-size: 100%;
+    width: 46px;
+    position: absolute;
+    height: 46px;
+    display: inline-block;
+    margin-top: 10px; }
+  nav .menu {
+    display: inline-block;
+    margin-left: 40px; }
+    nav .menu ul {
+      color: #666666;
+      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
+      nav .menu ul a, nav .menu ul a:visited {
+        color: #a0a2a3;
+        /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
+        text-decoration: none; }
+      nav .menu ul li {
+        list-style: none; }
+  nav .fullMenu {
+    display: none; }
+
+#page1 {
+  background-color: #f9941f;
+  width: 100%; }
+  #page1 h1 {
+    font-size: 25px;
+    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    margin-left: 16px;
+    width: 330px;
+    margin-bottom: 0px;
+    font-weight: 600; }
+  #page1 h2 {
+    font-size: 25px;
+    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+    color: #ffffff;
+    margin-left: 16px;
+    margin-top: 0px;
+    font-weight: 400; }
+  #page1 .dwnArrow {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    background: url(../img/iPhone/Scroll_Arrow@2x.png);
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+#page2 {
+  background: url(../img/Web/UX_Background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+#page2 h1 {
+  display: block-inline;
+  /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
+  font-size: 47px;
+  color: #ffffff;
+  margin-left: 6px;
+  width: 75px;
+  height: 57px;
+  margin-top: 0px;
+  padding-top: 0;
+  display: inline-block;
+  border-right: 1px solid;
+  font-stretch: condensed;
+  font-weight: 600; }
+#page2 h2 {
+  /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: left;
+  padding: 0;
+  margin-top: 0px;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  text-align: left;
+  font-stretch: condensed;
+  font-weight: 300;
+  vertical-align: top; }
+#page2 p {
+  color: #ffffff;
+  display: inline-block; }
+
+#page3 {
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  #page3 header {
+    width: 100%; }
+  #page3 h1 {
+    display: block-inline;
+    /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
+    font-size: 47px;
+    color: #666666;
+    margin-left: 6px;
+    width: 50px;
+    height: 57px;
+    margin-top: 0px;
+    padding-top: 0;
+    display: inline-block;
+    border-right: 1px solid;
+    font-stretch: condensed;
+    font-weight: 400; }
+  #page3 h2 {
+    /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
+    font-weight: bold;
+    font-size: 24px;
+    color: #666666;
+    text-align: left;
+    padding: 0;
+    margin-top: 0px;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: left;
+    font-stretch: condensed;
+    font-weight: 400;
+    vertical-align: top; }
+  #page3 p {
+    color: #f9941f; }
+
+#page2, #page3 {
+  padding-bottom: 60px; }
+  #page2 .svg, #page3 .svg {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    flex-direction: row-reverse; }
+    #page2 .svg div, #page3 .svg div {
+      width: 100px;
+      height: 100px; }
+  #page2 svg, #page3 svg {
+    width: 100px;
+    height: 100px;
+    display: inline-block; }
+  #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+    position: absolute;
+    margin: 35px auto 0 auto;
+    z-index: 3;
+    width: 100%;
+    text-align: center; }
+    #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+      color: #ffffff;
+      margin-top: 11px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%; }
+    #page2 .article1 h1, #page2 .article2 h1, #page3 .article1 h1, #page3 .article2 h1 {
+      color: #ffffff;
+      border: none;
+      font-size: 30px;
+      width: 100%;
+      margin: 0;
+      height: auto; }
+
+#page4 {
+  background-color: #f9941f;
+  text-align: center;
+  padding-bottom: 50px; }
+  #page4 header {
+    width: 100%;
+    text-align: center;
+    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/ }
+    #page4 header h1 {
+      color: #ffffff;
+      display: inline-block;
+      font-size: 47px; }
+    #page4 header h2 {
+      margin-top: 53px;
+      display: inline-block;
+      font-size: 24px;
+      color: #ffffff; }
+    #page4 header .venn {
+      background: url(../img/iPhone/VennDiagram@2x.png);
+      background-size: 100%;
+      width: 68px;
+      height: 68px;
+      display: inline-block;
+      margin-top: 15px; }
+  #page4 .slider {
+    margin-top: 40px; }
+    #page4 .slider .leftButt {
+      background: url(../img/iPhone/ArrowLeft.png);
+      background-size: 100%;
+      width: 14px;
+      height: 10px;
+      display: inline-block;
+      margin-right: 30px;
+      margin-bottom: 20px; }
+    #page4 .slider .rightButt {
+      background: url(../img/iPhone/ArrowRight.png);
+      background-size: 100%;
+      width: 14px;
+      height: 10px;
+      display: inline-block;
+      margin-left: 30px;
+      margin-bottom: 20px; }
+    #page4 .slider .pixPerf {
+      background-image: url(../img/iPhone/UIPixelPerfection.png); }
+    #page4 .slider .pixPerf:before {
+      content: "UI pixel perfection"; }
+    #page4 .slider .final {
+      background-image: url(../img/iPhone/FinalGraphics.png); }
+    #page4 .slider .final:before {
+      content: "final graphics & assets"; }
+    #page4 .slider .design {
+      background-image: url(../img/iPhone/DesignComps.png); }
+    #page4 .slider .design:before {
+      content: "design comps"; }
+    #page4 .slider .sol {
+      background-image: url(../img/iPhone/SolutionArchitecture.png); }
+    #page4 .slider .sol:before {
+      content: "solution architecture"; }
+    #page4 .slider .ux {
+      background-image: url(../img/iPhone/UserExperience.png); }
+    #page4 .slider .ux:before {
+      content: "user experience"; }
+    #page4 .slider .us {
+      background-image: url(../img/iPhone/UserStories.png); }
+    #page4 .slider .us:before {
+      content: "user stories"; }
+    #page4 .slider .projectSpecs {
+      background-image: url(../img/iPhone/ProjectSpecs.png); }
+    #page4 .slider .projectSpecs:before {
+      content: "project specs & requirments"; }
+    #page4 .slider .pixPerf, #page4 .slider .final, #page4 .slider .design, #page4 .slider .sol, #page4 .slider .ux, #page4 .slider .us, #page4 .slider .projectSpecs {
+      background-size: 100%;
+      width: 52px;
+      height: 52px;
+      display: inline-block; }
+    #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
+      /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/
+      font-size: 15pt;
+      color: #ffffff;
+      display: inline-block;
+      margin-top: 50px;
+      position: absolute;
+      margin-top: 60px;
+      margin-left: -45px;
+      width: 90px; }
+  #page4 .circle {
+    width: 285px;
+    height: 285px;
+    margin-top: 70px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid #ffffff;
+    border-width: 2px;
+    display: inline-block; }
+    #page4 .circle .circ {
+      width: 7px;
+      height: 7px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border-color: #ffffff;
+      margin: auto; }
+    #page4 .circle .num1, #page4 .circle .num2, #page4 .circle .num3, #page4 .circle .num4, #page4 .circle .num5, #page4 .circle .num6, #page4 .circle .num7 {
+      width: 17px;
+      height: 17px;
+      text-align: center;
+      position: absolute; }
+    #page4 .circle .num1 {
+      margin-left: 135px;
+      margin-top: -5px; }
+    #page4 .circle .num2 {
+      margin-left: 240px;
+      margin-top: 43px; }
+    #page4 .circle .num3 {
+      margin-left: 275px;
+      margin-top: 165px; }
+    #page4 .circle .num4 {
+      margin-left: 218px;
+      margin-top: 255px; }
+    #page4 .circle .num5 {
+      margin-left: 50px;
+      margin-top: 255px; }
+    #page4 .circle .num6 {
+      margin-top: 165px;
+      margin-left: -7px; }
+    #page4 .circle .num7 {
+      margin-top: 51px;
+      margin-left: 20px; }
+    #page4 .circle h1 {
+      font-size: 30pt;
+      display: inline-block;
+      color: #ffffff;
+      /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+      margin-top: 45px;
+      margin-right: -20px; }
+    #page4 .circle h2 {
+      font-size: 18pt;
+      margin-left: 15px;
+      color: #ffffff;
+      /*font-family: "HelveticaNeueLightCondensed", "HelveticaNeue-Light-Condensed", "Helvetica Neue Light Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:300; font-stretch:condensed;*/
+      display: inline-block; }
+    #page4 .circle .suits {
+      background: url(../img/iPhone/Client_Icon@2x.png);
+      background-size: 100%;
+      width: 75px;
+      height: 93px;
+      margin: 75px auto 0 auto; }
+    #page4 .circle .ci {
+      margin-top: -40px;
+      display: inline-block; }
+
+#page5 {
+  background-color: #ebebeb;
+  text-align: center; }
+  #page5 header {
+    color: #929292;
+    padding-top: 20px;
+    /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/ }
+    #page5 header h2 {
+      display: inline-block;
+      font-size: 24pt;
+      margin: 0; }
+    #page5 header h1 {
+      display: inline-block;
+      font-size: 47pt;
+      margin: 0; }
+  #page5 .x3 {
+    background-image: url(../img/iPhone/OrangeX@2x.png);
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    display: inline-block;
+    z-index: 4;
+    margin-left: 280px; }
+  #page5 .boxes {
+    margin-top: 20px;
+    z-index: 0; }
+    #page5 .boxes .cont {
+      margin: 18px;
+      display: inline-block; }
+    #page5 .boxes .pu {
+      background-color: #ffffff;
+      width: 284px;
+      height: 190px;
+      display: inline-block;
+      border: solid;
+      border-color: #cccccc;
+      border-width: 1px; }
+
+footer {
+  background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
+  background-size: 100%;
+  text-align: center;
+  margin: 0; }
+  footer ul {
+    background-size: 100%;
+    padding: 40px 0;
+    margin: 0;
+    color: #ebebeb;
+    font-size: 20pt;
+    /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
+    footer ul a, footer ul a:visited {
+      color: #ebebeb;
+      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
+      font-size: 20pt;
+      text-decoration: none; }
+    footer ul li {
+      list-style: none;
+      display: inline-block; }
+
+div[state=small] {
+  position: static; }
+
+div[state=bigAF] {
+  position: relative;
+  z-index: 1; }
+
+.lp_graphic {
+  background: url(../img/iPhone/LP_Graphic@2x.png);
+  height: 365px;
+  width: 295px;
+  background-size: 100%;
+  margin-left: 10%; }
+
+.x:not(.x3) {
+  background: url(../img/iPhone/WhiteX@2x.png);
+  background-size: 100%;
+  height: 14px;
+  width: 14px;
+  margin-top: -90px;
+  margin-left: 282px;
+  z-index: 2;
+  position: absolute; }
+
+/* iPhone Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .supported_orientation {
+    display: none; }
+
+  nav .logo {
+    background: url(../img/iPhone/PKLogo@2x.png);
+    background-size: 100%; }
+  nav .menu {
+    float: right; }
+    nav .menu .image {
+      max-height: 21px;
+      margin-right: 16px;
+      float: right;
+      background: url(../img/iPhone/Menu.png);
+      background-size: 100%;
+      width: 28px;
+      height: 21px;
+      display: inline-block;
+      margin-top: 22px; }
+    nav .menu ul {
+      margin-top: 50px;
+      background-color: #ffffff;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      border-bottom-left-radius: 5px;
+      display: block; }
+    nav .menu li {
+      margin-left: -20px;
+      display: block; }
+
+  #page1 .dwnArrow {
+    background: url(../img/iPhone/Scroll_Arrow@2x.png);
+    background-size: 100%;
+    background-repeat: no-repeat; }
+
+  #page1 article, #page2 article, #page3 article, #page4 article {
+    display: none; }
+
+  .lp_graphic {
+    height: 365px;
+    width: 295px;
+    background: url(../img/iPhone/LP_Graphic@2x.png) 100% 100%;
+    background-size: 100%;
+    margin: 0; }
+
+  .svg {
+    margin-left: 20px;
+    margin-right: 20px; }
+    .svg div {
+      width: 100px;
+      height: 100px; } }
+/* iPhone Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .supported_orientation {
+    display: block; } }
+/* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  nav {
+    height: 108px; }
+    nav .logo {
+      margin-top: 15px;
+      margin-left: 52px;
+      width: 83px;
+      height: 83px;
+      background-image: url(../img/iPad/PKLogo@2x.png); }
+    nav .menu {
+      margin-left: 120px;
+      margin-top: 20px; }
+      nav .menu ul li {
+        display: inline-block;
+        font-size: 24px; }
+
+  #page1 header {
+    margin-left: 20px; }
+  #page1 h1 {
+    font-size: 52px;
+    width: 560px;
+    margin: 0; }
+  #page1 h2 {
+    font-size: 52px;
+    margin: 0; }
+  #page1 .lp_graphic {
+    background-image: url(../img/iPad/LP_Graphic_Portrait@2x.png) 100% 100%;
+    height: 645px;
+    width: 521px; }
+  #page1 article {
+    display: block;
+    color: #ffffff;
+    margin-left: 20px; }
+    #page1 article p {
+      font-size: 21pt;
+      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
+    #page1 article a {
+      font-size: 20pt;
+      /*font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:600; font-stretch:normal;*/
+      border: solid;
+      border-color: #ffffff;
+      border-radius: 2px;
+      border-width: 1px;
+      padding: 7px; }
+  #page1 .dwnArrow {
+    padding-bottom: 26px; }
+
+  #page2 .x, #page3 .x {
+    background-image: url(../img/iPad/WhiteX@2x.png);
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+    margin-left: 475px;
+    margin-top: -175px; }
+  #page2 header, #page3 header {
+    margin-top: 32px; }
+    #page2 header h1, #page3 header h1 {
+      font-size: 52pt;
+      padding-right: 10px;
+      padding-bottom: 15px; }
+    #page2 header h2, #page3 header h2 {
+      margin-top: 10px; }
+  #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+    margin-top: -120px;
+    width: 100%; }
+    #page2 .article1 h1, #page2 .article2 h1, #page3 .article1 h1, #page3 .article2 h1 {
+      font-size: 30px; }
+    #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+      font-size: 18pt;
+      width: 600px; }
+  #page2 article, #page3 article {
+    font-size: 24pt;
+    margin: 0 50px;
+    text-align: left; }
+  #page2 .svg, #page3 .svg {
+    width: 135px;
+    height: 135px; }
+    #page2 .svg svg, #page3 .svg svg {
+      width: 135px;
+      height: 135px; }
+    #page2 .svg div, #page3 .svg div {
+      width: 135px;
+      height: 135px; }
+  #page2 section.svgs, #page3 section.svgs {
+    margin: 84px 34px 0 34px;
+    padding-bottom: 40px; }
+    #page2 section.svgs .proto, #page2 section.svgs .desktop, #page3 section.svgs .proto, #page3 section.svgs .desktop {
+      margin: 0 80px; }
+    #page2 section.svgs .eval, #page2 section.svgs .usability, #page2 section.svgs .custom, #page2 section.svgs .presen, #page3 section.svgs .eval, #page3 section.svgs .usability, #page3 section.svgs .custom, #page3 section.svgs .presen {
+      margin-top: 94px;
+      margin-right: 40px;
+      margin-left: 40px; }
+
+  #page2 article {
+    color: #ffffff; }
+
+  #page3 article {
+    color: #666666; }
+
+  #page4 header h1 {
+    font-size: 80px; }
+  #page4 header h2 {
+    font-size: 42px; }
+  #page4 header .venn {
+    background-image: url(../img/iPad/VennDiagram@2x.png);
+    background-size: 100%;
+    width: 85px;
+    height: 78px;
+    margin-left: 10px;
+    margin-bottom: -10px; }
+  #page4 .slider {
+    margin-top: 0px; }
+    #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
+      font-size: 20pt; }
+    #page4 .slider .rightButt, #page4 .slider .leftButt {
+      margin-bottom: 0;
+      background-size: 100%;
+      background-repeat: none; }
+    #page4 .slider .rightButt {
+      background-image: url(../img/iPad/ArrowRight@2x.png);
+      height: 19px;
+      width: 26px;
+      margin-left: 100px; }
+    #page4 .slider .leftButt {
+      background-image: url(../img/iPad/ArrowLeft@2x.png);
+      height: 19px;
+      width: 26px;
+      margin-right: 100px; }
+  #page4 .circle {
+    width: 364px;
+    height: 364px;
+    margin: 130px 50px 0 50px; }
+    #page4 .circle .circ {
+      width: 9px;
+      height: 9px; }
+    #page4 .circle .num1 {
+      margin-left: 175px; }
+    #page4 .circle .num2 {
+      margin-left: 320px;
+      margin-top: 69px; }
+    #page4 .circle .num3 {
+      margin-left: 344px;
+      margin-top: 244px; }
+    #page4 .circle .num4 {
+      margin-left: 257px;
+      margin-top: 341px; }
+    #page4 .circle .num5 {
+      margin-top: 341px;
+      margin-left: 89px; }
+    #page4 .circle .num6 {
+      margin-top: 244px;
+      margin-left: 2px; }
+    #page4 .circle .num7 {
+      margin-top: 69px;
+      margin-left: 27px; }
+    #page4 .circle .suits {
+      margin-top: 105px;
+      background: url(../img/iPad/Client_Icon@2x.png);
+      background-size: 100%;
+      width: 55px;
+      height: 70px; }
+  #page4 article {
+    margin-top: 41px;
+    /*font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;*/
+    font-size: 21pt;
+    color: #ffffff;
+    margin: 0 50px;
+    text-align: left; }
+
+  p {
+    color: #ffffff; }
+
+  #page5 .x3 {
+    background-image: url(../img/iPad/OrangeX@2x.png);
+    height: 24px;
+    width: 25px;
+    background-size: 100%;
+    margin-left: 720px; }
+  #page5 .boxes .cont {
+    width: 325px;
+    height: 215;
+    margin: 16px;
+    display: inline-block; }
+  #page5 .boxes .pu {
+    width: 325px;
+    height: 215px; } }
+/* iPad Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  #page1 .lp_graphic {
+    background-image: url(../img/iPad/LP_Graphic_Landscape@2x.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 521px;
+    height: 645px;
+    position: absolute;
+    right: 50px;
+    top: 125px;
+    display: inline-block;
+    margin-left: 0; }
+  #page1 header {
+    margin-top: 125px;
+    font-size: 52px;
+    display: inline-block;
+    margin-left: 52px;
+    width: 50%; }
+  #page1 article {
+    margin-left: 52px;
+    width: 50%;
+    padding-bottom: 300px; }
+    #page1 article p {
+      font-size: 15pt; }
+
+  #page2, #page3 {
+    height: 688px; }
+    #page2 .x, #page3 .x {
+      margin-left: 634px;
+      margin-top: -260px; }
+    #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+      margin-top: -150px; }
+      #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+        width: 560px;
+        margin: 30px auto; }
+    #page2 section.svgs .svg, #page3 section.svgs .svg {
+      width: 122px;
+      height: 122px;
+      margin: 20px; }
+      #page2 section.svgs .svg div, #page3 section.svgs .svg div {
+        height: 122px;
+        width: 122px; }
+      #page2 section.svgs .svg svg, #page3 section.svgs .svg svg {
+        width: 122px;
+        height: 122px; }
+
+  #page4 .slider {
+    display: inline-block; }
+  #page4 .circle {
+    margin-top: 0; }
+
+  #page5 .boxes .cont {
+    width: 290px;
+    height: 193px;
+    margin: 16px; }
+    #page5 .boxes .cont .pu {
+      width: 290px;
+      height: 193px; } }
+/* ----------- Desktop Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1025px) and (max-device-width: 16000px) {
+  .pagination div {
+    width: 14px;
+    height: 14px; }
+
+  nav {
+    height: 144px; }
+    nav .logo {
+      margin-top: 15px;
+      margin-left: 52px;
+      width: 111px;
+      height: 111px;
+      background-image: url(../img/Web/PKLogo.png); }
+    nav .menu {
+      margin-left: 139px;
+      margin-top: 33px; }
+      nav .menu ul li {
+        display: inline-block;
+        font-size: 24px; }
+
+  #page1 .lp_graphic {
+    background-image: url(../img/Web/LP_Graphic.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 521px;
+    height: 645px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 30px;
+    display: inline-block;
+    margin-left: 0; }
+  #page1 header {
+    margin-top: 160px;
+    width: 300px;
+    font-size: 52px;
+    display: inline-block;
+    margin-left: 75px; }
+    #page1 header h1, #page1 header h2 {
+      font-size: 50pt;
+      width: 706px;
+      margin: 0; }
+  #page1 article {
+    margin-left: 75px;
+    width: 50%;
+    padding-bottom: 150px;
+    width: 706px; }
+    #page1 article p {
+      font-size: 24pt;
+      color: #ffffff; }
+    #page1 article a {
+      /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+      color: #ffffff;
+      font-size: 16pt;
+      padding: 9px;
+      border: solid;
+      border-width: 1px;
+      border-radius: 2px; }
+
+  #page2, #page3 {
+    height: 1000px; }
+    #page2 p, #page3 p {
+      font-size: 24pt; }
+    #page2 header, #page3 header {
+      margin-top: 100px; }
+      #page2 header h1, #page3 header h1 {
+        font-size: 84px;
+        width: auto;
+        height: 84px; }
+      #page2 header h2, #page3 header h2 {
+        font-size: 44px;
+        height: 44px;
+        line-height: 44px;
+        margin-bottom: 10px; }
+    #page2 .x, #page3 .x {
+      background-image: url(../img/iPad/WhiteX@2x.png);
+      background-size: 100%;
+      width: 24px;
+      height: 24px;
+      margin-left: 762px;
+      margin-top: -466px; }
+    #page2 article, #page3 article {
+      margin: 80px;
+      font-size: 24pt;
+      text-align: left; }
+    #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+      width: 100%;
+      margin-top: -340px;
+      text-align: center; }
+      #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+        width: 576px; }
+    #page2 section.svgs .svg, #page3 section.svgs .svg {
+      width: 142px;
+      height: 142px;
+      margin: 24px; }
+      #page2 section.svgs .svg div, #page3 section.svgs .svg div {
+        width: 142px;
+        height: 142px; }
+      #page2 section.svgs .svg p, #page3 section.svgs .svg p {
+        font-size: 22pt; }
+      #page2 section.svgs .svg svg, #page3 section.svgs .svg svg {
+        width: 142px;
+        height: 142px; }
+
+  #page4 header h2 {
+    font-size: 42px; }
+  #page4 header h1 {
+    font-size: 72px;
+    margin-right: 22px; }
+  #page4 .slider {
+    display: inline-block;
+    float: left;
+    margin-left: 230px;
+    margin-top: 147px; }
+    #page4 .slider .rightButt {
+      margin-left: 120px;
+      background-image: url(../img/Web/ArrowRight.png);
+      background-size: 100%;
+      width: 31px;
+      height: 22px; }
+    #page4 .slider #image {
+      width: 62px;
+      height: 62px; }
+    #page4 .slider .leftButt {
+      margin-right: 120px;
+      background-image: url(../img/Web/ArrowLeft.png);
+      background-size: 100%;
+      width: 31px;
+      height: 22px; }
+  #page4 .circle {
+    margin-left: 50px;
+    margin-top: 0;
+    width: 424px;
+    height: 424px; }
+    #page4 .circle .suits {
+      margin-top: 133px; }
+    #page4 .circle .circ {
+      width: 12px;
+      height: 12px; }
+    #page4 .circle .num1 {
+      margin-top: -7px;
+      margin-left: 201px; }
+    #page4 .circle .num2 {
+      margin-left: 357px;
+      margin-top: 59px; }
+    #page4 .circle .num3 {
+      margin-left: 415px;
+      margin-top: 233px; }
+    #page4 .circle .num4 {
+      margin-left: 325px;
+      margin-top: 381px; }
+    #page4 .circle .num5 {
+      margin-left: 82px;
+      margin-top: 381px; }
+    #page4 .circle .num6 {
+      margin-left: -8px;
+      margin-top: 233px; }
+    #page4 .circle .num7 {
+      margin-left: 49px;
+      margin-top: 59px; }
+  #page4 article {
+    width: 980px;
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 78px; }
+    #page4 article p {
+      /*font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;*/
+      font-size: 24pt;
+      color: #ffffff; }
+
+  #page5 .boxes {
+    width: 1000px;
+    margin: 0 auto; }
+    #page5 .boxes .cont {
+      width: 290px;
+      height: 193px;
+      margin: 16px; }
+      #page5 .boxes .cont .pu {
+        width: 290px;
+        height: 193px; } }
+/* ----------- Desktop Retina Screens ----------- */
+
+/*# sourceMappingURL=style.css.map */
