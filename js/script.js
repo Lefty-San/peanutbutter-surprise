@@ -2,18 +2,27 @@
 $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 
-    var $cards = $('.svg');
-    var cardInFocus = null;
-    $cards.each(function(index, elem){
+    var $svgs = $('.svg');
+    $svgs.each(function(index, elem){
         var $elem = $(elem);
         var pos = $elem.offset();
-        $(elem).data('orig-x', pos.left);
-        $(elem).data('orig-y', pos.top);
-        $(elem).data('pageNo', +$(elem).attr("scroll").replace("#page", ""));
+        $elem.data('orig-x', pos.left);
+        $elem.data('orig-y', pos.top);
+        $elem.data('pageNo', +$(elem).attr("scroll").replace("#page", ""));
         //console.log($elem.width());
-        $(elem).data('width', $elem.width());
+        $elem.data('width', $elem.width());
         $elem.data('height', $elem.height());
         //console.log($(elem).data());
+    });
+    var $recs = $('.pu');
+    $recs.each(function(index, elem){
+        var $elem = $(elem);
+        var pos = $elem.offset();
+        $elem.data('orig-x', pos.left);
+        $elem.data('orig-y', pos.top);
+        $elem.data('pageNo', 5);
+        $elem.data('width', $elem.width());
+        $elem.data('height', $elem.height());
     });
 });
 
@@ -38,7 +47,7 @@ $(".x, .shade, .svgs, nav, .pagination").click(function(){
 	  $(".article1").hide();
 	  $(".article2").hide();
     if(currPage == 5){
-        normWork(TIMING);
+        normSVG(TIMING);
     }
     else{
     	  normSVG("[state='bigAF'] div svg", TIMING, 1);
@@ -154,6 +163,13 @@ TweenMax.set($('.svgs'),{perspective:1000});
 function makeBigAF(ths, size){
 	var TIMING = 1.5;
   var pageHeight = 0;
+  var obj = {
+    origX: $(ths).data("orig-x"),
+    origY: $(ths).data("orig-y"),
+    pageNo: $(ths).data("pageNo"),
+    h: $(ths).data("height"),
+    w: $(ths).data("width")
+  }
   for (var i = 1; i < ths.data('pageNo'); i++){
     pageHeight += $("#page"+ths.data('pageNo')).height();
   }
@@ -164,23 +180,50 @@ function makeBigAF(ths, size){
 	  	zIndex: 2,
 	  	ease:Power4.easeInOut
 	});
-	TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
-	  	transform: "translateY(-200px) translateZ(0) scale(0.5, 0.5)",
-	  	zIndex: 3,
-	  	transformOrigin:"50% 50%",
-	  	ease:Power4.easeInOut
-	});
-  var trans = "translateX("+String(($(".mainContainer").width()/2) - ths.data('orig-x')- +size.replace("px","")/2)+"px) translateY("+String((pageHeight - ths.data('orig-y'))+$("#page"+ths.data('pageNo')).height()/4)+"px) ";
-  console.log(ths.data());
-  console.log($('.mainContainer').width())
-  console.log(trans);
+	if (device == "smartPhone"){
+    TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
+  	  	transform: "translateY(-240px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
+  	  	zIndex: 3,
+  	  	transformOrigin:"50% 50%",
+  	  	ease:Power1.easeOut
+  	});
+  }
+  else {
+    TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+  	  	transform: "translateY(-200px) translateX(10px) translateZ(0) scale(0.5, 0.5)",
+  	  	zIndex: 3,
+  	  	transformOrigin:"50% 50%",
+  	  	ease:Power4.easeInOut
+  	});
+  }
+  if(device == "smartPhone"){
+    if(obj.pageNo == 3)
+      var addr = 150;
+    else if(obj.pageNo == 2)
+      var addr = 200;
+  }
+  else if (device == "tabletPort"){
+    var addr = 0;
+  }
+  else if (device == "tabletLand"){
+    if (obj.pageNo == 2)
+      var addr = 0;
+    else
+      var addr = -30;
+  }
+  else{
+    var addr = 300;
+  }
+  var transY = "translateY("+String((pageHeight - obj.origY)+$("#page"+obj.pageNo).height()/4 - addr)+"px)";
+  var trans = "translateX("+String(($(".mainContainer").width()/2) - obj.origX - +size.replace("px","")/2)+"px) "+transY;
+
   TweenLite.to($("[state='bigAF'] div svg"),TIMING,{
     width: size,
     height: size,
     transform: trans,
     zIndex: 3
   });
-  if (size == 3){
+  if (obj.pageNo == 5){
     $("[state='bigAF']").parent().css("margin", 0);
     TweenLite.to( $("[state='bigAF']"), TIMING, {
       width: "100vw",
@@ -192,8 +235,8 @@ function makeBigAF(ths, size){
       ease:Power4.easeInOut
     });
   }
-	setTimeout(function(){$(".article"+String(ths.data('pageNo')-1)).show();}, (TIMING*1000));
-	setTimeout(function(){$(".x"+String(ths.data('pageNo')-1)).show();}, (TIMING*1000));
+	setTimeout(function(){$(".article"+String(obj.pageNo-1)).show();}, (TIMING*1000));
+	setTimeout(function(){$(".x"+String(obj.pageNo-1)).show();}, (TIMING*1000));
 	setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
 
@@ -225,10 +268,18 @@ function moveCirc(curr, next){
 	});
 }
 function normSVG(img, time, opacity){
+  if($(img).parent().parent().hasClass("svg") || $(img).hasClass("pu")){
+    var width = $(img).parent().parent().data("width");
+    var height = $(img).parent().parent().data("height");
+  }
+  else{
+    var width = "auto";
+    var height = "auto";
+  }
   TweenMax.to( $(img), time, {
 		transform: "scale(1, 1) translateX(0px) translateY(0px)",
-    width: $("[state='small']").width(),
-    height: $("[state='small']").width(),
+    width: width,
+    height: height,
 		opacity: opacity,
 		zIndex: 0,
 		transformOrigin:"50% 50%",
