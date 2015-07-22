@@ -5,6 +5,11 @@
 // or for manual compliles
 // sass style.scss style.css
 
+<<<<<<< HEAD
+=======
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+
+>>>>>>> dec12a4b30ef090a83ea00e1b6d37cce0b7e36cb
 @import 'assets';
 @import 'fonts';
 
@@ -25,6 +30,7 @@ $orange: #f9941f;
 
 *{
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
 }
 
 .open {
@@ -171,6 +177,7 @@ nav {
   	margin-left: 16px;
   	width: 330px;
   	margin-bottom: 0px;
+    font-weight: 600;
     }
   h2{
   	font-size: 25px;
@@ -178,6 +185,7 @@ nav {
   	color: $white;
   	margin-left: 16px;
   	margin-top:0px;
+    font-weight:400;
   }
   .dwnArrow{
   	display: block;
@@ -212,7 +220,7 @@ nav {
     display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed;
-    font-weight:400;
+    font-weight:600;
   }
 
   h2 {
@@ -228,7 +236,7 @@ nav {
     display: inline-block;
     text-align: left;
     font-stretch: condensed;
-    font-weight:400;
+    font-weight:300;
     vertical-align:top;
    }
    p {
