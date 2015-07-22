@@ -161,7 +161,7 @@ $(".leftButt").click(function(){
 TweenMax.set($('.svgs'),{perspective:1000});
 //functions
 function makeBigAF(ths, size){
-	var TIMING = 1.5;
+	var TIMING = 1;
   var pageHeight = 0;
   var obj = {
     origX: $(ths).data("orig-x"),

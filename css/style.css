@@ -1,4 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 /* Helvetica Neue (from https://gist.github.com/gpessia/8595729) */
+* {
+  font-family: 'Source Sans Pro', sans-serif; }
+
 .open {
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -50,7 +54,7 @@ body {
   background-color: #929292; }
 
 .p2 div {
-  border-color: #ffffff; }
+  border-color: white; }
 
 .p3 div {
   border-color: #aeaeae; }
@@ -70,17 +74,13 @@ body {
   display: none; }
 
 h1, h2, p {
-  font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-  font-weight: 500;
-  font-stretch: condensed; }
+  /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/ }
 
 nav {
-  background-color: #ffffff;
+  background-color: white;
   font-size: 24px;
   font-color: #a0a2a3;
-  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  font-weight: 300;
-  font-stretch: normal;
+  /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
   height: 65px;
   vertical-align: middle;
   position: fixed;
@@ -101,14 +101,10 @@ nav {
     margin-left: 40px; }
     nav .menu ul {
       color: #666666;
-      font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-      font-weight: 300;
-      font-stretch: normal; }
+      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
       nav .menu ul a, nav .menu ul a:visited {
         color: #a0a2a3;
-        font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-        font-weight: 300;
-        font-stretch: normal;
+        /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
         text-decoration: none; }
       nav .menu ul li {
         list-style: none; }
@@ -120,20 +116,16 @@ nav {
   width: 100%; }
   #page1 h1 {
     font-size: 25px;
-    font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-    font-weight: 600;
-    font-stretch: condensed;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+    color: white;
+    border-bottom: 1px solid white;
     margin-left: 16px;
     width: 330px;
     margin-bottom: 0px; }
   #page1 h2 {
     font-size: 25px;
-    font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-    font-weight: 600;
-    font-stretch: condensed;
-    color: #ffffff;
+    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+    color: white;
     margin-left: 16px;
     margin-top: 0px; }
   #page1 .dwnArrow {
@@ -159,11 +151,9 @@ nav {
 
 #page2 h1 {
   display: block-inline;
-  font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-  font-weight: 400;
-  font-stretch: condensed;
+  /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
   font-size: 47px;
-  color: #ffffff;
+  color: white;
   margin-left: 6px;
   width: 75px;
   height: 57px;
@@ -174,12 +164,10 @@ nav {
   font-stretch: condensed;
   font-weight: 400; }
 #page2 h2 {
-  font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-  font-weight: 400;
-  font-stretch: condensed;
+  /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
   font-weight: bold;
   font-size: 24px;
-  color: #ffffff;
+  color: white;
   text-align: left;
   padding: 0;
   margin-top: 0px;
@@ -191,11 +179,11 @@ nav {
   font-weight: 400;
   vertical-align: top; }
 #page2 p {
-  color: #ffffff;
+  color: white;
   display: inline-block; }
 
 #page3 {
-  background-color: #ffffff;
+  background-color: white;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -204,9 +192,7 @@ nav {
     width: 100%; }
   #page3 h1 {
     display: block-inline;
-    font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-    font-weight: 400;
-    font-stretch: condensed;
+    /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
     font-size: 47px;
     color: #666666;
     margin-left: 6px;
@@ -219,9 +205,7 @@ nav {
     font-stretch: condensed;
     font-weight: 400; }
   #page3 h2 {
-    font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-    font-weight: 400;
-    font-stretch: condensed;
+    /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
     font-weight: bold;
     font-size: 24px;
     color: #666666;
@@ -243,6 +227,7 @@ nav {
   #page2 .svg, #page3 .svg {
     display: inline-block;
     width: 100px;
+<<<<<<< HEAD
     height: 100px;
     flex-direction: row-reverse; }
     #page2 .svg div, #page3 .svg div {
@@ -256,6 +241,26 @@ nav {
     position: absolute;
     margin: 35px auto 0 auto;
     z-index: 3;
+=======
+    height: 100px; }
+#page2 svg, #page3 svg {
+  width: 100px;
+  height: 100px;
+  display: inline-block; }
+#page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
+  position: absolute;
+  margin-top: 30px;
+  z-index: 3;
+  width: 100%;
+  text-align: center; }
+  #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
+    color: white;
+    margin: 11px 30px 0 20px; }
+  #page2 .article1 h1, #page2 .article2 h1, #page3 .article1 h1, #page3 .article2 h1 {
+    color: white;
+    border: none;
+    font-size: 30px;
+>>>>>>> 9d9e791c1336b8a2e5375de6145ce3994a543fdb
     width: 100%;
     text-align: center; }
     #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
@@ -279,18 +284,16 @@ nav {
   #page4 header {
     width: 100%;
     text-align: center;
-    font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-    font-weight: 600;
-    font-stretch: condensed; }
+    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/ }
     #page4 header h1 {
-      color: #ffffff;
+      color: white;
       display: inline-block;
       font-size: 47px; }
     #page4 header h2 {
       margin-top: 53px;
       display: inline-block;
       font-size: 24px;
-      color: #ffffff; }
+      color: white; }
     #page4 header .venn {
       background: url(../img/iPhone/VennDiagram@2x.png);
       background-size: 100%;
@@ -350,11 +353,9 @@ nav {
       height: 52px;
       display: inline-block; }
     #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
-      font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-      font-weight: 500;
-      font-stretch: condensed;
+      /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/
       font-size: 15pt;
-      color: #ffffff;
+      color: white;
       display: inline-block;
       margin-top: 50px;
       position: absolute;
@@ -368,7 +369,7 @@ nav {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: solid #ffffff;
+    border: solid white;
     border-width: 2px;
     display: inline-block; }
     #page4 .circle .circ {
@@ -377,8 +378,8 @@ nav {
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
-      background-color: #ffffff;
-      border-color: #ffffff;
+      background-color: white;
+      border-color: white;
       margin: auto; }
     #page4 .circle .num1, #page4 .circle .num2, #page4 .circle .num3, #page4 .circle .num4, #page4 .circle .num5, #page4 .circle .num6, #page4 .circle .num7 {
       width: 17px;
@@ -409,19 +410,15 @@ nav {
     #page4 .circle h1 {
       font-size: 30pt;
       display: inline-block;
-      color: #ffffff;
-      font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-      font-weight: 600;
-      font-stretch: condensed;
+      color: white;
+      /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
       margin-top: 45px;
       margin-right: -20px; }
     #page4 .circle h2 {
       font-size: 18pt;
       margin-left: 15px;
-      color: #ffffff;
-      font-family: "HelveticaNeueLightCondensed", "HelveticaNeue-Light-Condensed", "Helvetica Neue Light Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-      font-weight: 300;
-      font-stretch: condensed;
+      color: white;
+      /*font-family: "HelveticaNeueLightCondensed", "HelveticaNeue-Light-Condensed", "Helvetica Neue Light Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:300; font-stretch:condensed;*/
       display: inline-block; }
     #page4 .circle .suits {
       background: url(../img/iPhone/Client_Icon@2x.png);
@@ -439,9 +436,7 @@ nav {
   #page5 header {
     color: #929292;
     padding-top: 20px;
-    font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-    font-weight: 500;
-    font-stretch: condensed; }
+    /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/ }
     #page5 header h2 {
       display: inline-block;
       font-size: 24pt;
@@ -466,7 +461,7 @@ nav {
       margin: 18px;
       display: inline-block; }
     #page5 .boxes .pu {
-      background-color: #ffffff;
+      background-color: white;
       width: 284px;
       height: 190px;
       display: inline-block;
@@ -485,14 +480,10 @@ footer {
     margin: 0;
     color: #ebebeb;
     font-size: 20pt;
-    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    font-weight: 300;
-    font-stretch: normal; }
+    /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
     footer ul a, footer ul a:visited {
       color: #ebebeb;
-      font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-      font-weight: 300;
-      font-stretch: normal;
+      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
       font-size: 20pt;
       text-decoration: none; }
     footer ul li {
@@ -545,7 +536,7 @@ div[state=bigAF] {
       margin-top: 22px; }
     nav .menu ul {
       margin-top: 50px;
-      background-color: #ffffff;
+      background-color: white;
       padding-bottom: 10px;
       padding-right: 10px;
       border-bottom-left-radius: 5px;
@@ -611,20 +602,16 @@ div[state=bigAF] {
     width: 521px; }
   #page1 article {
     display: block;
-    color: #ffffff;
+    color: white;
     margin-left: 20px; }
     #page1 article p {
       font-size: 21pt;
-      font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-      font-weight: 300;
-      font-stretch: normal; }
+      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
     #page1 article a {
       font-size: 20pt;
-      font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-      font-weight: 600;
-      font-stretch: normal;
+      /*font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:600; font-stretch:normal;*/
       border: solid;
-      border-color: #ffffff;
+      border-color: white;
       border-radius: 2px;
       border-width: 1px;
       padding: 7px; }
@@ -654,9 +641,7 @@ div[state=bigAF] {
       margin: 30px 84px;
       font-size: 18pt; }
   #page2 article, #page3 article {
-    font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
-    font-weight: 200;
-    font-stretch: normal;
+    /*font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;*/
     font-size: 24pt;
     margin: 0 50px;
     text-align: left; }
@@ -680,7 +665,7 @@ div[state=bigAF] {
       margin-left: 40px; }
 
   #page2 article {
-    color: #ffffff; }
+    color: white; }
 
   #page3 article {
     color: #666666; }
@@ -749,16 +734,14 @@ div[state=bigAF] {
       height: 70px; }
   #page4 article {
     margin-top: 41px;
-    font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
-    font-weight: 200;
-    font-stretch: normal;
+    /*font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;*/
     font-size: 21pt;
-    color: #ffffff;
+    color: white;
     margin: 0 50px;
     text-align: left; }
 
   p {
-    color: #ffffff; }
+    color: white; }
 
   #page5 .x3 {
     background-image: url(../img/iPad/OrangeX@2x.png);
@@ -882,12 +865,10 @@ div[state=bigAF] {
     width: 706px; }
     #page1 article p {
       font-size: 24pt;
-      color: #ffffff; }
+      color: white; }
     #page1 article a {
-      font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
-      font-weight: 600;
-      font-stretch: condensed;
-      color: #ffffff;
+      /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
+      color: white;
       font-size: 16pt;
       padding: 9px;
       border: solid;
@@ -997,11 +978,9 @@ div[state=bigAF] {
     margin-top: 100px;
     margin-left: 78px; }
     #page4 article p {
-      font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
-      font-weight: 200;
-      font-stretch: normal;
+      /*font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;*/
       font-size: 24pt;
-      color: #ffffff; }
+      color: white; }
 
   #page5 .boxes {
     width: 1000px;
@@ -1014,5 +993,3 @@ div[state=bigAF] {
         width: 290px;
         height: 193px; } }
 /* ----------- Desktop Retina Screens ----------- */
-
-/*# sourceMappingURL=style.css.map */
