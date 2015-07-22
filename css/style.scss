@@ -5,6 +5,8 @@
 // or for manual compliles
 // sass style.scss style.css
 
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
 @import 'assets';
 @import 'fonts';
 
@@ -21,6 +23,10 @@ $orange: #f9941f;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .open {
