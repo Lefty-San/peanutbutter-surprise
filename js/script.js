@@ -180,9 +180,9 @@ function makeBigAF(ths, size){
 	  	zIndex: 2,
 	  	ease:Power4.easeInOut
 	});
-	if (device == "smartPhone"){
+	if (device == "smartPhone" && obj.pageNo == 2){
     TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
-  	  	transform: "translateY(-240px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
+  	  	transform: "translateY(-235px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
   	  	zIndex: 3,
   	  	transformOrigin:"50% 50%",
   	  	ease:Power1.easeOut
