@@ -94,8 +94,6 @@ function orientationCheck(){
   else {
 
   }
-
-  console.log("Screen size has changed to: "+device);
 }
 
 // Stop checking user Agent, check for screen dimentions
@@ -180,17 +178,27 @@ function makeBigAF(ths, size){
 	  	zIndex: 2,
 	  	ease:Power4.easeInOut
 	});
-	if (device == "smartPhone" && obj.pageNo == 2){
-    TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
-  	  	transform: "translateY(-235px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
-  	  	zIndex: 3,
-  	  	transformOrigin:"50% 50%",
-  	  	ease:Power1.easeOut
-  	});
+	if (device == "smartPhone"){
+    if (obj.pageNo == 2){
+      TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
+    	  	transform: "translateY(-235px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
+    	  	zIndex: 3,
+    	  	transformOrigin:"50% 50%",
+    	  	ease:Power1.easeOut
+    	});
+    }
+    else if (obj.pageNo == 3){
+      TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
+    	  	transform: "translateY(-200px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
+    	  	zIndex: 3,
+    	  	transformOrigin:"50% 50%",
+    	  	ease:Power1.easeOut
+    	});
+    }
   }
   else {
     TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
-  	  	transform: "translateY(-200px) translateX(10px) translateZ(0) scale(0.5, 0.5)",
+  	  	transform: "translateY(-270px) translateX(10px) translateZ(0) scale(0.5, 0.5)",
   	  	zIndex: 3,
   	  	transformOrigin:"50% 50%",
   	  	ease:Power4.easeInOut
@@ -203,16 +211,23 @@ function makeBigAF(ths, size){
       var addr = 200;
   }
   else if (device == "tabletPort"){
-    var addr = 0;
-  }
-  else if (device == "tabletLand"){
     if (obj.pageNo == 2)
       var addr = 0;
     else
-      var addr = -30;
+      var addr = -150;
+  }
+  else if (device == "tabletLand"){
+    if (obj.pageNo == 2)
+      var addr = -150;
+    else
+      var addr = -260;
   }
   else{
-    var addr = 300;
+    if (obj.pageNo == 2)
+      var addr = 200;
+    else {
+      var addr = 120;
+    }
   }
   var transY = "translateY("+String((pageHeight - obj.origY)+$("#page"+obj.pageNo).height()/4 - addr)+"px)";
   var trans = "translateX("+String(($(".mainContainer").width()/2) - obj.origX - +size.replace("px","")/2)+"px) "+transY;
