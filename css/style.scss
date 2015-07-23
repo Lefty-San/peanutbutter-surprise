@@ -29,6 +29,10 @@ $orange: #f9941f;
   font-weight: 600;
 }
 
+p {
+  font-weight: 400;
+}
+
 .open {
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -146,6 +150,7 @@ nav {
     margin-left: 40px;
   	ul{
   		color: #666666;
+      font-weight: 300;
   		@include helvetica-neue-light();
   		a, a:visited{
   			color: #a0a2a3;
@@ -167,21 +172,30 @@ nav {
 	width: 100%;
    h1{
   	font-size: 25px;
-  	@include helvetica-neue-bold-condensed();
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
   	width: 330px;
   	margin-bottom: 0px;
-    font-weight: 600;
+    font-weight: 400;
     }
   h2{
   	font-size: 25px;
-  	@include helvetica-neue-bold-condensed();
   	color: $white;
   	margin-left: 16px;
   	margin-top:0px;
     font-weight:400;
+  }
+  article{
+    a{
+      font-size: 20pt;
+      border: solid;
+      border-color: $white;
+      border-radius: 2px;
+      border-width: 1px;
+      padding: 7px;
+      color: $white;
+    }
   }
   .dwnArrow{
   	display: block;
@@ -204,35 +218,34 @@ nav {
 }
 #page2{
   h1 {
-  	display: block-inline;
-  	@include helvetica-neue-regular-condensed();
-    font-size: 47px;
-  	color: $white;
-    margin-left: 6px;
-    width: 75px;
-    height: 57px;
-    margin-top: 0px;
-    padding-top:0;
     display: inline-block;
+    font-size: 47px;
+    color: $white;
+    margin-left: 6px;
+    width: 50px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 0px;
+    padding-right: 10px;
+    padding-top:0;
     border-right: 1px solid;
     font-stretch: condensed;
     font-weight:600;
   }
 
   h2 {
-    @include helvetica-neue-regular-condensed();
     font-weight: bold;
     font-size: 24px;
-  	color: $white;
-  	text-align: left;
-  	padding: 0;
-    margin-top: 0px;
+    color: $white;
+    text-align: left;
+    padding: 0;
+    margin-top: -5px;
     width: 100px;
     height: 50px;
     display: inline-block;
+    line-height: 24px;
     text-align: left;
-    font-stretch: condensed;
-    font-weight:300;
+    font-weight:400;
     vertical-align:top;
    }
    p {
@@ -253,19 +266,19 @@ nav {
   }
 
   h1 {
-  	display: block-inline;
+  	display: inline-block;
   	@include helvetica-neue-regular-condensed();
     font-size: 47px;
   	color: #666666;
     margin-left: 6px;
     width: 50px;
-    height: 57px;
+    height: 40px;
+    line-height: 35px;
     margin-top: 0px;
     padding-top:0;
-    display: inline-block;
     border-right: 1px solid;
     font-stretch: condensed;
-    font-weight:400;
+    font-weight:600;
   }
 
   h2 {
@@ -275,12 +288,12 @@ nav {
   	color: #666666;
   	text-align: left;
   	padding: 0;
-    margin-top: 0px;
+    margin-top: -5px;
     width: 100px;
     height: 50px;
     display: inline-block;
+    line-height: 24px;
     text-align: left;
-    font-stretch: condensed;
     font-weight:400;
     vertical-align:top;
    }
@@ -359,7 +372,7 @@ nav {
   	}
   }
 	.slider{
-		margin-top: 40px;
+		margin-top: 20px;
 		.leftButt{
 			background: $iphone_arrow_left;
 			background-size: 100%;
@@ -436,12 +449,13 @@ nav {
       margin-top: 60px;
       margin-left: -45px;
       width: 90px;
+      font-weight: 400;
     }
 	}
 	.circle {
 		width: 285px;
 		height: 285px;
-		margin-top: 70px;
+		margin-top: 108px;
 		-moz-border-radius: 50%;
 		-webkit-border-radius: 50%;
 		border-radius: 50%;
@@ -707,7 +721,8 @@ div[state=bigAF]{
 /* iPad Portrait */
 @media only screen
   and (min-device-width: 768px)
-  and (max-device-width: 1024px) {
+  and (max-device-width: 1024px)
+  and (orientation: portrait) {
     nav{
       height: 108px;
       .logo{
@@ -733,7 +748,7 @@ div[state=bigAF]{
         margin-left: 20px;
       }
       h1{
-        font-size: 52px;
+        font-size: 50px;
         width: 560px;
         margin: 0;
       }
@@ -752,11 +767,9 @@ div[state=bigAF]{
         margin-left: 20px;
         p{
           font-size:21pt;
-          @include helvetica-neue-light();
         }
         a{
           font-size: 20pt;
-          @include helvetica-neue-bold();
           border: solid;
           border-color: $white;
           border-radius: 2px;
@@ -781,11 +794,15 @@ div[state=bigAF]{
         margin-top: 32px;
         h1{
           font-size: 52pt;
-          padding-right: 10px;
-          padding-bottom: 15px;
+          padding-right: 2px;
+          line-height: 52px;
+          height: 52px;
+          width: auto;
         }
         h2{
-          margin-top: 10px;
+          margin-top: -6px;
+          line-height: 32px;
+          font-weight: 400;
         }
       }
       .article1, .article2{
@@ -797,6 +814,9 @@ div[state=bigAF]{
         p{
           font-size: 18pt;
           width: 600px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          //white-space: nowrap;
         }
       }
       article{
@@ -882,7 +902,7 @@ div[state=bigAF]{
       .circle{
         width: 364px;
         height: 364px;
-        margin: 130px 50px 0 50px;
+        margin: 169px 50px 0 50px;
         .circ{
           width: 9px;
           height: 9px;
@@ -924,7 +944,6 @@ div[state=bigAF]{
       }
       article{
         margin-top: 41px;
-        @include helvetica-neue-thin();
         font-size: 21pt;
         color: $white;
         margin: 0 50px;
@@ -963,6 +982,28 @@ div[state=bigAF]{
   and (max-device-width: 1024px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
+    nav{
+      height: 108px;
+      .logo{
+        margin-top: 15px;
+        margin-left: 52px;
+        width: 83px;
+        height: 83px;
+        background-image: $iPad_pk_logo2x;
+      }
+      .menu{
+        margin-left: 120px;
+        margin-top: 20px;
+        ul{
+          li{
+            display: inline-block;
+            font-size: 24px;
+            font-color: #666666;
+            font-weight: 400;
+          }
+        }
+      }
+    }
     #page1 {
       .lp_graphic{
         background-image: $iPad_land_lp_g2x;
@@ -978,34 +1019,66 @@ div[state=bigAF]{
       }
       header {
         margin-top: 125px;
-        font-size: 52px;
+        font-size: 50px;
         display: inline-block;
         margin-left: 52px;
         width: 50%;
+        h1{
+          width: 559px;
+          font-size: 50px;
+        }
+        h2{
+          font-size: 50px;
+        }
       }
       article {
-        margin-left: 52px;
+        margin-left: 68px;
         width: 50%;
-        padding-bottom: 300px;
+        padding-bottom: 180px;
         p{
           font-size: 15pt;
+          color: $white;
         }
       }
     }
     #page2, #page3{
       height: 688px;
+      padding: 0;
+      header{
+        padding-top: 80px;
+        h1{
+          font-size: 50pt;
+          height: 50px;
+          line-height: 50px;
+          padding-bottom: 0;
+          width: auto;
+          padding-right: 2px;
+        }
+        h2{
+          line-height: 29px;
+        }
+      }
       .x{
         margin-left: 634px;
         margin-top: -260px;
       }
+      article{
+        text-align: left;
+        font-size: 20px;
+        p{
+          margin: 0 5.8%;
+        }
+      }
       .article1, .article2{
         margin-top: -150px;
+        text-align: center;
         p{
           width: 560px;
           margin: 30px auto;
         }
       }
       section.svgs{
+        margin-top: 55px;
         .svg{
           width: 122px;
           height: 122px;
@@ -1024,9 +1097,26 @@ div[state=bigAF]{
     #page4{
       .slider{
         display: inline-block;
+        float: left;
+        margin-top: 100px;
+        margin-left: 117px;
+        .leftButt{
+          margin-right: 103px;
+        }
+        .rightButt{
+          margin-left: 103px;
+        }
       }
       .circle{
         margin-top: 0;
+        float:right;
+        margin-right: 117px;
+      }
+      article{
+        color: $white;
+        margin: 350px 59px 0px 59px;
+        text-align: left;
+        font-size: 24pt;
       }
     }
     #page5{
@@ -1076,7 +1166,7 @@ div[state=bigAF]{
     }
     #page1 {
       .lp_graphic{
-        background-image: $Web_lp_g;
+        background-image: $iPad_land_lp_g2x;
         background-size: 100%;
         background-repeat: no-repeat;
         width: 521px;
@@ -1153,7 +1243,7 @@ div[state=bigAF]{
       }
       .article1, .article2{
         width: 100%;
-        margin-top: -340px;
+        margin-top: -380px;
         text-align: center;
         p{
           width: 576px;
@@ -1281,7 +1371,6 @@ div[state=bigAF]{
         }
       }
     }
-
 }
 
 /* ----------- Desktop Retina Screens ----------- */
