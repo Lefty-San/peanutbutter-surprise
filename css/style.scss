@@ -170,6 +170,8 @@ nav {
 #page1 {
 	background-color: $orange;
 	width: 100%;
+  padding-top: 65px;
+  padding-bottom: 15px;
    h1{
   	font-size: 25px;
   	color: $white;
@@ -202,7 +204,6 @@ nav {
   	width: 19px;
     height:19px;
   	margin:0 auto;
-    padding-bottom:15px;
     background:$iphone_scroll_arrow2x;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -219,14 +220,14 @@ nav {
 #page2{
   h1 {
     display: inline-block;
-    font-size: 47px;
+    font-size: 60px;
     color: $white;
     margin-left: 6px;
     width: 50px;
     height: 40px;
     line-height: 35px;
     margin-top: 0px;
-    padding-right: 10px;
+    padding-right: 25px;
     padding-top:0;
     border-right: 1px solid;
     font-stretch: condensed;
@@ -235,7 +236,7 @@ nav {
 
   h2 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
     color: $white;
     text-align: left;
     padding: 0;
@@ -268,10 +269,10 @@ nav {
   h1 {
   	display: inline-block;
   	@include helvetica-neue-regular-condensed();
-    font-size: 47px;
+    font-size: 60px;
   	color: #666666;
     margin-left: 6px;
-    width: 50px;
+    width: auto;
     height: 40px;
     line-height: 35px;
     margin-top: 0px;
@@ -284,7 +285,7 @@ nav {
   h2 {
     @include helvetica-neue-regular-condensed();
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
   	color: #666666;
   	text-align: left;
   	padding: 0;
@@ -313,6 +314,13 @@ nav {
       height: 100px;
     }
 	}
+  section.svgs{
+    .proto, .eval, .presen{
+      p{
+        margin-top:0;
+      }
+    }
+  }
 	svg {
       //vertical-align: top;
    		width: 100px;
@@ -744,6 +752,8 @@ div[state=bigAF]{
       }
     }
     #page1{
+      padding-top: 108px;
+      padding-bottom: 26px;
       header{
         margin-left: 20px;
       }
@@ -765,6 +775,7 @@ div[state=bigAF]{
         display: block;
         color: $white;
         margin-left: 20px;
+        margin-bottom: 50px;
         p{
           font-size:21pt;
         }
@@ -776,9 +787,6 @@ div[state=bigAF]{
           border-width: 1px;
           padding: 7px;
         }
-      }
-      .dwnArrow{
-        padding-bottom: 26px;
       }
     }
     #page2, #page3{
@@ -820,7 +828,7 @@ div[state=bigAF]{
         }
       }
       article{
-        font-size: 24pt;
+        font-size: 21pt;
         margin: 0 50px;
         text-align: left;
       }
@@ -1034,7 +1042,7 @@ div[state=bigAF]{
       article {
         margin-left: 68px;
         width: 50%;
-        padding-bottom: 180px;
+        padding-bottom: 150px;
         p{
           font-size: 15pt;
           color: $white;
@@ -1059,8 +1067,12 @@ div[state=bigAF]{
         }
       }
       .x{
-        margin-left: 634px;
-        margin-top: -260px;
+        background-image: $iPad_white_x2x;
+        background-size: 100%;
+        width: 24px;
+        height: 24px;
+        margin-left: 640px;
+        margin-top: -140px;
       }
       article{
         text-align: left;
@@ -1070,7 +1082,7 @@ div[state=bigAF]{
         }
       }
       .article1, .article2{
-        margin-top: -150px;
+        margin-top: -13px;
         text-align: center;
         p{
           width: 560px;
@@ -1165,6 +1177,7 @@ div[state=bigAF]{
       }
     }
     #page1 {
+      padding-top: 144px;
       .lp_graphic{
         background-image: $iPad_land_lp_g2x;
         background-size: 100%;
@@ -1184,7 +1197,7 @@ div[state=bigAF]{
         display: inline-block;
         margin-left: 75px;
         h1, h2{
-          font-size: 50pt;
+          font-size: 48pt;
           width: 706px;
           margin: 0;
         }
@@ -1192,7 +1205,7 @@ div[state=bigAF]{
       article {
         margin-left: 75px;
         width: 50%;
-        padding-bottom: 150px;
+        padding-bottom: 70px;
         width: 706px;
         p{
           font-size: 24pt;
@@ -1211,20 +1224,24 @@ div[state=bigAF]{
     }
     #page2, #page3{
       height: 1000px;
+      padding:0;
       p{
         font-size: 24pt;
       }
       header{
-        margin-top: 100px;
+        margin-top: 130px;
+        height:68px;
         h1{
           font-size: 84px;
+          line-height: 62px;
           width: auto;
-          height: 84px;
+          margin-left:0;
+          height: 68px;
         }
         h2{
           font-size:44px;
           height: 44px;
-          line-height: 44px;
+          line-height: 35px;
           margin-bottom: 10px;
         }
       }
@@ -1233,11 +1250,15 @@ div[state=bigAF]{
         background-size: 100%;
         width: 24px;
         height: 24px;
-        margin-left: 762px;
+        margin-left: 60vw;
         margin-top: -466px;
+      }
+      .x2{
+        margin-left: 57vw;
       }
       article{
         margin: 80px;
+        margin-top: 124px;
         font-size: 24pt;
         text-align: left;
       }
@@ -1251,6 +1272,11 @@ div[state=bigAF]{
 
       }
       section.svgs{
+        .custom, .usability, .user{
+          p{
+            margin-top: 0;
+          }
+        }
         .svg{
           width: 142px;
           height: 142px;
@@ -1261,6 +1287,7 @@ div[state=bigAF]{
           }
           p{
             font-size: 22pt;
+            line-height: 30px;
           }
           svg {
             width: 142px;
