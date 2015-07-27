@@ -65,6 +65,7 @@ function orientationCheck(){
 
   var ow = window.outerWidth,
   	oh = window.outerHeight;
+  $('body').removeClass();
   if ( ow < 500 ) {
     $('body').addClass("smartPhone");
     $(".pagination").hide();
@@ -94,7 +95,10 @@ function orientationCheck(){
   else {
 
   }
+  console.log("Orientation: " +device);
 }
+
+window.addEventListener('orientationchange', orientationCheck);
 
 // Stop checking user Agent, check for screen dimentions
 //Put this at the top so it can be used
@@ -118,7 +122,6 @@ TweenMax.set($('.svgs'),{perspective:1000});
 //functions
 function makeBigAF(ths, size){
 	var TIMING = 1;
-  var pageHeight = 0;
   var obj = {
     origX: $(ths).data("orig-x"),
     origY: $(ths).data("orig-y"),
@@ -126,9 +129,10 @@ function makeBigAF(ths, size){
     h: $(ths).data("height"),
     w: $(ths).data("width")
   }
-  for (var i = 1; i < ths.data('pageNo'); i++){
-    pageHeight += $("#page"+ths.data('pageNo')).height();
-  }
+
+  console.log("orig-x: "+obj.origY);
+  var pagePos = $("#page"+obj.pageNo).offset();
+  var pageHeight = pagePos.top;
 
 	TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
 	  	opacity:"0",
@@ -164,30 +168,30 @@ function makeBigAF(ths, size){
   }
   if(device == "smartPhone"){
     if(obj.pageNo == 3)
-      var addr = 150;
+      var addr = -200;
     else if(obj.pageNo == 2)
-      var addr = 200;
+      var addr = -150;
   }
   else if (device == "tabletPort"){
     if (obj.pageNo == 2)
-      var addr = 0;
+      var addr = 100;
     else
-      var addr = -150;
+      var addr = 100;
   }
   else if (device == "tabletLand"){
     if (obj.pageNo == 2)
-      var addr = -150;
+      var addr = 124;
     else
-      var addr = -260;
+      var addr = 124;
   }
   else{
     if (obj.pageNo == 2)
-      var addr = 200;
+      var addr = 30;
     else {
-      var addr = 120;
+      var addr = 30;
     }
   }
-  var transY = "translateY("+String((pageHeight - obj.origY)+$("#page"+obj.pageNo).height()/4 - addr)+"px)";
+  var transY = "translateY("+String(-(obj.origY-pageHeight)+addr)+"px)";
   var trans = "translateX("+String(($(".mainContainer").width()/2) - obj.origX - +size.replace("px","")/2)+"px) "+transY;
 
   TweenLite.to($("[state='bigAF'] div svg"),TIMING,{
@@ -388,8 +392,14 @@ function scrollFunc(e) {
 		}
 	};
 }
-$("#page1").css("padding-top", $('nav').height());
 window.onscroll=scrollFunc;
+
+//down arrow Bounce
+var arrowBNC = new TimelineMax({repeat: -1});
+
+arrowBNC.to($(".dwnArrow"), .3, {y: "-10px", ease: Power2.easeIn})
+        .to($(".dwnArrow"), 1, {y: "0px", ease: Bounce.easeOut})
+        .to($(".dwnArrow"), 1, {});
 
 //slider logic
 current=1;
