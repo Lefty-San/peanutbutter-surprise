@@ -464,6 +464,16 @@ nav {
       border-color: #cccccc;
       border-width: 1px; }
 
+.kp1.pu {
+  background: url(../img/KP_Watch.png);
+  background-size: 31%;
+  background-repeat: no-repeat;
+  background-position: 53% 17px; }
+
+/*
+url(../img/KP_Watch.png) 260px 178px no-repeat, url(../img/KP_PopUp_1.png), url(../img/KP_PopUp_2.png) 79px 79px
+
+*/
 footer {
   background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
   background-size: 100%;
