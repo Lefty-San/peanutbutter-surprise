@@ -203,15 +203,28 @@ function makeBigAF(ths, size){
   });
   if (obj.pageNo == 5){
     $("[state='bigAF']").parent().css("margin", 0);
-    TweenLite.to( $("[state='bigAF']"), TIMING, {
-      width: "100vw",
-      height: "100vh",
-      margin:0,
-      zIndex:3,
-      x: 0,
-      transformOrigin: "50% 50%",
-      ease:Power4.easeInOut
-    });
+    if (device == "smartPhone"){
+      TweenLite.to( $("[state='bigAF']"), TIMING, {
+        width: "100vw",
+        height: "100vh",
+        margin:0,
+        zIndex:3,
+        x: 0,
+        transformOrigin: "50% 50%",
+        ease:Power4.easeInOut
+      });
+    }
+    else {//if(device == "tabletPort"){
+      TweenLite.to( $("[state='bigAF']"), TIMING, {
+        width: "100vw",
+        height: "75vh",
+        marginLeft: -obj.origX,
+        zIndex:3,
+        x: 0,
+        transformOrigin: "50% 50%",
+        ease:Power4.easeInOut
+      });
+    }
     var pngTL = new TimelineLite();
     $("[state='bigAF'] .img").show();
     pngTL.to($("[state='bigAF'] .bg"), TIMING/5, {opacity: 0})
@@ -448,7 +461,7 @@ $(".menu .image").click(function(){
 $("[scroll]").click( function(){
   var tar = $(this).attr("scroll");
   if (tar == "this"){
-    if (device == "smartPhone" || device == "tabletPort"){
+    if (device == "smartPhone"){
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
           scrollTop: $(this).offset().top - 17
@@ -459,7 +472,7 @@ $("[scroll]").click( function(){
     else{
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
-          scrollTop: $(this).parent().offset().top
+          scrollTop: $(this).offset().top - 150
         },1000);
         canExit = true;
       }
@@ -518,7 +531,18 @@ $("[state='small']").click(function(e){
   if ($(this).data("pageNo") != 5)
     load(".article" + ($(this).data("pageNo")-1), url);
   else {
-    var num = 40 + +$("[state='bigAF']").attr("num").replace("j","") * ((2* (+$(this).data("margin")+2)) + +$(this).data("height"));
+    //space x for our work
+    var row;
+    if (device == "smartPhone"){
+      row = +$("[state='bigAF']").attr("num").replace("j","");
+    }
+    else if(device == "tabletPort"){
+      row = Math.floor(+$("[state='bigAF']").attr("num").replace("j","")/2);
+    }
+    else{
+      row = Math.floor(+$("[state='bigAF']").attr("num").replace("j","")/3);
+    }
+    var num = 40 + row * ((2* (+$(this).data("margin")+2)) + +$(this).data("height"));
     $(".x3").css("margin-top",  String(num)+"px");
   }
 });
