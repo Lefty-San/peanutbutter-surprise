@@ -94,7 +94,9 @@ function orientationCheck(){
       ourWork.margins = "14px";
   }
   else {
-
+      ourWork.height = "193px";
+      ourWork.width = "290px";
+      ourWork.margins = "20px";
   }
   console.log("Orientation: " +device);
 }

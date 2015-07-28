@@ -764,8 +764,7 @@ div[state=bigAF] {
     background-image: url(../img/iPad/OrangeX@2x.png);
     height: 24px;
     width: 25px;
-    background-size: 100%;
-    margin-left: 720px; }
+    background-size: 100%; }
   #page5 .boxes .cont {
     width: 325px;
     height: 215;
@@ -911,6 +910,11 @@ div[state=bigAF] {
     text-align: left;
     font-size: 24pt; }
 
+  #page5 .x3 {
+    background-image: url(../img/iPad/OrangeX@2x.png);
+    height: 24px;
+    width: 25px;
+    background-size: 100%; }
   #page5 .boxes .cont {
     width: 290px;
     height: 193px;
@@ -978,9 +982,9 @@ div[state=bigAF] {
         border-width: 1px;
         border-radius: 2px; }
     #page1 .dwnArrow {
-      background-image: url(../img/iPad/Scroll_Arrow@2x.png);
-      width: 23px;
-      height: 23px; }
+      background-image: url(../img/Web/Scroll_Arrow.png);
+      width: 33px;
+      height: 33px; }
 
   #page2, #page3 {
     height: 1000px;
@@ -1124,6 +1128,11 @@ div[state=bigAF] {
       font-size: 24pt;
       color: #ffffff; }
 
+  #page5 .x3 {
+    background-image: url(../img/iPad/OrangeX@2x.png);
+    height: 24px;
+    width: 25px;
+    background-size: 100%; }
   #page5 .boxes {
     width: 1000px;
     margin: 0 auto; }
