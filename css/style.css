@@ -460,15 +460,6 @@ nav {
         height: 192px;
         width: 106px;
         margin: 0 auto; }
-      #page5 .boxes .pu .img {
-        background-size: 100%;
-        background-repeat: no-repeat;
-        display: none;
-        z-index: 3; }
-      #page5 .boxes .pu .left {
-        background-image: url(../img/iPhone/ourWork/KP_PopUp_1.png); }
-      #page5 .boxes .pu .right {
-        background-image: url(../img/iPhone/ourWork/KP_PopUp_2.png); }
 
 footer {
   background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
