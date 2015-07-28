@@ -219,7 +219,7 @@ function makeBigAF(ths, size){
     else {//if(device == "tabletPort"){
       TweenLite.to( $("[state='bigAF']"), TIMING, {
         width: "100vw",
-        height: "75vh",
+        height: "85vh",
         marginLeft: -obj.origX,
         zIndex:3,
         x: 0,
@@ -474,7 +474,7 @@ $("[scroll]").click( function(){
     else{
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
-          scrollTop: $(this).offset().top - 150
+          scrollTop: $(this).offset().top - 75
         },1000);
         canExit = true;
       }
@@ -528,11 +528,22 @@ $("[state='small']").click(function(e){
     else
       makeBigAF($(this), "724px");
 	}
-  var url = "arts/"+$(this).attr("class").replace("svg ", "") + ".htm";
-  console.log(url);
-  if ($(this).data("pageNo") != 5)
-    load(".article" + ($(this).data("pageNo")-1), url);
+
+  //determine article url then ajax it in
+  var url;
+  if ($(this).data("pageNo") == 2) {
+    url = "arts/ux/"+$(this).attr("class").replace("svg ", "") + ".htm";
+  }
+  else if ($(this).data("pageNo") == 3){
+    url = "arts/ui/"+$(this).attr("class").replace("svg ", "") + ".htm";
+  }
   else {
+    url = "arts/ourWork/"+$(this).attr("class").replace(" pu", "") + ".htm";
+  }
+  console.log(url);
+
+  load(".article" + ($(this).data("pageNo")-1), url);
+  if ($(this).data("pageNo") == 5) {
     //space x for our work
     var row;
     if (device == "smartPhone"){
