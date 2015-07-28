@@ -542,7 +542,8 @@ $("[state='small']").click(function(e){
   }
   console.log(url);
 
-  load(".article" + ($(this).data("pageNo")-1), url);
+  load($(this), url);
+
   if ($(this).data("pageNo") == 5) {
     //space x for our work
     var row;
