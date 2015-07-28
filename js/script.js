@@ -12,7 +12,6 @@ $(function(){
         //console.log($elem.width());
         $elem.data('width', $elem.width());
         $elem.data('height', $elem.height());
-        //console.log($(elem).data());
     });
     var $recs = $('.pu');
     $recs.each(function(index, elem){
@@ -23,6 +22,8 @@ $(function(){
         $elem.data('pageNo', 5);
         $elem.data('width', $elem.width());
         $elem.data('height', $elem.height());
+        $elem.data('margin', parseInt($elem.parent().css("margin-top")));
+        console.log($(elem).data());
     });
 });
 
@@ -40,14 +41,14 @@ var canExit = false;
 $(".article1").hide();
 $(".article2").hide();
 //listen for x click then make small AF
-$(".x, .shade, .svgs, nav, .pagination").click(function(){
+$(".x, .pu, .shade, .svgs, nav, .pagination").click(function(){
 	if (canExit == true){
 	  bigExists = false;
 	  var TIMING = .75;
 	  $(".article1").hide();
 	  $(".article2").hide();
     if(currPage == 5){
-        normSVG(TIMING);
+        normWork(TIMING);
     }
     else{
     	  normSVG("[state='bigAF'] div svg", TIMING, 1);
@@ -207,13 +208,20 @@ function makeBigAF(ths, size){
       height: "100vh",
       margin:0,
       zIndex:3,
-      left: 0,
+      x: 0,
       transformOrigin: "50% 50%",
       ease:Power4.easeInOut
     });
+    var pngTL = new TimelineLite();
+    $("[state='bigAF'] .img").show();
+    pngTL.to($("[state='bigAF'] .bg"), TIMING/5, {opacity: 0})
+         .to($("[state='bigAF'] .img"), .8*TIMING, {opacity: 1});
   }
 	setTimeout(function(){$(".article"+String(obj.pageNo-1)).show();}, (TIMING*1000));
 	setTimeout(function(){$(".x"+String(obj.pageNo-1)).show();}, (TIMING*1000));
+  if (obj.pageNo == 5){
+    setTimeout(function(){$(".x3").show();}, (TIMING*1000));
+  }
 	setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
 
@@ -507,7 +515,12 @@ $("[state='small']").click(function(e){
 	}
   var url = "arts/"+$(this).attr("class").replace("svg ", "") + ".htm";
   console.log(url);
-  load(".article" + ($(this).data("pageNo")-1), url);
+  if ($(this).data("pageNo") != 5)
+    load(".article" + ($(this).data("pageNo")-1), url);
+  else {
+    var num = 40 + +$("[state='bigAF']").attr("num").replace("j","") * ((2* (+$(this).data("margin")+2)) + +$(this).data("height"));
+    $(".x3").css("margin-top",  String(num)+"px");
+  }
 });
 
 // key log for window information

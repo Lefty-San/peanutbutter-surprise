@@ -77,14 +77,10 @@ body {
   z-index: 1;
   display: none; }
 
-h1, h2, p {
-  /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/ }
-
 nav {
   background-color: #ffffff;
   font-size: 24px;
   font-color: #a0a2a3;
-  /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
   height: 65px;
   vertical-align: middle;
   position: fixed;
@@ -105,11 +101,9 @@ nav {
     margin-left: 40px; }
     nav .menu ul {
       color: #666666;
-      font-weight: 300;
-      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
+      font-weight: 300; }
       nav .menu ul a, nav .menu ul a:visited {
         color: #a0a2a3;
-        /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
         text-decoration: none; }
       nav .menu ul li {
         list-style: none; }
@@ -205,7 +199,6 @@ nav {
     width: 100%; }
   #page3 h1 {
     display: inline-block;
-    /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
     font-size: 60px;
     color: #666666;
     margin-left: 6px;
@@ -218,7 +211,6 @@ nav {
     font-stretch: condensed;
     font-weight: 600; }
   #page3 h2 {
-    /*font-family: "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:400; font-stretch:condensed;*/
     font-weight: bold;
     font-size: 32px;
     color: #666666;
@@ -239,6 +231,7 @@ nav {
   padding-bottom: 60px; }
   #page2 .svg, #page3 .svg {
     display: inline-block;
+    margin-top: 25px;
     width: 100px;
     height: 100px;
     flex-direction: row-reverse; }
@@ -277,8 +270,7 @@ nav {
   padding-bottom: 50px; }
   #page4 header {
     width: 100%;
-    text-align: center;
-    /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/ }
+    text-align: center; }
     #page4 header h1 {
       color: #ffffff;
       display: inline-block;
@@ -294,7 +286,9 @@ nav {
       width: 68px;
       height: 68px;
       display: inline-block;
-      margin-top: 15px; }
+      margin-top: 15px;
+      margin-bottom: -15px;
+      margin-left: 14px; }
   #page4 .slider {
     margin-top: 20px; }
     #page4 .slider .leftButt {
@@ -347,7 +341,6 @@ nav {
       height: 52px;
       display: inline-block; }
     #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
-      /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/
       font-size: 15pt;
       color: #ffffff;
       display: inline-block;
@@ -403,17 +396,15 @@ nav {
       margin-top: 51px;
       margin-left: 20px; }
     #page4 .circle h1 {
-      font-size: 30pt;
+      font-size: 29pt;
       display: inline-block;
       color: #ffffff;
-      /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
       margin-top: 45px;
       margin-right: -20px; }
     #page4 .circle h2 {
-      font-size: 18pt;
+      font-size: 17pt;
       margin-left: 15px;
       color: #ffffff;
-      /*font-family: "HelveticaNeueLightCondensed", "HelveticaNeue-Light-Condensed", "Helvetica Neue Light Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:300; font-stretch:condensed;*/
       display: inline-block; }
     #page4 .circle .suits {
       background: url(../img/iPhone/Client_Icon@2x.png);
@@ -430,8 +421,7 @@ nav {
   text-align: center; }
   #page5 header {
     color: #929292;
-    padding-top: 20px;
-    /*font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:500; font-stretch:condensed;*/ }
+    padding-top: 20px; }
     #page5 header h2 {
       display: inline-block;
       font-size: 24pt;
@@ -448,7 +438,7 @@ nav {
     position: absolute;
     display: inline-block;
     z-index: 4;
-    margin-left: 280px; }
+    margin-left: 93vw; }
   #page5 .boxes {
     margin-top: 20px;
     z-index: 0; }
@@ -463,6 +453,22 @@ nav {
       border: solid;
       border-color: #cccccc;
       border-width: 1px; }
+      #page5 .boxes .pu .bg {
+        background-image: url(../img/iPhone/ourWork/KP_Watch.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 192px;
+        width: 106px;
+        margin: 0 auto; }
+      #page5 .boxes .pu .img {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: none;
+        z-index: 3; }
+      #page5 .boxes .pu .left {
+        background-image: url(../img/iPhone/ourWork/KP_PopUp_1.png); }
+      #page5 .boxes .pu .right {
+        background-image: url(../img/iPhone/ourWork/KP_PopUp_2.png); }
 
 footer {
   background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
@@ -474,11 +480,9 @@ footer {
     padding: 40px 0;
     margin: 0;
     color: #ebebeb;
-    font-size: 20pt;
-    /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/ }
+    font-size: 20pt; }
     footer ul a, footer ul a:visited {
       color: #ebebeb;
-      /*font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;*/
       font-size: 20pt;
       text-decoration: none; }
     footer ul li {
@@ -504,7 +508,7 @@ div[state=bigAF] {
   background-size: 100%;
   height: 14px;
   width: 14px;
-  margin-top: -90px;
+  margin-top: -80px;
   margin-left: 282px;
   z-index: 2;
   position: absolute; }
@@ -612,6 +616,10 @@ div[state=bigAF] {
         border-radius: 2px;
         border-width: 1px;
         padding: 7px; }
+    #page1 .dwnArrow {
+      background-image: url(../img/iPad/Scroll_Arrow@2x.png);
+      height: 23px;
+      width: 23px; }
 
   #page2 .x, #page3 .x {
     background-image: url(../img/iPad/WhiteX@2x.png);
@@ -700,6 +708,24 @@ div[state=bigAF] {
       height: 19px;
       width: 26px;
       margin-right: 100px; }
+    #page4 .slider .pixPerf {
+      background-image: url(../img/iPad/UIPixelPerfection@2x.png); }
+    #page4 .slider .final {
+      background-image: url(../img/iPad/FinalGraphics@2x.png); }
+    #page4 .slider .desgin {
+      background-image: url(../img/iPad/DesignComps@2x.png); }
+    #page4 .slider .sol {
+      background-image: url(../img/iPad/SolutionArchitecture@2x.png); }
+    #page4 .slider .ux {
+      background-image: url(../img/iPad/UserExperience@2x.png); }
+    #page4 .slider .us {
+      background-image: url(../img/iPad/UserStories@2x.png); }
+    #page4 .slider .projectSpecs {
+      background-image: url(../img/iPad/ProjectSpecs.png@2x); }
+    #page4 .slider .pixPerf, #page4 .slider .final, #page4 .slider .design, #page4 .slider .sol, #page4 .slider .ux, #page4 .slider .us, #page4 .slider .projectSpecs {
+      background-size: 100%;
+      width: 52px;
+      height: 52px; }
   #page4 .circle {
     width: 364px;
     height: 364px;
@@ -805,6 +831,10 @@ div[state=bigAF] {
     #page1 article p {
       font-size: 15pt;
       color: #ffffff; }
+  #page1 .dwnArrow {
+    background-image: url(../img/iPad/Scroll_Arrow@2x.png);
+    height: 23px;
+    width: 23px; }
 
   #page2, #page3 {
     height: 688px;
@@ -851,19 +881,39 @@ div[state=bigAF] {
           width: 122px;
           height: 122px; }
 
+  #page4 header .venn {
+    background-image: url(../img/iPad/VennDiagram@2x.png);
+    width: 85px;
+    height: 78px; }
   #page4 .slider {
     display: inline-block;
     float: left;
     margin-top: 100px;
     margin-left: 117px; }
-    #page4 .slider .leftButt {
-      margin-right: 103px; }
+    #page4 .slider .rightButt, #page4 .slider .leftButt {
+      margin-bottom: 0;
+      background-size: 100%;
+      background-repeat: none; }
     #page4 .slider .rightButt {
+      background-image: url(../img/iPad/ArrowRight@2x.png);
+      height: 19px;
+      width: 26px;
       margin-left: 103px; }
+    #page4 .slider .leftButt {
+      background-image: url(../img/iPad/ArrowLeft@2x.png);
+      height: 19px;
+      width: 26px;
+      margin-right: 103px; }
   #page4 .circle {
     margin-top: 0;
     float: right;
     margin-right: 117px; }
+    #page4 .circle .suits {
+      margin-top: 70px;
+      background: url(../img/iPad/Client_Icon@2x.png);
+      background-size: 100%;
+      width: 55px;
+      height: 70px; }
   #page4 article {
     color: #ffffff;
     margin: 350px 59px 0px 59px;
@@ -930,13 +980,16 @@ div[state=bigAF] {
         font-size: 24pt;
         color: #ffffff; }
       #page1 article a {
-        /*font-family: "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;*/
         color: #ffffff;
         font-size: 16pt;
         padding: 9px;
         border: solid;
         border-width: 1px;
         border-radius: 2px; }
+    #page1 .dwnArrow {
+      background-image: url(../img/iPad/Scroll_Arrow@2x.png);
+      width: 23px;
+      height: 23px; }
 
   #page2, #page3 {
     height: 1000px;
@@ -948,6 +1001,7 @@ div[state=bigAF] {
       height: 68px; }
       #page2 header h1, #page3 header h1 {
         font-size: 84px;
+        padding-right: 2px;
         line-height: 62px;
         width: auto;
         margin-left: 0;
@@ -973,10 +1027,12 @@ div[state=bigAF] {
       text-align: left; }
     #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
       width: 100%;
-      margin-top: -380px;
+      margin-top: -360px;
       text-align: center; }
       #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
         width: 576px; }
+      #page2 .article1 .article2, #page2 .article2 .article2, #page3 .article1 .article2, #page3 .article2 .article2 {
+        margin-top: -360px; }
     #page2 section.svgs .custom p, #page2 section.svgs .usability p, #page2 section.svgs .user p, #page3 section.svgs .custom p, #page3 section.svgs .usability p, #page3 section.svgs .user p {
       margin-top: 0; }
     #page2 section.svgs .svg, #page3 section.svgs .svg {
@@ -998,6 +1054,11 @@ div[state=bigAF] {
   #page4 header h1 {
     font-size: 72px;
     margin-right: 22px; }
+  #page4 header .venn {
+    background-image: url(../img/Web/VennDiagram.png);
+    width: 113px;
+    height: 113px;
+    margin-bottom: -30px; }
   #page4 .slider {
     display: inline-block;
     float: left;
@@ -1010,14 +1071,28 @@ div[state=bigAF] {
       width: 31px;
       height: 22px; }
     #page4 .slider #image {
-      width: 62px;
-      height: 62px; }
+      width: 65px;
+      height: 65px; }
     #page4 .slider .leftButt {
       margin-right: 120px;
       background-image: url(../img/Web/ArrowLeft.png);
       background-size: 100%;
       width: 31px;
       height: 22px; }
+    #page4 .slider .pixPerf {
+      background-image: url(../img/Web/UIPixelPerfection.png); }
+    #page4 .slider .final {
+      background-image: url(../img/Web/FinalGraphics.png); }
+    #page4 .slider .desgin {
+      background-image: url(../img/Web/DesignComps.png); }
+    #page4 .slider .sol {
+      background-image: url(../img/Web/SolutionArchitecture.png); }
+    #page4 .slider .ux {
+      background-image: url(../img/Web/UserExperience.png); }
+    #page4 .slider .us {
+      background-image: url(../img/Web/UserStories.png); }
+    #page4 .slider .projectSpecs {
+      background-image: url(../img/Web/ProjectSpecs.png); }
   #page4 .circle {
     margin-left: 50px;
     margin-top: 0;
@@ -1055,7 +1130,6 @@ div[state=bigAF] {
     margin-top: 100px;
     margin-left: 78px; }
     #page4 article p {
-      /*font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;*/
       font-size: 24pt;
       color: #ffffff; }
 
