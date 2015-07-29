@@ -157,9 +157,6 @@ nav {
   		}
   	}
   }
-  .fullMenu {
-    display:none;
-  }
 }
 #page1 {
 	background-color: $orange;
@@ -183,6 +180,7 @@ nav {
     font-weight:400;
   }
   article{
+    width: 90vw;
     a{
       font-size: 20pt;
       border: solid;
@@ -205,13 +203,11 @@ nav {
 }
 
 #page2 {
-  	@include fullscreen($Web_ux_back);
+	@include fullscreen($Web_ux_back);
 	overflow: hidden;
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
-}
-#page2{
   h1 {
     display: inline-block;
     font-size: 60px;
@@ -583,6 +579,23 @@ nav {
         height: 192px;
         width: 106px;
         margin: 0 auto;
+      }
+      h1{
+        position: absolute;
+        color: $orange;
+        margin: 10vh auto 0 auto;
+        text-align: center;
+        left: 0;
+        right: 0;
+      }
+      p{
+        position: absolute;
+        color: black;
+        width: 75vw;
+        margin: 20vh auto 0 auto;
+        text-align: center;
+        left: 0;
+        right: 0;
       }
     }
   }

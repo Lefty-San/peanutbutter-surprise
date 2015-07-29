@@ -9,7 +9,6 @@ $(function(){
         $elem.data('orig-x', pos.left);
         $elem.data('orig-y', pos.top);
         $elem.data('pageNo', +$(elem).attr("scroll").replace("#page", ""));
-        //console.log($elem.width());
         $elem.data('width', $elem.width());
         $elem.data('height', $elem.height());
     });
@@ -23,7 +22,6 @@ $(function(){
         $elem.data('width', $elem.width());
         $elem.data('height', $elem.height());
         $elem.data('margin', parseInt($elem.parent().css("margin-top")));
-        console.log($(elem).data());
     });
 });
 
@@ -49,6 +47,7 @@ $(".x, .pu, .shade, .svgs, nav, .pagination").click(function(){
 	  $(".article2").hide();
     if(currPage == 5){
         normWork(TIMING);
+        $("[state='bigAF']").empty();
     }
     else{
     	  normSVG("[state='bigAF'] div svg", TIMING, 1);
@@ -106,7 +105,6 @@ window.addEventListener('orientationchange', orientationCheck);
 // Stop checking user Agent, check for screen dimentions
 //Put this at the top so it can be used
 orientationCheck();
-console.log(window.outerWidth + '\n' + window.outerHeight);
 $(window).on("resize", orientationCheck);
 
 //  condensed slider functions
@@ -133,7 +131,6 @@ function makeBigAF(ths, size){
     w: $(ths).data("width")
   }
 
-  console.log("orig-x: "+obj.origY);
   var pagePos = $("#page"+obj.pageNo).offset();
   var pageHeight = pagePos.top;
 
@@ -420,7 +417,7 @@ window.onscroll=scrollFunc;
 //down arrow Bounce
 var arrowBNC = new TimelineMax({repeat: -1});
 
-arrowBNC.to($(".dwnArrow"), .3, {y: "-10px", ease: Power2.easeIn})
+arrowBNC.to($(".dwnArrow"), .15, {y: "-30px", ease: Power2.easeIn})
         .to($(".dwnArrow"), 1, {y: "0px", ease: Bounce.easeOut})
         .to($(".dwnArrow"), 1, {});
 
@@ -436,6 +433,15 @@ menuHidden=true;
 if (device=="smartPhone"){
 	$(".menu ul").hide();
 	$(".menu ul").css('margin-right', '-100px');
+}
+else{
+  //Add slashes to menu
+  $("li").each(function(i, elem){
+    var $elem = $(elem);
+    if (i < 3){
+      $elem.append("<a> /</a>");
+    }
+  });
 }
 $(".menu .image").click(function(){
 	if (menuHidden == false){
@@ -540,9 +546,13 @@ $("[state='small']").click(function(e){
   else {
     url = "arts/ourWork/"+$(this).attr("class").replace(" pu", "") + ".htm";
   }
-  console.log(url);
 
-  load($(this), url);
+  if ($(this).data("pageNo") == 2)
+    load(".article1", url);
+  else if ($(this).data("pageNo") == 3)
+    load(".article2", url);
+  else
+    load($(this), url);
 
   if ($(this).data("pageNo") == 5) {
     //space x for our work

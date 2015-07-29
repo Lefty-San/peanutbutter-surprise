@@ -107,8 +107,6 @@ nav {
         text-decoration: none; }
       nav .menu ul li {
         list-style: none; }
-  nav .fullMenu {
-    display: none; }
 
 #page1 {
   background-color: #f9941f;
@@ -129,14 +127,16 @@ nav {
     margin-left: 16px;
     margin-top: 0px;
     font-weight: 400; }
-  #page1 article a {
-    font-size: 20pt;
-    border: solid;
-    border-color: #ffffff;
-    border-radius: 2px;
-    border-width: 1px;
-    padding: 7px;
-    color: #ffffff; }
+  #page1 article {
+    width: 90vw; }
+    #page1 article a {
+      font-size: 20pt;
+      border: solid;
+      border-color: #ffffff;
+      border-radius: 2px;
+      border-width: 1px;
+      padding: 7px;
+      color: #ffffff; }
   #page1 .dwnArrow {
     display: block;
     width: 19px;
@@ -156,38 +156,37 @@ nav {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px; }
-
-#page2 h1 {
-  display: inline-block;
-  font-size: 60px;
-  color: #ffffff;
-  margin-left: 6px;
-  width: 50px;
-  height: 40px;
-  line-height: 35px;
-  margin-top: 0px;
-  padding-right: 25px;
-  padding-top: 0;
-  border-right: 1px solid;
-  font-stretch: condensed;
-  font-weight: 600; }
-#page2 h2 {
-  font-weight: bold;
-  font-size: 32px;
-  color: #ffffff;
-  text-align: left;
-  padding: 0;
-  margin-top: -5px;
-  width: 100px;
-  height: 50px;
-  display: inline-block;
-  line-height: 24px;
-  text-align: left;
-  font-weight: 400;
-  vertical-align: top; }
-#page2 p {
-  color: #ffffff;
-  display: inline-block; }
+  #page2 h1 {
+    display: inline-block;
+    font-size: 60px;
+    color: #ffffff;
+    margin-left: 6px;
+    width: 50px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 0px;
+    padding-right: 25px;
+    padding-top: 0;
+    border-right: 1px solid;
+    font-stretch: condensed;
+    font-weight: 600; }
+  #page2 h2 {
+    font-weight: bold;
+    font-size: 32px;
+    color: #ffffff;
+    text-align: left;
+    padding: 0;
+    margin-top: -5px;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    line-height: 24px;
+    text-align: left;
+    font-weight: 400;
+    vertical-align: top; }
+  #page2 p {
+    color: #ffffff;
+    display: inline-block; }
 
 #page3 {
   background-color: #ffffff;
@@ -460,6 +459,21 @@ nav {
         height: 192px;
         width: 106px;
         margin: 0 auto; }
+      #page5 .boxes .pu h1 {
+        position: absolute;
+        color: #f9941f;
+        margin: 10vh auto 0 auto;
+        text-align: center;
+        left: 0;
+        right: 0; }
+      #page5 .boxes .pu p {
+        position: absolute;
+        color: black;
+        width: 75vw;
+        margin: 20vh auto 0 auto;
+        text-align: center;
+        left: 0;
+        right: 0; }
 
 footer {
   background-image: url(http://33.media.tumblr.com/bd196f5ebb0350be951d377c6f33d6df/tumblr_nrht0ikx6b1uv0y2ro1_250.gif);
