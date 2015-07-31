@@ -66,6 +66,7 @@ function showShade(page){
   var pageHeight = $(".page" + page).height();
   var pagePos = $(".page" + page).offset();
   $(".shade" + page).css("margin-top", -pos.top);
+  $(".shade" + page).css("margin-left", "-5vw");
   $(".shade" + page).css("display", "block");
 }
 
