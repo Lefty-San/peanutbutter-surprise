@@ -61,6 +61,13 @@ $(".x, .pu, .shade, .svgs, nav, .pagination").click(function(){
 	}
 });
 
+function showShade(page){
+  var pos = $(".shade" + page).offset();
+  var pagePos = $(".page" + page).offset();
+  $(".shade" + page).css("margin-top", -pos.top);
+  $(".shade" + page).css("display", "block");
+}
+
 function orientationCheck(){
 
   var ow = window.outerWidth,
@@ -417,7 +424,7 @@ window.onscroll=scrollFunc;
 //down arrow Bounce
 var arrowBNC = new TimelineMax({repeat: -1});
 
-arrowBNC.to($(".dwnArrow"), .15, {y: "-30px", ease: Power2.easeIn})
+arrowBNC.to($(".dwnArrow"), .15, {y: "-20px", ease: Power2.easeInOut})
         .to($(".dwnArrow"), 1, {y: "0px", ease: Bounce.easeOut})
         .to($(".dwnArrow"), 1, {});
 
@@ -503,25 +510,24 @@ $("[scroll]").click( function(){
 });
 
 //load in page2 svgs
-$('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
-$(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
-$(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
+  $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
+      $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
+      $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
 $(".usability").prepend($('<div>').load("svg/UX/UsabilityTesting.svg"));
-$(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
+    $(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
 
 //load in page3 svgs
-$(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
-$(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
-$(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
+   $(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
+ $(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
+ $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
 $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
-$(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
+  $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
 
 //listen for clicked svgs and make big AF
 bigExists = false;
 $("[state='small']").click(function(e){
 	if(bigExists == false){
-	  $(".shade").css("display", "block");
 	  bigExists = true;
 	  $(this).attr("state", "bigAF");
 	  //$(this).children().children().css("position", "absolute");
@@ -539,9 +545,11 @@ $("[state='small']").click(function(e){
   var url;
   if ($(this).data("pageNo") == 2) {
     url = "arts/ux/"+$(this).attr("class").replace("svg ", "") + ".htm";
+    showShade($(this).data("pageNo"));
   }
   else if ($(this).data("pageNo") == 3){
     url = "arts/ui/"+$(this).attr("class").replace("svg ", "") + ".htm";
+    showShade($(this).data("pageNo"));
   }
   else {
     url = "arts/ourWork/"+$(this).attr("class").replace(" pu", "") + ".htm";
