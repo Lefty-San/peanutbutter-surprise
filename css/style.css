@@ -225,7 +225,7 @@ nav {
       width: 100px;
       height: 100px; }
   #page2 section.svgs .shade, #page3 section.svgs .shade {
-    width: 100vw;
+    width: 120vw;
     height: 500vh;
     /*overflow: hidden;*/
     position: absolute;
