@@ -136,11 +136,7 @@ nav {
     background-repeat: no-repeat; }
 
 #page2 {
-  background: url(../img/Web/UX_Background.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url(../img/Web/UX_Background.png) no-repeat center center;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -216,7 +212,9 @@ nav {
     color: #f9941f; }
 
 #page2, #page3 {
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden; }
   #page2 .svg, #page3 .svg {
     display: inline-block;
     margin-top: 25px;
@@ -229,8 +227,8 @@ nav {
   #page2 section.svgs .shade, #page3 section.svgs .shade {
     width: 100vw;
     height: 500vh;
+    /*overflow: hidden;*/
     position: absolute;
-    overflow: hidden;
     top: 0;
     left: 0;
     background-color: #000000;

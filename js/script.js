@@ -63,6 +63,7 @@ $(".x, .pu, .shade, .svgs, nav, .pagination").click(function(){
 
 function showShade(page){
   var pos = $(".shade" + page).offset();
+  var pageHeight = $(".page" + page).height();
   var pagePos = $(".page" + page).offset();
   $(".shade" + page).css("margin-top", -pos.top);
   $(".shade" + page).css("display", "block");

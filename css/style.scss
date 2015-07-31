@@ -17,11 +17,7 @@ $white: #ffffff;
 $orange: #f9941f;
 
 @mixin fullscreen($img) {
-  background: $img no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: $img no-repeat center center;
 }
 
 *{
@@ -280,6 +276,8 @@ nav {
 }
 #page2, #page3 {
   padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
 	.svg{
 		display: inline-block;
     margin-top: 25px;
@@ -295,8 +293,8 @@ nav {
     .shade{
       width: 100vw;
       height: 500vh;
+      /*overflow: hidden;*/
       position: absolute;
-      overflow: hidden;
       top: 0;
       left: 0;
       background-color: #000000;
