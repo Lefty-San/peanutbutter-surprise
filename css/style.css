@@ -5,7 +5,7 @@
   font-weight: 600; }
 
 p {
-  font-weight: 400; }
+  font-weight: 300; }
 
 .open {
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -33,6 +33,7 @@ body {
 
 .pagination {
   position: fixed;
+  z-index: 1;
   top: 50%;
   left: 97%; }
   .pagination div {
@@ -107,7 +108,7 @@ nav {
     color: white;
     border-bottom: 1px solid white;
     margin-left: 16px;
-    width: 330px;
+    width: 275px;
     margin-bottom: 0px;
     font-weight: 400; }
   #page1 h2 {
@@ -412,6 +413,8 @@ nav {
     #page4 .circle .ci {
       margin-top: -40px;
       display: inline-block; }
+      #page4 .circle .ci h2 {
+        font-weight: 200; }
 
 #page5 {
   background-color: #ebebeb;
@@ -512,7 +515,7 @@ div[state=bigAF] {
   height: 14px;
   width: 14px;
   margin-top: -80px;
-  margin-left: 282px;
+  margin-left: 90vw;
   z-index: 2;
   position: absolute; }
 
@@ -593,10 +596,11 @@ div[state=bigAF] {
     padding-top: 108px;
     padding-bottom: 26px; }
     #page1 header {
-      margin-left: 20px; }
+      margin-left: 20px;
+      margin-top: -90px; }
     #page1 h1 {
-      font-size: 50px;
-      width: 560px;
+      font-size: 52px;
+      width: 567px;
       margin: 0; }
     #page1 h2 {
       font-size: 52px;
@@ -629,8 +633,8 @@ div[state=bigAF] {
     background-size: 100%;
     width: 24px;
     height: 24px;
-    margin-left: 475px;
-    margin-top: -175px; }
+    margin-left: 67vw;
+    margin-top: -244px; }
   #page2 header, #page3 header {
     margin-top: 32px; }
     #page2 header h1, #page3 header h1 {
@@ -669,12 +673,18 @@ div[state=bigAF] {
   #page2 section.svgs, #page3 section.svgs {
     margin: 84px 34px 0 34px;
     padding-bottom: 40px; }
+    #page2 section.svgs .shade, #page3 section.svgs .shade {
+      overflow-x: hidden;
+      width: 115vw;
+      left: -10vw; }
     #page2 section.svgs .proto, #page2 section.svgs .desktop, #page3 section.svgs .proto, #page3 section.svgs .desktop {
       margin: 0 80px; }
     #page2 section.svgs .eval, #page2 section.svgs .usability, #page2 section.svgs .custom, #page2 section.svgs .presen, #page3 section.svgs .eval, #page3 section.svgs .usability, #page3 section.svgs .custom, #page3 section.svgs .presen {
       margin-top: 94px;
       margin-right: 40px;
       margin-left: 40px; }
+    #page2 section.svgs .eval p, #page3 section.svgs .eval p {
+      margin-top: 16px; }
 
   #page2 article {
     color: white; }
@@ -700,7 +710,7 @@ div[state=bigAF] {
     #page4 .slider .rightButt, #page4 .slider .leftButt {
       margin-bottom: 0;
       background-size: 100%;
-      background-repeat: none; }
+      background-repeat: no-repeat; }
     #page4 .slider .rightButt {
       background-image: url(../img/iPad/ArrowRight@2x.png);
       height: 19px;
@@ -724,7 +734,7 @@ div[state=bigAF] {
     #page4 .slider .us {
       background-image: url(../img/iPad/UserStories@2x.png); }
     #page4 .slider .projectSpecs {
-      background-image: url(../img/iPad/ProjectSpecs.png@2x); }
+      background-image: url(../img/iPad/ProjectSpecs@2x.png); }
     #page4 .slider .pixPerf, #page4 .slider .final, #page4 .slider .design, #page4 .slider .sol, #page4 .slider .ux, #page4 .slider .us, #page4 .slider .projectSpecs {
       background-size: 100%;
       width: 52px;
@@ -762,6 +772,10 @@ div[state=bigAF] {
       background-size: 100%;
       width: 55px;
       height: 70px; }
+    #page4 .circle .ci h1 {
+      font-size: 30pt; }
+    #page4 .circle .ci h2 {
+      font-size: 20pt; }
   #page4 article {
     margin-top: 41px;
     font-size: 21pt;
@@ -817,24 +831,30 @@ div[state=bigAF] {
     margin-left: 0; }
   #page1 header {
     margin-top: 125px;
-    font-size: 50px;
+    font-size: 52px;
     display: inline-block;
     margin-left: 52px;
     width: 50%; }
     #page1 header h1 {
-      width: 559px;
-      font-size: 50px; }
+      width: 570px;
+      font-size: 52px; }
     #page1 header h2 {
-      font-size: 50px; }
+      font-size: 52px; }
   #page1 article {
     margin-left: 68px;
     width: 50%;
     padding-bottom: 150px; }
     #page1 article p {
+<<<<<<< HEAD
       font-size: 15pt;
       color: white; }
+=======
+      font-size: 18pt;
+      color: #ffffff; }
+>>>>>>> 1db67ccd3308831bb6463ede4ae5d86ca1f072fb
   #page1 .dwnArrow {
     background-image: url(../img/iPad/Scroll_Arrow@2x.png);
+    margin-top: -45px;
     height: 23px;
     width: 23px; }
 
@@ -857,7 +877,7 @@ div[state=bigAF] {
       background-size: 100%;
       width: 24px;
       height: 24px;
-      margin-left: 640px;
+      margin-left: 60vw;
       margin-top: -140px; }
     #page2 article, #page3 article {
       text-align: left;
@@ -895,7 +915,7 @@ div[state=bigAF] {
     #page4 .slider .rightButt, #page4 .slider .leftButt {
       margin-bottom: 0;
       background-size: 100%;
-      background-repeat: none; }
+      background-repeat: no-repeat; }
     #page4 .slider .rightButt {
       background-image: url(../img/iPad/ArrowRight@2x.png);
       height: 19px;
@@ -909,13 +929,39 @@ div[state=bigAF] {
   #page4 .circle {
     margin-top: 0;
     float: right;
-    margin-right: 117px; }
+    margin-right: 117px;
+    width: 364px;
+    height: 364px; }
+    #page4 .circle .num1 {
+      margin-left: 172px; }
+    #page4 .circle .num2 {
+      margin-left: 324px;
+      margin-top: 75px; }
+    #page4 .circle .num3 {
+      margin-left: 344px;
+      margin-top: 245px; }
+    #page4 .circle .num4 {
+      margin-left: 258px;
+      margin-top: 341px; }
+    #page4 .circle .num5 {
+      margin-left: 89px;
+      margin-top: 341px; }
+    #page4 .circle .num6 {
+      margin-top: 245px;
+      margin-left: 3px; }
+    #page4 .circle .num7 {
+      margin-top: 75px;
+      margin-left: 23px; }
     #page4 .circle .suits {
-      margin-top: 70px;
+      margin-top: 110px;
       background: url(../img/iPad/Client_Icon@2x.png);
       background-size: 100%;
       width: 55px;
       height: 70px; }
+    #page4 .circle h1 {
+      font-size: 30pt; }
+    #page4 .circle h2 {
+      font-size: 20pt; }
   #page4 article {
     color: white;
     margin: 350px 59px 0px 59px;
