@@ -26,7 +26,7 @@ $orange: #f9941f;
 }
 
 p {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .open {
@@ -43,7 +43,6 @@ p {
   transition: all 0.3s ease 0.3s;
   -webkit-transition: all 0.3s ease 0.3s;
 }
-
 body{
 	width: 100vw;
 	margin: 0;
@@ -54,9 +53,9 @@ body{
 	margin: 0;
   overflow-x: hidden;
 }
-
 .pagination{
   position: fixed;
+  z-index: 1;
   top: 50%;
   left: 97%;
   div{
@@ -137,7 +136,6 @@ nav {
   		}
   		li{
   			list-style: none;
-        //display: inline-block;
   		}
   	}
   }
@@ -152,7 +150,7 @@ nav {
   	color: $white;
   	border-bottom: 1px solid $white;
   	margin-left: 16px;
-  	width: 330px;
+  	width: 275px;
   	margin-bottom: 0px;
     font-weight: 400;
     }
@@ -524,6 +522,9 @@ nav {
 		.ci{
 			margin-top: -40px;
 			display: inline-block;
+      h2{
+        font-weight: 200;
+      }
 		}
 	}
 }
@@ -646,7 +647,7 @@ div[state=bigAF]{
 	height: 14px;
 	width: 14px;
 	margin-top: -80px;
-	margin-left: 282px;
+	margin-left: 90vw;
 	z-index: 2;
 	position: absolute;
 }
@@ -763,10 +764,11 @@ div[state=bigAF]{
       padding-bottom: 26px;
       header{
         margin-left: 20px;
+        margin-top: -90px;
       }
       h1{
-        font-size: 50px;
-        width: 560px;
+        font-size: 52px;
+        width: 567px;
         margin: 0;
       }
       h2{
@@ -807,8 +809,8 @@ div[state=bigAF]{
         background-size: 100%;
         width: 24px;
         height: 24px;
-        margin-left: 475px;
-        margin-top: -175px;
+        margin-left: 67vw;
+        margin-top: -244px;
       }
       header{
         margin-top: 32px;
@@ -859,6 +861,11 @@ div[state=bigAF]{
       section.svgs{
         margin: 84px 34px 0 34px;
         padding-bottom: 40px;
+        .shade{
+          overflow-x: hidden;
+          width: 115vw;
+          left: -10vw;
+        }
         .proto, .desktop{
           margin: 0 80px;
         }
@@ -866,6 +873,9 @@ div[state=bigAF]{
           margin-top: 94px;
           margin-right: 40px;
           margin-left: 40px;
+        }
+        .eval p{
+          margin-top: 16px;
         }
       }
     }
@@ -904,7 +914,7 @@ div[state=bigAF]{
         .rightButt, .leftButt{
           margin-bottom: 0;
           background-size: 100%;
-          background-repeat: none;
+          background-repeat: no-repeat;
         }
         .rightButt{
           background-image: $iPad_arrow_right2x;
@@ -987,6 +997,14 @@ div[state=bigAF]{
           width: 55px;
           height: 70px;
         }
+        .ci{
+          h1{
+            font-size: 30pt;
+          }
+          h2{
+            font-size: 20pt;
+          }
+        }
       }
       article{
         margin-top: 41px;
@@ -1064,16 +1082,16 @@ div[state=bigAF]{
       }
       header {
         margin-top: 125px;
-        font-size: 50px;
+        font-size: 52px;
         display: inline-block;
         margin-left: 52px;
         width: 50%;
         h1{
-          width: 559px;
-          font-size: 50px;
+          width: 570px;
+          font-size: 52px;
         }
         h2{
-          font-size: 50px;
+          font-size: 52px;
         }
       }
       article {
@@ -1081,12 +1099,13 @@ div[state=bigAF]{
         width: 50%;
         padding-bottom: 150px;
         p{
-          font-size: 15pt;
+          font-size: 18pt;
           color: $white;
         }
       }
       .dwnArrow{
         background-image: $iPad_scroll_arrow2x;
+        margin-top: -45px;
         height: 23px;
         width: 23px;
       }
@@ -1113,7 +1132,7 @@ div[state=bigAF]{
         background-size: 100%;
         width: 24px;
         height: 24px;
-        margin-left: 640px;
+        margin-left: 60vw;
         margin-top: -140px;
       }
       article{
@@ -1164,7 +1183,7 @@ div[state=bigAF]{
         .rightButt, .leftButt{
           margin-bottom: 0;
           background-size: 100%;
-          background-repeat: none;
+          background-repeat: no-repeat;
         }
         .rightButt{
           background-image: $iPad_arrow_right2x;
@@ -1183,12 +1202,47 @@ div[state=bigAF]{
         margin-top: 0;
         float:right;
         margin-right: 117px;
+        width: 364px;
+        height: 364px;
+        .num1 {
+          margin-left: 172px;
+        }
+        .num2 {
+          margin-left: 324px;
+          margin-top: 75px;
+        }
+        .num3 {
+          margin-left: 344px;
+          margin-top: 245px;
+        }
+        .num4 {
+          margin-left: 258px;
+          margin-top: 341px;
+        }
+        .num5 {
+          margin-left: 89px;
+          margin-top: 341px;
+        }
+        .num6 {
+          margin-top: 245px;
+          margin-left: 3px;
+        }
+        .num7 {
+          margin-top: 75px;
+          margin-left: 23px;
+        }
         .suits{
-          margin-top: 70px;
+          margin-top: 110px;
           background: $iPad_client_icon2x;
           background-size: 100%;
           width: 55px;
           height: 70px;
+        }
+        h1{
+          font-size: 30pt;
+        }
+        h2{
+          font-size: 20pt;
         }
       }
       article{
