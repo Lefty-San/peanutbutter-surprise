@@ -2,6 +2,20 @@
 $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 
+    var iOsCheck = function(a) {
+      console.log(navigator.userAgent.indexOf(a));
+      return  navigator.userAgent.indexOf(a);
+    }
+    if (iOsCheck("iPhone") > 0 || iOsCheck("iPad") > 0 || iOsCheck("iOS Simulator") > 0) {
+      $('.svg').addClass("iOS");
+      console.log('iOS match');
+    } else {
+      // do nothing
+      console.log("ios no match");
+    }
+
+
+
     var $svgs = $('.svg');
     $svgs.each(function(index, elem){
         var $elem = $(elem);
