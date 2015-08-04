@@ -59,7 +59,7 @@ body {
   background-color: #929292; }
 
 .p2 div {
-  border-color: white; }
+  border-color: #ffffff; }
 
 .p3 div {
   border-color: #aeaeae; }
@@ -68,7 +68,7 @@ body {
   border-color: #929292; }
 
 nav {
-  background-color: white;
+  background-color: #ffffff;
   font-size: 24px;
   font-color: #a0a2a3;
   height: 65px;
@@ -105,15 +105,15 @@ nav {
   padding-bottom: 15px; }
   #page1 h1 {
     font-size: 25px;
-    color: white;
-    border-bottom: 1px solid white;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
     margin-left: 16px;
     width: 275px;
     margin-bottom: 0px;
     font-weight: 400; }
   #page1 h2 {
     font-size: 25px;
-    color: white;
+    color: #ffffff;
     margin-left: 16px;
     margin-top: 0px;
     font-weight: 400; }
@@ -122,11 +122,11 @@ nav {
     #page1 article a {
       font-size: 20pt;
       border: solid;
-      border-color: white;
+      border-color: #ffffff;
       border-radius: 2px;
       border-width: 1px;
       padding: 7px;
-      color: white; }
+      color: #ffffff; }
   #page1 .dwnArrow {
     display: block;
     width: 19px;
@@ -145,7 +145,7 @@ nav {
   #page2 h1 {
     display: inline-block;
     font-size: 60px;
-    color: white;
+    color: #ffffff;
     margin-left: 6px;
     width: 50px;
     height: 40px;
@@ -159,7 +159,7 @@ nav {
   #page2 h2 {
     font-weight: bold;
     font-size: 32px;
-    color: white;
+    color: #ffffff;
     text-align: left;
     padding: 0;
     margin-top: -5px;
@@ -171,11 +171,11 @@ nav {
     font-weight: 400;
     vertical-align: top; }
   #page2 p {
-    color: white;
+    color: #ffffff;
     display: inline-block; }
 
 #page3 {
-  background-color: white;
+  background-color: #ffffff;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -241,7 +241,7 @@ nav {
     opacity: .5;
     z-index: 1;
     display: none; }
-  #page2 section.svgs .proto p, #page2 section.svgs .eval p, #page2 section.svgs .presen p, #page3 section.svgs .proto p, #page3 section.svgs .eval p, #page3 section.svgs .presen p {
+  #page2 section.svgs .proto p, #page2 section.svgs .eval p, #page2 section.svgs .presen p, #page2 section.svgs .user p, #page3 section.svgs .proto p, #page3 section.svgs .eval p, #page3 section.svgs .presen p, #page3 section.svgs .user p {
     margin-top: 0; }
   #page2 svg, #page3 svg {
     width: 100px;
@@ -254,13 +254,13 @@ nav {
     width: 100%;
     text-align: center; }
     #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
-      color: white;
+      color: #ffffff;
       margin-top: 11px;
       margin-left: auto;
       margin-right: auto;
       width: 90%; }
     #page2 .article1 h1, #page2 .article2 h1, #page3 .article1 h1, #page3 .article2 h1 {
-      color: white;
+      color: #ffffff;
       border: none;
       font-size: 30px;
       width: 100%;
@@ -275,14 +275,14 @@ nav {
     width: 100%;
     text-align: center; }
     #page4 header h1 {
-      color: white;
+      color: #ffffff;
       display: inline-block;
       font-size: 47px; }
     #page4 header h2 {
       margin-top: 53px;
       display: inline-block;
       font-size: 24px;
-      color: white; }
+      color: #ffffff; }
     #page4 header .venn {
       background: url(../img/iPhone/VennDiagram@2x.png);
       background-size: 100%;
@@ -345,14 +345,14 @@ nav {
       display: inline-block; }
     #page4 .slider .pixPerf:before, #page4 .slider .final:before, #page4 .slider .design:before, #page4 .slider .sol:before, #page4 .slider .ux:before, #page4 .slider .us:before, #page4 .slider .projectSpecs:before {
       font-size: 15pt;
-      color: white;
+      color: #ffffff;
       display: inline-block;
       margin-top: 50px;
       position: absolute;
       margin-top: 60px;
       margin-left: -45px;
       width: 90px;
-      font-weight: 400; }
+      font-weight: 300; }
   #page4 .circle {
     width: 285px;
     height: 285px;
@@ -360,7 +360,7 @@ nav {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: solid white;
+    border: solid #ffffff;
     border-width: 2px;
     display: inline-block; }
     #page4 .circle .circ {
@@ -369,8 +369,8 @@ nav {
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
-      background-color: white;
-      border-color: white;
+      background-color: #ffffff;
+      border-color: #ffffff;
       margin: auto; }
     #page4 .circle .num1, #page4 .circle .num2, #page4 .circle .num3, #page4 .circle .num4, #page4 .circle .num5, #page4 .circle .num6, #page4 .circle .num7 {
       width: 17px;
@@ -401,13 +401,13 @@ nav {
     #page4 .circle h1 {
       font-size: 29pt;
       display: inline-block;
-      color: white;
+      color: #ffffff;
       margin-top: 45px;
       margin-right: -20px; }
     #page4 .circle h2 {
       font-size: 17pt;
       margin-left: 15px;
-      color: white;
+      color: #ffffff;
       display: inline-block; }
     #page4 .circle .suits {
       background: url(../img/iPhone/Client_Icon@2x.png);
@@ -451,7 +451,7 @@ nav {
       margin: 18px;
       display: inline-block; }
     #page5 .boxes .pu {
-      background-color: white;
+      background-color: #ffffff;
       width: 284px;
       height: 190px;
       display: inline-block;
@@ -546,7 +546,7 @@ div[state=bigAF] {
       margin-top: 22px; }
     nav .menu ul {
       margin-top: 50px;
-      background-color: white;
+      background-color: #ffffff;
       padding-bottom: 10px;
       padding-right: 10px;
       border-bottom-left-radius: 5px;
@@ -616,7 +616,7 @@ div[state=bigAF] {
       width: 521px; }
     #page1 article {
       display: block;
-      color: white;
+      color: #ffffff;
       margin-left: 20px;
       margin-bottom: 50px; }
       #page1 article p {
@@ -624,7 +624,7 @@ div[state=bigAF] {
       #page1 article a {
         font-size: 20pt;
         border: solid;
-        border-color: white;
+        border-color: #ffffff;
         border-radius: 2px;
         border-width: 1px;
         padding: 7px; }
@@ -645,8 +645,8 @@ div[state=bigAF] {
     #page2 header h1, #page3 header h1 {
       font-size: 80px;
       padding-right: 2px;
-      line-height: 52px;
-      height: 52px;
+      line-height: 58px;
+      height: 58px;
       width: auto; }
     #page2 header h2, #page3 header h2 {
       margin-top: -6px;
@@ -654,7 +654,7 @@ div[state=bigAF] {
       font-weight: 400;
       font-size: 41px; }
   #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
-    margin-top: -120px;
+    margin-top: -150px;
     width: 100%; }
     #page2 .article1 h1, #page2 .article2 h1, #page3 .article1 h1, #page3 .article2 h1 {
       font-size: 30px; }
@@ -695,7 +695,7 @@ div[state=bigAF] {
       margin-left: 40px; }
 
   #page2 article {
-    color: white; }
+    color: #ffffff; }
 
   #page3 article {
     color: #666666; }
@@ -787,12 +787,12 @@ div[state=bigAF] {
   #page4 article {
     margin-top: 41px;
     font-size: 21pt;
-    color: white;
+    color: #ffffff;
     margin: 0 50px;
     text-align: left; }
 
   p {
-    color: white; }
+    color: #ffffff; }
 
   #page5 .x3 {
     background-image: url(../img/iPad/OrangeX@2x.png);
@@ -853,13 +853,8 @@ div[state=bigAF] {
     width: 50%;
     padding-bottom: 150px; }
     #page1 article p {
-<<<<<<< HEAD
-      font-size: 15pt;
-      color: white; }
-=======
       font-size: 18pt;
       color: #ffffff; }
->>>>>>> 1db67ccd3308831bb6463ede4ae5d86ca1f072fb
   #page1 .dwnArrow {
     background-image: url(../img/iPad/Scroll_Arrow@2x.png);
     margin-top: -45px;
@@ -873,8 +868,8 @@ div[state=bigAF] {
       padding-top: 80px; }
       #page2 header h1, #page3 header h1 {
         font-size: 64px;
-        height: 50px;
-        line-height: 50px;
+        height: 48px;
+        line-height: 48px;
         padding-bottom: 0;
         width: auto;
         padding-right: 2px; }
@@ -888,17 +883,21 @@ div[state=bigAF] {
       height: 24px;
       margin-left: 60vw;
       margin-top: -140px; }
+    #page2 .x2, #page3 .x2 {
+      margin-top: -220px; }
     #page2 article, #page3 article {
       text-align: left;
       font-size: 20pt; }
       #page2 article p, #page3 article p {
         margin: 0 5.8%; }
     #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
-      margin-top: -13px;
-      text-align: center; }
+      text-align: center;
+      margin-top: -40px; }
       #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
         width: 560px;
         margin: 30px auto; }
+    #page2 .article2, #page3 .article2 {
+      margin-top: -80px; }
     #page2 section.svgs, #page3 section.svgs {
       margin-top: 55px; }
       #page2 section.svgs .custom p, #page2 section.svgs .usability p, #page2 section.svgs .user p, #page3 section.svgs .custom p, #page3 section.svgs .usability p, #page3 section.svgs .user p {
@@ -981,7 +980,7 @@ div[state=bigAF] {
     #page4 .circle h2 {
       font-size: 20pt; }
   #page4 article {
-    color: white;
+    color: #ffffff;
     margin: 350px 59px 0px 59px;
     text-align: left;
     font-size: 24pt; }
@@ -1049,9 +1048,9 @@ div[state=bigAF] {
       width: 706px; }
       #page1 article p {
         font-size: 24pt;
-        color: white; }
+        color: #ffffff; }
       #page1 article a {
-        color: white;
+        color: #ffffff;
         font-size: 16pt;
         padding: 9px;
         border: solid;
@@ -1205,7 +1204,7 @@ div[state=bigAF] {
     margin-left: 78px; }
     #page4 article p {
       font-size: 24pt;
-      color: white; }
+      color: #ffffff; }
 
   #page5 .x3 {
     background-image: url(../img/iPad/OrangeX@2x.png);
@@ -1223,3 +1222,5 @@ div[state=bigAF] {
         width: 290px;
         height: 193px; } }
 /* ----------- Desktop Retina Screens ----------- */
+
+/*# sourceMappingURL=style.css.map */
