@@ -225,6 +225,11 @@ nav {
     #page2 .svg div, #page3 .svg div {
       width: 100px;
       height: 100px; }
+    #page2 .svg p, #page3 .svg p {
+      font-size: 16pt; }
+  #page2 section.svgs .svg p, #page3 section.svgs .svg p {
+    line-height: 30px;
+    margin-top: 30px; }
   #page2 section.svgs .shade, #page3 section.svgs .shade {
     width: 120vw;
     height: 500vh;
@@ -638,7 +643,7 @@ div[state=bigAF] {
   #page2 header, #page3 header {
     margin-top: 32px; }
     #page2 header h1, #page3 header h1 {
-      font-size: 52pt;
+      font-size: 80px;
       padding-right: 2px;
       line-height: 52px;
       height: 52px;
@@ -646,7 +651,8 @@ div[state=bigAF] {
     #page2 header h2, #page3 header h2 {
       margin-top: -6px;
       line-height: 32px;
-      font-weight: 400; }
+      font-weight: 400;
+      font-size: 41px; }
   #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
     margin-top: -120px;
     width: 100%; }
@@ -664,6 +670,8 @@ div[state=bigAF] {
   #page2 .svg, #page3 .svg {
     width: 135px;
     height: 135px; }
+    #page2 .svg p, #page3 .svg p {
+      font-size: 21pt; }
     #page2 .svg svg, #page3 .svg svg {
       width: 135px;
       height: 135px; }
@@ -673,6 +681,8 @@ div[state=bigAF] {
   #page2 section.svgs, #page3 section.svgs {
     margin: 84px 34px 0 34px;
     padding-bottom: 40px; }
+    #page2 section.svgs .custom p, #page2 section.svgs .usability p, #page2 section.svgs .user p, #page2 section.svgs .eval p, #page3 section.svgs .custom p, #page3 section.svgs .usability p, #page3 section.svgs .user p, #page3 section.svgs .eval p {
+      margin-top: 0; }
     #page2 section.svgs .shade, #page3 section.svgs .shade {
       overflow-x: hidden;
       width: 115vw;
@@ -683,8 +693,6 @@ div[state=bigAF] {
       margin-top: 94px;
       margin-right: 40px;
       margin-left: 40px; }
-    #page2 section.svgs .eval p, #page3 section.svgs .eval p {
-      margin-top: 16px; }
 
   #page2 article {
     color: #ffffff; }
@@ -859,14 +867,15 @@ div[state=bigAF] {
     #page2 header, #page3 header {
       padding-top: 80px; }
       #page2 header h1, #page3 header h1 {
-        font-size: 50pt;
+        font-size: 64px;
         height: 50px;
         line-height: 50px;
         padding-bottom: 0;
         width: auto;
         padding-right: 2px; }
       #page2 header h2, #page3 header h2 {
-        line-height: 29px; }
+        line-height: 29px;
+        font-size: 33px; }
     #page2 .x, #page3 .x {
       background-image: url(../img/iPad/WhiteX@2x.png);
       background-size: 100%;
@@ -876,7 +885,7 @@ div[state=bigAF] {
       margin-top: -140px; }
     #page2 article, #page3 article {
       text-align: left;
-      font-size: 20px; }
+      font-size: 20pt; }
       #page2 article p, #page3 article p {
         margin: 0 5.8%; }
     #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
@@ -887,10 +896,15 @@ div[state=bigAF] {
         margin: 30px auto; }
     #page2 section.svgs, #page3 section.svgs {
       margin-top: 55px; }
+      #page2 section.svgs .custom p, #page2 section.svgs .usability p, #page2 section.svgs .user p, #page3 section.svgs .custom p, #page3 section.svgs .usability p, #page3 section.svgs .user p {
+        margin-top: 0; }
       #page2 section.svgs .svg, #page3 section.svgs .svg {
         width: 122px;
         height: 122px;
         margin: 20px; }
+        #page2 section.svgs .svg p, #page3 section.svgs .svg p {
+          font-size: 20pt;
+          color: #f9941f; }
         #page2 section.svgs .svg div, #page3 section.svgs .svg div {
           height: 122px;
           width: 122px; }
@@ -898,6 +912,10 @@ div[state=bigAF] {
           width: 122px;
           height: 122px; }
 
+  #page4 header h2 {
+    font-size: 32px; }
+  #page4 header h1 {
+    font-size: 54px; }
   #page4 header .venn {
     background-image: url(../img/iPad/VennDiagram@2x.png);
     width: 85px;
@@ -1087,6 +1105,9 @@ div[state=bigAF] {
       width: 142px;
       height: 142px;
       margin: 24px; }
+      #page2 section.svgs .svg p, #page3 section.svgs .svg p {
+        font-size: 22pt;
+        color: #f9941f; }
       #page2 section.svgs .svg div, #page3 section.svgs .svg div {
         width: 142px;
         height: 142px; }

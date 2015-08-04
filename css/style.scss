@@ -286,8 +286,17 @@ nav {
       width: 100px;
       height: 100px;
     }
+    p{
+      font-size: 16pt;
+    }
 	}
   section.svgs{
+    .svg{
+      p{
+        line-height: 30px;
+        margin-top: 30px;
+      }
+    }
     .shade{
       width: 120vw;
       height: 500vh;
@@ -816,7 +825,7 @@ div[state=bigAF]{
       header{
         margin-top: 32px;
         h1{
-          font-size: 52pt;
+          font-size: 80px;
           padding-right: 2px;
           line-height: 52px;
           height: 52px;
@@ -826,6 +835,7 @@ div[state=bigAF]{
           margin-top: -6px;
           line-height: 32px;
           font-weight: 400;
+          font-size: 41px;
         }
       }
       .article1, .article2{
@@ -850,6 +860,9 @@ div[state=bigAF]{
       .svg {
         width: 135px;
         height: 135px;
+        p{
+          font-size: 21pt;
+        }
         svg{
         width: 135px;
         height: 135px;
@@ -862,6 +875,11 @@ div[state=bigAF]{
       section.svgs{
         margin: 84px 34px 0 34px;
         padding-bottom: 40px;
+        .custom, .usability, .user, .eval{
+          p{
+            margin-top: 0;
+          }
+        }
         .shade{
           overflow-x: hidden;
           width: 115vw;
@@ -874,9 +892,6 @@ div[state=bigAF]{
           margin-top: 94px;
           margin-right: 40px;
           margin-left: 40px;
-        }
-        .eval p{
-          margin-top: 16px;
         }
       }
     }
@@ -1117,7 +1132,7 @@ div[state=bigAF]{
       header{
         padding-top: 80px;
         h1{
-          font-size: 50pt;
+          font-size: 64px;
           height: 50px;
           line-height: 50px;
           padding-bottom: 0;
@@ -1126,6 +1141,7 @@ div[state=bigAF]{
         }
         h2{
           line-height: 29px;
+          font-size: 33px;
         }
       }
       .x{
@@ -1138,7 +1154,7 @@ div[state=bigAF]{
       }
       article{
         text-align: left;
-        font-size: 20px;
+        font-size: 20pt;
         p{
           margin: 0 5.8%;
         }
@@ -1153,10 +1169,19 @@ div[state=bigAF]{
       }
       section.svgs{
         margin-top: 55px;
+        .custom, .usability, .user{
+          p{
+            margin-top: 0;
+          }
+        }
         .svg{
           width: 122px;
           height: 122px;
           margin: 20px;
+          p{
+            font-size: 20pt;
+            color: $orange;
+          }
           div{
             height: 122px;
             width: 122px;
@@ -1170,6 +1195,12 @@ div[state=bigAF]{
     }
     #page4{
       header{
+        h2{
+          font-size: 32px;
+        }
+        h1{
+          font-size: 54px;
+        }
         .venn{
           background-image: $iPad_venn_diag2x;
           width:85px;
@@ -1416,6 +1447,10 @@ div[state=bigAF]{
           width: 142px;
           height: 142px;
           margin: 24px;
+          p{
+            font-size: 22pt;
+            color: $orange;
+          }
           div{
             width: 142px;
             height: 142px;
