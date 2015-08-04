@@ -14,8 +14,6 @@ $(function(){
       console.log("ios no match");
     }
 
-
-
     var $svgs = $('.svg');
     $svgs.each(function(index, elem){
         var $elem = $(elem);
