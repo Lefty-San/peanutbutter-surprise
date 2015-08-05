@@ -160,6 +160,7 @@ function makeBigAF(ths, size){
 
 	TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
 	  	opacity:"0",
+      transform: "translateZ(.0)",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
 	  	ease:Power4.easeInOut
@@ -167,7 +168,7 @@ function makeBigAF(ths, size){
 	if (device == "smartPhone"){
     if (obj.pageNo == 2){
       TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
-    	  	transform: "translateY(-235px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
+    	  	transform: "translateY(-235px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
     	  	zIndex: 3,
     	  	transformOrigin:"50% 50%",
     	  	ease:Power1.easeOut
@@ -175,7 +176,7 @@ function makeBigAF(ths, size){
     }
     else if (obj.pageNo == 3){
       TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
-    	  	transform: "translateY(-200px) translateX(10px) translateZ(0) scale(0.25, 0.25)",
+    	  	transform: "translateY(-200px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
     	  	zIndex: 3,
     	  	transformOrigin:"50% 50%",
     	  	ease:Power1.easeOut
@@ -184,7 +185,7 @@ function makeBigAF(ths, size){
   }
   else {
     TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
-  	  	transform: "translateY(-270px) translateX(10px) translateZ(0) scale(0.5, 0.5)",
+  	  	transform: "translateY(-270px) translateX(10px) translateZ(.0) scale(0.5, 0.5)",
   	  	zIndex: 3,
   	  	transformOrigin:"50% 50%",
   	  	ease:Power4.easeInOut
@@ -197,14 +198,14 @@ function makeBigAF(ths, size){
         addr = -150;
       }
       else{
-        addr = -180;
+        addr = -160;
       }
     else if(obj.pageNo == 2)
       if (isIOS == true){
         addr = -130;
       }
       else{
-        addr = -150;
+        addr = -120;
       }
   }
   else if (device == "tabletPort"){
@@ -232,6 +233,7 @@ function makeBigAF(ths, size){
 
   TweenLite.to($("[state='bigAF'] div svg"),TIMING,{
     width: size,
+    transform: "translateZ(0)",
     height: size,
     transform: trans,
     zIndex: 3
@@ -241,6 +243,7 @@ function makeBigAF(ths, size){
     if (device == "smartPhone"){
       TweenLite.to( $("[state='bigAF']"), TIMING, {
         width: "100vw",
+        transform: "translateZ(0)",
         height: "100vh",
         margin:0,
         zIndex:3,
@@ -252,6 +255,7 @@ function makeBigAF(ths, size){
     else {//if(device == "tabletPort"){
       TweenLite.to( $("[state='bigAF']"), TIMING, {
         width: "100vw",
+        transform: "translateZ(0)",
         height: "85vh",
         marginLeft: -obj.origX,
         zIndex:3,
@@ -274,14 +278,14 @@ function makeBigAF(ths, size){
 }
 
 function load(section, htm){
-  // $(section).empty();
-  // $.ajax({
-  //   url: htm,
-  //   cache: false
-  // })
-  //   .done(function(html) {
-  //     $(section).append(html);
-  // });
+  $(section).empty();
+  $.ajax({
+    url: htm,
+    cache: false
+  })
+    .done(function(html) {
+      $(section).append(html);
+  });
 }
 
 //hideMenu function must be called onComplete
@@ -508,7 +512,7 @@ $("[scroll]").click( function(){
     if (device == "smartPhone"){
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
-          //scrollTop: $(this).offset().top - 17
+          scrollTop: $(this).offset().top - 17
         },1000);
         canExit = true;
       }
