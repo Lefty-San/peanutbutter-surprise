@@ -292,7 +292,7 @@ nav {
     }
 	}
   .svg.iOS {
-    margin-top:100px;
+    margin-bottom: 50px;
   }
   section.svgs{
     .svg{
@@ -1431,15 +1431,17 @@ div[state=bigAF]{
         margin-left: 57vw;
       }
       article{
-        margin: 80px;
+        margin: 80px auto 0 auto;
         margin-top: 124px;
         font-size: 24pt;
         text-align: left;
+        max-width: 1500px;
       }
       .article1, .article2{
         width: 100%;
         margin-top: -360px;
         text-align: center;
+        max-width: 100vw;
         p{
           width: 576px;
         }

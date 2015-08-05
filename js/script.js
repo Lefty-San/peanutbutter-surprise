@@ -2,6 +2,8 @@
 $(function(){
     console.log('jQuery loaded and running \n pixels available in document window ' + window.innerHeight);
 
+    isIOS = false;
+
     var iOsCheck = function(a) {
       console.log(navigator.userAgent.indexOf(a));
       return  navigator.userAgent.indexOf(a);
@@ -9,6 +11,7 @@ $(function(){
     if (iOsCheck("iPhone") > 0 || iOsCheck("iPad") > 0 || iOsCheck("iOS Simulator") > 0) {
       $('.svg').addClass("iOS");
       console.log('iOS match');
+      isIOS = true;
     } else {
       // do nothing
       console.log("ios no match");
@@ -187,31 +190,43 @@ function makeBigAF(ths, size){
   	  	ease:Power4.easeInOut
   	});
   }
+  var addr = 0;
   if(device == "smartPhone"){
     if(obj.pageNo == 3)
-      var addr = -200;
+      if (isIOS == true){
+        addr = -150;
+      }
+      else{
+        addr = -180;
+      }
     else if(obj.pageNo == 2)
-      var addr = -150;
+      if (isIOS == true){
+        addr = -130;
+      }
+      else{
+        addr = -150;
+      }
   }
   else if (device == "tabletPort"){
     if (obj.pageNo == 2)
-      var addr = 100;
+      addr = 100;
     else
-      var addr = 100;
+      addr = 100;
   }
   else if (device == "tabletLand"){
     if (obj.pageNo == 2)
-      var addr = 124;
+      addr = 124;
     else
-      var addr = 124;
+      addr = 124;
   }
   else{
     if (obj.pageNo == 2)
-      var addr = 30;
+      addr = 70;
     else {
-      var addr = 30;
+      addr = 70;
     }
   }
+
   var transY = "translateY("+String(-(obj.origY-pageHeight)+addr)+"px)";
   var trans = "translateX("+String(($(".mainContainer").width()/2) - obj.origX - +size.replace("px","")/2)+"px) "+transY;
 

@@ -229,7 +229,7 @@ nav {
     #page2 .svg p, #page3 .svg p {
       font-size: 16pt; }
   #page2 .svg.iOS, #page3 .svg.iOS {
-    margin-top: 100px; }
+    margin-bottom: 50px; }
   #page2 section.svgs .svg p, #page3 section.svgs .svg p {
     line-height: 30px;
     margin-top: 30px; }
@@ -1094,14 +1094,16 @@ div[state=bigAF] {
     #page2 .x2, #page3 .x2 {
       margin-left: 57vw; }
     #page2 article, #page3 article {
-      margin: 80px;
+      margin: 80px auto 0 auto;
       margin-top: 124px;
       font-size: 24pt;
-      text-align: left; }
+      text-align: left;
+      max-width: 1500px; }
     #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
       width: 100%;
       margin-top: -360px;
-      text-align: center; }
+      text-align: center;
+      max-width: 100vw; }
       #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
         width: 576px; }
       #page2 .article1 .article2, #page2 .article2 .article2, #page3 .article1 .article2, #page3 .article2 .article2 {
