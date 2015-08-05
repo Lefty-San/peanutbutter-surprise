@@ -5,7 +5,7 @@ $(function(){
     isIOS = false;
 
     var iOsCheck = function(a) {
-      console.log(navigator.userAgent.indexOf(a));
+      //console.log(navigator.userAgent.indexOf(a));
       return  navigator.userAgent.indexOf(a);
     }
     if (iOsCheck("iPhone") > 0 || iOsCheck("iPad") > 0 || iOsCheck("iOS Simulator") > 0) {
@@ -274,14 +274,14 @@ function makeBigAF(ths, size){
 }
 
 function load(section, htm){
-  $(section).empty();
-  $.ajax({
-    url: htm,
-    cache: false
-  })
-    .done(function(html) {
-      $(section).append(html);
-  });
+  // $(section).empty();
+  // $.ajax({
+  //   url: htm,
+  //   cache: false
+  // })
+  //   .done(function(html) {
+  //     $(section).append(html);
+  // });
 }
 
 //hideMenu function must be called onComplete
@@ -508,7 +508,7 @@ $("[scroll]").click( function(){
     if (device == "smartPhone"){
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
-          scrollTop: $(this).offset().top - 17
+          //scrollTop: $(this).offset().top - 17
         },1000);
         canExit = true;
       }

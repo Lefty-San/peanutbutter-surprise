@@ -1354,8 +1354,8 @@ div[state=bigAF]{
         width: 521px;
         height: 645px;
         float: right;
-        margin-right: 100px;
-        margin-top: 30px;
+        margin-right: 20vw;
+        margin-top: 70px;
         display: inline-block;
         margin-left: 0;
       }
@@ -1364,7 +1364,7 @@ div[state=bigAF]{
         width: 300px;
         font-size: 52px;
         display: inline-block;
-        margin-left: 75px;
+        margin-left: 10vw;
         h1, h2{
           font-size: 48pt;
           width: 706px;
@@ -1372,10 +1372,10 @@ div[state=bigAF]{
         }
       }
       article {
-        margin-left: 75px;
+        margin-left: 10vw;
         width: 50%;
-        padding-bottom: 70px;
-        width: 706px;
+        padding-bottom: 150px;
+        width: 50vw;
         p{
           font-size: 24pt;
           color: $white;
@@ -1439,7 +1439,7 @@ div[state=bigAF]{
       }
       .article1, .article2{
         width: 100%;
-        margin-top: -360px;
+        margin-top: -240px;
         text-align: center;
         max-width: 100vw;
         p{
@@ -1578,6 +1578,14 @@ div[state=bigAF]{
         .num7{
           margin-left: 49px;
           margin-top: 59px;
+        }
+        .ci{
+          h1{
+            font-size: 34pt;
+          }
+          h2{
+            font-size: 24pt;
+          }
         }
       }
       article{

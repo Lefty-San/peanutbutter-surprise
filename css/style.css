@@ -1030,8 +1030,8 @@ div[state=bigAF] {
       width: 521px;
       height: 645px;
       float: right;
-      margin-right: 100px;
-      margin-top: 30px;
+      margin-right: 20vw;
+      margin-top: 70px;
       display: inline-block;
       margin-left: 0; }
     #page1 header {
@@ -1039,16 +1039,16 @@ div[state=bigAF] {
       width: 300px;
       font-size: 52px;
       display: inline-block;
-      margin-left: 75px; }
+      margin-left: 10vw; }
       #page1 header h1, #page1 header h2 {
         font-size: 48pt;
         width: 706px;
         margin: 0; }
     #page1 article {
-      margin-left: 75px;
+      margin-left: 10vw;
       width: 50%;
-      padding-bottom: 70px;
-      width: 706px; }
+      padding-bottom: 150px;
+      width: 50vw; }
       #page1 article p {
         font-size: 24pt;
         color: #ffffff; }
@@ -1101,7 +1101,7 @@ div[state=bigAF] {
       max-width: 1500px; }
     #page2 .article1, #page2 .article2, #page3 .article1, #page3 .article2 {
       width: 100%;
-      margin-top: -360px;
+      margin-top: -240px;
       text-align: center;
       max-width: 100vw; }
       #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
@@ -1202,6 +1202,10 @@ div[state=bigAF] {
     #page4 .circle .num7 {
       margin-left: 49px;
       margin-top: 59px; }
+    #page4 .circle .ci h1 {
+      font-size: 34pt; }
+    #page4 .circle .ci h2 {
+      font-size: 24pt; }
   #page4 article {
     width: 980px;
     text-align: left;
