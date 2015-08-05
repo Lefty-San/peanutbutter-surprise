@@ -138,6 +138,7 @@ nav {
 
 #page2 {
   background: url(../img/Web/UX_Background.png) no-repeat center center;
+  background-size: 100vw 100%;
   overflow: hidden;
   text-align: center;
   padding-top: 20px;
@@ -227,6 +228,8 @@ nav {
       height: 100px; }
     #page2 .svg p, #page3 .svg p {
       font-size: 16pt; }
+  #page2 .svg.iOS, #page3 .svg.iOS {
+    margin-top: 100px; }
   #page2 section.svgs .svg p, #page3 section.svgs .svg p {
     line-height: 30px;
     margin-top: 30px; }
@@ -808,7 +811,7 @@ div[state=bigAF] {
     width: 325px;
     height: 215px; } }
 /* iPad Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
   nav {
     height: 108px; }
     nav .logo {

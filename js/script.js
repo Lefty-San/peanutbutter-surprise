@@ -558,15 +558,15 @@ $("[state='small']").click(function(e){
   //determine article url then ajax it in
   var url;
   if ($(this).data("pageNo") == 2) {
-    url = "arts/ux/"+$(this).attr("class").replace("svg ", "") + ".htm";
+    url = "arts/ux/"+$(this).attr("class").replace("svg ", "").replace(" iOS", "") + ".htm";
     showShade($(this).data("pageNo"));
   }
   else if ($(this).data("pageNo") == 3){
-    url = "arts/ui/"+$(this).attr("class").replace("svg ", "") + ".htm";
+    url = "arts/ui/"+$(this).attr("class").replace("svg ", "").replace(" iOS", "") + ".htm";
     showShade($(this).data("pageNo"));
   }
   else {
-    url = "arts/ourWork/"+$(this).attr("class").replace(" pu", "") + ".htm";
+    url = "arts/ourWork/"+$(this).attr("class").replace(" pu", "").replace(" iOS", "") + ".htm";
   }
 
   if ($(this).data("pageNo") == 2)
