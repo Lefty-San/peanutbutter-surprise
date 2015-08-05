@@ -159,7 +159,8 @@ function makeBigAF(ths, size){
   var pageHeight = pagePos.top;
 
 	TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
-	  	opacity:"0",
+    force3D:true,
+	  	autoAlpha:"0",
       transform: "translateZ(.0)",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
@@ -168,6 +169,7 @@ function makeBigAF(ths, size){
 	if (device == "smartPhone"){
     if (obj.pageNo == 2){
       TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
+        force3D:true,
     	  	transform: "translateY(-235px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
     	  	zIndex: 3,
     	  	transformOrigin:"50% 50%",
@@ -176,6 +178,7 @@ function makeBigAF(ths, size){
     }
     else if (obj.pageNo == 3){
       TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
+        force3D:true,
     	  	transform: "translateY(-200px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
     	  	zIndex: 3,
     	  	transformOrigin:"50% 50%",
@@ -185,6 +188,7 @@ function makeBigAF(ths, size){
   }
   else {
     TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
+      force3D:true,
   	  	transform: "translateY(-270px) translateX(10px) translateZ(.0) scale(0.5, 0.5)",
   	  	zIndex: 3,
   	  	transformOrigin:"50% 50%",
@@ -233,6 +237,7 @@ function makeBigAF(ths, size){
 
   TweenLite.to($("[state='bigAF'] div svg"),TIMING,{
     width: size,
+    force3D:true,
     transform: "translateZ(0)",
     height: size,
     transform: trans,
@@ -242,6 +247,7 @@ function makeBigAF(ths, size){
     $("[state='bigAF']").parent().css("margin", 0);
     if (device == "smartPhone"){
       TweenLite.to( $("[state='bigAF']"), TIMING, {
+        force3D:true,
         width: "100vw",
         transform: "translateZ(0)",
         height: "100vh",
@@ -254,6 +260,7 @@ function makeBigAF(ths, size){
     }
     else {//if(device == "tabletPort"){
       TweenLite.to( $("[state='bigAF']"), TIMING, {
+        force3D:true,
         width: "100vw",
         transform: "translateZ(0)",
         height: "85vh",
@@ -266,8 +273,8 @@ function makeBigAF(ths, size){
     }
     var pngTL = new TimelineLite();
     $("[state='bigAF'] .img").show();
-    pngTL.to($("[state='bigAF'] .bg"), TIMING/5, {opacity: 0})
-         .to($("[state='bigAF'] .img"), .8*TIMING, {opacity: 1});
+    pngTL.to($("[state='bigAF'] .bg"), TIMING/5, {autoAlpha: 0})
+         .to($("[state='bigAF'] .img"), .8*TIMING, {autoAlpha: 1});
   }
 	setTimeout(function(){$(".article"+String(obj.pageNo-1)).show();}, (TIMING*1000));
 	setTimeout(function(){$(".x"+String(obj.pageNo-1)).show();}, (TIMING*1000));
@@ -317,7 +324,7 @@ function normSVG(img, time, opacity){
 		transform: "scale(1, 1) translateX(0px) translateY(0px)",
     width: width,
     height: height,
-		opacity: opacity,
+		autoAlpha: opacity,
 		zIndex: 0,
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut
@@ -328,7 +335,7 @@ function normSVG(img, time, opacity){
 function norm(img, time, opacity){
 	TweenMax.to( $(img), time, {
 		transform: "scale(1, 1) translateX(0px) translateY(0px)",
-		opacity: opacity,
+		autoAlpha: opacity,
 		zIndex: 0,
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut
@@ -389,7 +396,7 @@ function animateRight(){
 	});
 	TweenMax.to( $("#image"), .3, {
 		transform: "scale(.9, .9) translateX(15px)",
-		opacity: "",
+		autoAlpha: "",
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut,
 		onComplete: moveRight
@@ -405,7 +412,7 @@ function animateLeft(){
 	});
 	TweenMax.to( $("#image"), .3, {
 		transform: "scale(.9, .9) translateX(-15px)",
-		opacity: "",
+		autoAlpha: "",
 		transformOrigin:"50% 50%",
 		ease:Power2.easeInOut,
 		onComplete: moveLeft
