@@ -136,6 +136,7 @@ var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
 function smlImage() {
   var smlDex = sml[current-1];
   $('#image').attr("class", smlDex);
+  $('#text').attr("class", smlDex);
 }
 //slider logic
 var current=1;
@@ -161,7 +162,7 @@ function makeBigAF(ths, size){
 	TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
     force3D:true,
 	  	autoAlpha:"0",
-      transform: "translateZ(.0)",
+      webkitTransform: "translateZ(.0)",
 	  	transformOrigin:"50% 50%",
 	  	zIndex: 2,
 	  	ease:Power4.easeInOut
@@ -238,7 +239,7 @@ function makeBigAF(ths, size){
   TweenLite.to($("[state='bigAF'] div svg"),TIMING,{
     width: size,
     force3D:true,
-    transform: "translateZ(0)",
+    webkitTransform: "translateZ(0)",
     height: size,
     transform: trans,
     zIndex: 3
