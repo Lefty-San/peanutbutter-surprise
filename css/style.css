@@ -1098,10 +1098,8 @@ div[state=bigAF] {
       background-size: 100%;
       width: 24px;
       height: 24px;
-      margin-left: 55vw;
-      margin-top: -361px; }
-    #page2 .x2, #page3 .x2 {
-      margin-left: 55vw; }
+      margin-left: 59vw;
+      margin-top: -345px; }
     #page2 article, #page3 article {
       margin: 80px auto 0 auto;
       margin-top: 124px;
@@ -1118,8 +1116,8 @@ div[state=bigAF] {
       #page2 .article1 p, #page2 .article2 p, #page3 .article1 p, #page3 .article2 p {
         width: 576px;
         font-size: 22px; }
-      #page2 .article1 .article2, #page2 .article2 .article2, #page3 .article1 .article2, #page3 .article2 .article2 {
-        margin-top: -360px; }
+    #page2 .article2, #page3 .article2 {
+      margin-top: -200px; }
     #page2 section.svgs .custom p, #page2 section.svgs .usability p, #page2 section.svgs .user p, #page3 section.svgs .custom p, #page3 section.svgs .usability p, #page3 section.svgs .user p {
       margin-top: 0; }
     #page2 section.svgs .svg, #page3 section.svgs .svg {

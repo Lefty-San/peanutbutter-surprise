@@ -40,41 +40,25 @@ $(function(){
     });
 });
 
-//initiate ourWork object
-var ourWork = {
-  height:"",
-  width:"",
-  margins:""
-};
+//load in page2 svgs
+  $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
+      $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
+      $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
+$(".usability").prepend($('<div>').load("svg/UX/UsabilityTesting.svg"));
+    $(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
 
-//hide x until needed
-$(".x").hide();
-var canExit = false;
-//hide text until svgs are clicked
-$(".article1").hide();
-$(".article2").hide();
-//listen for x click then make small AF
-$(".x, .pu, .shade, .svgs, nav, .pagination").click(function(){
-	if (canExit == true){
-	  bigExists = false;
-	  var TIMING = .75;
-	  $(".article1").hide();
-	  $(".article2").hide();
-    if(currPage == 5){
-        normWork(TIMING);
-        $("[state='bigAF']").empty();
-    }
-    else{
-    	  normSVG("[state='bigAF'] div svg", TIMING, 1);
-    	  normSVG("[state='bigAF'] div svg path:not(g path)", TIMING, .12);
-    	  normSVG("[state='bigAF'] div svg g", TIMING, 1);
-    }
-	  canExit = false;
-	  $(".shade").css("display", "none");
-	  $("[state='bigAF']").attr("state", "small");
-	  $(".x").hide();
-	}
-});
+//load in page3 svgs
+   $(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
+ $(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
+ $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
+$(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
+  $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
+
+/**************************************
+ *           ||
+ * Functions ||
+ *           \/
+ *****************************************/
 
 function showShade(page){
   var pos = $(".shade" + page).offset();
@@ -88,7 +72,7 @@ function showShade(page){
 function orientationCheck(){
 
   var ow = window.outerWidth,
-  	oh = window.outerHeight;
+    oh = window.outerHeight;
   $('body').removeClass();
   if ( ow < 500 ) {
     $('body').addClass("smartPhone");
@@ -124,13 +108,6 @@ function orientationCheck(){
   console.log("Orientation: " +device);
 }
 
-window.addEventListener('orientationchange', orientationCheck);
-
-// Stop checking user Agent, check for screen dimentions
-//Put this at the top so it can be used
-orientationCheck();
-$(window).on("resize", orientationCheck);
-
 //  condensed slider functions
 var sml = ['pixPerf', 'final', 'design', 'sol', 'ux', 'us', 'projectSpecs'];
 function smlImage() {
@@ -138,16 +115,9 @@ function smlImage() {
   $('#image').attr("class", smlDex);
   $('#text').attr("class", smlDex);
 }
-//slider logic
-var current=1;
-$(".num"+current).children().addClass("large");
-$(".leftbutt").css('visibility','hidden');
-$(".leftButt").click(function(){
-});
-TweenMax.set($('.svgs'),{perspective:1000});
-//functions
+
 function makeBigAF(ths, size){
-	var TIMING = 1;
+  var TIMING = 1;
   var obj = {
     origX: $(ths).data("orig-x"),
     origY: $(ths).data("orig-y"),
@@ -159,78 +129,70 @@ function makeBigAF(ths, size){
   var pagePos = $("#page"+obj.pageNo).offset();
   var pageHeight = pagePos.top;
 
-	TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
+  TweenLite.to($("[state='bigAF'] div svg path:not(g path)"), TIMING, {
     force3D:true,
-	  	autoAlpha:"0",
+      autoAlpha:"0",
       webkitTransform: "translateZ(.0)",
-	  	transformOrigin:"50% 50%",
-	  	zIndex: 2,
-	  	ease:Power4.easeInOut
-	});
-	if (device == "smartPhone"){
+      transformOrigin:"50% 50%",
+      zIndex: 2,
+      ease:Power4.easeInOut
+  });
+  if (device == "smartPhone"){
     if (obj.pageNo == 2){
       TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
         force3D:true,
-    	  	transform: "translateY(-235px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
-    	  	zIndex: 3,
-    	  	transformOrigin:"50% 50%",
-    	  	ease:Power1.easeOut
-    	});
+          transform: "translateY(-235px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
+          zIndex: 3,
+          transformOrigin:"50% 50%",
+          ease:Power1.easeOut
+      });
     }
     else if (obj.pageNo == 3){
       TweenLite.to($("[state='bigAF'] div svg g"), TIMING/1.1, {
         force3D:true,
-    	  	transform: "translateY(-200px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
-    	  	zIndex: 3,
-    	  	transformOrigin:"50% 50%",
-    	  	ease:Power1.easeOut
-    	});
+          transform: "translateY(-200px) translateX(10px) translateZ(.0) scale(0.25, 0.25)",
+          zIndex: 3,
+          transformOrigin:"50% 50%",
+          ease:Power1.easeOut
+      });
     }
   }
   else {
     TweenLite.to($("[state='bigAF'] div svg g"), TIMING, {
       force3D:true,
-  	  	transform: "translateY(-270px) translateX(10px) translateZ(.0) scale(0.5, 0.5)",
-  	  	zIndex: 3,
-  	  	transformOrigin:"50% 50%",
-  	  	ease:Power4.easeInOut
-  	});
+        transform: "translateY(-270px) translateX(10px) translateZ(.0) scale(0.5, 0.5)",
+        zIndex: 3,
+        transformOrigin:"50% 50%",
+        ease:Power4.easeInOut
+    });
   }
   var addr = 0;
   if(device == "smartPhone"){
-    if(obj.pageNo == 3)
+    if(obj.pageNo == 3){
       if (isIOS == true){
         addr = -150;
       }
       else{
         addr = -160;
       }
-    else if(obj.pageNo == 2)
+    }
+    else if(obj.pageNo == 2){
       if (isIOS == true){
         addr = -130;
       }
       else{
         addr = -120;
       }
+    }
   }
   else if (device == "tabletPort"){
-    if (obj.pageNo == 2)
-      addr = 100;
-    else
-      addr = 100;
+    addr = 100;
   }
   else if (device == "tabletLand"){
-    if (obj.pageNo == 2)
-      addr = 124;
-    else
-      addr = 124;
+    addr = 124;
   }
   else{
-    if (obj.pageNo == 2)
-      addr = 70;
-    else {
-      addr = 70;
-    }
+    addr = 70;
   }
 
   var transY = "translateY("+String(-(obj.origY-pageHeight)+addr)+"px)";
@@ -277,12 +239,12 @@ function makeBigAF(ths, size){
     pngTL.to($("[state='bigAF'] .bg"), TIMING/5, {autoAlpha: 0})
          .to($("[state='bigAF'] .img"), .8*TIMING, {autoAlpha: 1});
   }
-	setTimeout(function(){$(".article"+String(obj.pageNo-1)).show();}, (TIMING*1000));
-	setTimeout(function(){$(".x"+String(obj.pageNo-1)).show();}, (TIMING*1000));
+  setTimeout(function(){$(".article"+String(obj.pageNo-1)).show();}, (TIMING*1000));
+  setTimeout(function(){$(".x"+String(obj.pageNo-1)).show();}, (TIMING*1000));
   if (obj.pageNo == 5){
     setTimeout(function(){$(".x3").show();}, (TIMING*1000));
   }
-	setTimeout(function(){canExit = true;}, (TIMING*1000));
+  setTimeout(function(){canExit = true;}, (TIMING*1000));
 }
 
 function load(section, htm){
@@ -298,20 +260,22 @@ function load(section, htm){
 
 //hideMenu function must be called onComplete
 function hideMenu(){
-	$(".menu ul").hide();
+  $(".menu ul").hide();
 }
+
 function moveCirc(curr, next){
-	TweenLite.to($(".num"+curr).children(), .5, {
-		transform: "scale(1, 1)",
-		transformOrigin: "50% 50%",
-		ease:Power2.easeInOut
-	});
-	TweenLite.to($(".num"+next).children(), .5, {
-		transform: "scale(2, 2)",
-		transformOrigin: "50% 50%",
-		ease:Power2.easeInOut
-	});
+  TweenLite.to($(".num"+curr).children(), .5, {
+    transform: "scale(1, 1)",
+    transformOrigin: "50% 50%",
+    ease:Power2.easeInOut
+  });
+  TweenLite.to($(".num"+next).children(), .5, {
+    transform: "scale(2, 2)",
+    transformOrigin: "50% 50%",
+    ease:Power2.easeInOut
+  });
 }
+
 function normSVG(img, time, opacity){
   if($(img).parent().parent().hasClass("svg") || $(img).hasClass("pu")){
     var width = $(img).parent().parent().data("width");
@@ -322,25 +286,25 @@ function normSVG(img, time, opacity){
     var height = "auto";
   }
   TweenMax.to( $(img), time, {
-		transform: "scale(1, 1) translateX(0px) translateY(0px)",
+    transform: "scale(1, 1) translateX(0px) translateY(0px)",
     width: width,
     height: height,
-		autoAlpha: opacity,
-		zIndex: 0,
-		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut
-	});
+    autoAlpha: opacity,
+    zIndex: 0,
+    transformOrigin:"50% 50%",
+    ease:Power2.easeInOut
+  });
 }
 
 //make an image or svg normal after animation
 function norm(img, time, opacity){
-	TweenMax.to( $(img), time, {
-		transform: "scale(1, 1) translateX(0px) translateY(0px)",
-		autoAlpha: opacity,
-		zIndex: 0,
-		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut
-	});
+  TweenMax.to( $(img), time, {
+    transform: "scale(1, 1) translateX(0px) translateY(0px)",
+    autoAlpha: opacity,
+    zIndex: 0,
+    transformOrigin:"50% 50%",
+    ease:Power2.easeInOut
+  });
 }
 
 function normWork(time){
@@ -360,85 +324,87 @@ function normWork(time){
 
 //move icons after animations
 function moveLeft(){
-	if (current != 1){
-		current--;
-	}
-	smlImage();
-	norm("#image", .3, 1);
+  if (current != 1){
+    current--;
+  }
+  smlImage();
+  norm("#image", .3, 1);
 
-	if ($("#image").hasClass("pixPerf")){
-		$(".leftButt").css('visibility','hidden');
-	}
-	$(".rightButt").css('visibility','visible');
-	moveCirc(current+1, current);
+  if ($("#image").hasClass("pixPerf")){
+    $(".leftButt").css('visibility','hidden');
+  }
+  $(".rightButt").css('visibility','visible');
+  moveCirc(current+1, current);
 }
-function moveRight(){
-	if (current != 7){
-		current++;
-	}
-	smlImage();
-	norm("#image", .3, 1);
 
-	if ($("#image").hasClass("projectSpecs")){
-		$(".rightButt").css('visibility','hidden');
-	}
-	$(".leftButt").css('visibility','visible');
-	moveCirc(current-1, current);
+function moveRight(){
+  if (current != 7){
+    current++;
+  }
+  smlImage();
+  norm("#image", .3, 1);
+
+  if ($("#image").hasClass("projectSpecs")){
+    $(".rightButt").css('visibility','hidden');
+  }
+  $(".leftButt").css('visibility','visible');
+  moveCirc(current-1, current);
 }
 
 //animate buttons and icons on OurProcess
 function animateRight(){
-	TweenMax.to( $(".rightButt"), .1, {
-		transform: "scale(.75, .75) translateX(5px)",
-		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut,
-		repeat:1,
-		yoyo: true
-	});
-	TweenMax.to( $("#image"), .3, {
-		transform: "scale(.9, .9) translateX(15px)",
-		autoAlpha: "",
-		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut,
-		onComplete: moveRight
-	});
+  TweenMax.to( $(".rightButt"), .1, {
+    transform: "scale(.75, .75) translateX(5px)",
+    transformOrigin:"50% 50%",
+    ease:Power2.easeInOut,
+    repeat:1,
+    yoyo: true
+  });
+  TweenMax.to( $("#image"), .3, {
+    transform: "scale(.9, .9) translateX(15px)",
+    autoAlpha: "",
+    transformOrigin:"50% 50%",
+    ease:Power2.easeInOut,
+    onComplete: moveRight
+  });
 }
+
 function animateLeft(){
-	TweenMax.to( $(".leftButt"), .1, {
-		transform: "scale(.75, .75) translateX(-5px)",
-		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut,
-		repeat:1,
-		yoyo: true,
-	});
-	TweenMax.to( $("#image"), .3, {
-		transform: "scale(.9, .9) translateX(-15px)",
-		autoAlpha: "",
-		transformOrigin:"50% 50%",
-		ease:Power2.easeInOut,
-		onComplete: moveLeft
-	});
+  TweenMax.to( $(".leftButt"), .1, {
+    transform: "scale(.75, .75) translateX(-5px)",
+    transformOrigin:"50% 50%",
+    ease:Power2.easeInOut,
+    repeat:1,
+    yoyo: true,
+  });
+  TweenMax.to( $("#image"), .3, {
+    transform: "scale(.9, .9) translateX(-15px)",
+    autoAlpha: "",
+    transformOrigin:"50% 50%",
+    ease:Power2.easeInOut,
+    onComplete: moveLeft
+  });
 }
 
 currPage = 1;
 function scrollFunc(e) {
-	var win = $(window);
+  var win = $(window);
 
-	if (win.scrollTop()<($("#page1").height()/1.75)){
-		currPage = 1
-	}
-	else if ((win.scrollTop()>($("#page1").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()/1.75))){
-		currPage = 2;
-	}
-	else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))){
-		currPage = 3;
-	}
-	else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()+$("#page4").height()/1.75))){
-		currPage = 4;
-	}
-	else {
-		currPage = 5;
-	}
+  if (win.scrollTop()<($("#page1").height()/1.75)){
+    currPage = 1
+  }
+  else if ((win.scrollTop()>($("#page1").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()/1.75))){
+    currPage = 2;
+  }
+  else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))){
+    currPage = 3;
+  }
+  else if ((win.scrollTop()>($("#page1").height()+$("#page2").height()+$("#page3").height()/1.75))&&(win.scrollTop()<($("#page1").height()+$("#page2").height()+$("#page3").height()+$("#page4").height()/1.75))){
+    currPage = 4;
+  }
+  else {
+    currPage = 5;
+  }
 
   if (currPage == 1){
     $('nav').attr("class","open");
@@ -448,18 +414,77 @@ function scrollFunc(e) {
   }
 
   //pagination logic
-	for (var i = 1; i < 6; i++) {
-		if (i == currPage){
-			$(".pagination div.o" + i).addClass("current");
-			$(".pagination").addClass("p"+i);
-		}
-		else {
-			$(".pagination div.o" + i).removeClass("current");
-			$(".pagination").removeClass("p"+i);
+  for (var i = 1; i < 6; i++) {
+    if (i == currPage){
+      $(".pagination div.o" + i).addClass("current");
+      $(".pagination").addClass("p"+i);
+    }
+    else {
+      $(".pagination div.o" + i).removeClass("current");
+      $(".pagination").removeClass("p"+i);
 
-		}
-	};
+    }
+  };
 }
+
+/******************
+ * listeners, initiators etc.
+ *******************/
+
+ //initiate ourWork object
+var ourWork = {
+  height:"",
+  width:"",
+  margins:""
+};
+
+//hide x until needed
+$(".x").hide();
+var canExit = false;
+//hide text until svgs are clicked
+$(".article1").hide();
+$(".article2").hide();
+//listen for x click then make small AF
+$(".x, .pu, .shade, .svgs, nav, .pagination").click(function(){
+	if (canExit == true){
+	  bigExists = false;
+	  var TIMING = .75;
+	  $(".article1").hide();
+	  $(".article2").hide();
+    if(currPage == 5){
+        normWork(TIMING);
+        $("[state='bigAF']").empty();
+    }
+    else{
+    	  normSVG("[state='bigAF'] div svg", TIMING, 1);
+    	  normSVG("[state='bigAF'] div svg path:not(g path)", TIMING, .12);
+    	  normSVG("[state='bigAF'] div svg g", TIMING, 1);
+    }
+	  canExit = false;
+	  $(".shade").css("display", "none");
+	  $("[state='bigAF']").attr("state", "small");
+	  $(".x").hide();
+	}
+});
+
+
+
+window.addEventListener('orientationchange', orientationCheck);
+
+// Stop checking user Agent, check for screen dimentions
+//Put this at the top so it can be used
+orientationCheck();
+$(window).on("resize", orientationCheck);
+
+
+//slider logic
+var current=1;
+$(".num"+current).children().addClass("large");
+$(".leftbutt").css('visibility','hidden');
+$(".leftButt").click(function(){
+});
+TweenMax.set($('.svgs'),{perspective:1000});
+
 window.onscroll=scrollFunc;
 
 //down arrow Bounce
@@ -549,20 +574,6 @@ $("[scroll]").click( function(){
 	    menuHidden = true;
 	}
 });
-
-//load in page2 svgs
-  $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
-      $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
-      $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
-$(".usability").prepend($('<div>').load("svg/UX/UsabilityTesting.svg"));
-    $(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
-
-//load in page3 svgs
-   $(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
- $(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
- $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
-$(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
-  $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
 
 
 //listen for clicked svgs and make big AF
