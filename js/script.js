@@ -547,7 +547,7 @@ $("[scroll]").click( function(){
       if ($(this).attr("state")=="small"){
         $("html, body").animate({
           scrollTop: $(this).offset().top - 17
-        },1000);
+        },250);
         canExit = true;
       }
     }
@@ -563,7 +563,7 @@ $("[scroll]").click( function(){
   else{
     $('html, body').animate({
           scrollTop: $(tar).offset().top
-    }, 1000);
+    }, 250);
   }
   if (tar != "#page1"){
     setTimeout(function () {$("nav").attr("class","close");}, 1000);
@@ -612,10 +612,10 @@ $("[state='small']").click(function(e){
     load(".article1", url);
   else if ($(this).data("pageNo") == 3)
     load(".article2", url);
-  else
+  else{
     load($(this), url);
-
-  if ($(this).data("pageNo") == 5) {
+    $(document).ajaxComplete(function(){$(".pu h1, .pu p").hide();});
+    setTimeout(function(){$(".pu").children().show();}, 1000);
     //space x for our work
     var row;
     if (device == "smartPhone"){
