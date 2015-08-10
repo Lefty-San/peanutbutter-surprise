@@ -483,8 +483,7 @@ $(window).on("resize", orientationCheck);
 var current=1;
 $(".num"+current).children().addClass("large");
 $(".leftbutt").css('visibility','hidden');
-$(".leftButt").click(function(){
-});
+
 TweenMax.set($('.svgs'),{perspective:1000});
 
 window.onscroll=scrollFunc;

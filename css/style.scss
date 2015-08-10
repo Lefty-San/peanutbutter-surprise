@@ -60,6 +60,7 @@ body{
   top: 50%;
   left: 97%;
   div{
+    cursor: pointer;
     width: 7px;
     height: 7px;
     border-radius: 50%;
@@ -124,6 +125,7 @@ nav {
     height:46px;
     display:inline-block;
     margin-top:10px;
+    cursor: pointer;
   }
   .menu{
   	display: inline-block;
@@ -134,6 +136,7 @@ nav {
   		a, a:visited{
   			color: #a0a2a3;
   			text-decoration: none;
+        cursor: pointer;
   		}
   		li{
   			list-style: none;
@@ -172,6 +175,7 @@ nav {
       border-width: 1px;
       padding: 7px;
       color: $white;
+      cursor: pointer;
     }
   }
   .dwnArrow{
@@ -182,6 +186,7 @@ nav {
     background:$iphone_scroll_arrow2x;
     background-size: 100%;
     background-repeat: no-repeat;
+    cursor: pointer;
   }
 }
 
@@ -278,6 +283,7 @@ nav {
   position: relative;
   overflow: hidden;
 	.svg{
+    cursor: pointer;
 		display: inline-block;
     margin-top: 25px;
 		width: 100px;
@@ -321,7 +327,7 @@ nav {
     }
   }
 	svg {
-      //vertical-align: top;
+      cursor: pointer;
    		width: 100px;
    		height: 100px;
       display: inline-block;
@@ -382,6 +388,7 @@ nav {
 	.slider{
 		margin-top: 20px;
 		.leftButt{
+      cursor: pointer;
 			background: $iphone_arrow_left;
 			background-size: 100%;
 			width: 14px;
@@ -393,6 +400,7 @@ nav {
       padding-top: 10%;
 		}
 		.rightButt{
+      cursor: pointer;
 			background: $iphone_arrow_right;
 			background-size: 100%;
 			width: 14px;
@@ -589,6 +597,7 @@ nav {
       display: inline-block
     }
     .pu{
+      cursor: pointer;
       background-color: $white;
       width: 284px;
       height: 190px;
@@ -644,6 +653,7 @@ footer{
     li{
       list-style: none;
       display: inline-block;
+      cursor: pointer;
     }
   }
   .prokarma{
@@ -1625,6 +1635,12 @@ div[state=bigAF]{
         height: 24px;
         width: 25px;
         background-size: 100%;
+      }
+      h1{
+        font-size: 72px;
+      }
+      p{
+        font-size: 24pt;
       }
       .boxes{
         width: 1000px;

@@ -37,6 +37,7 @@ body {
   top: 50%;
   left: 97%; }
   .pagination div {
+    cursor: pointer;
     width: 7px;
     height: 7px;
     border-radius: 50%;
@@ -85,7 +86,8 @@ nav {
     position: absolute;
     height: 46px;
     display: inline-block;
-    margin-top: 10px; }
+    margin-top: 10px;
+    cursor: pointer; }
   nav .menu {
     display: inline-block;
     margin-left: 40px; }
@@ -94,7 +96,8 @@ nav {
       font-weight: 300; }
       nav .menu ul a, nav .menu ul a:visited {
         color: #a0a2a3;
-        text-decoration: none; }
+        text-decoration: none;
+        cursor: pointer; }
       nav .menu ul li {
         list-style: none; }
 
@@ -126,7 +129,8 @@ nav {
       border-radius: 2px;
       border-width: 1px;
       padding: 7px;
-      color: #ffffff; }
+      color: #ffffff;
+      cursor: pointer; }
   #page1 .dwnArrow {
     display: block;
     width: 19px;
@@ -134,7 +138,8 @@ nav {
     margin: 0 auto;
     background: url(../img/iPhone/Scroll_Arrow@2x.png);
     background-size: 100%;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    cursor: pointer; }
 
 #page2 {
   background: url(../img/Web/UX_Background.png) no-repeat center center;
@@ -218,6 +223,7 @@ nav {
   position: relative;
   overflow: hidden; }
   #page2 .svg, #page3 .svg {
+    cursor: pointer;
     display: inline-block;
     margin-top: 25px;
     width: 100px;
@@ -247,6 +253,7 @@ nav {
   #page2 section.svgs .proto p, #page2 section.svgs .eval p, #page2 section.svgs .presen p, #page2 section.svgs .user p, #page3 section.svgs .proto p, #page3 section.svgs .eval p, #page3 section.svgs .presen p, #page3 section.svgs .user p {
     margin-top: 0; }
   #page2 svg, #page3 svg {
+    cursor: pointer;
     width: 100px;
     height: 100px;
     display: inline-block; }
@@ -298,6 +305,7 @@ nav {
   #page4 .slider {
     margin-top: 20px; }
     #page4 .slider .leftButt {
+      cursor: pointer;
       background: url(../img/iPhone/ArrowLeft.png);
       background-size: 100%;
       width: 14px;
@@ -308,6 +316,7 @@ nav {
       background-repeat: no-repeat;
       padding-top: 10%; }
     #page4 .slider .rightButt {
+      cursor: pointer;
       background: url(../img/iPhone/ArrowRight.png);
       background-size: 100%;
       width: 14px;
@@ -463,6 +472,7 @@ nav {
       margin: 18px;
       display: inline-block; }
     #page5 .boxes .pu {
+      cursor: pointer;
       background-color: #ffffff;
       width: 284px;
       height: 190px;
@@ -510,7 +520,8 @@ footer {
       text-decoration: none; }
     footer ul li {
       list-style: none;
-      display: inline-block; }
+      display: inline-block;
+      cursor: pointer; }
 
 div[state=small] {
   position: static; }
@@ -1234,6 +1245,10 @@ div[state=bigAF] {
     height: 24px;
     width: 25px;
     background-size: 100%; }
+  #page5 h1 {
+    font-size: 72px; }
+  #page5 p {
+    font-size: 24pt; }
   #page5 .boxes {
     width: 1000px;
     margin: 0 auto; }
