@@ -129,7 +129,7 @@ function makeBigAF(ths, size){
   var pagePos = $('#page'+obj.pageNo).offset();
   var pageHeight = pagePos.top;
 
-  TweenLite.to($('[state='bigAF'] div svg path:not(g path)'), TIMING, {
+  TweenLite.to($('[state="bigAF"] div svg path:not(g path)'), TIMING, {
     force3D:true,
       autoAlpha:'0',
       webkitTransform: 'translateZ(.0)',
@@ -139,7 +139,7 @@ function makeBigAF(ths, size){
   });
   if (device == 'smartPhone'){
     if (obj.pageNo == 2){
-      TweenLite.to($('[state='bigAF'] div svg g'), TIMING/1.1, {
+      TweenLite.to($('[state="bigAF"] div svg g'), TIMING/1.1, {
         force3D:true,
           transform: 'translateY(-235px) translateX(10px) translateZ(.0) scale(0.25, 0.25)',
           zIndex: 3,
@@ -148,7 +148,7 @@ function makeBigAF(ths, size){
       });
     }
     else if (obj.pageNo == 3){
-      TweenLite.to($('[state='bigAF'] div svg g'), TIMING/1.1, {
+      TweenLite.to($('[state="bigAF"] div svg g'), TIMING/1.1, {
         force3D:true,
           transform: 'translateY(-200px) translateX(10px) translateZ(.0) scale(0.25, 0.25)',
           zIndex: 3,
@@ -158,7 +158,7 @@ function makeBigAF(ths, size){
     }
   }
   else {
-    TweenLite.to($('[state='bigAF'] div svg g'), TIMING, {
+    TweenLite.to($('[state="bigAF"] div svg g'), TIMING, {
       force3D:true,
         transform: 'translateY(-270px) translateX(10px) translateZ(.0) scale(0.5, 0.5)',
         zIndex: 3,
@@ -198,7 +198,7 @@ function makeBigAF(ths, size){
   var transY = 'translateY('+String(-(obj.origY-pageHeight)+addr)+'px)';
   var trans = 'translateX('+String(($('.mainContainer').width()/2) - obj.origX - +size.replace('px','')/2)+'px) '+transY;
 
-  TweenLite.to($('[state='bigAF'] div svg'),TIMING,{
+  TweenLite.to($('[state="bigAF"] div svg'),TIMING,{
     width: size,
     force3D:true,
     webkitTransform: 'translateZ(0)',
@@ -207,9 +207,9 @@ function makeBigAF(ths, size){
     zIndex: 3
   });
   if (obj.pageNo == 5){
-    $('[state='bigAF']').parent().css('margin', 0);
+    $('[state="bigAF"]').parent().css('margin', 0);
     if (device == 'smartPhone'){
-      TweenLite.to( $('[state='bigAF']'), TIMING, {
+      TweenLite.to( $('[state="bigAF"]'), TIMING, {
         force3D:true,
         width: '100vw',
         transform: 'translateZ(0)',
@@ -222,7 +222,7 @@ function makeBigAF(ths, size){
       });
     }
     else {//if(device == 'tabletPort'){
-      TweenLite.to( $('[state='bigAF']'), TIMING, {
+      TweenLite.to( $('[state="bigAF"]'), TIMING, {
         force3D:true,
         width: '100vw',
         transform: 'translateZ(0)',
@@ -235,9 +235,9 @@ function makeBigAF(ths, size){
       });
     }
     var pngTL = new TimelineLite();
-    $('[state='bigAF'] .img').show();
-    pngTL.to($('[state='bigAF'] .bg'), TIMING/5, {autoAlpha: 0})
-         .to($('[state='bigAF'] .img'), .8*TIMING, {autoAlpha: 1});
+    $('[state="bigAF"] .img').show();
+    pngTL.to($('[state="bigAF"] .bg'), TIMING/5, {autoAlpha: 0})
+         .to($('[state="bigAF"] .img'), .8*TIMING, {autoAlpha: 1});
   }
   setTimeout(function(){$('.article'+String(obj.pageNo-1)).show();}, (TIMING*1000));
   setTimeout(function(){$('.x'+String(obj.pageNo-1)).show();}, (TIMING*1000));
@@ -308,7 +308,7 @@ function norm(img, time, opacity){
 }
 
 function normWork(time){
-  $('[state = 'bigAF']').parent().css('margin', ourWork.margins);
+  $('[state = "bigAF"]').parent().css('margin', ourWork.margins);
   $('[state = bigAF]').css('position', 'relative');
   TweenLite.to($('[state = bigAF]'), time,{
     width: ourWork.width,
@@ -455,16 +455,16 @@ $('.x, .pu, .shade, .svgs, nav, .pagination').click(function(){
 	  $('.article2').hide();
     if(currPage == 5){
         normWork(TIMING);
-        $('[state='bigAF']').empty();
+        $('[state="bigAF"]').empty();
     }
     else{
-    	  normSVG('[state='bigAF'] div svg', TIMING, 1);
-    	  normSVG('[state='bigAF'] div svg path:not(g path)', TIMING, .12);
-    	  normSVG('[state='bigAF'] div svg g', TIMING, 1);
+    	  normSVG('[state="bigAF"] div svg', TIMING, 1);
+    	  normSVG('[state="bigAF"] div svg path:not(g path)', TIMING, .12);
+    	  normSVG('[state="bigAF"] div svg g', TIMING, 1);
     }
 	  canExit = false;
 	  $('.shade').css('display', 'none');
-	  $('[state='bigAF']').attr('state', 'small');
+	  $('[state="bigAF"]').attr('state', "small");
 	  $('.x').hide();
 	}
 });
@@ -544,7 +544,7 @@ $('[scroll]').click( function(){
   var tar = $(this).attr('scroll');
   if (tar == 'this'){
     if (device == 'smartPhone'){
-      if ($(this).attr('state')=='small'){
+      if ($(this).attr('state')=="small"){
         $('html, body').animate({
           scrollTop: $(this).offset().top - 17
         },500);
@@ -552,7 +552,7 @@ $('[scroll]').click( function(){
       }
     }
     else{
-      if ($(this).attr('state')=='small'){
+      if ($(this).attr('state')=="small"){
         $('html, body').animate({
           scrollTop: $(this).offset().top - 75
         },1500);
@@ -579,10 +579,10 @@ $('[scroll]').click( function(){
 
 //listen for clicked svgs and make big AF
 bigExists = false;
-$('[state='small']').click(function(e){
+$('[state="small"]').click(function(e){
 	if(bigExists == false){
 	  bigExists = true;
-	  $(this).attr('state', 'bigAF');
+	  $(this).attr('state', "bigAF");
 	  //$(this).children().children().css('position', 'absolute');
     if (device == 'smartPhone')
       makeBigAF($(this), '1000px');
@@ -619,13 +619,13 @@ $('[state='small']').click(function(e){
     //space x for our work
     var row;
     if (device == 'smartPhone'){
-      row = +$('[state='bigAF']').attr('num').replace('j','');
+      row = +$('[state="bigAF"]').attr('num').replace('j','');
     }
     else if(device == 'tabletPort'){
-      row = Math.floor(+$('[state='bigAF']').attr('num').replace('j','')/2);
+      row = Math.floor(+$('[state="bigAF"]').attr('num').replace('j','')/2);
     }
     else{
-      row = Math.floor(+$('[state='bigAF']').attr('num').replace('j','')/3);
+      row = Math.floor(+$('[state="bigAF"]').attr('num').replace('j','')/3);
     }
     var num = 40 + row * ((2* (+$(this).data('margin')+2)) + +$(this).data('height'));
     $('.x3').css('margin-top',  String(num)+'px');
