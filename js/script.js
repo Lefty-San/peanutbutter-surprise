@@ -40,36 +40,6 @@ $(function(){
     });
 });
 
-//load in page2 svgs
-<<<<<<< HEAD
-  $('.wireframes').prepend($('<div>').load('svg/UX/Wireframes.svg'));
-      $('.proto').prepend($('<div>').load('svg/UX/InteractivePrototypes.svg'));
-      $('.eval').prepend($('<div>').load('svg/UX/HeuristicEvaluation.svg'));
-$('.usability').prepend($('<div>').load('svg/UX/UsabilityTesting.svg'));
-    $('.user').prepend($('<div>').load('svg/UX/UserPersonas.svg'));
-
-//load in page3 svgs
-   $('.custom').prepend($('<div>').load('svg/UI/CustomInterfaceDesign.svg'));
- $('.desktop').prepend($('<div>').load('svg/UI/DesktopUI.svg'));
- $('.presen').prepend($('<div>').load('svg/UI/InteractivePresentation.svg'));
-$('.mobile').prepend($('<div>').load('svg/UI/MobileUI.svg'));
-  $('.poc').prepend($('<div>').load('svg/UI/POC.svg'));
-=======
-//   $('.wireframes').prepend($('<div>').load("svg/UX/Wireframes.svg"));//$(".wireframes").load("svg/UX/Wireframes.svg");
-//       $(".proto").prepend($('<div>').load("svg/UX/InteractivePrototypes.svg"));
-//       // $(".eval").prepend($('<div>').load("svg/UX/HeuristicEvaluation.svg"));
-// $(".usability").prepend($('<div>').load("svg/UX/UsabilityTesting.svg"));
-//     $(".user").prepend($('<div>').load("svg/UX/UserPersonas.svg"));
-//
-// //load in page3 svgs
-//    $(".custom").prepend($('<div>').load("svg/UI/CustomInterfaceDesign.svg"));
-//  $(".desktop").prepend($('<div>').load("svg/UI/DesktopUI.svg"));
-//  // $(".presen").prepend($('<div>').load("svg/UI/InteractivePresentation.svg"));
-// $(".mobile").prepend($('<div>').load("svg/UI/MobileUI.svg"));
-//   // $(".poc").prepend($('<div>').load("svg/UI/POC.svg"));
-//   $(".poc").prepend($('<div>').load("UI/POC.svg"));
-//   // $(".presen").prepend($('<div>').load("UI/InteractivePresentation.svg"));
->>>>>>> f4e73e62f5913de791de93423dfd8cb13ba184d8
 
 /**************************************
  *           ||
@@ -146,7 +116,7 @@ function makeBigAF(ths, size){
   var pagePos = $('#page'+obj.pageNo).offset();
   var pageHeight = pagePos.top;
 
-  TweenLite.to($('[state="bigAF"] div svg path:not(g path)'), TIMING, {
+  TweenLite.to($('[state="bigAF"] div #shadow g'), TIMING, {
     force3D:true,
       autoAlpha:'0',
       webkitTransform: 'translateZ(.0)',
@@ -156,7 +126,7 @@ function makeBigAF(ths, size){
   });
   if (device == 'smartPhone'){
     if (obj.pageNo == 2){
-      TweenLite.to($('[state="bigAF"] div svg g'), TIMING/1.1, {
+      TweenLite.to($('[state="bigAF"] div #icon g'), TIMING/1.1, {
         force3D:true,
           transform: 'translateY(-235px) translateX(10px) translateZ(.0) scale(0.25, 0.25)',
           zIndex: 3,
@@ -165,7 +135,7 @@ function makeBigAF(ths, size){
       });
     }
     else if (obj.pageNo == 3){
-      TweenLite.to($('[state="bigAF"] div svg g'), TIMING/1.1, {
+      TweenLite.to($('[state="bigAF"] div #icon g'), TIMING/1.1, {
         force3D:true,
           transform: 'translateY(-200px) translateX(10px) translateZ(.0) scale(0.25, 0.25)',
           zIndex: 3,
@@ -175,7 +145,7 @@ function makeBigAF(ths, size){
     }
   }
   else {
-    TweenLite.to($('[state="bigAF"] div svg g'), TIMING, {
+    TweenLite.to($('[state="bigAF"] div #icon g'), TIMING, {
       force3D:true,
         transform: 'translateY(-270px) translateX(10px) translateZ(.0) scale(0.5, 0.5)',
         zIndex: 3,
