@@ -41,7 +41,7 @@ $(function(){
 });
 
 //load in page2 svgs
-  $('.wireframes').prepend($('<div>').load('svg/UX/Wireframes.svg'));//$('.wireframes').load('svg/UX/Wireframes.svg');
+  $('.wireframes').prepend($('<div>').load('svg/UX/Wireframes.svg'));
       $('.proto').prepend($('<div>').load('svg/UX/InteractivePrototypes.svg'));
       $('.eval').prepend($('<div>').load('svg/UX/HeuristicEvaluation.svg'));
 $('.usability').prepend($('<div>').load('svg/UX/UsabilityTesting.svg'));
