@@ -10,6 +10,9 @@ html {
 p {
   font-weight: 300; }
 
+.x {
+  cursor: pointer; }
+
 .open {
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -23,6 +26,17 @@ p {
   transform-origin: 50% 0%;
   transition: all 0.3s ease 0.3s;
   -webkit-transition: all 0.3s ease 0.3s; }
+
+::-webkit-scrollbar {
+  width: 14px; }
+
+/*::-webkit-scrollbar-track {
+    background-color: white;
+}*/
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset -6px 0px 12px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px; }
 
 body {
   width: 100vw;
