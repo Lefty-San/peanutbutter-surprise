@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import stylesheet-->
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Micro Site</title>
+</head>
+<body>
+  <div class="mainContainer" role="main">
+    <div class="pagination p1">
+      <div class="o1 current" scroll="#page1"></div>
+      <div class="o2" scroll="#page2"></div>
+      <div class="o3" scroll="#page3"></div>
+      <div class="o4" scroll="#page4"></div>
+      <div class="o5" scroll="#page5"></div>
+    </div>
+    <nav>
+      <span><a class="logo" href="http://prokarma.com"></a></span>
+      <div class="menu">
+        <div class="image"></div>
+        <ul>
+          <li><a scroll="#page2" href="#page2">UX</a></li>
+          <li><a scroll="#page3" href="#page3">UI</a></li>
+          <li><a scroll="#page4" href="#page4">Process</a></li>
+          <li><a scroll="#page5" href="#page5">Our Work</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="page1" class="page">
+      <div class="lp_graphic" title="landing page graphic" alt="landing page graphic">
+        <!-- landing page graphic -->
+      </div>
+      <header>
+        <h1>INNOVATION INSPIRES US</h1>
+        <h2>PROCESS DRIVES US</h2>
+      </header>
+      <article>
+        <p>PK Interactive offers top-notch user experience & user interface experts that understand what it takes to build a successful product. Our team collaborates & engages in every step of the project to ensure the highest quality.</p>
+        <a>EXPLORE</a>
+      </article>
+      <div class="arrow_container">
+          <a scroll="#page2" class="dwnArrow"></a>
+      </div>
+    </div>
+    <div id="page2" class="page">
+      <header>
+        <h1>UX</h1>
+        <h2>user experience</h2>
+      </header>
+      <article class="page2">
+        <p>A great product is set apart, is engaging, is memorable. It is a product that looks good & works as intended - with a user experience that persuades, informs & lets people accomplish what they have to set out to do.</p>
+      </article>
+      <div class="x x1"></div>
+      <article class="article1"></article>
+      <section class="svgs">
+        <div class="shade shade2"></div>
+        <div page="#page2" state="small" scroll="#page2" class="svg wireframes">
+          <div>
+            <?php include './svg/UX/Wireframes.svg'; ?>
+          </div>
+          <p>Wireframes</p>
+        </div>
+        <div page="#page2" state="small" scroll="#page2" class="svg proto">
+          <div>
+            <?php include './svg/UX/InteractivePrototypes.svg'; ?>
+          </div>
+          <p>Interactive Prototypes</p>
+        </div>
+        <div page="#page2" state="small" scroll="#page2" class="svg user">
+          <div>
+            <?php include './svg/UX/UserPersonas.svg'; ?>
+          </div>
+          <p>User Personas</p>
+        </div>
+        <div page="#page2" state="small" scroll="#page2" class="svg eval">
+          <div>
+            <?php include './svg/UX/HeuristicEvaluation.svg'; ?>
+          </div>
+          <p>Heuristic Evaluation</p>
+        </div>
+        <div page="#page2" state="small" scroll="#page2" class="svg usability">
+          <div>
+            <?php include './svg/UX/UsabilityTesting.svg'; ?>
+          </div>
+          <p>Usability Testing</p>
+        </div>
+      </section>
+    </div>
+    <div id="page3" class="page">
+      <header>
+        <h1>UI</h1>
+        <h2>user interface</h2>
+      </header>
+      <article class="page3">
+        <p>Native, hybrid, mobile web, desktop or responsive, we understand the design principles involved for each. We design platform-specific solutions for iOS, Android and Windows, and we embrace the distinct differences offered by each operating system.</p>
+      </article>
+      <div class="x x2"></div>
+      <article class="article2"><p></p></article>
+      <section class="svgs">
+        <div class="shade shade3"></div>
+        <div page="#page3" state="small" scroll="#page3" class="svg mobile">
+          <div>
+            <?php include './svg/UI/MobileUI.svg'; ?>
+          </div>
+          <p>Mobile UI</p>
+        </div>
+        <div page="#page3" state="small" scroll="#page3" class="svg desktop">
+          <div>
+            <?php include './svg/UI/DesktopUI.svg'; ?>
+          </div>
+          <p>Desktop UI</p>
+        </div>
+        <div page="#page3" state="small" scroll="#page3" class="svg poc">
+          <div>
+            <?php include './svg/UI/POC.svg'; ?>
+          </div>
+          <p>POC</p>
+        </div>
+        <div page="#page3" state="small" scroll="#page3" class="svg presen">
+
+          <div>
+            <?php include './svg/UI/InteractivePresentation.svg'; ?>
+          </div>
+          <p>Interactive Presentation</p>
+        </div>
+        <div page="#page3" state="small" scroll="#page3" class="svg custom">
+          <div>
+            <?php include './svg/UI/CustomInterfaceDesign.svg' ?>
+          </div>
+          <p>Custom Ui Design</p>
+        </div>
+      </section>
+    </div>
+    <div id="page4" class="page">
+      <header>
+        <h2>OUR</h2>
+        <h1>PROCESS</h1>
+        <div class="venn"></div>
+      </header>
+      <div class="slider">
+        <div scroll="#page4" style="visibility: hidden" class="leftButt"></div>
+        <fieldset>
+          <div id="image" class="pixPerf"></div>
+          <div id="text" class="pixPerf"></div>
+        </fieldset>
+        <div scroll="#page4" class="rightButt"></div>
+      </div>
+      <div class="circle">
+        <div class="num1"><div class="circ"></div></div>
+        <div class="num2"><div class="circ"></div></div>
+        <div class="num3"><div class="circ"></div></div>
+        <div class="num4"><div class="circ"></div></div>
+        <div class="num5"><div class="circ"></div></div>
+        <div class="num6"><div class="circ"></div></div>
+        <div class="num7"><div class="circ"></div></div>
+        <div class="suits"></div>
+        <div class="ci">
+          <h1>CLIENT</h1>
+          <h2>interaction<h2>
+        </div>
+      </div>
+      <article>
+        <p>We take pride that our process is a true differentiator. We don&#8217;t create something and throw it over the wall and hope that it will work. Instead, our team collaborates together and with the client throughout the entire life cycle of the project. We know how to work with requirements, the importance of business goals and just what developers need from us to build a solid product.</p>
+      </article>
+    </div>
+    <div id="page5" class="page">
+      <header>
+        <h2>OUR</h2>
+        <h1>WORK</h2>
+      </header>
+      <div class="x3 x"></div>
+      <div class="boxes">
+        <div class="cont">
+          <div state="small" num="j0" scroll="this" class="kp1 pu">
+            <div class="bg"></div>
+            <div class="img left"></div>
+            <div class="img right"></div>
+          </div>
+        </div>
+        <div class="cont"><div state="small" num="j1" scroll="this" class="valmont pu"></div></div>
+        <div class="cont"><div state="small" num="j2" scroll="this" class="lz pu"></div></div>
+        <div class="cont"><div state="small" num="j3" scroll="this" class="il pu"></div></div>
+        <div class="cont"><div state="small" num="j4" scroll="this" class="ipharm pu"></div></div>
+        <div class="cont"><div state="small" num="j5" scroll="this" class="kp2 pu"></div></div>
+        <div class="cont"><div state="small" num="j6" scroll="this" class="charter pu"></div></div>
+        <div class="cont"><div state="small" num="j7" scroll="this" class="baker pu"></div></div>
+        <div class="cont"><div state="small" num="j8" scroll="this" class="kiewit pu"></div></div>
+      </div>
+    </div>
+    <footer>
+      <div class="nav"></div>
+        <ul>
+          <li><a scroll="#page2">UX</a></li>
+          <li>/</li>
+          <li><a scroll="#page3">UI</a></li>
+          <li>/</li>
+          <li><a scroll="#page4">Process</a></li>
+          <li>/</li>
+          <li><a scroll="#page5">Work</a></li>
+        </ul>
+      <div class="prokarma"><iframe src="" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></div>
+    </footer>
+    </div>
+    <!--Import script-->
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</html>
